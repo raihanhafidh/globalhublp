@@ -1,0 +1,5 @@
+.claude/
+node_modules/
+# salinan lama, isinya sama dengan study-abroad-a/ dan study-abroad-b/
+/study-abroad-A-direct-offer.html
+/study-abroad-B-konsultasi-wa.html
