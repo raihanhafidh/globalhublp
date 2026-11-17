@@ -247,6 +247,26 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
 }
 @media(min-width:1040px){.pricing.c4{grid-template-columns:repeat(4,1fr)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.sticky{transition:none}}
+
+/* section dua kolom: foto + isi */
+.split{display:grid;gap:20px;align-items:center}
+.split .head{text-align:left;margin:0 0 16px}
+.photo{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);background:#DDE5F7}
+.photo img{width:100%;height:190px;object-fit:cover}
+.split .pain{grid-template-columns:1fr}
+.tcard .who .av{width:36px;height:36px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;font-size:13px;display:grid;place-items:center;flex:none}
+.tcard .who.l{justify-content:flex-start}
+.mlist{display:grid;gap:10px}
+.mrow{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:12px 14px}
+.mrow .ava{margin:0}
+.mrow b{display:block;font-size:15px;line-height:1.25}
+.mrow span{font-size:13px;color:var(--ink-2);line-height:1.35;display:block}
+.mrow .aw{font-size:12px;font-weight:700;color:#0E7C76;background:var(--tint-teal);padding:3px 8px;border-radius:4px;white-space:nowrap}
+@media(min-width:900px){
+  .split{grid-template-columns:1fr 1fr;gap:48px}
+  .split.rev .photo{order:2}
+  .photo img{height:340px}
+}
 </style>
 </head>
 <body data-variant="B">
