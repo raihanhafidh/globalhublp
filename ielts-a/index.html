@@ -333,6 +333,19 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
   .mcards.g6 .mb img{height:32px}
   .mcard small{font-size:14px;margin-top:8px}
 }
+
+/* HP: isi paket dilipat, dibuka lewat tombol atau saat paket dipilih */
+.plan .more{display:none}
+@media(max-width:719px){
+  .plan.fold .more{display:block;width:100%;margin-top:10px;background:none;border:0;font:inherit;font-size:13.5px;font-weight:600;color:var(--blue);cursor:pointer;padding:6px}
+  .plan.fold:not(.open):not(.pick) hr,.plan.fold:not(.open):not(.pick) .checks,.plan.fold:not(.open):not(.pick) .bonus{display:none}
+  .plan.fold.open .more,.plan.fold.pick .more{display:none}
+  .compact .stage{gap:6px;margin-bottom:22px}
+  .compact .stage button{font-size:13px;padding:8px 11px}
+  .compact .panel-body{padding:16px}
+  .compact .asklist{gap:10px}
+  .compact .ticks{margin-top:14px}
+}
 </style>
 </head>
 <body class="compact" data-variant="IELTS-A" data-wa-plain>
@@ -559,6 +572,12 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
     bar.classList.add("hide");
     new IntersectionObserver(function (en) { bar.classList.toggle("hide", en[0].isIntersecting); }, { threshold: 0.15 }).observe(hero);
   }
+
+  // HP: buka isi paket yang dilipat
+  document.addEventListener("click", function (e) {
+    var m = e.target.closest(".plan .more"); if (!m) return;
+    m.closest(".plan").classList.add("open"); m.setAttribute("aria-expanded", "true");
+  });
 
   // Pemilih tahap -> sorot paket yang cocok (Versi B)
   var stage = document.querySelector(".stage");

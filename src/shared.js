@@ -45,6 +45,12 @@
     new IntersectionObserver(function (en) { bar.classList.toggle("hide", en[0].isIntersecting); }, { threshold: 0.15 }).observe(hero);
   }
 
+  // HP: buka isi paket yang dilipat
+  document.addEventListener("click", function (e) {
+    var m = e.target.closest(".plan .more"); if (!m) return;
+    m.closest(".plan").classList.add("open"); m.setAttribute("aria-expanded", "true");
+  });
+
   // Pemilih tahap -> sorot paket yang cocok (Versi B)
   var stage = document.querySelector(".stage");
   if (stage) {
