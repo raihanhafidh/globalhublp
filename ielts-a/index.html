@@ -267,9 +267,49 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
   .split.rev .photo{order:2}
   .photo img{height:340px}
 }
+
+/* kartu mentor berfoto */
+.mcards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;text-align:center}
+.mph{position:relative;aspect-ratio:1/1;background:linear-gradient(160deg,#DDE5F7,#E8F8F7)}
+.mph>img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.mb{position:absolute;top:10px;right:10px;display:none;gap:8px}
+.mb img{height:32px;width:auto;background:#fff;border-radius:6px;padding:4px 6px;box-shadow:0 1px 4px rgba(23,23,23,.15)}
+.mcard figcaption{padding:10px 6px 12px}
+.mcard b{display:block;font-size:13.5px;line-height:1.25}
+.mcard span{font-size:12.5px;font-weight:600;color:#0E7C76}
+@media(min-width:720px){
+  .mcards{gap:20px}
+  .mph{aspect-ratio:6/5}
+  .mb{display:flex}
+  .mcard figcaption{padding:16px 10px 18px}
+  .mcard b{font-size:18px}
+  .mcard span{font-size:15px}
+}
+/* HP ringkas (dipakai halaman ber-class .compact di body) */
+@media(max-width:719px){
+  .compact .sec{padding:32px 0}
+  .compact .head{margin-bottom:18px}
+  .compact .hero{padding:22px 0 28px}
+  .compact .shot img{height:170px}
+  .compact .photo img{height:140px}
+  .compact .split{gap:16px}
+  .compact .pain{gap:8px}
+  .compact .pain li{padding:12px 14px;font-size:15px}
+  .compact .plan{padding:18px 16px 16px}
+  .compact .plan .for{min-height:0}
+  .compact .plan .p{margin-bottom:12px}
+  .compact .plan hr{margin:14px 0 12px}
+  .compact .bento{grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+  .compact .bento .c{grid-template-columns:1fr;gap:6px;padding:14px;border:0;background:#fff}
+  .compact .bento .ico{grid-row:auto;width:34px;height:34px}
+  .compact .bento h3{font-size:15px}
+  .compact .bento p{grid-column:1;font-size:13.5px;line-height:1.45}
+  .compact .closing{padding:24px 18px}
+}
 </style>
 </head>
-<body data-variant="IELTS-A" data-wa-plain>
+<body class="compact" data-variant="IELTS-A" data-wa-plain>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></symbol>
   <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
@@ -317,13 +357,13 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
     </div>
     <figure class="shot">
       <img src="https://globalhub.id/ads/ieltsbeasiswa/backgrounds/ads_hero_desktop_v1.avif" alt="Pelajar sedang mempersiapkan IELTS" width="1920" height="1600">
-      <figcaption class="float f1">Kinanti, IELTS Private<b>5.5 → <i>7.0</i></b></figcaption>
+      <figcaption class="float f1">3 pilihan kelas<b>Mulai Rp359 ribu</b></figcaption>
       <div class="float f2">Mentor ber-skor<b>Band 7 sampai 8</b></div>
     </figure>
   </div>
 </section>
 
-<!-- MASALAH DAN BUKTI -->
+<!-- MASALAH (testimoni sengaja tidak dipasang sampai ada testimoni murid yang bisa dibuktikan) -->
 <section class="sec alt">
   <div class="wrap">
     <div class="split">
@@ -335,20 +375,6 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
           <li>Belajar sendiri sepulang kerja, seminggu jalan lalu berhenti.</li>
           <li>Mau ikut kursus, tapi takut kemahalan dan jadwalnya bentrok.</li>
         </ul>
-      </div>
-    </div>
-    <p class="bridge">Mereka juga pernah di situ.</p>
-    <!-- Testimoni dari /ieltsgo (murid Private). DEV: ganti .av dengan foto murid kalau ada izin. -->
-    <div class="testi">
-      <div class="tcard">
-        <div class="score"><small>Overall</small>5.5 <i>→</i> <b>7.0</b></div>
-        <blockquote>“Feedback dari mentor membantu banget, terutama di Writing. Progresnya jauh lebih bagus dari yang aku kira.”</blockquote>
-        <div class="who l"><span class="av">K</span><div><b>Kinanti</b>IELTS Private</div></div>
-      </div>
-      <div class="tcard">
-        <div class="score"><small>Speaking</small>6.0 <i>→</i> <b>7.5</b></div>
-        <blockquote>“Dulu sering ragu pas Speaking, sekarang jauh lebih nyaman dan siap menghadapi tes.”</blockquote>
-        <div class="who l"><span class="av">DS</span><div><b>Dimas Saputra</b>IELTS Private</div></div>
       </div>
     </div>
   </div>
@@ -367,7 +393,6 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
         <h3>IELTS Live Class</h3>
         <p class="for">Kelas grup malam hari, buat yang mau mulai dengan biaya ringan.</p>
         <div class="p">Rp359.000 <s>Rp830.000</s></div>
-        <p class="n">10 sesi kelas grup</p>
         <a class="btn btn-wa btn-block" data-cta="whatsapp" data-pos="kelas" data-paket="live-class" data-msg="Halo kak, aku mau tanya IELTS Live Class Rp359.000 (kode IELTSHERO). Skorku sekarang ___." href="#">Tanya Live Class</a>
         <hr>
         <ul class="checks">
@@ -381,7 +406,6 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
         <h3>Private IELTS Sprint</h3>
         <p class="for">1-on-1 dengan jadwal yang ngikutin jam kerjamu. Target Band 7+.</p>
         <div class="p">Rp2.990.000 <s>Rp5.980.000</s></div>
-        <p class="n">10 sesi privat</p>
         <a class="btn btn-wa btn-block" data-cta="whatsapp" data-pos="kelas" data-paket="private-sprint" data-msg="Halo kak, aku mau tanya Private IELTS Sprint. Skorku sekarang ___, bisanya jam ___." href="#">Tanya Private Sprint</a>
         <hr>
         <ul class="checks">
@@ -395,7 +419,6 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
         <h3>Private IELTS Booster</h3>
         <p class="for">Sesi lebih banyak, buat yang deadline beasiswanya udah dekat.</p>
         <div class="p">Rp4.399.000 <s>Rp8.798.000</s></div>
-        <p class="n">15 sesi privat</p>
         <a class="btn btn-wa btn-block" data-cta="whatsapp" data-pos="kelas" data-paket="private-booster" data-msg="Halo kak, aku mau tanya Private IELTS Booster. Skorku sekarang ___, bisanya jam ___." href="#">Tanya Private Booster</a>
         <hr>
         <ul class="checks">
@@ -421,20 +444,14 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
   </div>
 </section>
 
-<!-- MENTOR -->
+<!-- MENTOR · foto dari globalhub.id/mentor/default. Kalau foto gagal dimuat, kotak .mph tetap jadi ruang foto. -->
 <section class="sec">
   <div class="wrap">
-    <div class="split rev">
-      <figure class="photo"><img src="https://globalhub.id/preparation/backgrounds/mentor_mobile.avif" alt="Mentor IELTS mendampingi pelajar secara daring" width="714" height="384" loading="lazy"></figure>
-      <div>
-        <div class="head"><h2>Mentor berpengalaman dan bersertifikasi IELTS</h2><p>Kamu diajar orang yang sudah melewati tesnya sendiri, dengan skor band 7 sampai 8.</p></div>
-        <!-- DEV: ganti .ava dengan foto mentor ukuran kecil -->
-        <div class="mlist">
-          <div class="mrow"><div class="ava">AH</div><div><b>Aurelia Hillary Wibisono</b><span>S1 Engineering, Universitas Atma Jaya</span></div><span class="aw">Band 7.0</span></div>
-          <div class="mrow"><div class="ava">CA</div><div><b>Cecilia Aileen Yap</b><span>IISMA Awardee, University of California Davis</span></div><span class="aw">Band 8.0</span></div>
-          <div class="mrow"><div class="ava">YJ</div><div><b>Yovita Jovanika</b><span>S1 English Language Education, UNY</span></div><span class="aw">Band 7.0</span></div>
-        </div>
-      </div>
+    <div class="head"><h2>Mentor berpengalaman dan bersertifikasi IELTS</h2><p>Kamu diajar orang yang sudah melewati tesnya sendiri.</p></div>
+    <div class="mcards">
+      <figure class="mcard"><div class="mph"><img src="https://globalhub.id/mentor/default/aurelia.avif" alt="Aurelia Hillary Wibisono" loading="lazy"><span class="mb"><img src="https://globalhub.id/mentor/icons/iisma.webp" alt="IISMA"><img src="https://globalhub.id/mentor/icons/taiwan.webp" alt="National Taiwan University of Science and Technology"></span></div><figcaption><b>Aurelia Hillary Wibisono</b><span>IELTS Band 7.0</span></figcaption></figure>
+      <figure class="mcard"><div class="mph"><img src="https://globalhub.id/mentor/default/cecilia.avif" alt="Cecilia Aileen Yap" loading="lazy"><span class="mb"><img src="https://globalhub.id/mentor/icons/iisma.webp" alt="IISMA"><img src="https://globalhub.id/mentor/icons/california.webp" alt="University of California Davis"></span></div><figcaption><b>Cecilia Aileen Yap</b><span>IELTS Band 8.0</span></figcaption></figure>
+      <figure class="mcard"><div class="mph"><img src="https://globalhub.id/mentor/default/yovita.avif" alt="Yovita Jovanika" loading="lazy"><span class="mb"><img src="https://globalhub.id/mentor/icons/ielts.webp" alt="IELTS"><img src="https://globalhub.id/mentor/icons/uny.webp" alt="Universitas Negeri Yogyakarta"></span></div><figcaption><b>Yovita Jovanika</b><span>IELTS Band 7.0</span></figcaption></figure>
     </div>
   </div>
 </section>
