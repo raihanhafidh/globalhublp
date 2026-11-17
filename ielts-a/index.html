@@ -4,348 +4,324 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Konsultasi Gratis IELTS untuk Pejuang Beasiswa | Global Hub</title>
-<meta name="description" content="Ceritain skor dan target IELTS-mu ke admin Global Hub. Admin bantu pilih dari 3 kelas, mulai Rp359 ribu.">
+<title>Konsultasi Gratis IELTS buat yang Sambil Kerja | Global Hub</title>
+<meta name="description" content="Ceritain skor dan target IELTS-mu ke admin Global Hub. Kami bantu pilih kelas yang muat di jadwal kerjamu, mulai Rp359 ribu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>:root{
+<style>/* ===== Global Hub LP · sistem layout v2 =====
+   Pola section diadaptasi dari komponen 21st.dev (hero split + badge, feature grid/bento
+   bergaris tipis, pricing cards dengan tier unggulan), ditulis ulang sebagai HTML/CSS biasa. */
+:root{
   --blue:#2853EA; --blue-d:#1D3FC0; --teal:#31C7BF; --ink:#171717; --ink-2:#525252; --ink-3:#737373;
   --bg:#FAFAFA; --bg-2:#F2F4F7; --line:#E5E5E5; --white:#fff; --wa:#128C4A; --wa-d:#0E733C;
-  --warn:#B42318; --tint:#EEF2FE; --tint-teal:#E8F8F7;
+  --tint:#EEF2FE; --tint-teal:#E8F8F7;
   --grad:linear-gradient(105deg,#31C7BF 0%,#2F8FDC 58%,#2853EA 100%);
-  --r:6px; --r-lg:12px; --shadow:0 1px 2px rgba(23,23,23,.06),0 8px 24px rgba(23,23,23,.06);
+  --r:8px; --r-lg:14px; --shadow:0 1px 2px rgba(23,23,23,.05),0 10px 30px rgba(23,23,23,.07);
+  --check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M7.6 14.6 3.4 10.4l1.5-1.5 2.7 2.7 7.5-7.5 1.5 1.5z'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:"Google Sans","Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:16px;padding-bottom:76px}
+body{font-family:"Google Sans","Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:16px;padding-bottom:72px}
 img{max-width:100%;display:block}
 a{color:inherit}
+[id]{scroll-margin-top:72px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-.sec{padding:56px 0}
+.sec{padding:44px 0}
 .sec.alt{background:var(--bg-2)}
-.sec.dark{background:var(--ink);color:var(--bg)}
 h1,h2,h3{line-height:1.15;letter-spacing:-.02em;text-wrap:balance}
-h1{font-size:clamp(30px,6.4vw,50px);font-weight:700}
-h2{font-size:clamp(25px,4.6vw,38px);font-weight:700}
-h3{font-size:18px;font-weight:700;letter-spacing:-.01em}
+h1{font-size:clamp(29px,7vw,50px);font-weight:700}
+h2{font-size:clamp(24px,4.4vw,36px);font-weight:700}
+h3{font-size:17px;font-weight:700;letter-spacing:-.01em}
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:17px;color:var(--ink-2);max-width:60ch}
-.dark .lead{color:#D4D4D4}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
-.eyebrow::before{content:"";width:18px;height:3px;border-radius:2px;background:var(--grad)}
-.dark .eyebrow{color:#7FE3DD}
-.sec-head{margin-bottom:32px;max-width:720px}
-.sec-head p{margin-top:12px;color:var(--ink-2)}
-.center{text-align:center;margin-left:auto;margin-right:auto}
-.center .eyebrow{justify-content:center}
-
-/* top bar */
-.top{position:sticky;top:0;z-index:30;background:rgba(250,250,250,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
-.top img{height:30px;width:auto}
-.top .btn{padding:9px 14px;font-size:14px;min-height:40px}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 22px;border-radius:var(--r);font:inherit;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .15s,transform .15s,border-color .15s;text-align:center}
-.btn:active{transform:translateY(1px)}
-.btn:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #9DB3FA;outline-offset:2px}
-.btn-primary{background:var(--blue);color:#fff}
-.btn-primary:hover{background:var(--blue-d)}
-.btn-wa{background:var(--wa);color:#fff}
-.btn-wa:hover{background:var(--wa-d)}
-.btn-ghost{background:transparent;border-color:#C9CED6;color:var(--ink)}
-.btn-ghost:hover{border-color:var(--ink)}
-.dark .btn-ghost{color:#fff;border-color:#5A5A5A}
-.dark .btn-ghost:hover{border-color:#fff}
-.btn-block{width:100%}
-.btn svg{width:20px;height:20px;flex:none}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.hero .cta-row .btn{flex:1 1 220px}
-[id]{scroll-margin-top:76px}
-.micro{font-size:13.5px;color:var(--ink-3);margin-top:12px}
-.dark .micro{color:#A3A3A3}
+.lead{font-size:17px;color:var(--ink-2);text-wrap:pretty}
+.micro{font-size:13.5px;color:var(--ink-3)}
 .textlink{font-weight:600;color:var(--blue);text-underline-offset:3px}
+.ic{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-/* hero */
-.hero{padding:40px 0 48px}
-.hero-grid{display:grid;gap:32px;align-items:center}
-.hero .lead{margin-top:16px}
-.hero.dark{background:radial-gradient(900px 420px at 85% -10%,rgba(49,199,191,.22),transparent 60%),radial-gradient(700px 380px at 0% 110%,rgba(40,83,234,.35),transparent 60%),var(--ink)}
-.ticks{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;font-size:14px;color:var(--ink-2)}
-.dark .ticks{color:#D4D4D4}
-.ticks li{display:flex;align-items:center;gap:7px}
-.ticks li::before{content:"";width:16px;height:16px;flex:none;background:var(--teal);-webkit-mask:var(--check) center/contain no-repeat;mask:var(--check) center/contain no-repeat}
-:root{--check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M7.6 14.6 3.4 10.4l1.5-1.5 2.7 2.7 7.5-7.5 1.5 1.5z'/%3E%3C/svg%3E")}
+/* section head: selalu di tengah supaya tidak ada sisi kanan yang kosong */
+.head{max-width:680px;margin:0 auto 26px;text-align:center}
+.head p{margin-top:10px;color:var(--ink-2)}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue);background:var(--tint);border:1px solid #D5DFFC;border-radius:99px;padding:5px 12px;margin-bottom:14px}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal)}
 
-/* cards */
-.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;color:var(--ink)}
-.card.lift{box-shadow:var(--shadow)}
-.grid{display:grid;gap:16px}
-.checks{list-style:none;display:grid;gap:10px}
-.checks li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
-.checks li::before{content:"";width:18px;height:18px;margin-top:3px;flex:none;background:var(--blue);-webkit-mask:var(--check) center/contain no-repeat;mask:var(--check) center/contain no-repeat}
-.checks.x li::before{background:#A3A3A3;-webkit-mask-image:var(--cross);mask-image:var(--cross)}
-:root{--cross:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='m5.3 3.9 4.7 4.7 4.7-4.7 1.4 1.4-4.7 4.7 4.7 4.7-1.4 1.4-4.7-4.7-4.7 4.7-1.4-1.4 4.7-4.7-4.7-4.7z'/%3E%3C/svg%3E")}
+/* bar atas */
+.draft{background:#FFF4CC;color:#5C4400;font-size:12.5px;text-align:center;padding:6px 14px}
+.promo{background:var(--ink);color:#fff;text-align:center;font-size:13.5px;font-weight:600;padding:8px 14px}
+.promo b{color:#7FE3DD}
+.top{position:sticky;top:0;z-index:30;background:rgba(250,250,250,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.top img{height:28px;width:auto}
+.top .btn{padding:8px 14px;font-size:14px;min-height:38px}
 
-/* offer card */
-.offer{border-radius:var(--r-lg);background:#fff;color:var(--ink);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.28)}
-.offer-top{background:var(--grad);color:#fff;padding:14px 22px;font-weight:700;font-size:14px;display:flex;justify-content:space-between;gap:10px}
-.offer-body{padding:22px}
-.offer h3{font-size:20px}
-.offer .sub{font-size:14px;color:var(--ink-2);margin:4px 0 16px}
-.price{font-size:38px;font-weight:700;letter-spacing:-.03em;line-height:1}
-.price small{display:block;font-size:13.5px;font-weight:500;color:var(--ink-3);letter-spacing:0;margin-top:8px}
-.offer hr{border:0;border-top:1px dashed var(--line);margin:18px 0}
-.label{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+/* tombol */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:13px 22px;border-radius:var(--r);font:inherit;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;text-align:center}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible,summary:focus-visible,.stage button:focus-visible{outline:3px solid #9DB3FA;outline-offset:2px}
+.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-d)}
+.btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{background:var(--wa-d)}
+.btn-ghost{background:#fff;border-color:#C9CED6;color:var(--ink)}.btn-ghost:hover{border-color:var(--ink)}
+.btn-white{background:#fff;color:var(--ink)}
+.btn-block{width:100%}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cta-row .btn{flex:1 1 220px}
 
-/* proof strip */
-.strip{border-block:1px solid var(--line);background:#fff;padding:18px 0}
-.strip .wrap{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
-.strip span.t{font-size:13.5px;color:var(--ink-3);width:100%;margin-bottom:4px}
-.chip{font-size:13.5px;font-weight:600;padding:6px 12px;border-radius:99px;background:var(--bg-2);color:var(--ink-2);white-space:nowrap}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:100%}
-.stats b{display:block;font-size:clamp(22px,5vw,30px);letter-spacing:-.02em}
-.stats span{font-size:13.5px;color:var(--ink-2)}
+/* HERO · split: teks kiri, visual kanan */
+.hero{padding:28px 0 36px;background:radial-gradient(700px 360px at 100% 0%,rgba(49,199,191,.14),transparent 65%),radial-gradient(620px 340px at 0% 100%,rgba(40,83,234,.10),transparent 65%)}
+.hero-grid{display:grid;gap:26px;align-items:center}
+.hero .lead{margin-top:14px;max-width:54ch}
+.hero .micro{margin-top:12px}
+.ticks{list-style:none;display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;font-size:14px;color:var(--ink-2)}
+.ticks li{display:flex;align-items:center;gap:6px}
+.ticks li::before{content:"";width:15px;height:15px;flex:none;background:var(--teal);-webkit-mask:var(--check) center/contain no-repeat;mask:var(--check) center/contain no-repeat}
+.shot{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);background:#DDE5F7}
+.shot img{width:100%;height:210px;object-fit:cover;object-position:50% 20%}
+.float{position:absolute;background:#fff;border-radius:10px;box-shadow:0 6px 20px rgba(23,23,23,.16);padding:9px 12px;font-size:12.5px;line-height:1.3;color:var(--ink-2)}
+.float b{display:block;font-size:17px;color:var(--ink);letter-spacing:-.01em}
+.float b i{font-style:normal;color:#0E7C76}
+.float.f1{left:12px;bottom:12px}
+.float.f2{right:12px;top:12px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden}
+.panel-top{background:var(--grad);color:#fff;padding:12px 20px;font-weight:700;font-size:14px;display:flex;justify-content:space-between;gap:10px}
+.panel-body{padding:20px}
+.panel .label{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.panel hr{border:0;border-top:1px dashed var(--line);margin:16px 0}
+.price{font-size:36px;font-weight:700;letter-spacing:-.03em;line-height:1.05}
+.price small{display:block;font-size:13.5px;font-weight:500;color:var(--ink-3);letter-spacing:0;margin-top:6px}
+.asklist{list-style:none;counter-reset:q;display:grid;gap:12px}
+.asklist li{counter-increment:q;display:grid;grid-template-columns:28px 1fr;gap:12px;font-size:15px}
+.asklist li::before{content:counter(q);width:28px;height:28px;border-radius:50%;background:var(--tint);color:var(--blue);font-weight:700;font-size:14px;display:grid;place-items:center}
+.asklist b{display:block}
+.asklist span{color:var(--ink-2);font-size:14px}
 
-/* pain */
-.pain{display:grid;gap:12px}
-.pain li{list-style:none;background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:var(--r);padding:16px 18px;font-size:16px;font-weight:500}
-.pain li span{display:block;font-weight:400;font-size:14.5px;color:var(--ink-2);margin-top:4px}
+/* strip bukti: sel bergaris tipis */
+.strip{border-block:1px solid var(--line);background:#fff}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.strip .cell{padding:16px 10px;text-align:center;border-left:1px solid var(--line)}
+.strip .cell:first-child{border-left:0}
+.strip b{display:block;font-size:clamp(19px,4.6vw,26px);letter-spacing:-.02em}
+.strip span{font-size:12.5px;color:var(--ink-2);line-height:1.3;display:block}
 
-/* compare */
-.compare{display:grid;gap:16px}
-.compare .card h3{margin-bottom:14px}
-.compare .yes{border:2px solid var(--blue);background:linear-gradient(#fff,#fff) padding-box}
-.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:4px;background:var(--tint);color:var(--blue);margin-bottom:10px}
-.tag.teal{background:var(--tint-teal);color:#0E7C76}
-.tag.grey{background:var(--bg-2);color:var(--ink-3)}
+/* masalah: 3 kartu ringkas */
+.pain{list-style:none;display:grid;gap:10px}
+.pain li{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:15px 16px;font-size:15.5px;font-weight:500;display:flex;gap:12px;align-items:flex-start}
+.pain li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--blue);margin-top:8px}
+.bridge{text-align:center;font-weight:700;font-size:17px;margin:24px 0 14px}
 
-/* steps */
-.steps{display:grid;gap:14px;counter-reset:s}
-.steps li{list-style:none;counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
-.steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;display:grid;place-items:center;font-size:18px}
-.steps p{color:var(--ink-2);font-size:15px;margin-top:3px}
+/* FEATURES · grid bergaris tipis (bento) */
+.bento{display:grid;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.bento .c{padding:18px;border-top:1px solid var(--line);display:grid;grid-template-columns:40px 1fr;gap:4px 14px;align-content:start}
+.bento .c:first-child{border-top:0}
+.bento .ico{grid-row:span 2;width:40px;height:40px;border-radius:10px;background:var(--tint);color:var(--blue);display:grid;place-items:center}
+.bento .c:nth-child(even) .ico{background:var(--tint-teal);color:#0E7C76}
+.bento p{grid-column:2;font-size:14.5px;color:var(--ink-2)}
+.note{border:1.5px solid #BFD0FB;background:var(--tint);border-radius:var(--r-lg);padding:14px 18px;margin-top:16px;font-size:15px;display:flex;gap:12px;align-items:flex-start}
+.note .ic{color:var(--blue);margin-top:2px}
+.note b{display:block;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--blue)}
 
-/* mentors */
-.mentors{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.mentor{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:16px}
-.ava{width:52px;height:52px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;display:grid;place-items:center;margin-bottom:12px;font-size:17px}
-.mentor b{display:block;font-size:15px;line-height:1.3}
-.mentor .aw{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#0E7C76;background:var(--tint-teal);padding:3px 7px;border-radius:4px;margin:7px 0}
-.mentor p{font-size:13.5px;color:var(--ink-2);line-height:1.4}
+/* mentor */
+.mentors{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.mentors.six{grid-template-columns:repeat(2,1fr);margin-top:0}
+.mentor{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:14px 10px;text-align:center}
+.ava{width:46px;height:46px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;display:grid;place-items:center;margin:0 auto 8px;font-size:15px}
+.mentor b{display:block;font-size:13.5px;line-height:1.25}
+.mentor .aw{display:inline-block;font-size:11.5px;font-weight:700;color:#0E7C76;background:var(--tint-teal);padding:2px 7px;border-radius:4px;margin-top:6px}
+.mentor p{font-size:12.5px;color:var(--ink-2);line-height:1.35;margin-top:6px}
 
-/* testimonials */
-.testi{display:grid;gap:14px}
-.testi .card{display:flex;flex-direction:column;gap:14px}
-.testi blockquote{font-size:15.5px}
-.testi .who{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:14px}
-.testi .who b{display:block}
-.result{font-size:12.5px;font-weight:700;color:#0E7C76;background:var(--tint-teal);padding:5px 9px;border-radius:4px;text-align:right}
+/* testimoni */
+.testi{display:grid;gap:12px}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px;display:flex;flex-direction:column;gap:12px}
+.tcard blockquote{font-size:15px}
+.tcard .who{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tcard .who b{display:block;color:var(--ink);font-size:14.5px}
+.score{display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:22px;letter-spacing:-.02em}
+.score small{font-size:12.5px;font-weight:600;color:var(--ink-3);letter-spacing:0;margin-right:auto}
+.score i{font-style:normal;color:var(--ink-3);font-weight:500}
+.score b{color:#0E7C76}
+.result{font-size:12px;font-weight:700;color:#0E7C76;background:var(--tint-teal);padding:4px 8px;border-radius:4px;text-align:right}
 
-/* guarantee */
-.guar{display:grid;gap:18px;border:1px solid #BFD0FB;background:var(--tint);border-radius:var(--r-lg);padding:24px}
-.guar ul{margin:12px 0 0 18px;font-size:14.5px;color:var(--ink-2);display:grid;gap:5px}
-
-/* packages */
-.pk{display:grid;gap:16px}
-.pk .card{display:flex;flex-direction:column}
-.pk .card.best{border:2px solid var(--blue)}
-.pk .p{font-size:28px;font-weight:700;letter-spacing:-.02em;margin:10px 0 2px}
-.pk .n{font-size:14px;color:var(--ink-2);margin-bottom:14px}
-.pk .for{font-size:14.5px;color:var(--ink-2);margin:6px 0 4px}
-.pk .checks{margin-bottom:18px}
-.pk .checks li{font-size:14.5px}
-.pk .acts{margin-top:auto;display:grid;gap:10px;text-align:center}
-.pk .acts .textlink{font-size:14px}
-.pk .bonus{font-size:13.5px;background:var(--tint-teal);color:#0B5F5A;border-radius:var(--r);padding:9px 11px;margin-bottom:16px}
-.rows{display:grid;gap:10px}
-.rowp{display:grid;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px}
-.rowp b{font-size:16px}
-.rowp p{font-size:14px;color:var(--ink-2)}
-.rowp .pr{font-weight:700;font-size:18px;white-space:nowrap}
-.rowp .btn{min-height:44px;padding:10px 16px;font-size:14.5px}
-
-/* stage picker */
-.stage{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.stage button{font:inherit;font-size:14.5px;font-weight:600;padding:10px 14px;border-radius:99px;border:1.5px solid #C9CED6;background:#fff;color:var(--ink-2);cursor:pointer}
+/* PRICING · kartu tier, satu diunggulkan */
+.pricing{display:grid;gap:14px;align-items:stretch}
+.plan{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;display:flex;flex-direction:column}
+.plan.pop{border:2px solid var(--blue);box-shadow:var(--shadow)}
+.plan .badge{position:absolute;top:-11px;left:18px;background:var(--blue);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:99px}
+.plan .badge.teal{background:#0E7C76}
+.plan .for{font-size:14px;color:var(--ink-2);margin-top:4px;min-height:2.9em}
+.plan .p{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-top:10px;line-height:1.1}
+.plan .p s{font-size:14px;font-weight:500;color:var(--ink-3);letter-spacing:0;margin-left:6px}
+.plan .n{font-size:13.5px;color:var(--ink-3);margin:4px 0 14px}
+.plan .btn{min-height:48px;font-size:15px}
+.plan .alt{display:block;text-align:center;font-size:13.5px;margin-top:10px}
+.plan hr{border:0;border-top:1px solid var(--line);margin:16px 0 14px}
+.checks{list-style:none;display:grid;gap:8px}
+.checks li{display:flex;gap:9px;align-items:flex-start;font-size:14.5px}
+.checks li::before{content:"";width:17px;height:17px;margin-top:3px;flex:none;background:var(--blue);-webkit-mask:var(--check) center/contain no-repeat;mask:var(--check) center/contain no-repeat}
+.plan .bonus{font-size:13px;background:var(--tint-teal);color:#0B5F5A;border-radius:var(--r);padding:8px 10px;margin-top:12px}
+.plan.dim{opacity:.55}
+.plan.pick{border:2px solid var(--blue);box-shadow:var(--shadow)}
+.plan .pick-note{display:none}
+.plan.pick .pick-note{display:block}
+.under{text-align:center;margin-top:16px;font-size:14px;color:var(--ink-2)}
+.stage{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:24px}
+.stage button{font:inherit;font-size:14px;font-weight:600;padding:9px 14px;border-radius:99px;border:1.5px solid #C9CED6;background:#fff;color:var(--ink-2);cursor:pointer}
 .stage button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.pk .card.dim{opacity:.55}
-.pk .card.pick{border:2px solid var(--blue);box-shadow:var(--shadow)}
-.pick-note{display:none;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--blue);padding:4px 9px;border-radius:4px;margin-bottom:10px;align-self:flex-start}
-.pk .card.pick .pick-note{display:inline-block}
+/* pricing satu produk: kartu harga + langkah / garansi di sampingnya */
+.duo{display:grid;gap:16px;align-items:stretch}
+.duo .side{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:20px}
+.duo .side h3{margin-bottom:12px}
+.duo .side ul.plain{margin:10px 0 0 18px;font-size:14.5px;color:var(--ink-2);display:grid;gap:5px}
+.howto{list-style:none;counter-reset:h;display:grid;gap:12px}
+.howto li{counter-increment:h;display:grid;grid-template-columns:28px 1fr;gap:12px;font-size:15px}
+.howto li::before{content:counter(h);width:28px;height:28px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center}
+.rows{display:grid;gap:10px;margin-top:14px}
+.rowp{display:grid;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:14px 16px}
+.rowp p{font-size:13.5px;color:var(--ink-2)}
+.rowp .pr{font-weight:700;font-size:17px;white-space:nowrap}
+.rowp .btn{min-height:42px;padding:8px 14px;font-size:14px}
 
-/* form */
-.form{display:grid;gap:14px}
-.form label{display:grid;gap:6px;font-size:14px;font-weight:600}
-.form input,.form select{font:inherit;font-size:16px;padding:12px 13px;border:1.5px solid #C9CED6;border-radius:var(--r);background:#fff;color:var(--ink);width:100%;min-height:48px}
-.form input:focus,.form select:focus{border-color:var(--blue)}
-
-/* faq */
-.faq{display:grid;gap:10px;max-width:780px}
+/* FAQ: judul kiri, akordeon kanan */
+.faq-grid{display:grid;gap:20px}
+.faq-grid .head{text-align:left;margin:0}
+.faq{display:grid;gap:8px}
 .faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg)}
-.faq summary{cursor:pointer;list-style:none;padding:16px 46px 16px 18px;font-weight:600;position:relative}
+.faq summary{cursor:pointer;list-style:none;padding:15px 44px 15px 16px;font-weight:600;position:relative}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:400;color:var(--blue)}
+.faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:400;color:var(--blue)}
 .faq details[open] summary::after{content:"–"}
-.faq p{padding:0 18px 18px;color:var(--ink-2);font-size:15px}
+.faq p{padding:0 16px 16px;color:var(--ink-2);font-size:15px}
 
-/* final */
-.final{background:var(--grad);color:#fff;text-align:center;padding:56px 0}
-.final p{margin:12px auto 0;max-width:52ch;color:#F0F9FF}
-.final .cta-row{justify-content:center}
-.final .btn-white{background:#fff;color:var(--ink)}
-.final .btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
-.final .micro{color:#E6F3FF}
-footer{padding:24px 0;font-size:13px;color:var(--ink-3);text-align:center}
+/* penutup */
+.closing{background:var(--grad);color:#fff;border-radius:var(--r-lg);padding:28px 20px;text-align:center}
+.closing p{margin:8px auto 0;max-width:50ch;color:#F0F9FF}
+.closing .cta-row{justify-content:center;margin-top:18px}
+.closing .cta-row .btn{flex:0 1 320px}
+.closing .btn-ghost{background:transparent;border-color:rgba(255,255,255,.7);color:#fff}
+.closing .asklink{display:inline-block;margin-top:14px;font-size:14px;color:#fff}
+footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center}
 
-/* sticky bar */
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(23,23,23,.08);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center}
-.sticky .info{flex:1;min-width:0;font-size:12.5px;color:var(--ink-3);line-height:1.25}
-.sticky .info b{display:block;font-size:17px;color:var(--ink);letter-spacing:-.01em}
-.sticky .btn{min-height:48px;padding:11px 16px;font-size:15px}
-.sticky .icon{padding:11px 13px}
+/* penanda [V] */
+.ph{background:#FFF4CC;color:#5C4400;border-bottom:2px dashed #D9A400;padding:0 3px;border-radius:2px}
+.promo .ph{background:#FFE07A;color:#3D2E00}
+
+/* bar melayang HP */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(23,23,23,.08);padding:9px 14px calc(9px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;transition:transform .2s}
+.sticky.hide{transform:translateY(110%)}
+.sticky .info{min-width:0;font-size:12px;color:var(--ink-3);line-height:1.25;margin-right:auto}
+.sticky .info b{display:block;font-size:16px;color:var(--ink)}
+.sticky .btn{min-height:48px;padding:10px 16px;font-size:15px;flex:1}
+.sticky .info+.btn,.sticky .info~.btn{flex:0 1 auto}
+.sticky .icon{flex:none;padding:10px 13px}
 
 @media(min-width:720px){
   body{padding-bottom:0}
   .sticky{display:none}
-  .sec{padding:84px 0}
-  .hero{padding:64px 0 76px}
-  .pain{grid-template-columns:1fr 1fr}
-  .compare{grid-template-columns:1fr 1fr}
-  .mentors{grid-template-columns:repeat(3,1fr)}
-  .testi{grid-template-columns:repeat(3,1fr)}
-  .steps{grid-template-columns:repeat(3,1fr);gap:24px}
-  .steps li{grid-template-columns:1fr}
-  .guar{grid-template-columns:1.1fr 1fr;padding:32px;align-items:center}
-  .rowp{grid-template-columns:1fr auto auto;gap:20px}
-  .pk{grid-template-columns:1fr 1fr}
-  .g3{grid-template-columns:repeat(3,1fr)}
-  .strip span.t{width:auto;margin:0 6px 0 0}
-}
-@media(min-width:980px){
-  .hero-grid{grid-template-columns:1.15fr .85fr;gap:56px}
-  .pk.four{grid-template-columns:repeat(4,1fr)}
-  .mentors{grid-template-columns:repeat(6,1fr)}
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
-
-/* ===== Tambahan khusus LP IELTS (brief 16 Nov 2026: 5 layar HP, satu aksi per versi) ===== */
-.sec{padding:40px 0}
-.sec-head{margin-bottom:22px}
-.promo{background:var(--ink);color:#fff;text-align:center;font-size:13.5px;font-weight:600;padding:9px 14px}
-.promo b{color:#7FE3DD}
-.hero{padding:0 0 32px}
-.hero-photo{width:100%;height:28vh;max-height:240px;min-height:150px;object-fit:cover;object-position:50% 22%}
-.hero .wrap{padding-top:22px}
-.hero h1{font-size:clamp(28px,7.4vw,46px)}
-.hero .lead{margin-top:12px}
-.hero .cta-row{margin-top:20px}
-.hero .cta-row .btn{flex:1 1 100%}
-.hero .seeprice{display:block;text-align:center;margin-top:14px;font-size:14.5px}
-.legal{font-size:12.5px;color:var(--ink-3);margin-top:14px}
-.pain.tight{gap:8px}
-.pain.tight li{padding:12px 16px;font-size:15.5px}
-.bridge{margin:26px 0 14px;font-size:18px;font-weight:700}
-.score{display:flex;align-items:center;gap:10px;font-weight:700;font-size:22px;letter-spacing:-.02em}
-.score small{font-size:12.5px;font-weight:600;color:var(--ink-3);letter-spacing:0;margin-right:auto}
-.score i{font-style:normal;color:var(--ink-3);font-weight:500}
-.score b{color:#0E7C76}
-.testi blockquote{font-size:15px}
-.pk.stack{grid-template-columns:1fr;max-width:560px}
-.pk.stack .card{padding:20px}
-.pk .p s{font-size:15px;font-weight:500;color:var(--ink-3);margin-left:8px;letter-spacing:0}
-.pk .checks{margin:12px 0 16px}
-.mrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
-.mrow .ava{margin:0 auto 8px}
-.mrow b{display:block;font-size:13.5px;line-height:1.25}
-.mrow span{font-size:12.5px;color:#0E7C76;font-weight:700}
-.lines{list-style:none;display:grid;gap:10px;margin-top:22px}
-.lines li{display:flex;gap:10px;font-size:15.5px;font-weight:500}
-.lines li::before{content:"";width:18px;height:18px;margin-top:3px;flex:none;background:var(--blue);-webkit-mask:var(--check) center/contain no-repeat;mask:var(--check) center/contain no-repeat}
-.sched{border:1.5px solid #BFD0FB;background:var(--tint);border-radius:var(--r-lg);padding:16px 18px;margin-top:20px;font-size:15.5px}
-.sched b{display:block;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
-.pricebox{background:#fff;border:2px solid var(--blue);border-radius:var(--r-lg);padding:22px;text-align:center;max-width:560px}
-.pricebox s{color:var(--ink-3);font-size:17px}
-.pricebox .price{font-size:44px;margin:4px 0 6px}
-.pricebox .until{font-size:14px;color:var(--ink-2);margin-bottom:16px}
-.howto{list-style:none;counter-reset:h;display:grid;gap:10px;margin-top:20px;max-width:560px}
-.howto li{counter-increment:h;display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
-.howto li::before{content:counter(h);flex:none;width:28px;height:28px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center}
-.closing{margin-top:28px;background:var(--grad);color:#fff;border-radius:var(--r-lg);padding:24px 20px;max-width:780px}
-.closing h2{font-size:24px}
-.closing p{margin-top:8px;color:#F0F9FF}
-.closing .form{margin-top:16px}
-.closing .form label{color:#fff}
-.closing .btn-white{background:#fff;color:var(--ink)}
-.closing .asklink{display:block;margin-top:14px;font-size:14px;color:#fff;text-align:center}
-/* penanda isi yang masih perlu dikonfirmasi ([V] di brief) */
-.ph{background:#FFF4CC;color:#5C4400;border-bottom:2px dashed #D9A400;padding:0 3px;border-radius:2px}
-.dark .ph,.promo .ph,.closing .ph{background:#FFE07A;color:#3D2E00}
-.draft{background:#FFF4CC;color:#5C4400;font-size:12.5px;text-align:center;padding:7px 14px;border-bottom:1px solid #E9D48A}
-.draft a{font-weight:700}
-/* bar melayang muncul setelah hero lewat */
-.sticky{transition:transform .2s}
-.sticky.hide{transform:translateY(110%)}
-.sticky .btn{flex:1}
-@media(min-width:720px){
   .sec{padding:64px 0}
-  .hero{padding-bottom:56px}
-  .hero-photo{height:300px;max-height:300px}
-  .hero .wrap{max-width:760px}
-  .hero .cta-row .btn{flex:0 1 auto}
-  .hero .seeprice{text-align:left}
-  .mrow{max-width:560px}
+  .head{margin-bottom:34px}
+  .hero{padding:52px 0 60px}
+  .cta-row .btn{flex:0 1 auto}
+  .pain{grid-template-columns:repeat(3,1fr)}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .bento .c{border-top:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0;padding:22px}
+  .testi{grid-template-columns:repeat(2,1fr)}
+  .testi.t3{grid-template-columns:repeat(3,1fr)}
+  .mentors{max-width:640px;margin-left:auto;margin-right:auto}
+  .mentors.six{grid-template-columns:repeat(3,1fr);max-width:none}
+  .pricing.c4{grid-template-columns:repeat(2,1fr)}
+  .duo{grid-template-columns:1fr 1fr}
+  .rowp{grid-template-columns:1fr auto auto;gap:18px}
+  .strip .cell{padding:20px 10px}
+  .strip span{font-size:13.5px}
+  .closing{padding:44px 28px}
 }
-@media(prefers-reduced-motion:reduce){.sticky{transition:none}}
+@media(min-width:900px){
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:48px}
+  .shot img{height:400px}
+  .bento.b3{grid-template-columns:repeat(3,1fr)}
+  .bento.b4{grid-template-columns:repeat(4,1fr)}
+  .bento.b3 .c,.bento.b4 .c{grid-template-columns:1fr;gap:10px}
+  .bento.b3 .ico,.bento.b4 .ico{grid-row:auto}
+  .bento.b3 p,.bento.b4 p{grid-column:1}
+  .pricing.c3{grid-template-columns:repeat(3,1fr)}
+  .faq-grid{grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+  .mentors.six{grid-template-columns:repeat(6,1fr)}
+}
+@media(min-width:1040px){.pricing.c4{grid-template-columns:repeat(4,1fr)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.sticky{transition:none}}
 </style>
 </head>
 <body data-variant="IELTS-A" data-wa-plain>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-feedback" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="m9 10.5 2 2 4-4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 19v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="6.5" r="3.5"/><path d="M21 19v-1a4 4 0 0 0-3-3.9M15.5 3.1a3.5 3.5 0 0 1 0 6.8"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.500 8.500-2 5-5 2 2-5z"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 7h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3 7 12-3v3M17 13.500h.010"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+</svg>
+
 
 <!-- LP IELTS · VERSI A · TANYA ADMIN (target: globalhub.id/ieltsgo)
-     Satu aksi: chat WhatsApp. TIDAK ADA link ke Order Online di halaman ini.
+     Satu aksi: chat WhatsApp. TIDAK ADA link ke Order Online dan TIDAK ADA form di halaman ini.
+     UI/UX: form kualifikasi dipasang sebagai langkah setelah tombol [data-cta="whatsapp"] ditekan.
      Teks berkelas .ph = bertanda [V] di brief, wajib dikonfirmasi sebelum tayang. -->
 
 <div class="draft">Draft untuk review. Teks berlatar kuning masih perlu dikonfirmasi.</div>
-<!-- [V] isi & masa berlaku kode IELTSHERO dikonfirmasi product manager -->
 <div class="promo">Kode <b>IELTSHERO</b> <span class="ph">berlaku sampai 24 Nov</span></div>
+<header class="top">
+  <div class="wrap">
+    <img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="140" height="28">
+    <a class="btn btn-wa" data-cta="whatsapp" data-pos="topbar" data-msg="Halo kak, aku mau konsultasi IELTS (kode IELTSHERO). Skorku sekarang ___, targetku ___." href="#">Chat Admin</a>
+  </div>
+</header>
 
 <main>
-<!-- LAYAR 1 · HERO -->
+<!-- HERO -->
 <section class="hero">
-  <img class="hero-photo" src="https://globalhub.id/ads/ieltsbeasiswa/backgrounds/ads_hero_desktop_v1.avif" alt="Pelajar sedang mempersiapkan IELTS" width="1920" height="1600">
-  <div class="wrap">
-    <h1>Skor IELTS Jeblok, <span class="grad-text">Mimpi Beasiswa Jadi Mentok!</span></h1>
-    <p class="lead">Ceritain skor dan targetmu. Admin bantu pilih dari 3 kelas, mulai Rp359 ribu.</p>
-    <div class="cta-row">
-      <a class="btn btn-wa" data-cta="whatsapp" data-pos="hero" data-msg="Halo kak, aku mau konsultasi IELTS (kode IELTSHERO). Skorku sekarang ___, targetku ___." href="#">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.500a8.500 8.500 0 0 1-12.600 7.400L3 20l1.200-5.100A8.500 8.500 0 1 1 21 11.500z"/></svg>
-        Konsultasi Gratis via WhatsApp</a>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">IELTS Preparation untuk yang sambil kerja</span>
+      <h1>Mau lanjut S2 ke luar negeri, tapi <span class="grad-text">skor IELTS belum cukup?</span></h1>
+      <p class="lead">Belajar sepulang kerja itu berat kalau sendirian. Ceritain skor dan targetmu, admin bantu pilih kelas yang muat di jadwal dan budgetmu. Mulai Rp359 ribu.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" data-cta="whatsapp" data-pos="hero" data-msg="Halo kak, aku mau konsultasi IELTS (kode IELTSHERO). Skorku sekarang ___, targetku ___." href="#"><svg class="ic"><use href="#i-chat"/></svg>Konsultasi Gratis via WhatsApp</a>
+        <a class="btn btn-ghost" href="#kelas">Lihat harga kelas</a>
+      </div>
+      <p class="micro">Gratis, nggak wajib daftar. Admin 08.00–22.00 WIB.</p>
     </div>
-    <a class="textlink seeprice" href="#kelas">Lihat harga kelas</a>
-    <p class="micro">Gratis, nggak wajib daftar. Admin 08.00–22.00 WIB.</p>
-    <p class="legal">Global Hub by Englishvit · PT Sinergi Insan Andalan</p>
+    <figure class="shot">
+      <img src="https://globalhub.id/ads/ieltsbeasiswa/backgrounds/ads_hero_desktop_v1.avif" alt="Pelajar sedang mempersiapkan IELTS" width="1920" height="1600">
+      <figcaption class="float f1">Kinanti, IELTS Private<b>5.5 → <i>7.0</i></b></figcaption>
+      <div class="float f2">Mentor ber-skor<b>Band 7 sampai 8</b></div>
+    </figure>
   </div>
 </section>
 
-<!-- LAYAR 2 · MASALAH DAN BUKTI -->
+<!-- MASALAH DAN BUKTI -->
 <section class="sec alt">
   <div class="wrap">
-    <div class="sec-head"><h2>Pernah ngerasa gini?</h2></div>
-    <ul class="pain tight">
-      <li>Tes berkali-kali, mentok di bawah 6.5.</li>
-      <li>Belajar dari YouTube, makin pusing.</li>
-      <li>Mau kursus, takut kemahalan.</li>
+    <div class="head"><h2>Ngejar IELTS sambil kerja memang nggak gampang</h2></div>
+    <ul class="pain">
+      <li>Udah tes, skornya mentok di bawah 6.5.</li>
+      <li>Belajar sendiri sepulang kerja, seminggu jalan lalu berhenti.</li>
+      <li>Mau ikut kursus, tapi takut kemahalan dan jadwalnya bentrok.</li>
     </ul>
     <p class="bridge">Mereka juga pernah di situ.</p>
-    <!-- Testimoni diambil dari /ieltsgo (murid Private). Brief minta tambah testimoni murid Live Class. -->
+    <!-- Testimoni dari /ieltsgo (murid Private). Brief minta tambah testimoni murid Live Class. -->
     <div class="testi">
-      <div class="card">
+      <div class="tcard">
         <div class="score"><small>Overall</small>5.5 <i>→</i> <b>7.0</b></div>
         <blockquote>“Feedback dari mentor membantu banget, terutama di Writing. Progresnya jauh lebih bagus dari yang aku kira.”</blockquote>
         <div class="who"><div><b>Kinanti</b>IELTS Private</div></div>
       </div>
-      <div class="card">
+      <div class="tcard">
         <div class="score"><small>Speaking</small>6.0 <i>→</i> <b>7.5</b></div>
         <blockquote>“Dulu sering ragu pas Speaking, sekarang jauh lebih nyaman dan siap menghadapi tes.”</blockquote>
         <div class="who"><div><b>Dimas Saputra</b>IELTS Private</div></div>
@@ -354,93 +330,95 @@ footer{padding:24px 0;font-size:13px;color:var(--ink-3);text-align:center}
   </div>
 </section>
 
-<!-- LAYAR 3 · PILIHAN KELAS (kartu ditumpuk, bukan digeser) -->
+<!-- PRICING -->
 <section class="sec" id="kelas">
   <div class="wrap">
-    <div class="sec-head"><h2>Pilih kelas yang pas buat kamu</h2></div>
-    <div class="pk stack">
-      <div class="card best">
-        <span class="tag">Paling banyak dipilih</span>
+    <div class="head">
+      <h2>Tiga kelas, pilih yang muat di jadwalmu</h2>
+      <p>Belum yakin yang mana? Tanya dulu. Admin bantu cocokin sama skor dan waktumu.</p>
+    </div>
+    <div class="pricing c3">
+      <div class="plan pop">
+        <span class="badge">Paling banyak dipilih</span>
         <h3>IELTS Live Class</h3>
-        <p class="for">Buat yang mau naikin skor bareng kelas grup.</p>
+        <p class="for">Kelas grup malam hari, buat yang mau mulai dengan biaya ringan.</p>
         <div class="p">Rp359.000 <s>Rp830.000</s></div>
+        <p class="n">10 sesi kelas grup</p>
+        <a class="btn btn-wa btn-block" data-cta="whatsapp" data-pos="kelas" data-paket="live-class" data-msg="Halo kak, aku mau tanya IELTS Live Class Rp359.000 (kode IELTSHERO). Skorku sekarang ___." href="#">Tanya Live Class</a>
+        <hr>
         <ul class="checks">
-          <li>10x kelas Zoom, 4 skill</li>
+          <li>10x kelas Zoom untuk 4 skill</li>
           <li>2x simulasi IELTS</li>
           <li>Writing smartbook &amp; Speaking e-course</li>
         </ul>
-        <div class="acts"><a class="btn btn-wa" data-cta="whatsapp" data-pos="kelas" data-paket="live-class" data-msg="Halo kak, aku mau tanya IELTS Live Class Rp359.000 (kode IELTSHERO). Skorku sekarang ___." href="#">Tanya Live Class</a></div>
       </div>
-      <div class="card">
-        <span class="tag teal">Jadwal malam · bisa cicil 50%</span>
+      <div class="plan">
+        <span class="badge teal">Bisa cicil 50%</span>
         <h3>Private IELTS Sprint</h3>
-        <p class="for">Buat yang ngejar Band 7+ dengan mentor sendiri.</p>
+        <p class="for">1-on-1 dengan jadwal yang ngikutin jam kerjamu. Target Band 7+.</p>
         <div class="p">Rp2.990.000 <s>Rp5.980.000</s></div>
+        <p class="n">10 sesi privat</p>
+        <a class="btn btn-wa btn-block" data-cta="whatsapp" data-pos="kelas" data-paket="private-sprint" data-msg="Halo kak, aku mau tanya Private IELTS Sprint. Skorku sekarang ___, bisanya jam ___." href="#">Tanya Private Sprint</a>
+        <hr>
         <ul class="checks">
           <li>10x sesi Zoom 1-on-1</li>
           <li>Jadwal fleksibel, ada kelas malam</li>
           <li>1x simulasi IELTS</li>
         </ul>
-        <div class="acts"><a class="btn btn-wa" data-cta="whatsapp" data-pos="kelas" data-paket="private-sprint" data-msg="Halo kak, aku mau tanya Private IELTS Sprint. Skorku sekarang ___, bisanya jam ___." href="#">Tanya Private Sprint</a></div>
       </div>
-      <div class="card">
+      <div class="plan">
         <h3>Private IELTS Booster</h3>
-        <p class="for">Buat yang mau naik skor lebih cepat.</p>
+        <p class="for">Sesi lebih banyak, buat yang deadline beasiswanya udah dekat.</p>
         <div class="p">Rp4.399.000 <s>Rp8.798.000</s></div>
+        <p class="n">15 sesi privat</p>
+        <a class="btn btn-wa btn-block" data-cta="whatsapp" data-pos="kelas" data-paket="private-booster" data-msg="Halo kak, aku mau tanya Private IELTS Booster. Skorku sekarang ___, bisanya jam ___." href="#">Tanya Private Booster</a>
+        <hr>
         <ul class="checks">
           <li>15x sesi Zoom 1-on-1</li>
           <li>2x simulasi IELTS</li>
           <li>Materi vocabulary &amp; grammar</li>
         </ul>
-        <div class="acts"><a class="btn btn-wa" data-cta="whatsapp" data-pos="kelas" data-paket="private-booster" data-msg="Halo kak, aku mau tanya Private IELTS Booster. Skorku sekarang ___, bisanya jam ___." href="#">Tanya Private Booster</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LAYAR 4 · ALASAN PERCAYA -->
+<!-- FEATURES -->
 <section class="sec alt">
   <div class="wrap">
-    <div class="sec-head"><h2>Diajar mentor yang sudah lewat tesnya</h2></div>
-    <!-- DEV: ganti .ava dengan foto mentor ukuran kecil -->
-    <div class="mrow">
-      <div><div class="ava">AH</div><b>Aurelia Hillary W.</b><span>Band 7.0</span></div>
-      <div><div class="ava">CA</div><b>Cecilia Aileen Yap</b><span>Band 8.0</span></div>
-      <div><div class="ava">YJ</div><b>Yovita Jovanika</b><span>Band 7.0</span></div>
+    <div class="head"><h2>Diajar mentor yang sudah lewat tesnya</h2></div>
+    <div class="bento b4">
+      <div class="c"><span class="ico"><svg class="ic"><use href="#i-moon"/></svg></span><h3>Kelas malam</h3><p>Sesi berjalan di malam hari, jadi nggak ganggu jam kantor.</p></div>
+      <div class="c"><span class="ico"><svg class="ic"><use href="#i-target"/></svg></span><h3>Mulai dari kelemahanmu</h3><p>Latihan difokuskan ke skill yang paling menahan skormu.</p></div>
+      <div class="c"><span class="ico"><svg class="ic"><use href="#i-feedback"/></svg></span><h3>Feedback tiap latihan</h3><p>Kamu tahu salahnya di mana dan harus latihan apa berikutnya.</p></div>
+      <div class="c"><span class="ico"><svg class="ic"><use href="#i-clock"/></svg></span><h3>Simulasi mirip tes asli</h3><p>Format dan waktunya sama, supaya hari-H nggak kaget.</p></div>
     </div>
-    <ul class="lines">
-      <li>Mentor ber-skor band 7 sampai 8.</li>
-      <li>Latihan mulai dari kelemahanmu.</li>
-      <li>Simulasi mirip tes asli.</li>
-    </ul>
+    <!-- DEV: ganti .ava dengan foto mentor ukuran kecil -->
+    <div class="mentors">
+      <div class="mentor"><div class="ava">AH</div><b>Aurelia Hillary W.</b><span class="aw">Band 7.0</span></div>
+      <div class="mentor"><div class="ava">CA</div><b>Cecilia Aileen Yap</b><span class="aw">Band 8.0</span></div>
+      <div class="mentor"><div class="ava">YJ</div><b>Yovita Jovanika</b><span class="aw">Band 7.0</span></div>
+    </div>
   </div>
 </section>
 
-<!-- LAYAR 5 · FAQ DAN PENUTUP -->
+<!-- FAQ DAN PENUTUP -->
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head"><h2>Yang sering ditanyain</h2></div>
-    <div class="faq">
-      <details><summary>Konsultasinya beneran gratis?</summary><p>Iya. Konsultasi via WhatsApp gratis dan nggak wajib daftar.</p></details>
-      <details><summary>Ada kelas malam atau weekend?</summary><p>Kelas tersedia di malam hari, jadi aman buat kamu yang kuliah atau kerja. Kalau ambil program Private, jadwalnya fleksibel dan bisa disesuaikan sama waktumu.</p></details>
-      <details><summary>Bisa bayar cicil?</summary><p>Bisa, khusus program Private. Kamu cukup bayar 50% dulu di awal, sisanya menyusul. Detail jadwal pelunasannya tanya admin aja ya.</p></details>
-      <details><summary>Global Hub itu apa?</summary><p>Global Hub by Englishvit, dikelola PT Sinergi Insan Andalan. Kami bantu pejuang beasiswa lewat persiapan IELTS, mentoring beasiswa, dan penerjemahan dokumen.</p></details>
+    <div class="faq-grid">
+      <div class="head"><h2>Yang sering ditanyain</h2><p>Nggak nemu jawabannya di sini? Tanya admin aja, gratis.</p></div>
+      <div class="faq">
+        <details><summary>Konsultasinya beneran gratis?</summary><p>Iya. Konsultasi via WhatsApp gratis dan nggak wajib daftar.</p></details>
+        <details><summary>Ada kelas malam atau weekend?</summary><p>Kelas tersedia di malam hari, jadi aman buat kamu yang kuliah atau kerja. Kalau ambil program Private, jadwalnya fleksibel dan bisa disesuaikan sama waktumu.</p></details>
+        <details><summary>Bisa bayar cicil?</summary><p>Bisa, khusus program Private. Kamu cukup bayar 50% dulu di awal, sisanya menyusul. Detail jadwal pelunasannya tanya admin aja ya.</p></details>
+        <details><summary>Global Hub itu apa?</summary><p>Global Hub by Englishvit, dikelola PT Sinergi Insan Andalan. Kami bantu pejuang beasiswa lewat persiapan IELTS, mentoring beasiswa, dan penerjemahan dokumen.</p></details>
+      </div>
     </div>
-
-    <div class="closing">
+    <div class="closing" style="margin-top:32px">
       <h2>Masih ragu? Wajar kok.</h2>
-      <p>Ngobrol dulu aja, putusin belakangan.</p>
-      <div class="form">
-        <label>Skor atau targetmu sekarang
-          <select id="wa-pick" required>
-            <option value="" disabled selected>Pilih salah satu</option>
-            <option>Belum pernah tes</option>
-            <option>Skor di bawah 6.0, target 6.5</option>
-            <option>Skor 6.0–6.5, target 7.0+</option>
-            <option>Belum tahu targetnya</option>
-          </select>
-        </label>
-        <button class="btn btn-white btn-block" type="button" id="wa-pick-send" data-msg="Halo kak, aku masih bingung mulai dari mana. Skor/targetku: {pilihan}.">Chat Admin Sekarang</button>
+      <p>Ngobrol dulu aja sama admin. Mau daftar atau mikir dulu, bebas.</p>
+      <div class="cta-row">
+        <a class="btn btn-white" data-cta="whatsapp" data-pos="penutup" data-msg="Halo kak, aku masih bingung mulai dari mana buat IELTS. Skorku sekarang ___, targetku ___." href="#">Chat Admin Sekarang</a>
       </div>
     </div>
   </div>
@@ -450,9 +428,7 @@ footer{padding:24px 0;font-size:13px;color:var(--ink-3);text-align:center}
 <footer><div class="wrap">© Global Hub by Englishvit · PT Sinergi Insan Andalan</div></footer>
 
 <div class="sticky" data-after-hero>
-  <a class="btn btn-wa" data-cta="whatsapp" data-pos="sticky" data-msg="Halo kak, aku mau konsultasi IELTS (kode IELTSHERO). Skorku sekarang ___, targetku ___." href="#">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.500a8.500 8.500 0 0 1-12.600 7.400L3 20l1.200-5.100A8.500 8.500 0 1 1 21 11.500z"/></svg>
-    Konsultasi Gratis</a>
+  <a class="btn btn-wa" data-cta="whatsapp" data-pos="sticky" data-msg="Halo kak, aku mau konsultasi IELTS (kode IELTSHERO). Skorku sekarang ___, targetku ___." href="#"><svg class="ic"><use href="#i-chat"/></svg>Konsultasi Gratis</a>
 </div>
 
 <script>/* ===== Global Hub LP — catatan untuk developer =====
@@ -495,35 +471,6 @@ footer{padding:24px 0;font-size:13px;color:var(--ink-3);text-align:center}
     window.dataLayer.push({ event: "lp_cta_click", cta: el.dataset.cta, pos: el.dataset.pos || "", variant: VARIANT, paket: el.dataset.paket || "" });
   });
 
-  // Form kualifikasi -> WhatsApp (Versi B)
-  var form = document.getElementById("wa-form");
-  if (form) {
-    document.getElementById("wa-send").addEventListener("click", function () {
-      var fields = form.querySelectorAll("input,select"), f = new Map();
-      for (var i = 0; i < fields.length; i++) {
-        if (!fields[i].reportValidity()) return;
-        f.set(fields[i].name, fields[i].value.trim());
-      }
-      var text = "Halo Admin Global Hub, aku mau konsultasi Study Abroad.\n\n" +
-        "Nama: " + (f.get("nama") || "") + "\n" +
-        "Jenjang tujuan: " + (f.get("jenjang") || "") + "\n" +
-        "Beasiswa incaran: " + (f.get("beasiswa") || "") + "\n" +
-        "Rencana apply: " + (f.get("kapan") || "") + "\n\n(ref: SA-" + VARIANT + "/form)";
-      window.dataLayer.push({ event: "lp_cta_click", cta: "whatsapp", pos: "form", variant: VARIANT });
-      window.open(waUrl(text), "_blank", "noopener");
-    });
-  }
-
-  // Satu pilihan -> WhatsApp (penutup LP IELTS Versi A)
-  var pick = document.getElementById("wa-pick"), pickSend = document.getElementById("wa-pick-send");
-  if (pick && pickSend) {
-    pickSend.addEventListener("click", function () {
-      if (!pick.reportValidity()) return;
-      window.dataLayer.push({ event: "lp_cta_click", cta: "whatsapp", pos: "penutup", variant: VARIANT });
-      window.open(waUrl(pickSend.dataset.msg.replace("{pilihan}", pick.value)), "_blank", "noopener");
-    });
-  }
-
   // Bar melayang baru muncul setelah hero lewat
   var bar = document.querySelector(".sticky[data-after-hero]"), hero = document.querySelector(".hero");
   if (bar && hero && "IntersectionObserver" in window) {
@@ -537,7 +484,7 @@ footer{padding:24px 0;font-size:13px;color:var(--ink-3);text-align:center}
     stage.addEventListener("click", function (e) {
       var b = e.target.closest("button"); if (!b) return;
       stage.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-      document.querySelectorAll(".pk .card[data-paket]").forEach(function (c) {
+      document.querySelectorAll(".plan[data-paket]").forEach(function (c) {
         var on = c.dataset.paket === b.dataset.target;
         c.classList.toggle("pick", on); c.classList.toggle("dim", !on);
       });

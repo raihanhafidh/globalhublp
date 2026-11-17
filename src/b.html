@@ -3,153 +3,103 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
 <title>Konsultasi Gratis Beasiswa Luar Negeri | Global Hub</title>
-<meta name="description" content="Ceritain target beasiswamu ke admin Global Hub. Kami bantu pilih paket mentoring bareng awardee LPDP, mulai Rp499 ribu.">
+<meta name="description" content="Ceritain target beasiswamu ke admin Global Hub. Kami bantu pilih mentoring bareng awardee LPDP yang pas sama target dan budgetmu, mulai Rp499 ribu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>/*__CSS__*/</style>
 </head>
 <body data-variant="B">
+<!--ICONS-->
 
-<!-- VERSI B · KONSULTASI DULU (LPWA): CTA utama = WhatsApp dengan pesan terisi otomatis, CTA kedua = checkout Order Online per paket -->
+<!-- STUDY ABROAD · VERSI B · KONSULTASI DULU: CTA utama = WhatsApp, CTA kedua = checkout per paket.
+     TIDAK ADA form di halaman. UI/UX: form kualifikasi dipasang sebagai langkah setelah tombol [data-cta="whatsapp"] ditekan. -->
 
 <header class="top">
   <div class="wrap">
-    <img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="150" height="30">
+    <img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="140" height="28">
     <a class="btn btn-wa" data-cta="whatsapp" data-pos="topbar" href="#">Chat Admin</a>
   </div>
 </header>
 
 <main>
-<section class="hero sec">
+<!-- HERO -->
+<section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Scholarship Mentoring untuk Pejuang Beasiswa</span>
-      <h1>Ngincer Beasiswa Luar Negeri? <span class="grad-text">Ceritain Targetmu, Kami Petakan Langkahnya.</span></h1>
-      <p class="lead">Konsultasi gratis via WhatsApp. Admin bantu pilih paket mentoring bareng awardee LPDP yang pas sama target dan budgetmu, mulai Rp499 ribu.</p>
+      <span class="pill">Scholarship Mentoring untuk yang sambil kerja</span>
+      <h1>Kepikiran S2 ke luar negeri, tapi <span class="grad-text">belum tahu mulai dari mana?</span></h1>
+      <p class="lead">Ceritain kondisimu ke admin lewat WhatsApp. Kami bantu pilih mentoring bareng awardee LPDP yang pas sama target, waktu, dan budgetmu. Mulai Rp499 ribu.</p>
       <div class="cta-row">
-        <a class="btn btn-wa" data-cta="whatsapp" data-pos="hero" href="#">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.500a8.500 8.500 0 0 1-12.600 7.400L3 20l1.200-5.100A8.500 8.500 0 1 1 21 11.500z"/></svg>
-          Konsultasi Gratis via WhatsApp</a>
+        <a class="btn btn-wa" data-cta="whatsapp" data-pos="hero" href="#"><svg class="ic"><use href="#i-chat"/></svg>Konsultasi Gratis via WhatsApp</a>
         <a class="btn btn-ghost" href="#paket">Lihat Paket &amp; Harga</a>
       </div>
       <!-- DEV: jam operasional diambil dari halaman /ieltsgo, konfirmasi ke tim admin -->
       <p class="micro">Gratis, nggak wajib daftar. Admin online 08.00–22.00 WIB.</p>
     </div>
-
-    <aside class="card lift" aria-label="Form konsultasi">
-      <h3>Isi 4 hal ini, admin langsung tahu harus bantu dari mana</h3>
-      <p class="micro" style="margin:6px 0 18px">Jawabanmu jadi pesan WhatsApp otomatis. Tinggal tekan kirim.</p>
-      <div class="form" id="wa-form">
-        <label>Nama panggilan
-          <input name="nama" autocomplete="given-name" required placeholder="Contoh: Nadia">
-        </label>
-        <label>Mau lanjut jenjang apa?
-          <select name="jenjang" required>
-            <option value="" disabled selected>Pilih jenjang</option>
-            <option>S1</option><option>S2</option><option>S3</option><option>Belum tahu</option>
-          </select>
-        </label>
-        <label>Beasiswa yang diincar
-          <select name="beasiswa" required>
-            <option value="" disabled selected>Pilih beasiswa</option>
-            <option>LPDP</option><option>Australia Awards (AAS)</option><option>Chevening</option><option>Beasiswa kampus / negara lain</option><option>Belum tahu, mau dibantu pilih</option>
-          </select>
-        </label>
-        <label>Rencana apply kapan?
-          <select name="kapan" required>
-            <option value="" disabled selected>Pilih waktu</option>
-            <option>Dalam 3 bulan</option><option>3–6 bulan lagi</option><option>6–12 bulan lagi</option><option>Belum tahu</option>
-          </select>
-        </label>
-        <button class="btn btn-wa btn-block" type="button" id="wa-send">Kirim ke Admin via WhatsApp</button>
+    <aside class="panel" aria-label="Yang ditanyakan admin">
+      <div class="panel-top"><span>Konsultasi via WhatsApp</span><span>Gratis</span></div>
+      <div class="panel-body">
+        <p class="label">Cukup siapin tiga jawaban ini</p>
+        <ol class="asklist">
+          <li><div><b>Mau lanjut jenjang apa?</b><span>S2, S3, atau masih menimbang.</span></div></li>
+          <li><div><b>Beasiswa mana yang diincar?</b><span>LPDP, AAS, Chevening, atau belum tahu.</span></div></li>
+          <li><div><b>Rencana apply kapan?</b><span>Tahun ini, tahun depan, atau belum pasti.</span></div></li>
+        </ol>
+        <hr>
+        <p class="micro">Belum punya jawabannya juga nggak apa-apa. Admin bantu dari situ.</p>
       </div>
-      <p class="micro">Datamu nggak disimpan di halaman ini, langsung terkirim ke WhatsApp admin Global Hub.</p>
     </aside>
   </div>
 </section>
 
 <div class="strip">
+  <!-- DEV/MARKETING: angka diambil dari homepage globalhub.id -->
   <div class="wrap">
-    <!-- DEV/MARKETING: angka diambil dari homepage globalhub.id -->
-    <div class="stats">
-      <div><b>2.000+</b><span>pelajar bergabung</span></div>
-      <div><b>40+</b><span>negara tujuan</span></div>
-      <div><b>100%</b><span>mentor awardee</span></div>
-    </div>
+    <div class="cell"><b>2.000+</b><span>pelajar bergabung</span></div>
+    <div class="cell"><b>40+</b><span>negara tujuan</span></div>
+    <div class="cell"><b>100%</b><span>mentor awardee</span></div>
   </div>
 </div>
 
+<!-- MASALAH -->
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Problem</span>
-      <h2>Kalau Ini Kamu Banget, Kamu Nggak Sendirian</h2>
-    </div>
+    <div class="head"><h2>Kalau ini kamu, kamu nggak sendirian</h2></div>
     <ul class="pain">
-      <li>Udah lama pengen apply, tapi tiap tahun deadline-nya lewat.</li>
-      <li>Esai udah ditulis ulang berkali-kali, tetap nggak yakin bagus.</li>
-      <li>Nggak tahu profilmu cocoknya ke beasiswa dan kampus yang mana.</li>
-      <li>Takut gagal di interview karena belum pernah latihan sama yang ngerti.</li>
+      <li>Niat apply udah dari tahun lalu, tapi kerjaan selalu menang.</li>
+      <li>Esai udah ditulis ulang berkali-kali, tetap nggak yakin.</li>
+      <li>Belum tahu profilmu cocoknya ke beasiswa dan kampus yang mana.</li>
     </ul>
-    <div class="cta-row">
-      <a class="btn btn-wa" data-cta="whatsapp" data-pos="problem" data-msg="Halo Admin Global Hub, aku lagi nyiapin beasiswa luar negeri tapi masih bingung. Mau cerita dulu boleh?" href="#">Cerita ke Admin</a>
-    </div>
   </div>
 </section>
 
+<!-- FEATURES -->
 <section class="sec alt">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Cara Konsultasi</span>
-      <h2>Gratis, Cuma 3 Langkah</h2>
-      <p>Nggak ada paksaan daftar. Ngobrol dulu, pilih paket belakangan.</p>
+    <div class="head">
+      <h2>Didampingi dari bingung sampai submit</h2>
+      <p>Semua sesi online, 60 menit, dan jadwalnya disepakati bareng mentor. Bisa di luar jam kerja atau akhir pekan.</p>
     </div>
-    <ol class="steps">
-      <li><div><h3>Klik tombol WhatsApp</h3><p>Pesannya udah otomatis keisi, kamu tinggal kirim.</p></div></li>
-      <li><div><h3>Ceritain kondisimu</h3><p>Jenjang tujuan, beasiswa incaran, dan kapan mau apply.</p></div></li>
-      <li><div><h3>Dapat rekomendasi paket</h3><p>Admin bantu pilih yang pas sama target dan budget. Mau daftar atau mikir dulu, bebas.</p></div></li>
-    </ol>
+    <div class="bento b3">
+      <div class="c"><span class="ico"><svg class="ic"><use href="#i-compass"/></svg></span><h3>Pemetaan arah</h3><p>Negara, kampus, jurusan, dan beasiswa yang cocok dengan profilmu.</p></div>
+      <div class="c"><span class="ico"><svg class="ic"><use href="#i-doc"/></svg></span><h3>Review esai</h3><p>Personal statement dibaca mentor awardee, dengan masukan yang detail.</p></div>
+      <div class="c"><span class="ico"><svg class="ic"><use href="#i-mic"/></svg></span><h3>Mock interview</h3><p>Latihan wawancara sebelum hari seleksi yang sebenarnya.</p></div>
+      <div class="c"><span class="ico"><svg class="ic"><use href="#i-list"/></svg></span><h3>Dokumen dan timeline</h3><p>Daftar dokumen dan urutan langkah yang jelas dari awal.</p></div>
+      <div class="c"><span class="ico"><svg class="ic"><use href="#i-target"/></svg></span><h3>Strategi IELTS</h3><p>Arahan dan latihan IELTS sesuai skor yang diminta beasiswamu.</p></div>
+      <div class="c"><span class="ico"><svg class="ic"><use href="#i-feedback"/></svg></span><h3>Sampai siap submit</h3><p>Pendampingan sampai aplikasi beasiswamu siap dikirim.</p></div>
+    </div>
+    <p class="under">Cakupan tiap paket berbeda. Rinciannya ada di bawah.</p>
   </div>
 </section>
 
-<section class="sec">
+<!-- PRICING -->
+<section class="sec" id="paket">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Kenapa Global Hub</span>
-      <h2>Apply Sendiri vs Didampingi Awardee</h2>
-    </div>
-    <div class="compare">
-      <div class="card">
-        <span class="tag grey">Apply sendiri</span>
-        <h3>Semua ditebak sendiri</h3>
-        <ul class="checks x">
-          <li>Nggak tahu esainya udah sesuai yang dicari reviewer atau belum</li>
-          <li>Interview pertama kali ya pas hari seleksi</li>
-          <li>Dokumen sering baru ketahuan kurang mendekati deadline</li>
-          <li>Gagal, tapi nggak tahu salahnya di mana</li>
-        </ul>
-      </div>
-      <div class="card yes">
-        <span class="tag">Scholarship Mentoring</span>
-        <h3>Dipandu yang udah pernah lolos</h3>
-        <ul class="checks">
-          <li>Esai direview mentor awardee, feedback-nya detail</li>
-          <li>Mock interview sebelum hari-H</li>
-          <li>List dokumen dan timeline jelas dari awal</li>
-          <li>Pendampingan sampai aplikasi siap submit</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec alt" id="paket">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Paket &amp; Harga</span>
-      <h2>Kamu Lagi di Tahap Mana?</h2>
+    <div class="head">
+      <h2>Kamu lagi di tahap mana?</h2>
       <p>Pilih kondisimu, kami tandai paket yang paling cocok.</p>
     </div>
     <div class="stage" role="group" aria-label="Pilih tahap persiapanmu">
@@ -159,29 +109,31 @@
       <button type="button" data-target="elite-10" aria-pressed="false">Apply banyak + butuh IELTS</button>
     </div>
 
-    <div class="pk four">
-      <div class="card" data-paket="essential">
-        <span class="pick-note">Cocok buat kamu</span>
+    <div class="pricing c4">
+      <div class="plan" data-paket="essential">
+        <span class="badge pick-note">Cocok buat kamu</span>
         <h3>Essential</h3>
         <p class="for">Buat yang bingung mulai dari mana.</p>
-        <div class="p">Rp499.000</div><p class="n">2 sesi mentoring · kuota terbatas</p>
+        <div class="p">Rp499.000</div><p class="n">2 sesi · kuota terbatas</p>
+        <a class="btn btn-wa btn-block" data-cta="whatsapp" data-pos="paket" data-paket="essential" data-msg="Halo Admin Global Hub, aku tertarik paket Essential (Rp499.000). Mau tanya dulu." href="#">Tanya Essential</a>
+        <a class="textlink alt" data-cta="checkout" data-pos="paket" data-paket="essential" href="https://globalhub.orderonline.id/scholarship-mentoring-essential">atau langsung daftar</a>
+        <hr>
         <ul class="checks">
           <li>Cek minat &amp; potensi diri</li>
           <li>Negara, kampus, jurusan yang cocok</li>
           <li>Personal scholarship plan &amp; timeline</li>
           <li>Daftar tugas sesuai target</li>
         </ul>
-        <div class="acts">
-          <a class="btn btn-wa" data-cta="whatsapp" data-pos="paket" data-paket="essential" data-msg="Halo Admin Global Hub, aku tertarik paket Essential (Rp499.000). Mau tanya dulu." href="#">Tanya Essential via WA</a>
-          <a class="textlink" data-cta="checkout" data-pos="paket" data-paket="essential" href="https://globalhub.orderonline.id/scholarship-mentoring-essential">atau langsung daftar</a>
-        </div>
       </div>
 
-      <div class="card" data-paket="advance-04">
-        <span class="pick-note">Cocok buat kamu</span>
+      <div class="plan" data-paket="advance-04">
+        <span class="badge pick-note">Cocok buat kamu</span>
         <h3>Advance 04</h3>
         <p class="for">Udah punya target, mau perkuat aplikasi.</p>
         <div class="p">Rp2.799.000</div><p class="n">4 sesi · 1 strategi aplikasi</p>
+        <a class="btn btn-wa btn-block" data-cta="whatsapp" data-pos="paket" data-paket="advance-04" data-msg="Halo Admin Global Hub, aku tertarik paket Advance 04 (Rp2.799.000). Mau tanya dulu." href="#">Tanya Advance</a>
+        <a class="textlink alt" data-cta="checkout" data-pos="paket" data-paket="advance-04" href="https://globalhub.orderonline.id/scholarship-mentoring-advance-04">atau langsung daftar</a>
+        <hr>
         <ul class="checks">
           <li>Perbaikan personal statement / esai</li>
           <li>Mock interview</li>
@@ -189,17 +141,16 @@
           <li>Strategi &amp; latihan IELTS</li>
           <li>1 aplikasi beasiswa siap submit</li>
         </ul>
-        <div class="acts">
-          <a class="btn btn-wa" data-cta="whatsapp" data-pos="paket" data-paket="advance-04" data-msg="Halo Admin Global Hub, aku tertarik paket Advance 04 (Rp2.799.000). Mau tanya dulu." href="#">Tanya Advance via WA</a>
-          <a class="textlink" data-cta="checkout" data-pos="paket" data-paket="advance-04" href="https://globalhub.orderonline.id/scholarship-mentoring-advance-04">atau langsung daftar</a>
-        </div>
       </div>
 
-      <div class="card" data-paket="premier-07">
-        <span class="pick-note">Cocok buat kamu</span>
+      <div class="plan" data-paket="premier-07">
+        <span class="badge pick-note">Cocok buat kamu</span>
         <h3>Premier 07</h3>
         <p class="for">Mau maksimalin peluang di 2 beasiswa.</p>
         <div class="p">Rp4.499.000</div><p class="n">7 sesi · 2 strategi aplikasi</p>
+        <a class="btn btn-wa btn-block" data-cta="whatsapp" data-pos="paket" data-paket="premier-07" data-msg="Halo Admin Global Hub, aku tertarik paket Premier 07 (Rp4.499.000). Mau tanya dulu." href="#">Tanya Premier</a>
+        <a class="textlink alt" data-cta="checkout" data-pos="paket" data-paket="premier-07" href="https://globalhub.orderonline.id/scholarship-mentoring-premier-07">atau langsung daftar</a>
+        <hr>
         <ul class="checks">
           <li>Review esai tiap aplikasi</li>
           <li>Mock interview</li>
@@ -208,17 +159,16 @@
           <li>2 aplikasi beasiswa siap submit</li>
         </ul>
         <p class="bonus">Bonus: sworn translation senilai hingga Rp350.000</p>
-        <div class="acts">
-          <a class="btn btn-wa" data-cta="whatsapp" data-pos="paket" data-paket="premier-07" data-msg="Halo Admin Global Hub, aku tertarik paket Premier 07 (Rp4.499.000). Mau tanya dulu." href="#">Tanya Premier via WA</a>
-          <a class="textlink" data-cta="checkout" data-pos="paket" data-paket="premier-07" href="https://globalhub.orderonline.id/scholarship-mentoring-premier-07">atau langsung daftar</a>
-        </div>
       </div>
 
-      <div class="card" data-paket="elite-10">
-        <span class="pick-note">Cocok buat kamu</span>
-        <h3>Elite 10 <span class="tag" style="margin:0 0 0 4px;vertical-align:middle">Paling lengkap</span></h3>
-        <p class="for">Siapin beasiswa sekaligus IELTS.</p>
+      <div class="plan" data-paket="elite-10">
+        <span class="badge pick-note">Cocok buat kamu</span>
+        <h3>Elite 10</h3>
+        <p class="for">Paling lengkap: beasiswa sekaligus IELTS.</p>
         <div class="p">Rp5.999.000</div><p class="n">10 sesi · 4 strategi aplikasi</p>
+        <a class="btn btn-wa btn-block" data-cta="whatsapp" data-pos="paket" data-paket="elite-10" data-msg="Halo Admin Global Hub, aku tertarik paket Elite 10 (Rp5.999.000). Mau tanya dulu." href="#">Tanya Elite</a>
+        <a class="textlink alt" data-cta="checkout" data-pos="paket" data-paket="elite-10" href="https://globalhub.orderonline.id/scholarship-mentoring-elite-10">atau langsung daftar</a>
+        <hr>
         <ul class="checks">
           <li>Review esai &amp; dokumen lengkap</li>
           <li>Mock interview</li>
@@ -226,106 +176,69 @@
           <li>4 aplikasi beasiswa siap submit</li>
         </ul>
         <p class="bonus">Bonus: kelas IELTS live 10 sesi + sworn translation hingga Rp500.000</p>
-        <div class="acts">
-          <a class="btn btn-wa" data-cta="whatsapp" data-pos="paket" data-paket="elite-10" data-msg="Halo Admin Global Hub, aku tertarik paket Elite 10 (Rp5.999.000). Mau tanya dulu." href="#">Tanya Elite via WA</a>
-          <a class="textlink" data-cta="checkout" data-pos="paket" data-paket="elite-10" href="https://globalhub.orderonline.id/scholarship-mentoring-elite-10">atau langsung daftar</a>
-        </div>
       </div>
     </div>
-    <p class="micro" style="margin-top:18px">Masih bingung pilih? <a class="textlink" data-cta="whatsapp" data-pos="paket-bingung" data-msg="Halo Admin Global Hub, aku bingung pilih paket Scholarship Mentoring. Bisa bantu rekomendasiin?" href="#">Tanya admin, nanti dibantu rekomendasiin.</a></p>
+    <p class="under">Masih bingung pilih? <a class="textlink" data-cta="whatsapp" data-pos="paket-bingung" data-msg="Halo Admin Global Hub, aku bingung pilih paket Scholarship Mentoring. Bisa bantu rekomendasiin?" href="#">Tanya admin, nanti dibantu rekomendasiin.</a></p>
   </div>
 </section>
 
-<section class="sec">
+<!-- BUKTI -->
+<section class="sec alt">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Mentor</span>
-      <h2>Dibimbing Langsung Awardee LPDP</h2>
-      <p>Belajar dari yang pernah menjalani seleksinya, bukan dari teori.</p>
+    <div class="head">
+      <h2>Dibimbing langsung awardee LPDP</h2>
+      <p>Belajar dari yang pernah menjalani seleksinya.</p>
     </div>
     <!-- DEV: ganti .ava dengan foto mentor dari globalhub.id/mentors -->
-    <div class="mentors">
-      <div class="mentor"><div class="ava">KB</div><b>Khaliq Bashar</b><span class="aw">LPDP Awardee</span><p>PhD Education, University of Newcastle</p></div>
-      <div class="mentor"><div class="ava">RP</div><b>M. Rangga Padika</b><span class="aw">LPDP Awardee</span><p>MA Creative Writing, University of Birmingham</p></div>
-      <div class="mentor"><div class="ava">SW</div><b>Selma Wulandari</b><span class="aw">LPDP Awardee</span><p>Master of Environment &amp; Sustainability, Monash University</p></div>
-      <div class="mentor"><div class="ava">RK</div><b>Rista Lidia S. Kmurawak</b><span class="aw">LPDP Awardee</span><p>Master of Environment &amp; Sustainability, Monash University</p></div>
-      <div class="mentor"><div class="ava">JS</div><b>Joeang Salsabiltisa</b><span class="aw">LPDP Awardee</span><p>Master of Education, University of Adelaide</p></div>
-      <div class="mentor"><div class="ava">AK</div><b>Andi Muammar Kareba</b><span class="aw">LPDP Awardee</span><p>Master of Applied Linguistics, Monash University</p></div>
+    <div class="mentors six">
+      <div class="mentor"><div class="ava">KB</div><b>Khaliq Bashar</b><p>PhD Education, University of Newcastle</p></div>
+      <div class="mentor"><div class="ava">RP</div><b>M. Rangga Padika</b><p>MA Creative Writing, University of Birmingham</p></div>
+      <div class="mentor"><div class="ava">SW</div><b>Selma Wulandari</b><p>Master of Environment &amp; Sustainability, Monash University</p></div>
+      <div class="mentor"><div class="ava">RK</div><b>Rista Lidia S. Kmurawak</b><p>Master of Environment &amp; Sustainability, Monash University</p></div>
+      <div class="mentor"><div class="ava">JS</div><b>Joeang Salsabiltisa</b><p>Master of Education, University of Adelaide</p></div>
+      <div class="mentor"><div class="ava">AK</div><b>Andi Muammar Kareba</b><p>Master of Applied Linguistics, Monash University</p></div>
+    </div>
+    <!-- DEV/MARKETING: idealnya tambah foto + bukti (LoA / pengumuman) di tiap kartu -->
+    <div class="testi t3" style="margin-top:16px">
+      <div class="tcard"><blockquote>“Mentornya detail banget waktu kasih feedback. Banyak hal yang sebelumnya aku nggak kepikiran ternyata penting buat aplikasi.”</blockquote><div class="who"><div><b>Amanda Salsabila</b>Study Abroad</div><span class="result">Siap Apply</span></div></div>
+      <div class="tcard"><blockquote>“Mentor nggak cuma ngajarin teori, tapi juga sharing pengalaman pribadi mereka. Bikin aku lebih yakin sama targetku.”</blockquote><div class="who"><div><b>Vania Maharani</b>Study Abroad</div><span class="result">Lolos Administrasi</span></div></div>
+      <div class="tcard"><blockquote>“Mentor bantu aku nyusun timeline, milih kampus, sampai review dokumen satu per satu.”</blockquote><div class="who"><div><b>Nadia Putri</b>Study Abroad</div><span class="result">LoA Universitas Tujuan</span></div></div>
     </div>
   </div>
 </section>
 
-<section class="sec alt">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Testimoni</span>
-      <h2>Dari Bingung, Jadi Siap Submit</h2>
-    </div>
-    <!-- DEV/MARKETING: idealnya tambah foto + screenshot bukti (LoA / pengumuman) di tiap kartu -->
-    <div class="testi">
-      <div class="card"><blockquote>“Mentornya detail banget waktu kasih feedback. Banyak hal yang sebelumnya aku nggak kepikiran ternyata penting buat aplikasi. Berkat arahan mereka, aku jadi lebih pede waktu submit dokumen.”</blockquote><div class="who"><div><b>Amanda Salsabila</b>Study Abroad</div><span class="result">Siap Apply Beasiswa</span></div></div>
-      <div class="card"><blockquote>“Aku suka karena mentor nggak cuma ngajarin teori, tapi juga sharing pengalaman pribadi mereka. Insight seperti ini susah dicari di tempat lain dan bikin aku lebih yakin sama targetku.”</blockquote><div class="who"><div><b>Vania Maharani</b>Study Abroad</div><span class="result">Lolos Administrasi Beasiswa</span></div></div>
-      <div class="card"><blockquote>“Awalnya aku bingung banget harus mulai dari mana buat kuliah ke luar negeri. Setelah ikut program ini, semuanya jadi lebih jelas. Mentor bantu aku nyusun timeline, milih kampus, sampai review dokumen satu per satu.”</blockquote><div class="who"><div><b>Nadia Putri</b>Study Abroad</div><span class="result">LoA Universitas Tujuan</span></div></div>
-    </div>
-  </div>
-</section>
-
+<!-- FAQ DAN PENUTUP -->
 <section class="sec">
   <div class="wrap">
-    <div class="guar">
-      <div>
-        <span class="eyebrow">Garansi</span>
-        <h2>100% Mentor Quality Guarantee</h2>
-        <p style="margin-top:12px;color:var(--ink-2)">Kalau mentor nggak mendampingi sesuai standar program, kamu dapat mentor pengganti atau sesi tambahan tanpa biaya.</p>
+    <div class="faq-grid">
+      <div class="head">
+        <h2>Yang sering ditanyain</h2>
+        <p><b>100% Mentor Quality Guarantee.</b> Kalau mentor nggak mendampingi sesuai standar program, kamu dapat mentor pengganti atau sesi tambahan tanpa biaya. <a class="textlink" data-cta="whatsapp" data-pos="garansi" data-msg="Halo Admin Global Hub, aku mau tanya soal garansi kualitas mentor di Scholarship Mentoring." href="#">Cek syaratnya ke admin.</a></p>
       </div>
-      <div>
-        <ul style="margin-top:0">
-          <li>Ikuti seluruh sesi sesuai paket dan hadir sesuai jadwal</li>
-          <li>Semua sesi direkam untuk evaluasi kualitas</li>
-          <li>Keluhan diajukan maksimal 7 hari setelah sesi</li>
-        </ul>
-        <div class="cta-row"><a class="btn btn-wa" data-cta="whatsapp" data-pos="garansi" data-msg="Halo Admin Global Hub, aku mau tanya soal garansi kualitas mentor di Scholarship Mentoring." href="#">Cek Syaratnya ke Admin</a></div>
+      <div class="faq">
+        <details><summary>Konsultasinya beneran gratis?</summary><p>Iya. Konsultasi via WhatsApp gratis dan nggak wajib daftar.</p></details>
+        <details><summary>Apa aku dijamin dapat beasiswa?</summary><p>Nggak, dan kami nggak mau janji begitu. Yang kami bantu: kamu masuk proses seleksi dengan profil yang kuat, narasi yang jelas, dan persiapan yang matang.</p></details>
+        <details><summary>Aku kerja full-time. Sesinya kapan?</summary><p>Semua sesi online, 60 menit per sesi. Jadwal disepakati bareng mentor, termasuk di luar jam kerja atau akhir pekan.</p></details>
+        <details><summary>Aku belum tahu mau ke kampus mana. Boleh ikut?</summary><p>Boleh. Kalau belum yakin jalur mana yang cocok, tim kami bantu nentuin di konsultasi awal.</p></details>
+        <details><summary>Esainya dituliskan mentor?</summary><p>Nggak. Mentor membimbing dan kasih masukan detail, tapi esainya tetap kamu yang nulis. Kamu harus menguasai setiap kata di dalamnya, terutama pas interview.</p></details>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="sec alt">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">FAQ</span>
-      <h2>Yang Sering Ditanyain</h2>
+    <div class="closing" style="margin-top:32px">
+      <h2>Masih ragu? Wajar kok.</h2>
+      <p>Ngobrol dulu aja sama admin. Mau daftar atau mikir dulu, bebas.</p>
+      <div class="cta-row">
+        <a class="btn btn-white" data-cta="whatsapp" data-pos="final" href="#">Chat Admin Sekarang</a>
+      </div>
     </div>
-    <div class="faq">
-      <details open><summary>Konsultasinya beneran gratis?</summary><p>Iya. Konsultasi via WhatsApp gratis dan nggak wajib daftar.</p></details>
-      <details><summary>Apa aku dijamin dapat beasiswa?</summary><p>Nggak, dan kami nggak mau janji begitu. Yang kami jamin: kamu masuk proses seleksi dengan profil yang kuat, narasi yang jelas, dan persiapan yang nggak dimiliki kebanyakan pelamar lain.</p></details>
-      <details><summary>Aku belum tahu mau ke kampus mana. Boleh ikut?</summary><p>Boleh. Kalau belum yakin jalur mana yang cocok, tim kami bantu nentuin di konsultasi awal.</p></details>
-      <details><summary>Mentornya beneran penerima beasiswa?</summary><p>Iya, semuanya. Kami juga berusaha mencocokkan mentor dengan bidang studi dan kampus tujuanmu sebisa mungkin.</p></details>
-      <details><summary>Sesinya gimana dan kapan bisa dijadwalkan?</summary><p>Semua sesi online, 60 menit per sesi. Jadwal disepakati bareng mentor, termasuk di luar jam kerja atau akhir pekan.</p></details>
-      <details><summary>Esainya dituliskan mentor?</summary><p>Nggak. Mentor membimbing, menantang, dan kasih masukan detail, tapi esainya tetap kamu yang nulis. Kamu harus menguasai setiap kata di dalamnya, terutama pas interview.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="final">
-  <div class="wrap">
-    <h2>Masih Ragu? Wajar Kok.</h2>
-    <p>Ngobrol dulu aja sama admin. Putusin belakangan.</p>
-    <div class="cta-row">
-      <a class="btn btn-white" data-cta="whatsapp" data-pos="final" href="#">Chat Admin Sekarang</a>
-      <a class="btn btn-ghost" href="#paket">Lihat Paket &amp; Harga</a>
-    </div>
-    <p class="micro">Admin online 08.00–22.00 WIB</p>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">© Global Hub by Englishvit</div></footer>
+<footer><div class="wrap">© Global Hub by Englishvit · PT Sinergi Insan Andalan</div></footer>
 
 <div class="sticky">
   <div class="info"><b>Mulai Rp499rb</b>Konsultasi gratis</div>
-  <a class="btn btn-ghost" href="#paket">Paket</a>
-  <a class="btn btn-wa" data-cta="whatsapp" data-pos="sticky" href="#">Chat Admin</a>
+  <a class="btn btn-wa" data-cta="whatsapp" data-pos="sticky" href="#"><svg class="ic"><use href="#i-chat"/></svg>Chat Admin</a>
 </div>
 
 <script>/*__JS__*/</script>

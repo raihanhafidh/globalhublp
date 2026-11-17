@@ -21,13 +21,14 @@ Sumbernya ada di `src/`. Setelah mengubah, rakit ulang:
 node build.js
 ```
 
-- `src/shared.css`, `src/ielts.css`: tampilan.
+- `src/lp.css`: tampilan semua halaman. `src/icons.html`: ikon.
 - `src/shared.js`: nomor WhatsApp admin (`WA_NUMBER`), penerusan UTM ke Order Online, dan tracking klik.
 - `src/ielts-a.html`, `src/ielts-b.html`, `src/a.html`, `src/b.html`: isi tiap halaman.
 
 ## Yang harus dikerjakan developer sebelum tayang
 
 1. Pasang Meta Pixel dan Microsoft Clarity. Tiap tombol sudah mengirim event `lp_cta_click` ke `dataLayer` dengan `cta` (`whatsapp` atau `checkout`), `pos`, `variant`, dan `paket`. Petakan `whatsapp` ke `Contact` dan `checkout` ke `InitiateCheckout`.
-2. Ganti semua teks berkelas `.ph` (latar kuning) dengan data yang sudah dikonfirmasi, lalu hapus bar `.draft` dan meta `noindex`.
-3. Ganti inisial mentor (`.ava`) dengan foto.
-4. IELTS Versi B: pastikan harga di `globalhub.orderonline.id/ielts-live-class` sudah Rp359.000 dan lakukan satu pembelian uji dari HP sebelum iklan diarahkan ke halaman ini.
+2. Pasang form kualifikasi sebagai langkah setelah tombol `[data-cta="whatsapp"]` ditekan (halaman sengaja tanpa form).
+3. Ganti semua teks berkelas `.ph` (latar kuning) dengan data yang sudah dikonfirmasi, lalu hapus bar `.draft` dan meta `noindex`.
+4. Ganti inisial mentor (`.ava`) dengan foto.
+5. IELTS Versi B: pastikan harga di `globalhub.orderonline.id/ielts-live-class` sudah Rp359.000 dan lakukan satu pembelian uji dari HP sebelum iklan diarahkan ke halaman ini.

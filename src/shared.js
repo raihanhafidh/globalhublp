@@ -38,35 +38,6 @@
     window.dataLayer.push({ event: "lp_cta_click", cta: el.dataset.cta, pos: el.dataset.pos || "", variant: VARIANT, paket: el.dataset.paket || "" });
   });
 
-  // Form kualifikasi -> WhatsApp (Versi B)
-  var form = document.getElementById("wa-form");
-  if (form) {
-    document.getElementById("wa-send").addEventListener("click", function () {
-      var fields = form.querySelectorAll("input,select"), f = new Map();
-      for (var i = 0; i < fields.length; i++) {
-        if (!fields[i].reportValidity()) return;
-        f.set(fields[i].name, fields[i].value.trim());
-      }
-      var text = "Halo Admin Global Hub, aku mau konsultasi Study Abroad.\n\n" +
-        "Nama: " + (f.get("nama") || "") + "\n" +
-        "Jenjang tujuan: " + (f.get("jenjang") || "") + "\n" +
-        "Beasiswa incaran: " + (f.get("beasiswa") || "") + "\n" +
-        "Rencana apply: " + (f.get("kapan") || "") + "\n\n(ref: SA-" + VARIANT + "/form)";
-      window.dataLayer.push({ event: "lp_cta_click", cta: "whatsapp", pos: "form", variant: VARIANT });
-      window.open(waUrl(text), "_blank", "noopener");
-    });
-  }
-
-  // Satu pilihan -> WhatsApp (penutup LP IELTS Versi A)
-  var pick = document.getElementById("wa-pick"), pickSend = document.getElementById("wa-pick-send");
-  if (pick && pickSend) {
-    pickSend.addEventListener("click", function () {
-      if (!pick.reportValidity()) return;
-      window.dataLayer.push({ event: "lp_cta_click", cta: "whatsapp", pos: "penutup", variant: VARIANT });
-      window.open(waUrl(pickSend.dataset.msg.replace("{pilihan}", pick.value)), "_blank", "noopener");
-    });
-  }
-
   // Bar melayang baru muncul setelah hero lewat
   var bar = document.querySelector(".sticky[data-after-hero]"), hero = document.querySelector(".hero");
   if (bar && hero && "IntersectionObserver" in window) {
@@ -80,7 +51,7 @@
     stage.addEventListener("click", function (e) {
       var b = e.target.closest("button"); if (!b) return;
       stage.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-      document.querySelectorAll(".pk .card[data-paket]").forEach(function (c) {
+      document.querySelectorAll(".plan[data-paket]").forEach(function (c) {
         var on = c.dataset.paket === b.dataset.target;
         c.classList.toggle("pick", on); c.classList.toggle("dim", !on);
       });
