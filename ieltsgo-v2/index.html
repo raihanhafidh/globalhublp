@@ -623,6 +623,16 @@ body.v2{background:var(--paper);color:var(--ink)}
 }
 @media(min-width:720px){.tqs{grid-template-columns:1fr 1fr;max-width:860px}}
 .tq .pscore b{display:inline;font-size:20px}.tq .pscore{flex:none}
+/* Tombol WhatsApp melayang (versi direct) */
+.wa-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:45;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;border-radius:999px;padding:12px 18px 12px 14px;font-weight:700;font-size:14.5px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .25s,bottom .25s}
+.wa-fab svg{width:24px;height:24px;fill:currentColor;flex:none}
+.wa-fab:hover{transform:translateY(-2px)}
+@media(max-width:719px){
+  .wa-fab{padding:13px;right:14px}
+  .wa-fab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .bar-on .wa-fab{bottom:calc(82px + env(safe-area-inset-bottom))}
+}
+.hero.vid .hero-in>.cta-row:last-child{margin-bottom:40px}
 </style>
 <!-- TODO: tracking dipasang saat integrasi ke situs utama -->
 </head>
@@ -796,9 +806,7 @@ body.v2{background:var(--paper);color:var(--ink)}
     <div class="head" data-reveal><h2>Hal yang <em>sering ditanyakan</em></h2></div>
     <div class="faq2">
       <details><summary>Konsultasinya beneran gratis?</summary><p>Iya. Konsultasi via WhatsApp gratis dan nggak wajib daftar.</p></details>
-      <details id="faq-garansi"><summary>Garansi Band 7 itu gimana?</summary><p>Khusus Private IELTS Foundation. Kalau kamu udah hadir di semua 20 sesi, ngerjain semua tugas dari mentor, dan skor resmi (TRF) masih di bawah 7, kamu dapat 10x IELTS Live Class gratis. Jadi kamu tetap didampingi buat lanjut belajar.</p></details>
-      <!-- TODO [V] cara klaim garansi: konfirmasi langkah, kanal, dan batas waktu ke product manager. -->
-      <details id="faq-klaim"><summary>Gimana cara klaim Garansi Band 7?</summary><p><span class="ph">Kirim hasil tes resmi (TRF) ke admin via WhatsApp paling lambat 30 hari setelah hasil keluar. Tim kami cek kehadiran dan tugasmu, lalu jadwal 10x IELTS Live Class gratis dikirim ke kamu.</span></p></details>
+      <details id="faq-garansi"><summary>Gimana cara klaim Garansi Band 7?</summary><p>Garansi Band 7 hanya khusus Private IELTS Foundation. Kalau kamu udah hadir di semua 20 sesi, ngerjain semua tugas dari mentor, dan skor resmi masih di bawah 7, kamu dapat 10x IELTS Live Class tambahan secara gratis untuk menggapai target skor IELTS.</p></details>
       <details><summary>Ada kelas malam atau weekend?</summary><p>Ada kelas malam, aman buat yang kerja atau kuliah. Program Private jadwalnya fleksibel.</p></details>
       <!-- TODO [V]: pastikan cicilan 50% juga berlaku untuk Foundation. -->
       <details><summary>Bisa bayar cicil?</summary><p>Bisa untuk program Private: bayar 50% dulu, sisanya menyusul.</p></details>

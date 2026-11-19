@@ -270,3 +270,13 @@ body.v2{background:var(--paper);color:var(--ink)}
 }
 @media(min-width:720px){.tqs{grid-template-columns:1fr 1fr;max-width:860px}}
 .tq .pscore b{display:inline;font-size:20px}.tq .pscore{flex:none}
+/* Tombol WhatsApp melayang (versi direct) */
+.wa-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:45;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;border-radius:999px;padding:12px 18px 12px 14px;font-weight:700;font-size:14.5px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .25s,bottom .25s}
+.wa-fab svg{width:24px;height:24px;fill:currentColor;flex:none}
+.wa-fab:hover{transform:translateY(-2px)}
+@media(max-width:719px){
+  .wa-fab{padding:13px;right:14px}
+  .wa-fab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .bar-on .wa-fab{bottom:calc(82px + env(safe-area-inset-bottom))}
+}
+.hero.vid .hero-in>.cta-row:last-child{margin-bottom:40px}
