@@ -10,6 +10,7 @@ const pages = [
   ["a.html", "study-abroad-a", css],
   ["b.html", "study-abroad-b", css],
   ["ieltsgo-v2.html", "ieltsgo-v2", css + src("ieltsgo-v2.css")],
+  ["ieltsgo-v2-direct.html", "ieltsgo-v2-direct", css + src("ieltsgo-v2.css")],
 ];
 for (const [file, dir, style] of pages) {
   let html = src(file).replace("/*__CSS__*/", () => style).replace("/*__JS__*/", () => js).replace("<!--ICONS-->", () => icons);
