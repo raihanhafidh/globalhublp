@@ -250,3 +250,4 @@ body.v2{background:var(--paper);color:var(--ink)}
 .v2 .sticky.hide{transform:translateY(110%)}
 @media(min-width:720px){.cover{border-radius:40px 40px 0 0;margin-top:-40px}}
 @media(prefers-reduced-motion:reduce){.hero-bg,.hero-in{transform:none}.hero-dim{opacity:0}}
+.hero-syarat{display:inline-block;margin-top:10px;font-size:13px;color:#D6D2CA;text-underline-offset:3px}.hero-syarat:hover{color:#fff}
