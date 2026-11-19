@@ -2,6 +2,13 @@
 
 Draft baru halaman `globalhub.id/ieltsgo` sesuai brief 19 Nov 2026: Garansi Band 7 jadi identitas halaman, halaman lebih pendek, satu aksi chat admin. Halaman live `/ieltsgo` tidak diubah. Jangan merge sebelum di-review.
 
+## Update 2: versi ringkas (permintaan Rehan)
+
+- Copy dipangkas: kata di halaman sekitar 240, tinggi HP 3.359 px (sebelumnya 4.971 px).
+- Section garansi dihapus. Penjelasan dan syarat garansi hanya ada di FAQ "Garansi Band 7 itu gimana?". Badge "Bergaransi Band 7" di kartu Foundation diberi link "Lihat syarat" yang membuka FAQ itu.
+- Kotak syarat di hero, syarat di kartu Foundation, dan baris "Mau yang bergaransi Band 7?" di kartu lain dihapus. Placement `guarantee` ikut hilang (8 tombol tersisa).
+- Testimoni diringkas jadi nama dan skor saja (kutipan lengkap tetap di halaman live).
+
 ## Update: format visual baru (ref: lassie.ai)
 
 Atas permintaan Rehan, tampilan diubah mengikuti format lassie.ai, dengan copy dan aturan brief tetap sama:
