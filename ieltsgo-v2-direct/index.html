@@ -633,6 +633,23 @@ body.v2{background:var(--paper);color:var(--ink)}
   .bar-on .wa-fab{bottom:calc(82px + env(safe-area-inset-bottom))}
 }
 .hero.vid .hero-in>.cta-row:last-child{margin-bottom:40px}
+/* Mentor: kartu foto + band + logo (data dari globalhub.id/ielts-preparation) */
+.mlist{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mcard{margin:0;background:#fff;border:1px solid var(--line-w);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.mph{width:100%;height:200px;object-fit:cover;object-position:top;background:#E9E6E0}
+.mcard figcaption{padding:12px 14px 14px;display:flex;flex-direction:column;gap:2px}
+.mcard b{font-size:15px;line-height:1.3}
+.mband{color:#0E7C76;font-weight:700;font-size:14px}
+.myr{font-size:12.5px;color:var(--ink-3)}
+.mlogos{display:flex;align-items:center;gap:10px;margin-top:8px}
+.mlogos img{height:20px;width:auto}
+@media(max-width:719px){
+  .mlist{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 6px;scrollbar-width:none}
+  .mlist::-webkit-scrollbar{display:none}
+  .mcard{flex:0 0 62%;scroll-snap-align:start}
+  .mph{height:180px}
+}
+.mcard figcaption{text-align:left;align-items:flex-start}.mcard .myr{color:var(--ink-3);font-weight:500}.mcard .mband{font-weight:700}
 </style>
 <!-- TODO: tracking dipasang saat integrasi ke situs utama -->
 </head>
@@ -687,7 +704,7 @@ body.v2{background:var(--paper);color:var(--ink)}
     <span class="gpill">Mentoring IELTS Personalized by Global Hub</span>
     <h1>Garansi IELTS Band 7,<br><em>Siap Lulus Beasiswa Kuliah Luar Negeri!</em></h1>
     <a class="hero-syarat" href="#faq-garansi" data-open-faq>*Syarat berlaku, khusus Private IELTS Foundation</a>
-    <p class="lead">Kelas IELTS mulai Rp359 ribu, bareng mentor ber-skor band 7 sampai 8.</p>
+    <p class="lead">Kelas IELTS mulai Rp359 ribu, bareng mentor ber-skor band 7 sampai 8.5.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#registration" data-marketing-placement="hero">Pilih Kelas &amp; Daftar</a>
     </div>
@@ -749,8 +766,8 @@ body.v2{background:var(--paper);color:var(--ink)}
           <li>Jadwal fleksibel</li>
         </ul>
         <div class="price-row">
-          <!-- TODO [V]: harga November untuk Foundation. Catatan produk: Rp5.599.000. Harga coret belum ada. -->
-          <div class="p"><span class="ph">Rp5.599.000</span></div>
+          <!-- TODO [V]: harga November untuk Foundation. Catatan produk: Rp5.599.000. Harga coret Rp12.398.000 = harga normal di Order Online (private-ielts-foundation). -->
+          <div class="p"><span class="ph">Rp5.599.000</span> <s>Rp12.398.000</s></div>
           <a class="btn btn-primary btn-block" href="https://globalhub.orderonline.id/private-ielts-foundation" data-cta="checkout" data-pos="card-foundation" data-paket="private-ielts-foundation" data-marketing-placement="card-foundation">Daftar Sekarang</a>
         </div>
       </div>
@@ -789,14 +806,19 @@ body.v2{background:var(--paper);color:var(--ink)}
 </section>
 
 <!-- MENTOR -->
-<!-- TODO [V]: masa mengajar Aurelia belum konsisten di halaman live; tidak ditampilkan. -->
+<!-- Mentor dari globalhub.id/ielts-preparation: 8 mentor dengan band tertinggi / pengalaman terpanjang. Band, lama mengajar, dan logo sesuai halaman itu. -->
 <section class="sec" id="mentor" style="padding-top:0">
   <div class="wrap">
     <div class="head" data-reveal><h2>Diajar mentor yang <em>udah lewat tesnya</em></h2></div>
-    <div class="mround" data-reveal>
-      <figure><img src="https://globalhub.id/mentor/default/aurelia.avif" alt="Aurelia Hillary Wibisono" width="84" height="84" loading="lazy"><b>Aurelia Hillary Wibisono</b><span>Band 7.0</span></figure>
-      <figure><img src="https://globalhub.id/mentor/default/cecilia.avif" alt="Cecilia Aileen Yap" width="84" height="84" loading="lazy"><b>Cecilia Aileen Yap</b><span>Band 8.0</span></figure>
-      <figure><img src="https://globalhub.id/mentor/default/yovita.avif" alt="Yovita Jovanika" width="84" height="84" loading="lazy"><b>Yovita Jovanika</b><span>Band 7.0</span></figure>
+    <div class="mlist" data-reveal>
+      <figure class="mcard"><img class="mph" src="https://globalhub.id/mentor/default/patricia.avif" alt="Patricia Heidi Surjadidjaja" width="240" height="200" loading="lazy"><figcaption><b>Patricia Heidi Surjadidjaja</b><span class="mband">IELTS Band 8.5</span><span class="myr">1 tahun mengajar</span><span class="mlogos"><img src="https://globalhub.id/mentor/icons/iisma.webp" alt="" height="20" loading="lazy"><img src="https://globalhub.id/mentor/icons/ui.webp" alt="" height="20" loading="lazy"></span></figcaption></figure>
+      <figure class="mcard"><img class="mph" src="https://globalhub.id/mentor/default/rangga.avif" alt="M. Rangga Padika" width="240" height="200" loading="lazy"><figcaption><b>M. Rangga Padika</b><span class="mband">IELTS Band 8.0</span><span class="myr">5 tahun mengajar</span><span class="mlogos"><img src="https://globalhub.id/mentor/icons/lpdp.webp" alt="" height="20" loading="lazy"><img src="https://globalhub.id/mentor/icons/birmingham.webp" alt="" height="20" loading="lazy"></span></figcaption></figure>
+      <figure class="mcard"><img class="mph" src="https://globalhub.id/mentor/default/keshia.avif" alt="Keshia Aurell Aryadi" width="240" height="200" loading="lazy"><figcaption><b>Keshia Aurell Aryadi</b><span class="mband">IELTS Band 8.0</span><span class="myr">3 tahun mengajar</span><span class="mlogos"><img src="https://globalhub.id/mentor/icons/ielts.webp" alt="" height="20" loading="lazy"><img src="https://globalhub.id/mentor/icons/ciputra.webp" alt="" height="20" loading="lazy"></span></figcaption></figure>
+      <figure class="mcard"><img class="mph" src="https://globalhub.id/mentor/default/jiesta.avif" alt="Ni Putu Luh Jiesta" width="240" height="200" loading="lazy"><figcaption><b>Ni Putu Luh Jiesta</b><span class="mband">IELTS Band 8.0</span><span class="myr">2 tahun mengajar</span><span class="mlogos"><img src="https://globalhub.id/mentor/icons/ielts.webp" alt="" height="20" loading="lazy"><img src="https://globalhub.id/mentor/icons/itb.webp" alt="" height="20" loading="lazy"></span></figcaption></figure>
+      <figure class="mcard"><img class="mph" src="https://globalhub.id/mentor/default/cecilia.avif" alt="Cecilia Aileen Yap" width="240" height="200" loading="lazy"><figcaption><b>Cecilia Aileen Yap</b><span class="mband">IELTS Band 8.0</span><span class="myr">1 tahun mengajar</span><span class="mlogos"><img src="https://globalhub.id/mentor/icons/iisma.webp" alt="" height="20" loading="lazy"><img src="https://globalhub.id/mentor/icons/california.webp" alt="" height="20" loading="lazy"></span></figcaption></figure>
+      <figure class="mcard"><img class="mph" src="https://globalhub.id/mentor/default/radix.avif" alt="Radix Renald Prasetyo" width="240" height="200" loading="lazy"><figcaption><b>Radix Renald Prasetyo</b><span class="mband">IELTS Band 7.5</span><span class="myr">5 tahun mengajar</span><span class="mlogos"><img src="https://globalhub.id/mentor/icons/ielts.webp" alt="" height="20" loading="lazy"><img src="https://globalhub.id/mentor/icons/ui.webp" alt="" height="20" loading="lazy"></span></figcaption></figure>
+      <figure class="mcard"><img class="mph" src="https://globalhub.id/mentor/default/krisnanto.avif" alt="Krisnanto Mahardika" width="240" height="200" loading="lazy"><figcaption><b>Krisnanto Mahardika</b><span class="mband">IELTS Band 7.5</span><span class="myr">15 tahun mengajar</span><span class="mlogos"><img src="https://globalhub.id/mentor/icons/ielts.webp" alt="" height="20" loading="lazy"><img src="https://globalhub.id/mentor/icons/sanata.webp" alt="" height="20" loading="lazy"></span></figcaption></figure>
+      <figure class="mcard"><img class="mph" src="https://globalhub.id/mentor/default/khaliq.avif" alt="Khaliq Bashar" width="240" height="200" loading="lazy"><figcaption><b>Khaliq Bashar</b><span class="mband">IELTS Band 7.0</span><span class="myr">17 tahun mengajar</span><span class="mlogos"><img src="https://globalhub.id/mentor/icons/lpdp.webp" alt="" height="20" loading="lazy"><img src="https://globalhub.id/mentor/icons/newcastle.webp" alt="" height="20" loading="lazy"></span></figcaption></figure>
     </div>
   </div>
 </section>
