@@ -672,7 +672,7 @@ body.v2{background:var(--paper);color:var(--ink)}
 </svg>
 
 
-<!-- Video hero diputar otomatis untuk semua pengunjung (kecuali mode hemat data), dengan tombol jeda.
+<!-- Video hero diputar otomatis untuk semua pengunjung (kecuali mode hemat data). Tombol jeda dihapus atas permintaan Rehan.
      IELTSGO v2 · GARANSI BAND 7 · versi ringkas (revisi 19 Nov 2026, permintaan Rehan)
      Format visual mengikuti referensi lassie.ai: hero video layar penuh, judul serif, chip status berganti.
      Penjelasan dan syarat garansi hanya di FAQ (#faq-garansi). Badge "Bergaransi Band 7" di kartu Foundation diberi link ke FAQ itu.
@@ -692,7 +692,6 @@ body.v2{background:var(--paper);color:var(--ink)}
     <source src="media/hero-540.mp4" type="video/mp4">
   </video>
   <div class="hero-dim" aria-hidden="true"></div>
-  <button class="vtoggle" type="button" aria-pressed="true" aria-label="Jeda atau putar video latar"><svg class="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg><svg class="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
   <nav class="pillnav" aria-label="Navigasi halaman">
     <img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="110" height="22">
     <a href="#registration">Kelas</a><a href="#mentor">Mentor</a><a href="#faq">FAQ</a>
@@ -936,16 +935,13 @@ body.v2{background:var(--paper);color:var(--ink)}
   if (v) {
     if (window.matchMedia("(min-width:720px)").matches && v.dataset.posterDesktop) v.poster = v.dataset.posterDesktop;
     // Video selalu diputar otomatis (permintaan Rehan), juga untuk perangkat dengan "kurangi animasi".
-    // Pengecualian: mode hemat data. Tombol jeda tetap ada.
-    var btn = document.querySelector(".vtoggle"); wantPlay = !saveData;
-    var sync = function () { btn.setAttribute("aria-pressed", wantPlay ? "true" : "false"); };
+    // Pengecualian: mode hemat data (video tidak dimuat, poster saja).
+    wantPlay = !saveData;
     if (!wantPlay) { v.removeAttribute("autoplay"); v.pause(); v.preload = "none"; }
-    sync();
     var tryPlay = function () { if (wantPlay && !covered) v.play().catch(function () {}); };
     tryPlay();
     // Cadangan kalau browser menahan autoplay (misalnya iPhone mode hemat daya): putar di interaksi pertama
     ["touchstart", "pointerdown", "scroll", "keydown"].forEach(function (ev) { window.addEventListener(ev, tryPlay, { once: true, passive: true }); });
-    btn.addEventListener("click", function () { wantPlay = !wantPlay; sync(); wantPlay ? v.play().catch(function () {}) : v.pause(); });
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(function (e) { if (!wantPlay || covered) return; e[0].isIntersecting ? v.play().catch(function () {}) : v.pause(); }).observe(v);
     }
