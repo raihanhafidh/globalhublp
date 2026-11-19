@@ -10,8 +10,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://globalhub.id">
-<link rel="preload" as="image" href="https://globalhub.id/ads/ieltsbeasiswa/backgrounds/ads_hero_mobile.avif" media="(max-width:899px)" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="media/poster-540.webp" media="(max-width:719px)" fetchpriority="high">
+<link rel="preload" as="image" href="media/poster-1280.webp" media="(min-width:720px)" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <style>/* ===== Global Hub LP · sistem layout v2 =====
    Pola section diadaptasi dari komponen 21st.dev (hero split + badge, feature grid/bento
    bergaris tipis, pricing cards dengan tier unggulan), ditulis ulang sebagai HTML/CSS biasa. */
@@ -349,115 +351,231 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
   .compact .asklist{gap:10px}
   .compact .ticks{margin-top:14px}
 }
-/* ===== IELTSGO v2 · Garansi Band 7 (brief 19 Nov 2026) =====
-   Ditempel setelah lp.css, hanya untuk halaman ieltsgo-v2. */
-:root{--r:4px;--wa:#22C55E;--wa-d:#16A34A}
+/* ===== IELTSGO v2 · Garansi Band 7 · format editorial + video (ref: lassie.ai) =====
+   Ditempel setelah lp.css, hanya untuk halaman ieltsgo-v2.
+   Pola yang diambil dari referensi: hero video layar penuh dengan judul serif besar, chip status yang berganti,
+   panel media membulat dengan kartu UI yang "berjalan" saat discroll, FAQ bergaris tipis, penutup bergambar. */
+:root{
+  --r:4px;--wa:#22C55E;--wa-d:#16A34A;
+  --paper:#F6F3EC;--paper-2:#EFEAE0;--line-w:#E2DBCE;--ink:#141414;--ink-2:#55524C;--ink-3:#85817A;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+}
+body.v2{background:var(--paper);color:var(--ink)}
+.v2 h1,.v2 h2{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.02}
+.v2 h1 em,.v2 h2 em{font-style:italic}
+.v2 h2{font-size:clamp(34px,8.6vw,58px)}
+.v2 h3{letter-spacing:-.01em}
+.v2 .wrap{max-width:1120px}
 .v2 .draft{padding:4px 12px;font-size:12px}
 .promo-link{display:block;background:var(--ink);color:#fff;text-align:center;font-size:13px;font-weight:600;padding:8px 12px;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .promo-link .ph{background:transparent;color:#fff;border-bottom-color:#FFE07A}
-.v2 .top{position:static}
-.v2 .top .wrap{height:48px}
-.v2 .top img{height:26px}
-
-/* hero: foto maks 30% tinggi layar di HP */
-.v2 .hero{padding:0 0 26px;background:none}
-.v2 .hero-grid{gap:16px}
-.hero-media{margin:0 -20px;height:30vh;max-height:244px;overflow:hidden;background:#DDE5F7}
-.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 16%}
-.v2 .pill{font-size:12.5px;line-height:1.35;padding:5px 10px;margin-bottom:10px;align-items:flex-start;border-radius:var(--r)}
-.v2 .pill::before{margin-top:5px;flex:none}
-.v2 .hero .lead{margin-top:10px}
-.syarat{display:flex;gap:8px;align-items:flex-start;font-size:13px;line-height:1.45;color:var(--ink-2);background:var(--tint);border:1px solid #D5DFFC;border-radius:var(--r);padding:8px 10px;margin-top:12px}
-.syarat .ic{width:16px;height:16px;color:var(--blue);margin-top:2px}
-.v2 .hero .cta-row{margin-top:16px}
-.seeprice{display:inline-block;margin-top:12px;font-size:15px}
-.v2 .hero .micro{margin-top:6px}
-.legal{font-size:12.5px;color:var(--ink-3);margin-top:4px}
-
-/* masalah + bukti */
-.xlist{list-style:none;display:grid;gap:10px}
-.xlist li{display:flex;gap:10px;align-items:flex-start;font-size:16px}
-.xlist li::before{content:"×";flex:none;width:22px;height:22px;border-radius:50%;background:#FDECEA;color:#D92D20;font-weight:700;font-size:16px;line-height:22px;text-align:center;margin-top:1px}
-.v2 .bridge{text-align:left;margin:20px 0 12px}
-.tcard .who img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none}
-.v2 .tcard .who{justify-content:flex-start}
-
-/* kartu kelas */
-.v2 .plan .for{min-height:0;margin-bottom:12px}
-.v2 .plan .checks{margin-bottom:14px}
-.v2 .plan .price-row{margin-top:auto}
-.v2 .plan .p{margin:0 0 12px}
-.plan.found{background:linear-gradient(180deg,#F1F5FF 0%,#fff 60%);border-width:2px}
-.plan .gsyarat{font-size:12.5px;line-height:1.45;color:var(--ink-2);margin:-4px 0 12px;padding:8px 10px;background:#fff;border:1px dashed #BFD0FB;border-radius:var(--r)}
-.plan .gsyarat b{color:var(--ink)}
-.v2 .plan .alt{margin-top:10px;font-size:13px}
+.v2 .btn{border-radius:var(--r)}
+.v2 .btn-wa{background:var(--wa)}
 .v2 .btn-wa:hover{background:var(--wa-d)}
+.v2 .sec{padding:56px 0}
+.v2 .head{max-width:720px;margin:0 auto 28px;text-align:center}
+.v2 .head p{color:var(--ink-2);margin-top:12px;font-size:16px}
 
-/* garansi */
-.gbox{background:var(--ink);color:#fff;border-radius:12px;padding:24px 20px;display:grid;gap:18px}
-.gbox h2{color:#fff}
-.gbox p{color:#D4D8E1;margin-top:10px}
-.gbox h3{color:#fff;margin-bottom:10px}
-.gbox .howto li{color:#E8EBF1}
-.gbox .btn{margin-top:16px}
+/* reveal saat discroll (hanya kalau JS aktif) */
+.js [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.js [data-reveal].in{opacity:1;transform:none}
 
-/* mentor */
-.mround{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;max-width:520px;margin:0 auto}
-.mround img{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 0;margin:0 auto 8px;background:#DDE5F7}
+/* ===== HERO: video layar penuh ===== */
+.hero.vid{position:relative;overflow:hidden;color:#fff;background:#1B1A18;min-height:calc(100svh - 62px);display:flex;flex-direction:column;padding:0}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero.vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,14,.35) 0%,rgba(12,12,14,.35) 30%,rgba(12,12,14,.78) 62%,rgba(12,12,14,.92) 100%)}
+.pillnav{position:relative;z-index:2;display:flex;align-items:center;gap:4px;margin:14px auto 0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:99px;padding:5px 6px 5px 12px;box-shadow:0 4px 18px rgba(0,0,0,.15)}
+.pillnav img{height:20px;width:auto;margin-right:6px}
+.pillnav a{font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;padding:6px 10px;border-radius:99px}
+.pillnav a:hover{background:var(--paper-2)}
+.hero-in{position:relative;z-index:2;margin-top:auto;padding-top:56px;padding-bottom:28px;text-align:left}
+.gpill{display:inline-flex;gap:8px;align-items:flex-start;font-size:12.5px;font-weight:600;line-height:1.35;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);border-radius:99px;padding:6px 12px;margin-bottom:14px}
+.gpill::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:#5EE0D8;margin-top:5px}
+.hero.vid h1{font-size:clamp(42px,11.4vw,92px);color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero.vid .lead{color:#E9E6E0;font-size:17px;margin-top:14px;max-width:46ch}
+.ticker{display:inline-flex;align-items:center;gap:9px;margin-top:14px;font-size:13.5px;color:#fff;background:rgba(20,20,20,.45);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:7px 11px;min-height:34px}
+.ticker .dot{width:16px;height:16px;flex:none;border-radius:50%;border:2px solid #5EE0D8;position:relative}
+.ticker .dot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:#5EE0D8}
+.ticker .t{transition:opacity .35s,transform .35s}
+.ticker .t.out{opacity:0;transform:translateY(-6px)}
+.hero.vid .syarat{display:flex;gap:8px;align-items:flex-start;font-size:13px;line-height:1.45;color:#E9E6E0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:9px 11px;margin-top:12px;max-width:560px;text-align:left}
+.hero.vid .syarat .ic{width:16px;height:16px;color:#5EE0D8;margin-top:2px;flex:none}
+.hero.vid .cta-row{margin-top:16px}
+.hero.vid .cta-row .btn{flex:1 1 100%}
+.hero-links{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-top:10px;font-size:13px;color:#C9C5BD}
+.hero-links a{color:#fff;font-weight:600;font-size:15px;text-underline-offset:3px}
+.hero .legal{font-size:12px;color:#A9A59D;margin-top:6px}
+
+/* ===== MASALAH + BUKTI ===== */
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:760px;margin:0 auto;padding:0}
+.chips li{list-style:none;display:flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line-w);border-radius:99px;padding:9px 14px 9px 10px;font-size:15px;font-weight:500}
+.chips li::before{content:"×";flex:none;width:20px;height:20px;border-radius:50%;background:#FDECEA;color:#D92D20;font-weight:700;line-height:20px;text-align:center}
+.bridge-s{font-family:var(--serif);font-style:italic;font-size:28px;text-align:center;margin:30px 0 16px}
+.v2 .testi{display:grid;gap:12px;max-width:880px;margin:0 auto}
+.v2 .tcard{background:#fff;border:1px solid var(--line-w);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.v2 .tcard[hidden]{display:none}
+.v2 .tcard blockquote{font-size:16px;line-height:1.55}
+.thead{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-2);line-height:1.3}
+.thead img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none}
+.thead b{display:block;color:var(--ink);font-size:15px}
+.thead .score{margin-left:auto;text-align:right;white-space:nowrap;font-weight:700;font-size:19px;color:var(--ink)}
+.thead .score small{display:block;font-size:11.5px;font-weight:600;color:var(--ink-3)}
+.thead .score b{display:inline;color:#0E7C76;font-size:19px}
+.thead .score i{font-style:normal;color:var(--ink-3);font-weight:500}
+
+/* ===== KARTU KELAS ===== */
+.v2 .pricing{display:grid;gap:14px;align-items:stretch}
+.v2 .plan{position:relative;background:#fff;border:1px solid var(--line-w);border-radius:18px;padding:20px 18px 18px;display:flex;flex-direction:column}
+.v2 .plan h3{font-size:19px}
+.v2 .plan .for{font-size:14.5px;color:var(--ink-2);margin:4px 0 12px;min-height:0}
+.v2 .plan .badge{position:static;align-self:flex-start;margin-bottom:10px;border-radius:99px}
+.v2 .plan .price-row{margin-top:auto}
+.v2 .plan .p{font-size:28px;margin:0 0 12px}
+.v2 .plan .alt{margin-top:10px;font-size:13px;text-align:center;display:block}
+.v2 .plan .checks{gap:7px;margin-bottom:14px}
+.v2 .plan .checks li{font-size:15px}
+/* poin dicentang satu per satu saat kartu masuk layar */
+.js .plan[data-reveal] .checks li::before{transform:scale(0);transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.js .plan[data-reveal].in .checks li::before{transform:scale(1)}
+.js .plan[data-reveal].in .checks li:nth-child(2)::before{transition-delay:.15s}
+.js .plan[data-reveal].in .checks li:nth-child(3)::before{transition-delay:.3s}
+/* Foundation: kartu gelap, paling menonjol */
+.v2 .plan.found{background:#141414;color:#fff;border:0;box-shadow:0 18px 40px rgba(20,20,20,.18)}
+.v2 .plan.found .for{color:#C9C5BD}
+.v2 .plan.found .checks li::before{background:#5EE0D8}
+.v2 .plan.found .badge{background:#5EE0D8;color:#0B2E2C}
+.v2 .plan .gsyarat{font-size:12.5px;line-height:1.45;color:#D6D2CA;margin:-2px 0 12px;padding:9px 11px;border:1px dashed rgba(255,255,255,.3);border-radius:8px}
+.v2 .plan .gsyarat b{color:#fff}
+.v2 .plan.found .ph{background:transparent;color:#FFE07A;border-bottom-color:#FFE07A}
+
+/* ===== GARANSI: panel media + kartu UI yang berjalan ===== */
+.gpanel{display:grid;gap:22px;align-items:center}
+.gtext p{color:var(--ink-2);margin-top:12px;font-size:16px}
+.gtext .btn{margin-top:18px;width:100%}
+.gmedia{position:relative;border-radius:24px;overflow:hidden;padding:18px;min-height:300px;display:flex;align-items:center;justify-content:center;background:#2A2723 center/cover no-repeat}
+.gmedia::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.35))}
+.gui{position:relative;width:100%;max-width:400px;background:rgba(255,255,255,.96);border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.28);padding:14px 14px 12px;font-size:13.5px}
+.gui-top{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;margin-bottom:10px}
+.gui-top img{width:18px;height:18px}
+.gui-top span{margin-left:auto;font-weight:600;font-size:11.5px;color:var(--ink-3)}
+.gsteps{list-style:none;display:grid;gap:2px;padding:0}
+.gsteps li{display:grid;grid-template-columns:22px 1fr;gap:9px;align-items:start;padding:7px 4px;border-top:1px solid #EEE9DF;line-height:1.4}
+.gsteps li:first-child{border-top:0}
+.gsteps .st{width:18px;height:18px;border-radius:50%;border:2px solid #CFC8BA;margin-top:1px;position:relative}
+.gsteps li.done .st,.no-js-done .gsteps .st{border-color:var(--wa);background:var(--wa)}
+.gsteps li.done .st::after{content:"";position:absolute;left:4px;top:1px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.gsteps li.run .st{border-color:var(--wa);border-right-color:transparent;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.gresult{margin-top:8px;border-radius:10px;background:#E8F8EE;color:#0B5A2C;padding:10px 12px;font-weight:600;line-height:1.4;transition:opacity .4s,transform .4s}
+.gresult b{display:block;color:#064120}
+.js .gui:not(.finished) .gresult{opacity:0;transform:translateY(6px)}
+
+/* ===== MENTOR ===== */
+.mround{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;max-width:560px;margin:0 auto}
+.mround img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 0;margin:0 auto 10px;background:var(--paper-2);border:3px solid #fff;box-shadow:0 6px 18px rgba(20,20,20,.12)}
 .mround b{display:block;font-size:13.5px;line-height:1.25}
 .mround span{font-size:12.5px;font-weight:700;color:#0E7C76}
-.v2 .mlines{max-width:520px;margin:20px auto 0}
+.mlines{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:760px;margin:24px auto 0;padding:0}
+.mlines li{background:#fff;border:1px solid var(--line-w);border-radius:99px;padding:8px 14px;font-size:14px}
 
+/* ===== FAQ bergaris tipis ===== */
+.faq2{max-width:760px;margin:0 auto;border-top:1px solid var(--line-w)}
+.faq2 details{border-bottom:1px solid var(--line-w)}
+.faq2 summary{list-style:none;cursor:pointer;padding:16px 36px 16px 0;font-weight:600;font-size:16px;position:relative}
+.faq2 summary::-webkit-details-marker{display:none}
+.faq2 summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:24px;font-weight:300;color:var(--ink-3);transition:transform .2s}
+.faq2 details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq2 p{padding:0 0 18px;color:var(--ink-2);font-size:16px}
+
+/* ===== PENUTUP bergambar ===== */
+.closing2{position:relative;border-radius:24px;overflow:hidden;color:#fff;text-align:center;padding:64px 20px;background:#2A2723 center/cover no-repeat}
+.closing2::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,14,.45),rgba(12,12,14,.7))}
+.closing2>*{position:relative}
+.closing2 h2{color:#fff}
+.closing2 p{margin-top:10px;color:#E9E6E0}
+.closing2 .btn{margin-top:22px;min-width:260px}
+.v2 footer{color:var(--ink-3)}
 .v2 .sticky .btn{flex:1}
 
-@media(min-width:720px){
-  .v2 .hero{padding:40px 0 56px}
-  .prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-  .v2 .prob-grid .head{text-align:left;margin:0 0 18px}
-  .v2 .testi{grid-template-columns:1fr}
-  .gbox{grid-template-columns:1.1fr .9fr;padding:40px;gap:40px;align-items:center}
-  .mround img{width:96px;height:96px}
-  .mround b{font-size:15px}
+@media(max-width:719px){
+  .v2 .sec{padding:40px 0}
+  .v2 .head{margin-bottom:20px}
 }
-@media(min-width:900px){
-  .hero-media{order:2;margin:0;height:auto;max-height:none;border-radius:12px;box-shadow:var(--shadow)}
-  .hero-media img{height:440px}
+@media(min-width:720px){
+  .hero.vid{min-height:min(calc(100svh - 62px),860px)}
+  .hero-in{padding-bottom:56px;text-align:center}
+  .hero-in .gpill,.hero-in .ticker{margin-left:auto;margin-right:auto}
+  .hero.vid .lead,.hero.vid .syarat{margin-left:auto;margin-right:auto}
+  .hero.vid .cta-row{justify-content:center}
+  .hero.vid .cta-row .btn{flex:0 1 auto;min-width:320px}
+  .hero-links{justify-content:center}
+  .v2 .sec{padding:88px 0}
+  .v2 .testi{grid-template-columns:1fr 1fr}
+  .v2 .pricing{grid-template-columns:1fr 1fr}
+  .gpanel{grid-template-columns:.9fr 1.1fr;gap:48px}
+  .gtext .btn{width:auto}
+  .gmedia{min-height:460px;padding:40px}
+  .mround img{width:108px;height:108px}
+  .mround b{font-size:15px}
+  .closing2{padding:110px 40px}
+}
+@media(min-width:1100px){.v2 .pricing{grid-template-columns:repeat(4,1fr)}}
+@media(prefers-reduced-motion:reduce){
+  .js [data-reveal]{opacity:1;transform:none;transition:none}
+  .js .plan[data-reveal] .checks li::before{transform:none;transition:none}
+  .gsteps li.run .st{animation:none}
+  .ticker .t{transition:none}
 }
 
-/* testimoni: foto, nama, dan skor satu baris */
-.thead{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-2);line-height:1.3}
-.thead img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none}
-.thead b{display:block;color:var(--ink);font-size:15px}
-.thead .score{margin-left:auto;font-size:19px;flex-direction:column;align-items:flex-end;gap:0;text-align:right}
-.thead .score small{margin:0;font-size:11.5px}
-.v2 .tcard{gap:10px;padding:16px}
-.v2 .tcard blockquote,.v2 .xlist li,.v2 .faq p,.v2 .gbox p{font-size:16px}
+/* tombol putar/jeda video hero */
+.vtoggle{position:absolute;z-index:3;right:12px;top:76px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(20,20,20,.45);color:#fff;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px)}
+.vtoggle svg{width:14px;height:14px;fill:currentColor}
+.vtoggle .i-play{display:none}
+.vtoggle[aria-pressed="false"] .i-play{display:block}
+.vtoggle[aria-pressed="false"] .i-pause{display:none}
+.vtoggle:focus-visible{outline:3px solid #9DB3FA;outline-offset:2px}
 
 /* HP: dirapatkan supaya tinggi halaman <= 5.000 px di 375 px */
 @media(max-width:719px){
-  .v2 .sec{padding:28px 0}
-  .v2 .head{margin-bottom:14px}
-  .hero-media{height:26vh;max-height:212px}
-  .v2 .bridge{margin:18px 0 10px}
-  .v2 .plan{padding:16px 14px 14px}
-  .v2 .plan .for{margin-bottom:8px}
-  .v2 .plan .checks{gap:6px;margin-bottom:10px}
-  .v2 .plan .p{margin-bottom:10px}
-  .v2 .plan .alt{margin-top:6px;padding:4px 0}
-  .gbox{padding:20px 16px;gap:14px}
-  .gbox .howto{gap:8px}
-  .v2 .faq summary{padding:13px 40px 13px 14px}
-  .v2 .closing{padding:22px 16px}
-  .v2 .mlines{margin-top:16px}
+  .v2 .sec{padding:30px 0}
+  .v2 .head{margin-bottom:16px}
+  .v2 h2{font-size:34px}
+  .chips{gap:6px}
+  .chips li{font-size:14.5px;padding:7px 12px 7px 8px}
+  .bridge-s{font-size:25px;margin:20px 0 12px}
+  .v2 .testi{gap:10px}
+  .v2 .tcard{padding:15px;gap:10px}
+  .v2 .plan{padding:16px 16px 14px}
+  .v2 .plan .badge{margin-bottom:8px}
+  .v2 .plan .for{margin:2px 0 10px}
+  .v2 .plan .checks{gap:5px;margin-bottom:12px}
+  .v2 .plan .p{font-size:26px;margin-bottom:10px}
+  .v2 .plan .alt{margin-top:8px}
+  .v2 .pricing{gap:12px}
+  .gpanel{gap:16px}
+  .gmedia{min-height:0;padding:14px}
+  .gtext p{margin-top:10px}
+  .mround img{width:72px;height:72px;margin-bottom:8px}
+  .mlines{margin-top:16px;gap:6px}
+  .mlines li{font-size:13.5px;padding:7px 12px}
+  .faq2 summary{padding:14px 32px 14px 0}
+  .closing2{padding:44px 18px}
+  .closing2 .btn{margin-top:18px}
 }
-.tcard[hidden]{display:none}
-.thead .score{display:block;white-space:nowrap}
-.thead .score small{display:block}
-.thead .score b{display:inline}
+@media(max-width:719px){
+  .hero.vid{min-height:0}
+  .hero-in{padding-top:48px;padding-bottom:24px}
+}
+@media(max-width:719px){
+  .v2 footer{padding:14px 0 18px}
+  .closing2{padding:38px 18px}
+  .bridge-s{margin:18px 0 10px}
+  .gmedia{padding:12px}
+}
 </style>
 <!-- TODO: tracking dipasang saat integrasi ke situs utama -->
 </head>
-<body class="compact v2" data-variant="IELTSGO-V2">
+<body class="v2" data-variant="IELTSGO-V2">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></symbol>
   <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
@@ -477,6 +595,8 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
 
 
 <!-- IELTSGO v2 · GARANSI BAND 7 · draft dari brief 19 Nov 2026 (target route: /ieltsgo-v2, noindex)
+     Format visual mengikuti referensi lassie.ai: hero video layar penuh, judul serif, chip status berganti,
+     panel media dengan kartu UI yang berjalan saat discroll. Video: potongan 7,5 detik dari "Footage building.mp4".
      Satu aksi: chat admin lewat endpoint konsultasi situs utama. Tidak ada link ke orderonline.
      Semua tombol WhatsApp punya data-marketing-placement unik (brief 4.3). Tidak ada pixel, GA, Zaraz, atau Clarity di draft ini.
      Teks berkelas .ph = [V] di brief, tampil kuning di draft dan wajib dikonfirmasi sebelum tayang. -->
@@ -484,75 +604,69 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
 <div class="draft">Draft untuk review. Teks berlatar kuning masih perlu dikonfirmasi.</div>
 <!-- TODO [V]: isi promo November dari product manager. -->
 <a class="promo-link" href="https://globalhub.id/ieltsgo/konsultasi" target="_blank" rel="noopener noreferrer" data-marketing-placement="promo-bar"><span class="ph">Promo kelas IELTS sampai 24 November.</span> Tanya admin →</a>
-<header class="top">
-  <div class="wrap"><img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="130" height="26"></div>
-</header>
 
 <main>
-<!-- HERO (layar 1) -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <figure class="hero-media">
-      <picture>
-        <source media="(min-width:900px)" srcset="https://globalhub.id/ads/ieltsbeasiswa/backgrounds/ads_hero_desktop_v1.avif" width="1920" height="1600">
-        <img src="https://globalhub.id/ads/ieltsbeasiswa/backgrounds/ads_hero_mobile.avif" alt="Pelajar sedang mempersiapkan IELTS" width="824" height="1368" fetchpriority="high">
-      </picture>
-    </figure>
-    <div>
-      <span class="pill">IELTS Preparation untuk Pejuang Beasiswa · Ada program bergaransi Band 7</span>
-      <h1>Skor IELTS Jeblok, Mimpi Beasiswa Jadi Mentok!</h1>
-      <p class="lead">Kelas mulai Rp359 ribu. Atau ambil program bergaransi: belum tembus Band 7, lanjut belajar gratis.</p>
-      <p class="syarat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span>Syarat singkat: Khusus Private IELTS Foundation 20 sesi. Ikuti semua kelas dan tugas. Kalau skor resmi masih di bawah 7, kamu dapat 10x IELTS Live Class gratis.</span></p>
-      <div class="cta-row">
-        <a class="btn btn-wa" href="https://globalhub.id/ieltsgo/konsultasi" target="_blank" rel="noopener noreferrer" data-marketing-placement="hero"><svg class="ic"><use href="#i-chat"/></svg>Konsultasi Gratis via WhatsApp</a>
-      </div>
-      <a class="textlink seeprice" href="#registration">Lihat harga kelas ↓</a>
-      <p class="micro">Gratis, nggak wajib daftar. Admin aktif 08.00–22.00 WIB.</p>
-      <p class="legal">Global Hub by Englishvit · PT Sinergi Insan Andalan</p>
+<!-- HERO (layar 1): video latar layar penuh -->
+<section class="hero vid">
+  <video class="hero-bg" autoplay muted loop playsinline preload="metadata" poster="media/poster-540.webp" aria-hidden="true" data-poster-desktop="media/poster-1280.webp">
+    <source src="media/hero-1280.mp4" type="video/mp4" media="(min-width:720px)">
+    <source src="media/hero-540.mp4" type="video/mp4">
+  </video>
+  <button class="vtoggle" type="button" aria-pressed="true" aria-label="Jeda atau putar video latar"><svg class="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg><svg class="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+  <nav class="pillnav" aria-label="Navigasi halaman">
+    <img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="110" height="22">
+    <a href="#registration">Kelas</a><a href="#garansi">Garansi</a><a href="#faq">FAQ</a>
+  </nav>
+  <div class="wrap hero-in">
+    <span class="gpill">IELTS Preparation untuk Pejuang Beasiswa · Ada program bergaransi Band 7</span>
+    <h1>Skor IELTS Jeblok,<br><em>Mimpi Beasiswa Jadi Mentok!</em></h1>
+    <p class="lead">Kelas mulai Rp359 ribu. Atau ambil program bergaransi: belum tembus Band 7, lanjut belajar gratis.</p>
+    <p class="syarat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span>Syarat singkat: Khusus Private IELTS Foundation 20 sesi. Ikuti semua kelas dan tugas. Kalau skor resmi masih di bawah 7, kamu dapat 10x IELTS Live Class gratis.</span></p>
+    <div class="cta-row">
+      <a class="btn btn-wa" href="https://globalhub.id/ieltsgo/konsultasi" target="_blank" rel="noopener noreferrer" data-marketing-placement="hero"><svg class="ic"><use href="#i-chat"/></svg>Konsultasi Gratis via WhatsApp</a>
     </div>
+    <p class="hero-links"><a href="#registration">Lihat harga kelas ↓</a><span>Gratis, nggak wajib daftar. Admin aktif 08.00–22.00 WIB.</span></p>
+    <!-- Chip status berganti (fakta dari halaman live). Tanpa JS: kalimat pertama saja. -->
+    <p class="ticker" aria-hidden="true"><span class="dot"></span><span class="t" data-ticker='["Kinanti · Overall 5.5 → 7.0","Dimas Saputra · Speaking 6.0 → 7.5","Mentor ber-skor band 7 sampai 8","Ada kelas malam, aman buat yang kerja"]'>Kinanti · Overall 5.5 → 7.0</span></p>
+    <p class="legal">Global Hub by Englishvit · PT Sinergi Insan Andalan</p>
   </div>
 </section>
 
 <!-- MASALAH DAN BUKTI (layar 2) -->
-<section class="sec alt">
-  <div class="wrap prob-grid">
-    <div>
-      <div class="head"><h2>Pernah ngerasa gini?</h2></div>
-      <ul class="xlist">
-        <li>Tes berkali-kali, skornya mentok di bawah 6.5.</li>
-        <li>Belajar sendiri dari YouTube, makin pusing.</li>
-        <li>Mau ikut kursus, tapi takut kemahalan.</li>
-      </ul>
-    </div>
-    <div>
-      <p class="bridge">Mereka juga pernah di situ.</p>
-      <div class="testi">
-        <!-- TODO [V]: kutipan Kinanti berbunyi "Awalnya skorku cuma naik sedikit…" di samping angka 5.5 → 7.0. Cek ke Rehan; kata-kata testimoni tidak diubah. -->
-        <div class="tcard">
-          <div class="thead"><img src="https://globalhub.id/home/testimonials/kinanti.avif" alt="" width="40" height="40" loading="lazy"><div><b>Kinanti</b>IELTS Private</div><div class="score"><small>Overall</small>5.5 <i>→</i> <b>7.0</b></div></div>
-          <blockquote>“Awalnya skorku cuma naik sedikit, tapi ternyata progresnya jauh lebih bagus dari yang aku kira. Feedback dari mentor membantu banget, terutama di Writing.”</blockquote>
-        </div>
-        <div class="tcard">
-          <div class="thead"><img src="https://globalhub.id/home/testimonials/dimas.avif" alt="" width="40" height="40" loading="lazy"><div><b>Dimas Saputra</b>IELTS Private</div><div class="score"><small>Speaking</small>6.0 <i>→</i> <b>7.5</b></div></div>
-          <blockquote>“Yang paling aku rasain adalah rasa percaya diri yang meningkat. Sebelum ikut program ini aku sering ragu pas Speaking, sekarang jadi jauh lebih nyaman dan siap menghadapi tes.”</blockquote>
-        </div>
-        <!-- TODO [V]: slot 1 testimoni IELTS Live Class. Disembunyikan sampai datanya ada (nama, skor sebelum → sesudah, izin). -->
-        <div class="tcard" hidden>
-          <div class="score"><small>Overall</small>[skor] <i>→</i> <b>[skor]</b></div>
-          <blockquote>[Kutipan murid IELTS Live Class]</blockquote>
-          <div class="who"><div><b>[Nama]</b>IELTS Live Class</div></div>
-        </div>
+<section class="sec">
+  <div class="wrap">
+    <div class="head" data-reveal><h2>Pernah <em>ngerasa gini?</em></h2></div>
+    <ul class="chips" data-reveal>
+      <li>Tes berkali-kali, skornya mentok di bawah 6.5.</li>
+      <li>Belajar sendiri dari YouTube, makin pusing.</li>
+      <li>Mau ikut kursus, tapi takut kemahalan.</li>
+    </ul>
+    <p class="bridge-s" data-reveal>Mereka juga pernah di situ.</p>
+    <div class="testi">
+      <!-- TODO [V]: kutipan Kinanti berbunyi "Awalnya skorku cuma naik sedikit…" di samping angka 5.5 → 7.0. Cek ke Rehan; kata-kata testimoni tidak diubah. -->
+      <div class="tcard" data-reveal>
+        <div class="thead"><img src="https://globalhub.id/home/testimonials/kinanti.avif" alt="" width="40" height="40" loading="lazy"><div><b>Kinanti</b>IELTS Private</div><div class="score"><small>Overall</small>5.5 <i>→</i> <b>7.0</b></div></div>
+        <blockquote>“Awalnya skorku cuma naik sedikit, tapi ternyata progresnya jauh lebih bagus dari yang aku kira. Feedback dari mentor membantu banget, terutama di Writing.”</blockquote>
+      </div>
+      <div class="tcard" data-reveal>
+        <div class="thead"><img src="https://globalhub.id/home/testimonials/dimas.avif" alt="" width="40" height="40" loading="lazy"><div><b>Dimas Saputra</b>IELTS Private</div><div class="score"><small>Speaking</small>6.0 <i>→</i> <b>7.5</b></div></div>
+        <blockquote>“Yang paling aku rasain adalah rasa percaya diri yang meningkat. Sebelum ikut program ini aku sering ragu pas Speaking, sekarang jadi jauh lebih nyaman dan siap menghadapi tes.”</blockquote>
+      </div>
+      <!-- TODO [V]: slot 1 testimoni IELTS Live Class. Disembunyikan sampai datanya ada (nama, skor sebelum → sesudah, izin). -->
+      <div class="tcard" hidden>
+        <div class="thead"><div><b>[Nama]</b>IELTS Live Class</div><div class="score"><small>Overall</small>[skor] <i>→</i> <b>[skor]</b></div></div>
+        <blockquote>[Kutipan murid IELTS Live Class]</blockquote>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PILIHAN KELAS (layar 3–4). Tidak ada link "Langsung Daftar" ke orderonline di versi ini. -->
-<section class="sec" id="registration">
+<section class="sec" id="registration" style="padding-top:0">
   <div class="wrap">
-    <div class="head"><h2>Pilih kelas yang pas buat kamu</h2><p>Bingung pilih? Tanya admin, nanti dibantu.</p></div>
-    <div class="pricing c4">
-      <div class="plan">
+    <div class="head" data-reveal><h2>Pilih kelas yang <em>pas buat kamu</em></h2><p>Bingung pilih? Tanya admin, nanti dibantu.</p></div>
+    <div class="pricing">
+      <div class="plan" data-reveal>
         <!-- TODO [V]: konfirmasi label "Paling banyak dipilih" untuk Live Class. -->
         <span class="badge teal"><span class="ph">Paling banyak dipilih</span></span>
         <h3>IELTS Live Class</h3>
@@ -569,7 +683,7 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
         </div>
       </div>
 
-      <div class="plan pop found">
+      <div class="plan found" data-reveal>
         <span class="badge">Bergaransi Band 7</span>
         <h3>Private IELTS Foundation</h3>
         <p class="for">Untuk kamu yang mau didampingi penuh sampai target.</p>
@@ -586,7 +700,7 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
         </div>
       </div>
 
-      <div class="plan">
+      <div class="plan" data-reveal>
         <span class="badge teal">Bisa cicil 50%</span>
         <h3>Private IELTS Sprint</h3>
         <p class="for">Mentoring privat untuk target Band 7+.</p>
@@ -602,7 +716,7 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
         </div>
       </div>
 
-      <div class="plan">
+      <div class="plan" data-reveal>
         <h3>Private IELTS Booster</h3>
         <p class="for">Mentoring privat untuk naik skor lebih cepat.</p>
         <ul class="checks">
@@ -620,25 +734,26 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
   </div>
 </section>
 
-<!-- GARANSI -->
+<!-- GARANSI: panel media + kartu UI yang berjalan saat discroll -->
 <!-- TODO [V] (jangan ditampilkan ke pengunjung): skor awal minimum; batas waktu tes resmi setelah sesi terakhir;
      Band 7 overall atau per skill; aturan reschedule; garansi berlaku berapa kali. Kalau product manager menambah syarat, daftar syarat di bawah yang diperbarui. -->
-<section class="sec alt" id="garansi">
-  <div class="wrap">
-    <div class="gbox">
-      <div>
-        <h2>Belum Tembus Band 7? Kamu Lanjut Belajar, Gratis.</h2>
-        <p>Di Private IELTS Foundation, kami nggak cuma ngajar 20 sesi lalu lepas tangan. Kalau kamu udah ikut semua kelas dan ngerjain semua tugas, tapi skor resmimu masih di bawah 7, kamu dapat 10x IELTS Live Class tanpa biaya.</p>
-      </div>
-      <div>
-        <h3>Syaratnya:</h3>
-        <ol class="howto">
-          <li><div>Ambil Private IELTS Foundation (20 sesi 1-on-1)</div></li>
-          <li><div>Hadir di semua 20 sesi</div></li>
-          <li><div>Kerjakan semua tugas dari mentor</div></li>
-          <li><div>Tunjukkan skor resmi (TRF) ke admin</div></li>
+<section class="sec" id="garansi" style="padding-top:0">
+  <div class="wrap gpanel">
+    <div class="gtext" data-reveal>
+      <h2>Belum Tembus Band 7? <em>Kamu Lanjut Belajar, Gratis.</em></h2>
+      <p>Di Private IELTS Foundation, kami nggak cuma ngajar 20 sesi lalu lepas tangan. Kalau kamu udah ikut semua kelas dan ngerjain semua tugas, tapi skor resmimu masih di bawah 7, kamu dapat 10x IELTS Live Class tanpa biaya.</p>
+      <a class="btn btn-wa" href="https://globalhub.id/ieltsgo/konsultasi?package=Private%20IELTS%20Foundation" target="_blank" rel="noopener noreferrer" data-marketing-placement="guarantee">Tanya Foundation ke Admin</a>
+    </div>
+    <div class="gmedia" data-bg="media/still-dome.webp">
+      <div class="gui" data-steps>
+        <div class="gui-top"><img src="https://globalhub.id/home/logos/favicon.svg" alt="" width="18" height="18">Syaratnya:<span data-status>4 langkah</span></div>
+        <ol class="gsteps">
+          <li><span class="st"></span><span>Ambil Private IELTS Foundation (20 sesi 1-on-1)</span></li>
+          <li><span class="st"></span><span>Hadir di semua 20 sesi</span></li>
+          <li><span class="st"></span><span>Kerjakan semua tugas dari mentor</span></li>
+          <li><span class="st"></span><span>Tunjukkan skor resmi (TRF) ke admin</span></li>
         </ol>
-        <a class="btn btn-wa btn-block" href="https://globalhub.id/ieltsgo/konsultasi?package=Private%20IELTS%20Foundation" target="_blank" rel="noopener noreferrer" data-marketing-placement="guarantee">Tanya Foundation ke Admin</a>
+        <p class="gresult"><b>Masih di bawah 7?</b>Kamu dapat 10x IELTS Live Class gratis.</p>
       </div>
     </div>
   </div>
@@ -646,15 +761,15 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
 
 <!-- MENTOR (satu baris, tanpa panel detail) -->
 <!-- TODO [V]: masa mengajar Aurelia tertulis 2 tahun di kartu dan 4 tahun di detail halaman live. Masa mengajar tidak ditampilkan sampai dikonfirmasi. -->
-<section class="sec">
+<section class="sec" style="padding-top:0">
   <div class="wrap">
-    <div class="head"><h2>Diajar mentor yang udah lewat tesnya</h2></div>
-    <div class="mround">
-      <figure><img src="https://globalhub.id/mentor/default/aurelia.avif" alt="Aurelia Hillary Wibisono" width="72" height="72" loading="lazy"><b>Aurelia Hillary Wibisono</b><span>Band 7.0</span></figure>
-      <figure><img src="https://globalhub.id/mentor/default/cecilia.avif" alt="Cecilia Aileen Yap" width="72" height="72" loading="lazy"><b>Cecilia Aileen Yap</b><span>Band 8.0</span></figure>
-      <figure><img src="https://globalhub.id/mentor/default/yovita.avif" alt="Yovita Jovanika" width="72" height="72" loading="lazy"><b>Yovita Jovanika</b><span>Band 7.0</span></figure>
+    <div class="head" data-reveal><h2>Diajar mentor yang <em>udah lewat tesnya</em></h2></div>
+    <div class="mround" data-reveal>
+      <figure><img src="https://globalhub.id/mentor/default/aurelia.avif" alt="Aurelia Hillary Wibisono" width="84" height="84" loading="lazy"><b>Aurelia Hillary Wibisono</b><span>Band 7.0</span></figure>
+      <figure><img src="https://globalhub.id/mentor/default/cecilia.avif" alt="Cecilia Aileen Yap" width="84" height="84" loading="lazy"><b>Cecilia Aileen Yap</b><span>Band 8.0</span></figure>
+      <figure><img src="https://globalhub.id/mentor/default/yovita.avif" alt="Yovita Jovanika" width="84" height="84" loading="lazy"><b>Yovita Jovanika</b><span>Band 7.0</span></figure>
     </div>
-    <ul class="checks mlines">
+    <ul class="mlines" data-reveal>
       <li>Mentor ber-skor band 7 sampai 8.</li>
       <li>Latihan mulai dari kelemahanmu, bukan dari nol.</li>
       <li>Simulasi mirip tes asli, jadi hari-H nggak kaget.</li>
@@ -662,26 +777,28 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
   </div>
 </section>
 
-<!-- FAQ DAN PENUTUP -->
-<section class="sec alt">
+<!-- FAQ -->
+<section class="sec" id="faq" style="padding-top:0">
   <div class="wrap">
-    <div class="faq-grid">
-      <div class="head"><h2>Hal yang sering ditanyakan</h2></div>
-      <div class="faq">
-        <details><summary>Konsultasinya beneran gratis?</summary><p>Iya. Konsultasi via WhatsApp gratis dan nggak wajib daftar.</p></details>
-        <details><summary>Garansi Band 7 artinya skorku pasti 7?</summary><p>Bukan. Nggak ada yang bisa menjamin skor tes resmi. Yang kami jamin: kalau kamu udah ikut semua kelas dan tugas di Private Foundation tapi belum tembus 7, kamu nggak ditinggal. Kamu dapat 10x Live Class gratis buat lanjut latihan.</p></details>
-        <details><summary>Ada kelas malam atau weekend?</summary><p>Kelas tersedia di malam hari, jadi aman buat kamu yang kuliah atau kerja. Kalau ambil program Private, jadwalnya fleksibel dan bisa disesuaikan sama waktumu.</p></details>
-        <!-- TODO [V]: pastikan cicilan 50% juga berlaku untuk Foundation. -->
-        <details><summary>Bisa bayar cicil?</summary><p>Bisa, khusus program Private. Kamu cukup bayar 50% dulu di awal, sisanya menyusul. Detail jadwal pelunasannya tanya admin aja ya.</p></details>
-        <details><summary>Global Hub itu apa?</summary><p>Global Hub by Englishvit, dikelola PT Sinergi Insan Andalan. Kami bantu pejuang beasiswa lewat persiapan IELTS, mentoring beasiswa, dan penerjemahan dokumen.</p></details>
-      </div>
+    <div class="head" data-reveal><h2>Hal yang <em>sering ditanyakan</em></h2></div>
+    <div class="faq2">
+      <details><summary>Konsultasinya beneran gratis?</summary><p>Iya. Konsultasi via WhatsApp gratis dan nggak wajib daftar.</p></details>
+      <details><summary>Garansi Band 7 artinya skorku pasti 7?</summary><p>Bukan. Nggak ada yang bisa menjamin skor tes resmi. Yang kami jamin: kalau kamu udah ikut semua kelas dan tugas di Private Foundation tapi belum tembus 7, kamu nggak ditinggal. Kamu dapat 10x Live Class gratis buat lanjut latihan.</p></details>
+      <details><summary>Ada kelas malam atau weekend?</summary><p>Kelas tersedia di malam hari, jadi aman buat kamu yang kuliah atau kerja. Kalau ambil program Private, jadwalnya fleksibel dan bisa disesuaikan sama waktumu.</p></details>
+      <!-- TODO [V]: pastikan cicilan 50% juga berlaku untuk Foundation. -->
+      <details><summary>Bisa bayar cicil?</summary><p>Bisa, khusus program Private. Kamu cukup bayar 50% dulu di awal, sisanya menyusul. Detail jadwal pelunasannya tanya admin aja ya.</p></details>
+      <details><summary>Global Hub itu apa?</summary><p>Global Hub by Englishvit, dikelola PT Sinergi Insan Andalan. Kami bantu pejuang beasiswa lewat persiapan IELTS, mentoring beasiswa, dan penerjemahan dokumen.</p></details>
     </div>
-    <div class="closing" style="margin-top:28px">
-      <h2>Masih ragu? Wajar kok.</h2>
+  </div>
+</section>
+
+<!-- PENUTUP -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="closing2" data-bg="media/still-campus.webp" data-reveal>
+      <h2>Masih ragu? <em>Wajar kok.</em></h2>
       <p>Ngobrol dulu aja, putusin belakangan.</p>
-      <div class="cta-row">
-        <a class="btn btn-white" href="https://globalhub.id/ieltsgo/konsultasi" target="_blank" rel="noopener noreferrer" data-marketing-placement="closing">Chat Admin Sekarang</a>
-      </div>
+      <a class="btn btn-wa" href="https://globalhub.id/ieltsgo/konsultasi" target="_blank" rel="noopener noreferrer" data-marketing-placement="closing">Chat Admin Sekarang</a>
     </div>
   </div>
 </section>
@@ -758,6 +875,77 @@ footer{padding:20px 0 24px;font-size:12.5px;color:var(--ink-3);text-align:center
         c.classList.toggle("pick", on); c.classList.toggle("dim", !on);
       });
     });
+  }
+})();
+</script>
+<script>
+/* Interaksi khusus IELTSGO v2: reveal saat discroll, chip status berganti, kartu syarat garansi berjalan,
+   gambar latar dimuat saat mendekati layar, video dihentikan untuk pengguna reduced-motion / hemat data. */
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var saveData = navigator.connection && navigator.connection.saveData;
+
+  // Video hero: poster desktop, jeda kalau reduced-motion atau hemat data, jeda saat keluar layar
+  var v = document.querySelector(".hero-bg");
+  if (v) {
+    if (window.matchMedia("(min-width:720px)").matches && v.dataset.posterDesktop) v.poster = v.dataset.posterDesktop;
+    var btn = document.querySelector(".vtoggle"), wantPlay = !(reduce || saveData);
+    var sync = function () { btn.setAttribute("aria-pressed", wantPlay ? "true" : "false"); };
+    if (!wantPlay) { v.removeAttribute("autoplay"); v.pause(); v.preload = "none"; }
+    sync();
+    btn.addEventListener("click", function () { wantPlay = !wantPlay; sync(); wantPlay ? v.play().catch(function () {}) : v.pause(); });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (e) { if (!wantPlay) return; e[0].isIntersecting ? v.play().catch(function () {}) : v.pause(); }).observe(v);
+    }
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    document.querySelectorAll("[data-reveal]").forEach(function (el) { el.classList.add("in"); });
+    document.querySelectorAll("[data-bg]").forEach(function (el) { el.style.backgroundImage = "url(" + el.dataset.bg + ")"; });
+    document.querySelectorAll(".gsteps li").forEach(function (li) { li.classList.add("done"); });
+    document.querySelectorAll(".gui").forEach(function (g) { g.classList.add("finished"); });
+    return;
+  }
+
+  // Reveal
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+  document.querySelectorAll("[data-reveal]").forEach(function (el) { io.observe(el); });
+
+  // Gambar latar dimuat saat mendekat
+  var bgIo = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.style.backgroundImage = "url(" + en.target.dataset.bg + ")"; bgIo.unobserve(en.target); } });
+  }, { rootMargin: "400px 0px" });
+  document.querySelectorAll("[data-bg]").forEach(function (el) { bgIo.observe(el); });
+
+  // Chip status berganti
+  var t = document.querySelector("[data-ticker]");
+  if (t && !reduce) {
+    var items = JSON.parse(t.dataset.ticker), i = 0;
+    setInterval(function () {
+      t.classList.add("out");
+      setTimeout(function () { i = (i + 1) % items.length; t.textContent = items[i]; t.classList.remove("out"); }, 350);
+    }, 2800);
+  }
+
+  // Kartu syarat garansi: langkah dicentang satu per satu saat terlihat
+  var gui = document.querySelector("[data-steps]");
+  if (gui) {
+    var steps = gui.querySelectorAll(".gsteps li"), status = gui.querySelector("[data-status]");
+    var finish = function () { steps.forEach(function (s) { s.className = "done"; }); gui.classList.add("finished"); status.textContent = "4/4 terpenuhi"; };
+    if (reduce) { finish(); return; }
+    var gIo = new IntersectionObserver(function (en) {
+      if (!en[0].isIntersecting) return; gIo.disconnect();
+      var k = 0;
+      (function next() {
+        if (k > 0) steps[k - 1].className = "done";
+        if (k === steps.length) { finish(); return; }
+        steps[k].className = "run"; status.textContent = "Langkah " + (k + 1) + "/4";
+        k++; setTimeout(next, 650);
+      })();
+    }, { threshold: 0.5 });
+    gIo.observe(gui);
   }
 })();
 </script>
