@@ -20,19 +20,19 @@
 <body class="v2" data-variant="IELTSGO-V2">
 <!--ICONS-->
 
-<!-- IELTSGO v2 · GARANSI BAND 7 · draft dari brief 19 Nov 2026 (target route: /ieltsgo-v2, noindex)
-     Format visual mengikuti referensi lassie.ai: hero video layar penuh, judul serif, chip status berganti,
-     panel media dengan kartu UI yang berjalan saat discroll. Video: potongan 7,5 detik dari "Footage building.mp4".
+<!-- IELTSGO v2 · GARANSI BAND 7 · versi ringkas (revisi 19 Nov 2026, permintaan Rehan)
+     Format visual mengikuti referensi lassie.ai: hero video layar penuh, judul serif, chip status berganti.
+     Penjelasan dan syarat garansi hanya di FAQ (#faq-garansi). Badge "Bergaransi Band 7" di kartu Foundation diberi link ke FAQ itu.
      Satu aksi: chat admin lewat endpoint konsultasi situs utama. Tidak ada link ke orderonline.
-     Semua tombol WhatsApp punya data-marketing-placement unik (brief 4.3). Tidak ada pixel, GA, Zaraz, atau Clarity di draft ini.
-     Teks berkelas .ph = [V] di brief, tampil kuning di draft dan wajib dikonfirmasi sebelum tayang. -->
+     Semua tombol WhatsApp punya data-marketing-placement unik. Tidak ada pixel, GA, Zaraz, atau Clarity di draft ini.
+     Teks berkelas .ph = belum dikonfirmasi, tampil kuning di draft. -->
 
 <div class="draft">Draft untuk review. Teks berlatar kuning masih perlu dikonfirmasi.</div>
 <!-- TODO [V]: isi promo November dari product manager. -->
 <a class="promo-link" href="https://globalhub.id/ieltsgo/konsultasi" target="_blank" rel="noopener noreferrer" data-marketing-placement="promo-bar"><span class="ph">Promo kelas IELTS sampai 24 November.</span> Tanya admin →</a>
 
 <main>
-<!-- HERO (layar 1): video latar layar penuh -->
+<!-- HERO -->
 <section class="hero vid">
   <video class="hero-bg" autoplay muted loop playsinline preload="metadata" poster="media/poster-540.webp" aria-hidden="true" data-poster-desktop="media/poster-1280.webp">
     <source src="media/hero-1280.mp4" type="video/mp4" media="(min-width:720px)">
@@ -41,87 +41,73 @@
   <button class="vtoggle" type="button" aria-pressed="true" aria-label="Jeda atau putar video latar"><svg class="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg><svg class="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
   <nav class="pillnav" aria-label="Navigasi halaman">
     <img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="110" height="22">
-    <a href="#registration">Kelas</a><a href="#garansi">Garansi</a><a href="#faq">FAQ</a>
+    <a href="#registration">Kelas</a><a href="#mentor">Mentor</a><a href="#faq">FAQ</a>
   </nav>
   <div class="wrap hero-in">
-    <span class="gpill">IELTS Preparation untuk Pejuang Beasiswa · Ada program bergaransi Band 7</span>
+    <span class="gpill">IELTS Preparation untuk Pejuang Beasiswa</span>
     <h1>Skor IELTS Jeblok,<br><em>Mimpi Beasiswa Jadi Mentok!</em></h1>
-    <p class="lead">Kelas mulai Rp359 ribu. Atau ambil program bergaransi: belum tembus Band 7, lanjut belajar gratis.</p>
-    <p class="syarat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span>Syarat singkat: Khusus Private IELTS Foundation 20 sesi. Ikuti semua kelas dan tugas. Kalau skor resmi masih di bawah 7, kamu dapat 10x IELTS Live Class gratis.</span></p>
+    <p class="lead">Kelas IELTS mulai Rp359 ribu, bareng mentor ber-skor band 7 sampai 8.</p>
     <div class="cta-row">
       <a class="btn btn-wa" href="https://globalhub.id/ieltsgo/konsultasi" target="_blank" rel="noopener noreferrer" data-marketing-placement="hero"><svg class="ic"><use href="#i-chat"/></svg>Konsultasi Gratis via WhatsApp</a>
     </div>
-    <p class="hero-links"><a href="#registration">Lihat harga kelas ↓</a><span>Gratis, nggak wajib daftar. Admin aktif 08.00–22.00 WIB.</span></p>
+    <p class="hero-links"><a href="#registration">Lihat harga kelas ↓</a><span>Admin aktif 08.00–22.00 WIB</span></p>
     <!-- Chip status berganti (fakta dari halaman live). Tanpa JS: kalimat pertama saja. -->
-    <p class="ticker" aria-hidden="true"><span class="dot"></span><span class="t" data-ticker='["Kinanti · Overall 5.5 → 7.0","Dimas Saputra · Speaking 6.0 → 7.5","Mentor ber-skor band 7 sampai 8","Ada kelas malam, aman buat yang kerja"]'>Kinanti · Overall 5.5 → 7.0</span></p>
-    <p class="legal">Global Hub by Englishvit · PT Sinergi Insan Andalan</p>
+    <p class="ticker" aria-hidden="true"><span class="dot"></span><span class="t" data-ticker='["Kinanti · Overall 5.5 → 7.0","Dimas Saputra · Speaking 6.0 → 7.5","Ada kelas malam, aman buat yang kerja","Private bisa cicil 50%"]'>Kinanti · Overall 5.5 → 7.0</span></p>
   </div>
 </section>
 
-<!-- MASALAH DAN BUKTI (layar 2) -->
+<!-- MASALAH DAN BUKTI -->
 <section class="sec">
   <div class="wrap">
     <div class="head" data-reveal><h2>Pernah <em>ngerasa gini?</em></h2></div>
     <ul class="chips" data-reveal>
-      <li>Tes berkali-kali, skornya mentok di bawah 6.5.</li>
-      <li>Belajar sendiri dari YouTube, makin pusing.</li>
-      <li>Mau ikut kursus, tapi takut kemahalan.</li>
+      <li>Skor mentok di bawah 6.5</li>
+      <li>Belajar sendiri, makin pusing</li>
+      <li>Takut kursusnya mahal</li>
     </ul>
     <p class="bridge-s" data-reveal>Mereka juga pernah di situ.</p>
-    <div class="testi">
-      <!-- TODO [V]: kutipan Kinanti berbunyi "Awalnya skorku cuma naik sedikit…" di samping angka 5.5 → 7.0. Cek ke Rehan; kata-kata testimoni tidak diubah. -->
-      <div class="tcard" data-reveal>
-        <div class="thead"><img src="https://globalhub.id/home/testimonials/kinanti.avif" alt="" width="40" height="40" loading="lazy"><div><b>Kinanti</b>IELTS Private</div><div class="score"><small>Overall</small>5.5 <i>→</i> <b>7.0</b></div></div>
-        <blockquote>“Awalnya skorku cuma naik sedikit, tapi ternyata progresnya jauh lebih bagus dari yang aku kira. Feedback dari mentor membantu banget, terutama di Writing.”</blockquote>
-      </div>
-      <div class="tcard" data-reveal>
-        <div class="thead"><img src="https://globalhub.id/home/testimonials/dimas.avif" alt="" width="40" height="40" loading="lazy"><div><b>Dimas Saputra</b>IELTS Private</div><div class="score"><small>Speaking</small>6.0 <i>→</i> <b>7.5</b></div></div>
-        <blockquote>“Yang paling aku rasain adalah rasa percaya diri yang meningkat. Sebelum ikut program ini aku sering ragu pas Speaking, sekarang jadi jauh lebih nyaman dan siap menghadapi tes.”</blockquote>
-      </div>
-      <!-- TODO [V]: slot 1 testimoni IELTS Live Class. Disembunyikan sampai datanya ada (nama, skor sebelum → sesudah, izin). -->
-      <div class="tcard" hidden>
-        <div class="thead"><div><b>[Nama]</b>IELTS Live Class</div><div class="score"><small>Overall</small>[skor] <i>→</i> <b>[skor]</b></div></div>
-        <blockquote>[Kutipan murid IELTS Live Class]</blockquote>
-      </div>
+    <!-- Bukti ringkas: nama + skor saja (kutipan lengkap ada di halaman live).
+         TODO [V]: slot testimoni IELTS Live Class kalau datanya sudah ada. -->
+    <div class="proof" data-reveal>
+      <div class="pcard"><img src="https://globalhub.id/home/testimonials/kinanti.avif" alt="" width="44" height="44" loading="lazy"><div><b>Kinanti</b><span>IELTS Private</span></div><p class="pscore"><small>Overall</small>5.5 <i>→</i> <b>7.0</b></p></div>
+      <div class="pcard"><img src="https://globalhub.id/home/testimonials/dimas.avif" alt="" width="44" height="44" loading="lazy"><div><b>Dimas Saputra</b><span>IELTS Private</span></div><p class="pscore"><small>Speaking</small>6.0 <i>→</i> <b>7.5</b></p></div>
     </div>
   </div>
 </section>
 
-<!-- PILIHAN KELAS (layar 3–4). Tidak ada link "Langsung Daftar" ke orderonline di versi ini. -->
+<!-- PILIHAN KELAS. Tidak ada link ke orderonline. -->
 <section class="sec" id="registration" style="padding-top:0">
   <div class="wrap">
-    <div class="head" data-reveal><h2>Pilih kelas yang <em>pas buat kamu</em></h2><p>Bingung pilih? Tanya admin, nanti dibantu.</p></div>
+    <div class="head" data-reveal><h2>Pilih kelas yang <em>pas buat kamu</em></h2></div>
     <div class="pricing">
       <div class="plan" data-reveal>
         <!-- TODO [V]: konfirmasi label "Paling banyak dipilih" untuk Live Class. -->
         <span class="badge teal"><span class="ph">Paling banyak dipilih</span></span>
         <h3>IELTS Live Class</h3>
-        <p class="for">Belajar strategi semua tipe soal bareng teman satu kelas.</p>
+        <p class="for">Kelas grup, bahas semua tipe soal.</p>
         <ul class="checks">
-          <li>10x kelas Zoom (L/R/W/S)</li>
+          <li>10x kelas Zoom</li>
           <li>2x simulasi IELTS</li>
-          <li>Writing smartbook &amp; Speaking e-course</li>
+          <li>Smartbook &amp; e-course</li>
         </ul>
         <div class="price-row">
           <div class="p">Rp359.000 <s>Rp830.000</s></div>
           <a class="btn btn-wa btn-block" href="https://globalhub.id/ieltsgo/konsultasi?package=IELTS%20Live%20Class" target="_blank" rel="noopener noreferrer" data-marketing-placement="card-live-class">Tanya Live Class</a>
-          <a class="textlink alt" href="#garansi">Mau yang bergaransi Band 7? Lihat Private Foundation.</a>
         </div>
       </div>
 
       <div class="plan found" data-reveal>
-        <span class="badge">Bergaransi Band 7</span>
+        <span class="badge-row"><span class="badge">Bergaransi Band 7</span><a class="syarat-link" href="#faq-garansi" data-open-faq>Lihat syarat</a></span>
         <h3>Private IELTS Foundation</h3>
-        <p class="for">Untuk kamu yang mau didampingi penuh sampai target.</p>
+        <p class="for">Didampingi penuh sampai target.</p>
         <ul class="checks">
           <li>20x sesi 1-on-1</li>
           <li>3x simulasi IELTS</li>
-          <li>Jadwal fleksibel, ada kelas malam</li>
+          <li>Jadwal fleksibel</li>
         </ul>
         <div class="price-row">
           <!-- TODO [V]: harga November untuk Foundation. Catatan produk: Rp5.599.000. Harga coret belum ada. -->
           <div class="p"><span class="ph">Rp5.599.000</span></div>
-          <p class="gsyarat"><b>Belum tembus Band 7? Lanjut belajar gratis.</b><br>Syarat singkat: Khusus Private IELTS Foundation 20 sesi. Ikuti semua kelas dan tugas. Kalau skor resmi masih di bawah 7, kamu dapat 10x IELTS Live Class gratis.</p>
           <a class="btn btn-wa btn-block" href="https://globalhub.id/ieltsgo/konsultasi?package=Private%20IELTS%20Foundation" target="_blank" rel="noopener noreferrer" data-marketing-placement="card-foundation">Tanya Foundation</a>
         </div>
       </div>
@@ -129,65 +115,38 @@
       <div class="plan" data-reveal>
         <span class="badge teal">Bisa cicil 50%</span>
         <h3>Private IELTS Sprint</h3>
-        <p class="for">Mentoring privat untuk target Band 7+.</p>
+        <p class="for">Privat untuk target Band 7+.</p>
         <ul class="checks">
           <li>10x sesi 1-on-1</li>
           <li>1x simulasi IELTS</li>
-          <li>Jadwal fleksibel, ada kelas malam</li>
+          <li>Jadwal fleksibel</li>
         </ul>
         <div class="price-row">
           <div class="p">Rp2.990.000 <s>Rp5.980.000</s></div>
           <a class="btn btn-wa btn-block" href="https://globalhub.id/ieltsgo/konsultasi?package=Private%20IELTS%20Sprint" target="_blank" rel="noopener noreferrer" data-marketing-placement="card-sprint">Tanya Private Sprint</a>
-          <a class="textlink alt" href="#garansi">Mau yang bergaransi Band 7? Lihat Private Foundation.</a>
         </div>
       </div>
 
       <div class="plan" data-reveal>
         <h3>Private IELTS Booster</h3>
-        <p class="for">Mentoring privat untuk naik skor lebih cepat.</p>
+        <p class="for">Privat untuk naik skor lebih cepat.</p>
         <ul class="checks">
           <li>15x sesi 1-on-1</li>
           <li>2x simulasi IELTS</li>
-          <li>Materi vocabulary &amp; grammar</li>
+          <li>Materi vocab &amp; grammar</li>
         </ul>
         <div class="price-row">
           <div class="p">Rp4.399.000 <s>Rp8.798.000</s></div>
           <a class="btn btn-wa btn-block" href="https://globalhub.id/ieltsgo/konsultasi?package=Private%20IELTS%20Booster" target="_blank" rel="noopener noreferrer" data-marketing-placement="card-booster">Tanya Private Booster</a>
-          <a class="textlink alt" href="#garansi">Mau yang bergaransi Band 7? Lihat Private Foundation.</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GARANSI: panel media + kartu UI yang berjalan saat discroll -->
-<!-- TODO [V] (jangan ditampilkan ke pengunjung): skor awal minimum; batas waktu tes resmi setelah sesi terakhir;
-     Band 7 overall atau per skill; aturan reschedule; garansi berlaku berapa kali. Kalau product manager menambah syarat, daftar syarat di bawah yang diperbarui. -->
-<section class="sec" id="garansi" style="padding-top:0">
-  <div class="wrap gpanel">
-    <div class="gtext" data-reveal>
-      <h2>Belum Tembus Band 7? <em>Kamu Lanjut Belajar, Gratis.</em></h2>
-      <p>Di Private IELTS Foundation, kami nggak cuma ngajar 20 sesi lalu lepas tangan. Kalau kamu udah ikut semua kelas dan ngerjain semua tugas, tapi skor resmimu masih di bawah 7, kamu dapat 10x IELTS Live Class tanpa biaya.</p>
-      <a class="btn btn-wa" href="https://globalhub.id/ieltsgo/konsultasi?package=Private%20IELTS%20Foundation" target="_blank" rel="noopener noreferrer" data-marketing-placement="guarantee">Tanya Foundation ke Admin</a>
-    </div>
-    <div class="gmedia" data-bg="media/still-dome.webp">
-      <div class="gui" data-steps>
-        <div class="gui-top"><img src="https://globalhub.id/home/logos/favicon.svg" alt="" width="18" height="18">Syaratnya:<span data-status>4 langkah</span></div>
-        <ol class="gsteps">
-          <li><span class="st"></span><span>Ambil Private IELTS Foundation (20 sesi 1-on-1)</span></li>
-          <li><span class="st"></span><span>Hadir di semua 20 sesi</span></li>
-          <li><span class="st"></span><span>Kerjakan semua tugas dari mentor</span></li>
-          <li><span class="st"></span><span>Tunjukkan skor resmi (TRF) ke admin</span></li>
-        </ol>
-        <p class="gresult"><b>Masih di bawah 7?</b>Kamu dapat 10x IELTS Live Class gratis.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MENTOR (satu baris, tanpa panel detail) -->
-<!-- TODO [V]: masa mengajar Aurelia tertulis 2 tahun di kartu dan 4 tahun di detail halaman live. Masa mengajar tidak ditampilkan sampai dikonfirmasi. -->
-<section class="sec" style="padding-top:0">
+<!-- MENTOR -->
+<!-- TODO [V]: masa mengajar Aurelia belum konsisten di halaman live; tidak ditampilkan. -->
+<section class="sec" id="mentor" style="padding-top:0">
   <div class="wrap">
     <div class="head" data-reveal><h2>Diajar mentor yang <em>udah lewat tesnya</em></h2></div>
     <div class="mround" data-reveal>
@@ -195,25 +154,21 @@
       <figure><img src="https://globalhub.id/mentor/default/cecilia.avif" alt="Cecilia Aileen Yap" width="84" height="84" loading="lazy"><b>Cecilia Aileen Yap</b><span>Band 8.0</span></figure>
       <figure><img src="https://globalhub.id/mentor/default/yovita.avif" alt="Yovita Jovanika" width="84" height="84" loading="lazy"><b>Yovita Jovanika</b><span>Band 7.0</span></figure>
     </div>
-    <ul class="mlines" data-reveal>
-      <li>Mentor ber-skor band 7 sampai 8.</li>
-      <li>Latihan mulai dari kelemahanmu, bukan dari nol.</li>
-      <li>Simulasi mirip tes asli, jadi hari-H nggak kaget.</li>
-    </ul>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- FAQ: satu-satunya tempat penjelasan dan syarat garansi -->
+<!-- TODO [V] syarat garansi: skor awal minimum; batas waktu tes resmi; Band 7 overall atau per skill; aturan reschedule; berlaku berapa kali. -->
 <section class="sec" id="faq" style="padding-top:0">
   <div class="wrap">
     <div class="head" data-reveal><h2>Hal yang <em>sering ditanyakan</em></h2></div>
     <div class="faq2">
       <details><summary>Konsultasinya beneran gratis?</summary><p>Iya. Konsultasi via WhatsApp gratis dan nggak wajib daftar.</p></details>
-      <details><summary>Garansi Band 7 artinya skorku pasti 7?</summary><p>Bukan. Nggak ada yang bisa menjamin skor tes resmi. Yang kami jamin: kalau kamu udah ikut semua kelas dan tugas di Private Foundation tapi belum tembus 7, kamu nggak ditinggal. Kamu dapat 10x Live Class gratis buat lanjut latihan.</p></details>
-      <details><summary>Ada kelas malam atau weekend?</summary><p>Kelas tersedia di malam hari, jadi aman buat kamu yang kuliah atau kerja. Kalau ambil program Private, jadwalnya fleksibel dan bisa disesuaikan sama waktumu.</p></details>
+      <details id="faq-garansi"><summary>Garansi Band 7 itu gimana?</summary><p>Khusus Private IELTS Foundation. Kalau kamu udah hadir di semua 20 sesi, ngerjain semua tugas dari mentor, dan skor resmi (TRF) masih di bawah 7, kamu dapat 10x IELTS Live Class gratis. Skornya sendiri nggak dijamin, yang dijamin kamu nggak ditinggal.</p></details>
+      <details><summary>Ada kelas malam atau weekend?</summary><p>Ada kelas malam, aman buat yang kerja atau kuliah. Program Private jadwalnya fleksibel.</p></details>
       <!-- TODO [V]: pastikan cicilan 50% juga berlaku untuk Foundation. -->
-      <details><summary>Bisa bayar cicil?</summary><p>Bisa, khusus program Private. Kamu cukup bayar 50% dulu di awal, sisanya menyusul. Detail jadwal pelunasannya tanya admin aja ya.</p></details>
-      <details><summary>Global Hub itu apa?</summary><p>Global Hub by Englishvit, dikelola PT Sinergi Insan Andalan. Kami bantu pejuang beasiswa lewat persiapan IELTS, mentoring beasiswa, dan penerjemahan dokumen.</p></details>
+      <details><summary>Bisa bayar cicil?</summary><p>Bisa untuk program Private: bayar 50% dulu, sisanya menyusul.</p></details>
+      <details><summary>Global Hub itu apa?</summary><p>Global Hub by Englishvit (PT Sinergi Insan Andalan). Kami bantu pejuang beasiswa lewat persiapan IELTS, mentoring beasiswa, dan penerjemahan dokumen.</p></details>
     </div>
   </div>
 </section>
@@ -239,13 +194,13 @@
 
 <script>/*__JS__*/</script>
 <script>
-/* Interaksi khusus IELTSGO v2: reveal saat discroll, chip status berganti, kartu syarat garansi berjalan,
+/* Interaksi khusus IELTSGO v2: reveal saat discroll, chip status berganti, link "Lihat syarat" membuka FAQ garansi,
    gambar latar dimuat saat mendekati layar, video dihentikan untuk pengguna reduced-motion / hemat data. */
 (function () {
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var saveData = navigator.connection && navigator.connection.saveData;
 
-  // Video hero: poster desktop, jeda kalau reduced-motion atau hemat data, jeda saat keluar layar
+  // Video hero
   var v = document.querySelector(".hero-bg");
   if (v) {
     if (window.matchMedia("(min-width:720px)").matches && v.dataset.posterDesktop) v.poster = v.dataset.posterDesktop;
@@ -259,11 +214,14 @@
     }
   }
 
+  // "Lihat syarat" membuka FAQ garansi
+  document.querySelectorAll("[data-open-faq]").forEach(function (a) {
+    a.addEventListener("click", function () { var d = document.getElementById("faq-garansi"); if (d) d.open = true; });
+  });
+
   if (!("IntersectionObserver" in window)) {
     document.querySelectorAll("[data-reveal]").forEach(function (el) { el.classList.add("in"); });
     document.querySelectorAll("[data-bg]").forEach(function (el) { el.style.backgroundImage = "url(" + el.dataset.bg + ")"; });
-    document.querySelectorAll(".gsteps li").forEach(function (li) { li.classList.add("done"); });
-    document.querySelectorAll(".gui").forEach(function (g) { g.classList.add("finished"); });
     return;
   }
 
@@ -287,25 +245,6 @@
       t.classList.add("out");
       setTimeout(function () { i = (i + 1) % items.length; t.textContent = items[i]; t.classList.remove("out"); }, 350);
     }, 2800);
-  }
-
-  // Kartu syarat garansi: langkah dicentang satu per satu saat terlihat
-  var gui = document.querySelector("[data-steps]");
-  if (gui) {
-    var steps = gui.querySelectorAll(".gsteps li"), status = gui.querySelector("[data-status]");
-    var finish = function () { steps.forEach(function (s) { s.className = "done"; }); gui.classList.add("finished"); status.textContent = "4/4 terpenuhi"; };
-    if (reduce) { finish(); return; }
-    var gIo = new IntersectionObserver(function (en) {
-      if (!en[0].isIntersecting) return; gIo.disconnect();
-      var k = 0;
-      (function next() {
-        if (k > 0) steps[k - 1].className = "done";
-        if (k === steps.length) { finish(); return; }
-        steps[k].className = "run"; status.textContent = "Langkah " + (k + 1) + "/4";
-        k++; setTimeout(next, 650);
-      })();
-    }, { threshold: 0.5 });
-    gIo.observe(gui);
   }
 })();
 </script>
