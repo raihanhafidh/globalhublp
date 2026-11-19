@@ -948,6 +948,34 @@ body.v2{background:var(--paper);color:var(--ink)}
     update();
   }
 
+  // Scroll halus untuk semua link ke bagian halaman (menu Kelas/Mentor/FAQ, tombol Pilih Kelas, dll).
+  // Dibuat dengan JS supaya geraknya sama di semua browser, juga di perangkat dengan "kurangi animasi" (permintaan Rehan).
+  // Berhenti kalau pengunjung ikut scroll sendiri di tengah jalan.
+  (function () {
+    var root = document.documentElement, raf = 0;
+    root.style.scrollBehavior = "auto";
+    var ease = function (t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+    var stop = function () { cancelAnimationFrame(raf); raf = 0; };
+    ["wheel", "touchstart", "keydown"].forEach(function (ev) { window.addEventListener(ev, stop, { passive: true }); });
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest('a[href^="#"]'); if (!a || a.getAttribute("href").length < 2) return;
+      var el = document.getElementById(a.getAttribute("href").slice(1)); if (!el) return;
+      e.preventDefault();
+      if (a.hasAttribute("data-open-faq") && el.tagName === "DETAILS") el.open = true;
+      var start = window.scrollY, to = Math.max(0, el.getBoundingClientRect().top + start - 16), dist = to - start;
+      var dur = Math.min(1100, Math.max(550, Math.abs(dist) * 0.45)), t0 = null;
+      stop();
+      var step = function (now) {
+        if (t0 === null) t0 = now;
+        var k = Math.min(1, (now - t0) / dur);
+        window.scrollTo(0, start + dist * ease(k));
+        raf = k < 1 ? requestAnimationFrame(step) : 0;
+      };
+      raf = requestAnimationFrame(step);
+      if (history.replaceState) history.replaceState(null, "", a.getAttribute("href"));
+    });
+  })();
+
   // "Lihat syarat" membuka FAQ garansi
   document.querySelectorAll("[data-open-faq]").forEach(function (a) {
     a.addEventListener("click", function () { var d = document.getElementById("faq-garansi"); if (d) d.open = true; });
