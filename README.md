@@ -6,6 +6,7 @@ Draft landing page untuk review dan serah terima ke developer. Belum final: semu
 
 | Folder | Isi | Aksi utama |
 |---|---|---|
+| `ieltsgo-v2/` | IELTSGO v2 · Garansi Band 7 (target `globalhub.id/ieltsgo-v2`, brief 19 Nov 2026) | Chat WhatsApp lewat endpoint konsultasi |
 | `ielts-a/` | IELTS · Versi A Tanya Admin (target `globalhub.id/ieltsgo`) | Chat WhatsApp |
 | `ielts-b/` | IELTS · Versi B Daftar Langsung (usul `globalhub.id/ieltslive`) | Checkout Order Online |
 | `study-abroad-a/` | Study Abroad · Versi A Direct Offer | Checkout Order Online |
@@ -21,7 +22,7 @@ Sumbernya ada di `src/`. Setelah mengubah, rakit ulang:
 node build.js
 ```
 
-- `src/lp.css`: tampilan semua halaman. `src/icons.html`: ikon.
+- `src/lp.css`: tampilan semua halaman. `src/ieltsgo-v2.css`: tambahan khusus IELTSGO v2. `src/icons.html`: ikon.
 - `src/shared.js`: nomor WhatsApp admin (`WA_NUMBER`), penerusan UTM ke Order Online, dan tracking klik.
 - `src/ielts-a.html`, `src/ielts-b.html`, `src/a.html`, `src/b.html`: isi tiap halaman.
 
