@@ -239,3 +239,14 @@ body.v2{background:var(--paper);color:var(--ink)}
   .chips li{font-size:14.5px}
 }
 .badge-row{flex-wrap:wrap;row-gap:6px}.syarat-link{white-space:nowrap}
+
+/* ===== efek sticky stacking: hero menempel, konten berikutnya naik menutupinya ===== */
+.hero.vid{position:sticky;top:0;z-index:0}
+.hero-dim{position:absolute;inset:0;z-index:1;background:#0C0C0E;opacity:calc(var(--p,0) * .65);pointer-events:none}
+.hero-bg,.hero-in{transform:scale(calc(1 - var(--p,0) * .06));transform-origin:50% 30%;will-change:transform}
+.cover{position:relative;z-index:2;background:var(--paper);border-radius:28px 28px 0 0;box-shadow:0 -18px 40px rgba(0,0,0,.28);margin-top:-28px;padding-top:6px}
+.cover::before{content:"";display:block;width:44px;height:5px;border-radius:99px;background:var(--line-w);margin:10px auto 0}
+.v2 footer{position:relative;z-index:2;background:var(--paper)}
+.v2 .sticky.hide{transform:translateY(110%)}
+@media(min-width:720px){.cover{border-radius:40px 40px 0 0;margin-top:-40px}}
+@media(prefers-reduced-motion:reduce){.hero-bg,.hero-in{transform:none}.hero-dim{opacity:0}}

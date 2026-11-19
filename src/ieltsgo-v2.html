@@ -38,6 +38,7 @@
     <source src="media/hero-1280.mp4" type="video/mp4" media="(min-width:720px)">
     <source src="media/hero-540.mp4" type="video/mp4">
   </video>
+  <div class="hero-dim" aria-hidden="true"></div>
   <button class="vtoggle" type="button" aria-pressed="true" aria-label="Jeda atau putar video latar"><svg class="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg><svg class="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
   <nav class="pillnav" aria-label="Navigasi halaman">
     <img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="110" height="22">
@@ -55,6 +56,9 @@
     <p class="ticker" aria-hidden="true"><span class="dot"></span><span class="t" data-ticker='["Kinanti · Overall 5.5 → 7.0","Dimas Saputra · Speaking 6.0 → 7.5","Ada kelas malam, aman buat yang kerja","Private bisa cicil 50%"]'>Kinanti · Overall 5.5 → 7.0</span></p>
   </div>
 </section>
+
+<!-- Efek sticky stacking: hero menempel di atas, semua konten di bawah ini naik menutupinya -->
+<div class="cover">
 
 <!-- MASALAH DAN BUKTI -->
 <section class="sec">
@@ -183,12 +187,13 @@
     </div>
   </div>
 </section>
+</div><!-- /.cover -->
 </main>
 
 <footer><div class="wrap">© Global Hub by Englishvit · PT Sinergi Insan Andalan</div></footer>
 
-<!-- Bar melayang HP: muncul setelah hero lewat, tetap ada sampai bawah (sama dengan live) -->
-<div class="sticky" data-after-hero>
+<!-- Bar melayang HP: muncul setelah hero tertutup konten, tetap ada sampai bawah -->
+<div class="sticky hide" data-cover-bar>
   <a class="btn btn-wa" href="https://globalhub.id/ieltsgo/konsultasi" target="_blank" rel="noopener noreferrer" data-marketing-placement="mobile-sticky-consultation"><svg class="ic"><use href="#i-chat"/></svg>Konsultasi Gratis</a>
 </div>
 
@@ -197,21 +202,40 @@
 /* Interaksi khusus IELTSGO v2: reveal saat discroll, chip status berganti, link "Lihat syarat" membuka FAQ garansi,
    gambar latar dimuat saat mendekati layar, video dihentikan untuk pengguna reduced-motion / hemat data. */
 (function () {
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches, covered = false, wantPlay = true;
   var saveData = navigator.connection && navigator.connection.saveData;
 
   // Video hero
   var v = document.querySelector(".hero-bg");
   if (v) {
     if (window.matchMedia("(min-width:720px)").matches && v.dataset.posterDesktop) v.poster = v.dataset.posterDesktop;
-    var btn = document.querySelector(".vtoggle"), wantPlay = !(reduce || saveData);
+    var btn = document.querySelector(".vtoggle"); wantPlay = !(reduce || saveData);
     var sync = function () { btn.setAttribute("aria-pressed", wantPlay ? "true" : "false"); };
     if (!wantPlay) { v.removeAttribute("autoplay"); v.pause(); v.preload = "none"; }
     sync();
     btn.addEventListener("click", function () { wantPlay = !wantPlay; sync(); wantPlay ? v.play().catch(function () {}) : v.pause(); });
     if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (e) { if (!wantPlay) return; e[0].isIntersecting ? v.play().catch(function () {}) : v.pause(); }).observe(v);
+      new IntersectionObserver(function (e) { if (!wantPlay || covered) return; e[0].isIntersecting ? v.play().catch(function () {}) : v.pause(); }).observe(v);
     }
+  }
+
+  // Sticky stacking: hitung seberapa jauh hero tertutup (0..1).
+  // Dipakai untuk efek mengecil + meredup, menjeda video saat tertutup penuh, dan memunculkan bar melayang HP.
+  var hero = document.querySelector(".hero.vid"), cover = document.querySelector(".cover"), bar = document.querySelector("[data-cover-bar]");
+  if (hero && cover) {
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var vh = window.innerHeight, top = cover.getBoundingClientRect().top;
+      var p = Math.min(1, Math.max(0, 1 - top / Math.min(vh, hero.offsetHeight)));
+      if (!reduce) hero.style.setProperty("--p", p.toFixed(3));
+      if (bar) bar.classList.toggle("hide", top > vh * 0.35);
+      var nowCovered = top <= 0;
+      if (nowCovered !== covered && v) { covered = nowCovered; if (covered) v.pause(); else if (wantPlay) v.play().catch(function () {}); }
+    };
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
   }
 
   // "Lihat syarat" membuka FAQ garansi
