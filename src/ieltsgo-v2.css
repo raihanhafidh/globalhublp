@@ -297,3 +297,9 @@ body.v2{background:var(--paper);color:var(--ink)}
   .mph{height:180px}
 }
 .mcard figcaption{text-align:left;align-items:flex-start}.mcard .myr{color:var(--ink-3);font-weight:500}.mcard .mband{font-weight:700}
+/* HP: hero hampir setinggi layar, teks nempel di bawah, jadi setengah atas video kelihatan jelas.
+   Slide 2 masih ngintip ~90px di bawah sebagai tanda bisa di-scroll. */
+@media(max-width:719px){
+  .hero.vid{min-height:calc(100svh - 120px)}
+  .hero.vid::after{background:linear-gradient(180deg,rgba(12,12,14,.3) 0%,rgba(12,12,14,.1) 22%,rgba(12,12,14,.15) 40%,rgba(12,12,14,.75) 62%,rgba(12,12,14,.92) 100%)}
+}
