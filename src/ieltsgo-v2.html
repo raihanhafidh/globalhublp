@@ -20,7 +20,8 @@
 <body class="v2" data-variant="IELTSGO-V2">
 <!--ICONS-->
 
-<!-- IELTSGO v2 · GARANSI BAND 7 · versi ringkas (revisi 19 Nov 2026, permintaan Rehan)
+<!-- Video hero diputar otomatis untuk semua pengunjung (kecuali mode hemat data), dengan tombol jeda.
+     IELTSGO v2 · GARANSI BAND 7 · versi ringkas (revisi 19 Nov 2026, permintaan Rehan)
      Format visual mengikuti referensi lassie.ai: hero video layar penuh, judul serif, chip status berganti.
      Penjelasan dan syarat garansi hanya di FAQ (#faq-garansi). Badge "Bergaransi Band 7" di kartu Foundation diberi link ke FAQ itu.
      Satu aksi: chat admin lewat endpoint konsultasi situs utama. Tidak ada link ke orderonline.
@@ -209,10 +210,16 @@
   var v = document.querySelector(".hero-bg");
   if (v) {
     if (window.matchMedia("(min-width:720px)").matches && v.dataset.posterDesktop) v.poster = v.dataset.posterDesktop;
-    var btn = document.querySelector(".vtoggle"); wantPlay = !(reduce || saveData);
+    // Video selalu diputar otomatis (permintaan Rehan), juga untuk perangkat dengan "kurangi animasi".
+    // Pengecualian: mode hemat data. Tombol jeda tetap ada.
+    var btn = document.querySelector(".vtoggle"); wantPlay = !saveData;
     var sync = function () { btn.setAttribute("aria-pressed", wantPlay ? "true" : "false"); };
     if (!wantPlay) { v.removeAttribute("autoplay"); v.pause(); v.preload = "none"; }
     sync();
+    var tryPlay = function () { if (wantPlay && !covered) v.play().catch(function () {}); };
+    tryPlay();
+    // Cadangan kalau browser menahan autoplay (misalnya iPhone mode hemat daya): putar di interaksi pertama
+    ["touchstart", "pointerdown", "scroll", "keydown"].forEach(function (ev) { window.addEventListener(ev, tryPlay, { once: true, passive: true }); });
     btn.addEventListener("click", function () { wantPlay = !wantPlay; sync(); wantPlay ? v.play().catch(function () {}) : v.pause(); });
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(function (e) { if (!wantPlay || covered) return; e[0].isIntersecting ? v.play().catch(function () {}) : v.pause(); }).observe(v);
