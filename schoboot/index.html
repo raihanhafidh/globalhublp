@@ -7,7 +7,7 @@
 <meta name="description" content="4 sesi live bareng mentor buat tahu apa aja yang perlu kamu siapin sebelum daftar LPDP. Rp149.000, kuota 50 peserta, Januari 2027.">
 <meta name="robots" content="noindex, nofollow"><!-- selama draft -->
 <meta name="theme-color" content="#ffffff">
-<link rel="icon" href="data:,"><!-- TODO: favicon Global Hub -->
+<link rel="icon" href="https://globalhub.id/home/logos/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Google Sans, sama dengan globalhub.id. Dimuat non-blocking; fallback sans-serif. -->
@@ -62,17 +62,16 @@ s{color:var(--muted)}
 .nav__pill::before,.nav__pill::after{content:"";position:absolute;top:0;width:var(--ear);height:var(--ear);pointer-events:none}
 .nav__pill::before{left:calc(var(--ear) * -1);background:radial-gradient(circle at 0 100%,transparent calc(var(--ear) - .5px),#000 var(--ear))}
 .nav__pill::after{right:calc(var(--ear) * -1);background:radial-gradient(circle at 100% 100%,transparent calc(var(--ear) - .5px),#000 var(--ear))}
-.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;font-size:15px;white-space:nowrap;margin-right:auto}
-.nav__icon{width:34px;height:34px;border-radius:10px;flex:none;display:grid;place-items:center;background:linear-gradient(160deg,#FFD25A 0%,var(--yellow) 40%,var(--orange) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(0,0,0,.18)}
-.nav__icon svg{display:block}
-.nav__logo small{font-weight:400;opacity:.65;font-size:12px}
+/* Logo Global Hub (warna asli, teks biru tua) di chip putih supaya terbaca di bar hitam */
+.nav__logo{display:flex;align-items:center;background:#fff;border-radius:10px;padding:0 12px;height:38px;text-decoration:none;margin-right:auto;flex:none}
+.nav__logo img{display:block;width:110px;height:22px}
 .nav__cta{flex:none}
-@media (max-width:479px){.nav__logo small{display:none}}
-@media (max-width:359px){.nav__cta svg{display:none}.nav__logo{font-size:14px;gap:8px}}
+/* HP: notch cuma berisi logo, menyempit dan di tengah seperti Dynamic Island. Tombol daftar ada di hero dan bar melayang bawah. */
+@media (max-width:767px){.nav .nav__pill{width:auto;padding:8px 14px}.nav .nav__logo{margin-right:0}.nav .nav__cta{display:none}}
 .nav__links{display:none;gap:2px}
 .nav__links a{color:#fff;opacity:.78;text-decoration:none;font-size:14px;padding:8px 12px;border-radius:999px}
 .nav__links a:hover{opacity:1;background:rgba(255,255,255,.08)}
-.nav__cta{display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--ink);font-weight:700;font-size:14px;text-decoration:none;padding:9px 14px;border-radius:10px;white-space:nowrap;transition:transform .15s cubic-bezier(.2,.8,.2,1)}
+.nav__cta{display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--ink);font-weight:700;font-size:14px;text-decoration:none;height:38px;padding:0 14px;border-radius:10px;white-space:nowrap;transition:transform .15s cubic-bezier(.2,.8,.2,1)}
 .nav__cta:active{transform:scale(.97)}
 
 /* ---------- Hero ---------- */
@@ -271,14 +270,14 @@ footer p + p{margin-top:6px}
 <!-- §nav -->
 <header class="nav">
   <nav class="nav__pill" aria-label="Utama">
-    <a href="#top" class="nav__logo"><span class="nav__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><span>SchoBoot <small>by Global Hub</small></span></a>
+    <a href="#top" class="nav__logo" aria-label="Global Hub by Englishvit, ke atas halaman"><img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="110" height="22" fetchpriority="high"></a>
     <div class="nav__links">
       <a href="#program">Program</a>
       <a href="#untuk-siapa">Untuk siapa</a>
       <a href="#harga">Harga</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="#harga" class="nav__cta" data-checkout data-cta="checkout" data-pos="nav" data-paket="schoboot" data-marketing-placement="nav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>Daftar Rp149K</a>
+    <a href="#harga" class="nav__cta" data-checkout data-cta="checkout" data-pos="nav" data-paket="schoboot" data-marketing-placement="nav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>Daftar</a>
   </nav>
 </header>
 <!-- /§nav -->

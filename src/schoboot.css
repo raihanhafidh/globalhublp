@@ -44,17 +44,16 @@ s{color:var(--muted)}
 .nav__pill::before,.nav__pill::after{content:"";position:absolute;top:0;width:var(--ear);height:var(--ear);pointer-events:none}
 .nav__pill::before{left:calc(var(--ear) * -1);background:radial-gradient(circle at 0 100%,transparent calc(var(--ear) - .5px),#000 var(--ear))}
 .nav__pill::after{right:calc(var(--ear) * -1);background:radial-gradient(circle at 100% 100%,transparent calc(var(--ear) - .5px),#000 var(--ear))}
-.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;font-size:15px;white-space:nowrap;margin-right:auto}
-.nav__icon{width:34px;height:34px;border-radius:10px;flex:none;display:grid;place-items:center;background:linear-gradient(160deg,#FFD25A 0%,var(--yellow) 40%,var(--orange) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(0,0,0,.18)}
-.nav__icon svg{display:block}
-.nav__logo small{font-weight:400;opacity:.65;font-size:12px}
+/* Logo Global Hub (warna asli, teks biru tua) di chip putih supaya terbaca di bar hitam */
+.nav__logo{display:flex;align-items:center;background:#fff;border-radius:10px;padding:0 12px;height:38px;text-decoration:none;margin-right:auto;flex:none}
+.nav__logo img{display:block;width:110px;height:22px}
 .nav__cta{flex:none}
-@media (max-width:479px){.nav__logo small{display:none}}
-@media (max-width:359px){.nav__cta svg{display:none}.nav__logo{font-size:14px;gap:8px}}
+/* HP: notch cuma berisi logo, menyempit dan di tengah seperti Dynamic Island. Tombol daftar ada di hero dan bar melayang bawah. */
+@media (max-width:767px){.nav .nav__pill{width:auto;padding:8px 14px}.nav .nav__logo{margin-right:0}.nav .nav__cta{display:none}}
 .nav__links{display:none;gap:2px}
 .nav__links a{color:#fff;opacity:.78;text-decoration:none;font-size:14px;padding:8px 12px;border-radius:999px}
 .nav__links a:hover{opacity:1;background:rgba(255,255,255,.08)}
-.nav__cta{display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--ink);font-weight:700;font-size:14px;text-decoration:none;padding:9px 14px;border-radius:10px;white-space:nowrap;transition:transform .15s cubic-bezier(.2,.8,.2,1)}
+.nav__cta{display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--ink);font-weight:700;font-size:14px;text-decoration:none;height:38px;padding:0 14px;border-radius:10px;white-space:nowrap;transition:transform .15s cubic-bezier(.2,.8,.2,1)}
 .nav__cta:active{transform:scale(.97)}
 
 /* ---------- Hero ---------- */
