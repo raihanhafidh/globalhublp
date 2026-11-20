@@ -126,7 +126,10 @@ s{color:var(--muted)}
 
 /* ---------- Destinasi (kartu bergerak) ---------- */
 .dest{display:grid;gap:18px;align-items:center}
-.deck{position:relative;height:250px;perspective:1000px}
+.deck{position:relative;height:250px;perspective:1000px;animation:deckfloat 6s ease-in-out infinite}
+@keyframes deckfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.card img{transition:transform 3.2s ease-out}
+.card.p0 img{transform:scale(1.06)}
 .card{position:absolute;left:50%;top:0;width:180px;height:236px;margin-left:-90px;border-radius:24px;overflow:hidden;background:#ddd;box-shadow:0 18px 40px rgba(14,14,16,.18);transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .8s,filter .8s;cursor:pointer;border:0;padding:0;color:#fff;text-align:left;font:inherit}
 .card img{width:100%;height:100%;object-fit:cover}
 .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.65))}
@@ -139,6 +142,13 @@ s{color:var(--muted)}
 .card.p2{transform:translateX(-42%) rotate(-7deg) scale(.88);z-index:1;filter:brightness(.85)}
 .deck__dots{display:flex;gap:6px;justify-content:center;margin-top:4px}
 .deck__dots i{width:6px;height:6px;border-radius:9px;background:#d6d6db;transition:width .3s,background .3s}
+/* Kartu destinasi tetap beranimasi walau reduced motion aktif (permintaan tim) */
+@media (prefers-reduced-motion:reduce){
+  .deck{animation-duration:6s!important;animation-iteration-count:infinite!important}
+  .card{transition-duration:.8s!important}
+  .card img{transition-duration:3.2s!important}
+  .deck__dots i{transition-duration:.3s!important}
+}
 .deck__dots i.on{width:18px;background:var(--orange)}
 
 /* ---------- Program / sesi ---------- */
