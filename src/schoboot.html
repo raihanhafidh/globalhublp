@@ -21,7 +21,7 @@
 
 <!-- §nav -->
 <header class="nav">
-  <nav class="nav__pill" aria-label="Utama">
+  <nav class="nav__pill" id="nav" aria-label="Utama">
     <a href="#top" class="nav__logo" aria-label="Global Hub by Englishvit, ke atas halaman"><img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="110" height="22" fetchpriority="high"></a>
     <div class="nav__links">
       <a href="#program">Program</a>
@@ -30,6 +30,20 @@
       <a href="#faq">FAQ</a>
     </div>
     <a href="#harga" class="nav__cta" data-checkout data-cta="checkout" data-pos="nav" data-paket="schoboot" data-marketing-placement="nav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>Daftar</a>
+    <!-- HP: tombol menu membuka panel dropdown di dalam notch (pola Supaste) -->
+    <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Buka menu">
+      <svg class="i-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="i-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="nav__panel" id="nav-panel">
+      <div class="nav__panel-in">
+        <a href="#program">Program</a>
+        <a href="#untuk-siapa">Untuk siapa</a>
+        <a href="#harga">Harga</a>
+        <a href="#faq">FAQ</a>
+        <a href="#harga" class="nav__panel-cta" data-checkout data-cta="checkout" data-pos="nav-menu" data-paket="schoboot" data-marketing-placement="nav-menu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>Daftar</a>
+      </div>
+    </div>
   </nav>
 </header>
 <!-- /§nav -->
@@ -61,22 +75,43 @@
       <a href="#harga" class="btn btn--hero" data-scroll data-marketing-placement="hero-info">Info lebih lengkap <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
       <a href="#" class="btn btn--ghost" data-cta="whatsapp" data-pos="hero-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="hero-wa">Tanya admin dulu</a>
     </div>
-    <ul class="trust">
-      <li>4 sesi × 60 menit</li>
-      <li><s>Rp250.000</s> Rp149.000</li>
-      <li>Kuota 50 peserta</li>
-    </ul>
   </div>
 </section>
 <!-- /§hero -->
 
 <!-- §facts -->
-<section class="facts" aria-label="Fakta program">
-  <div class="fact"><b>4 sesi</b><span>live grup</span></div>
-  <div class="fact"><b>60 menit</b><span>per sesi</span></div>
-  <div class="fact"><b>2 minggu</b><span>Jan 2027</span></div>
-  <div class="fact"><b>Maks. 50</b><span>peserta</span></div>
-  <!-- TODO [V]: tanggal dan jam tiap sesi -->
+<!-- Logo kampus berjalan, sama dengan globalhub.id/ieltsgo (logo & caption dari situ).
+     TODO [V]: pastikan caption ini juga berlaku untuk mentor SchoBoot. Logo kampus tidak berarti kerja sama resmi. -->
+<section class="campus" aria-label="Kampus tempat mentor Global Hub belajar">
+  <div class="wrap campus__inner">
+    <p class="campus__cap">Mentor kami menjadi bagian dari perjalanan pelajar Indonesia di universitas terbaik dunia.</p>
+    <div class="marquee">
+      <ul class="marquee__track">
+        <li><img src="https://globalhub.id/home/logos/monash.avif" alt="Monash University" width="177" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/adelaide.avif" alt="University of Adelaide" width="196" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/western.avif" alt="University of Western Australia" width="197" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/hellenic.avif" alt="Hellenic University" width="197" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/melbourne.avif" alt="The University of Melbourne" width="200" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/newcastle.avif" alt="University of Newcastle" width="192" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/selcuk.avif" alt="Selcuk University" width="214" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/jordan.avif" alt="Jordan University" width="172" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/khnty.avif" alt="University of Khnty" width="172" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/kfupm.avif" alt="King Fahd University of Petroleum and Minerals" width="251" height="64" loading="lazy" decoding="async"></li>
+      </ul>
+      <ul class="marquee__track" aria-hidden="true">
+        <li><img src="https://globalhub.id/home/logos/monash.avif" alt="" width="177" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/adelaide.avif" alt="" width="196" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/western.avif" alt="" width="197" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/hellenic.avif" alt="" width="197" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/melbourne.avif" alt="" width="200" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/newcastle.avif" alt="" width="192" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/selcuk.avif" alt="" width="214" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/jordan.avif" alt="" width="172" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/khnty.avif" alt="" width="172" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/kfupm.avif" alt="" width="251" height="64" loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+  </div>
 </section>
 <!-- /§facts -->
 
@@ -334,6 +369,21 @@ var CONFIG = {
     var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(e){ io.observe(e); });
   }
+
+  // Menu HP: buka/tutup panel di dalam notch
+  var navEl = document.getElementById('nav'), menuBtn = navEl.querySelector('.nav__menu'), panel = document.getElementById('nav-panel');
+  function setMenu(open){
+    navEl.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+    panel.querySelectorAll('a').forEach(function(a){ a.tabIndex = open ? 0 : -1; });
+  }
+  setMenu(false);
+  menuBtn.addEventListener('click', function(){ setMenu(!navEl.classList.contains('open')); });
+  panel.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && navEl.classList.contains('open')) { setMenu(false); menuBtn.focus(); } });
+  document.addEventListener('click', function(e){ if (navEl.classList.contains('open') && !navEl.contains(e.target)) setMenu(false); });
+  matchMedia('(min-width:768px)').addEventListener('change', function(){ setMenu(false); });
 
   // Scroll beranimasi untuk semua tombol/link yang mengarah ke section lain (#...)
   var navH = function(){ var n = document.querySelector('.nav__pill'); return n ? n.getBoundingClientRect().bottom + 12 : 0; };
