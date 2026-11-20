@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="id" data-btn="black">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SchoBoot: Bootcamp Persiapan LPDP 2027 | Global Hub</title>
+<meta name="description" content="4 sesi live bareng mentor buat tahu apa aja yang perlu kamu siapin sebelum daftar LPDP. Rp149.000, kuota 50 peserta, Januari 2027.">
+<meta name="robots" content="noindex, nofollow"><!-- selama draft -->
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:,"><!-- TODO: favicon Global Hub -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Sans, sama dengan globalhub.id. Dimuat non-blocking; fallback sans-serif. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap"></noscript>
+<!-- Tracking: tidak ada pixel/GA/Clarity di draft ini. Klik tombol push `lp_cta_click` ke dataLayer (src/shared.js):
+     cta=checkout -> InitiateCheckout, cta=whatsapp -> Contact. TIDAK ada Purchase dari LP; Purchase hanya dari pembayaran terverifikasi.
+     Developer: jangan biarkan tag menembak dari localhost/preview. -->
+<style>/*__CSS__*/</style>
+</head>
+<body data-variant="SCHOBOOT">
+
+<!-- §nav -->
+<header class="nav">
+  <nav class="nav__pill" aria-label="Utama">
+    <a href="#top" class="nav__logo">SchoBoot <small>by Global Hub</small></a>
+    <div class="nav__links">
+      <a href="#program">Program</a>
+      <a href="#untuk-siapa">Untuk siapa</a>
+      <a href="#harga">Harga</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#harga" class="nav__cta" data-checkout data-cta="checkout" data-pos="nav" data-paket="schoboot" data-marketing-placement="nav">Daftar Rp149K</a>
+  </nav>
+</header>
+<!-- /§nav -->
+
+<main id="top">
+<!-- §hero -->
+<section class="hero" id="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <span class="eyebrow"><i></i>Scholarship Bootcamp · LPDP Prep · Januari 2027</span>
+      <h1 class="h1" id="h1" aria-label="Tahu syaratnya itu gampang. Siap bersaing itu beda cerita.">
+        <span class="line">Tahu syaratnya itu gampang.</span>
+        <span class="line">Siap bersaing itu beda cerita.</span>
+      </h1>
+      <script>
+      /* A/B H1: ?h1=b atau ?h1=c. Lalu animasi per huruf (dilewati kalau reduced-motion). */
+      (function(){
+        var v={b:["Mau LPDP?","Jangan cuma tahu syaratnya."],c:["Mulai siapin LPDP","sebelum pendaftaran dibuka."]};
+        var h=document.getElementById('h1'),q=new URLSearchParams(location.search),k=q.get('h1'),L=h.querySelectorAll('.line');
+        if(v[k]){L[0].textContent=v[k][0];L[1].textContent=v[k][1];h.setAttribute('aria-label',v[k].join(' '));}
+        var b=q.get('btn');if(b==='orange'||b==='black')document.documentElement.setAttribute('data-btn',b);
+        if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+        var i=0;L.forEach(function(line){var words=line.textContent.trim().split(' ');line.textContent='';line.setAttribute('aria-hidden','true');
+          words.forEach(function(w,wi){var ws=document.createElement('span');ws.className='w';
+            Array.from(w).forEach(function(c){var s=document.createElement('span');s.className='ch';s.textContent=c;s.style.animationDelay=(i++*14)+'ms';ws.appendChild(s);});
+            line.appendChild(ws);if(wi<words.length-1)line.appendChild(document.createTextNode(' '));});});
+      })();
+      </script>
+      <p class="hero__sub">4 sesi live bareng mentor buat tahu apa aja yang perlu kamu siapin sebelum daftar LPDP, dan apa yang bikin aplikasimu punya arah.</p>
+      <div class="price"><s>Rp250.000</s><strong>Rp149.000</strong><span class="quota">· Kuota 50 peserta</span></div>
+      <div class="hero__cta">
+        <a href="#harga" class="btn" data-checkout data-cta="checkout" data-pos="hero" data-paket="schoboot" data-marketing-placement="hero">Amankan kursimu, Rp149K →</a>
+        <a href="#" class="link" data-cta="whatsapp" data-pos="hero-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="hero-wa">Masih ragu? Tanya admin dulu</a>
+      </div>
+      <ul class="trust">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>4 sesi × 60 menit</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Live &amp; interaktif</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Kuota terbatas 50 orang</li>
+      </ul>
+    </div>
+
+    <!-- Mockup "LPDP Prep Tracker": HTML/CSS, progres terisi saat di-scroll -->
+    <div class="tracker" id="tracker" role="img" aria-label="Ilustrasi checklist persiapan LPDP: study plan, esai kontribusi, dokumen, skor bahasa, wawancara">
+      <div class="tracker__top">
+        <span class="tracker__title">LPDP Prep Tracker</span>
+        <span class="tracker__count"><span id="tcount">0</span>/5</span>
+      </div>
+      <div class="bar"><span id="tbar"></span></div>
+      <ul>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Study plan<span class="tag">Sesi 2</span></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Esai kontribusi<span class="tag">Sesi 2</span></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Dokumen<span class="tag">Sesi 3</span></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Skor bahasa<span class="tag">Sesi 1</span></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Wawancara<span class="tag">Sesi 4</span></li>
+      </ul>
+      <!-- TODO [V]: label "Sesi N" di tracker mengikuti placeholder materi sesi, sesuaikan kalau materi final berbeda -->
+      <p class="tracker__foot">Ilustrasi. Isi tiap sesi menyesuaikan materi final.</p>
+    </div>
+  </div>
+</section>
+<!-- /§hero -->
+
+<!-- §facts -->
+<section class="facts" aria-label="Fakta program">
+  <div class="fact"><b>4 sesi</b><span>live grup</span></div>
+  <div class="fact"><b>60 menit</b><span>per sesi</span></div>
+  <div class="fact"><b>2 minggu</b><span>Jan 2027</span></div>
+  <div class="fact"><b>Maks. 50</b><span>peserta</span></div>
+  <!-- TODO [V]: tanggal dan jam tiap sesi -->
+</section>
+<!-- /§facts -->
+
+<!-- §compare -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="h2 reveal">Info LPDP gratis itu banyak. Yang bikin bingung: <span class="hl">mulai dari mana.</span></h2>
+    <div class="cmp">
+      <div class="cmp__head"><span>Info gratis di internet</span><span>Di SchoBoot</span></div>
+      <div class="cmp__row reveal"><div class="cmp__from"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Daftar persyaratan LPDP</div><div class="cmp__to"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Pendampingan cara menyiapkannya</div></div>
+      <div class="cmp__row reveal"><div class="cmp__from"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Tips bikin esai</div><div class="cmp__to"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Arahan strategi aplikasi</div></div>
+      <div class="cmp__row reveal"><div class="cmp__from"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Info tahapan seleksi</div><div class="cmp__to"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Persiapan sesuai kebutuhanmu</div></div>
+      <div class="cmp__row reveal"><div class="cmp__from"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Contoh pertanyaan wawancara</div><div class="cmp__to"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Pendampingan menghadapi seleksi</div></div>
+    </div>
+  </div>
+</section>
+<!-- /§compare -->
+
+<!-- §destinations -->
+<!-- TODO [V]: pastikan hak pakai ketiga foto, dan bahwa negara tujuan ini sesuai daftar kampus tujuan LPDP sebelum tayang -->
+<section class="sec sec--white" aria-labelledby="dest-title">
+  <div class="wrap dest">
+    <div>
+      <h2 class="h2 reveal" id="dest-title">Kampus impianmu ada di mana?</h2>
+      <p class="lead">Australia, Rusia, Tiongkok, atau negara lain. Apa pun tujuanmu, aplikasinya mulai dari persiapan yang sama.</p>
+    </div>
+    <div>
+      <div class="deck" id="deck">
+        <button class="card p0" type="button" aria-label="Australia, Sydney. Ganti kartu"><img src="media/australia.webp" alt="Gedung opera di tepi pelabuhan Sydney dengan latar gedung pencakar langit" width="480" height="270" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Australia</b><span>Sydney</span></span></button>
+        <button class="card p1" type="button" aria-label="Rusia, Moskow. Ganti kartu"><img src="media/rusia.webp" alt="Gedung utama universitas bergaya menara di Moskow dikelilingi taman" width="480" height="270" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Rusia</b><span>Moskow</span></span></button>
+        <button class="card p2" type="button" aria-label="Tiongkok, tradisi bertemu kota modern. Ganti kartu"><img src="media/tiongkok.webp" alt="Pagoda kayu bertingkat dengan latar gedung apartemen modern" width="480" height="360" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Tiongkok</b><span>Tradisi bertemu kota modern</span></span></button>
+      </div>
+      <div class="deck__dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    </div>
+  </div>
+</section>
+<!-- /§destinations -->
+
+<!-- §program -->
+<section class="sec" id="program">
+  <div class="wrap">
+    <h2 class="h2 reveal">Apa aja yang kamu dapat di 4 sesi</h2>
+    <!--
+      TODO [V]: judul dan isi tiap sesi belum ada di materi PM.
+      Placeholder di bawah DIAMBIL DARI content angle MOFU di deck PM,
+      wajib dikonfirmasi sebelum tayang.
+    -->
+    <div class="sessions">
+      <article class="sess reveal">
+        <div class="sess__text">
+          <span class="sess__no">Sesi 1</span>
+          <h3>Peta persiapan LPDP</h3>
+          <p>Pahami persyaratan dan tahapan seleksi, lalu petakan apa yang udah dan belum kamu punya.</p>
+        </div>
+        <div class="mock" aria-hidden="true"><ul>
+          <li><span class="dot g"></span>Ijazah &amp; transkrip<span class="pill" style="background:#E7F6EE;color:#1F7A45">siap</span></li>
+          <li><span class="dot y"></span>Skor bahasa<span class="pill">proses</span></li>
+          <li><span class="dot n"></span>Surat rekomendasi<span class="pill" style="background:#EEF0F3;color:#5B5B66">belum</span></li>
+        </ul></div>
+      </article>
+
+      <article class="sess reveal">
+        <div class="sess__text">
+          <span class="sess__no">Sesi 2</span>
+          <h3>Study plan &amp; narasi kontribusi</h3>
+          <p>Bangun rencana studi yang nyambung sama tujuanmu dan kontribusi yang mau kamu bawa pulang.</p>
+        </div>
+        <div class="mock flow" aria-hidden="true"><span>Tujuan</span><em>→</em><span>Jurusan</span><em>→</em><span>Kontribusi</span></div>
+      </article>
+
+      <!-- TODO [V]: slot testimoni peserta mentoring beasiswa Global Hub (nama, jenjang, kampus/beasiswa) + izin tertulis.
+           Disembunyikan sampai ada. JANGAN mengarang testimoni.
+      <figure class="sess testimonial">
+        <blockquote>"…"</blockquote>
+        <figcaption>Nama · Jenjang · Kampus/beasiswa</figcaption>
+      </figure>
+      -->
+
+      <article class="sess reveal">
+        <div class="sess__text">
+          <span class="sess__no">Sesi 3</span>
+          <h3>Dokumen aplikasi</h3>
+          <p>Kenali dokumen yang dibutuhkan dan kesalahan yang sering bikin aplikasi lemah.</p>
+        </div>
+        <div class="mock" aria-hidden="true"><ul>
+          <li><span class="dot g"></span>Esai</li>
+          <li><span class="dot y"></span>Surat rekomendasi<span class="pill">sering terlupa</span></li>
+          <li><span class="dot y"></span>Surat pernyataan<span class="pill">sering terlupa</span></li>
+        </ul></div>
+      </article>
+
+      <article class="sess reveal">
+        <div class="sess__text">
+          <span class="sess__no">Sesi 4</span>
+          <h3>Seleksi substansi &amp; wawancara</h3>
+          <p>Pahami apa yang dinilai di tahap substansi dan cara menyiapkan diri menghadapinya.</p>
+        </div>
+        <div class="mock"><div class="qa" id="qa">
+          <b>"Kenapa kamu memilih jurusan ini?"</b>
+          <button type="button" aria-expanded="false" aria-controls="qa-tip">Lihat tips</button>
+          <p id="qa-tip">Hubungkan pengalamanmu, jurusan pilihan, dan rencana kontribusimu dalam satu cerita yang runtut.</p>
+        </div></div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- /§program -->
+
+<!-- §mentor -->
+<section class="sec sec--white sec--sm">
+  <div class="wrap">
+    <h2 class="h2 reveal">Dipandu mentor yang udah lewat jalan ini</h2>
+    <!-- TODO [V]: nama mentor bootcamp, foto, beasiswa/kampus, satu kalimat, dan izinnya.
+         Klaim "awardee LPDP" hanya boleh ditulis kalau sudah diverifikasi.
+         Ganti kartu placeholder di bawah dengan kartu mentor asli. -->
+    <div class="mentor reveal">
+      <div class="avatar" aria-hidden="true">GH</div>
+      <div><b>Mentor Global Hub</b><p>Profil mentor bootcamp bakal kami umumkan di sini.</p></div>
+    </div>
+  </div>
+</section>
+<!-- /§mentor -->
+
+<!-- §personas -->
+<section class="sec" id="untuk-siapa">
+  <div class="wrap">
+    <h2 class="h2 reveal">Cocok buat kamu yang…</h2>
+    <div class="personas">
+      <article class="persona reveal"><span class="persona__tag t1">Baru mau mulai</span><h3>"Mulai siapin LPDP sebelum pendaftaran dibuka."</h3><p>Belum pernah daftar LPDP, tapi udah pengen S2/S3.</p></article>
+      <article class="persona reveal"><span class="persona__tag t2">Lagi nyiapin</span><h3>"Jangan cuma memenuhi syarat. Bangun aplikasi yang punya arah."</h3><p>Udah punya target LPDP dan mulai ngumpulin dokumen.</p></article>
+      <article class="persona reveal"><span class="persona__tag t3">Mau coba lagi</span><h3>"Pernah coba LPDP? Saatnya evaluasi strategi persiapanmu."</h3><p>Pernah daftar atau ikut seleksi, tapi belum lolos.</p></article>
+    </div>
+    <p class="swipe" aria-hidden="true">Geser untuk lihat lainnya →</p>
+    <p class="primary">Primary target: calon pendaftar S2/S3 yang serius daftar LPDP.</p>
+  </div>
+</section>
+<!-- /§personas -->
+
+<!-- §pricing -->
+<section class="sec sec--white" id="harga">
+  <div class="wrap" style="text-align:center">
+    <h2 class="h2 reveal">Satu tiket. 4 sesi lengkap.</h2>
+    <p class="lead">Sekali bayar, langsung dapat kursi di batch Januari 2027.</p>
+    <div class="pricecard reveal" style="text-align:left">
+      <div class="pricecard__name">SchoBoot · Scholarship Bootcamp</div>
+      <div class="pricecard__price"><s>Rp250.000</s><strong>Rp149.000</strong></div>
+      <!-- TODO [V]: angka sisa kursi asli dari data pendaftar (CONFIG.SEATS_LEFT). Selama null, label ini disembunyikan. -->
+      <span class="urgent" id="urgent" hidden></span>
+      <ul class="checks">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>4 sesi live × 60 menit</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Belajar bareng calon pendaftar LPDP lain</li>
+        <!-- TODO [V]: konfirmasi poin "peta persiapan" sebagai deliverable -->
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Peta persiapan LPDP yang bisa langsung kamu pakai</li>
+        <!-- TODO [V]: bonus tampil di LP atau cuma di chat? -->
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Bonus: potongan hingga Rp300.000 kalau lanjut Scholarship Mentoring*</li>
+      </ul>
+      <a href="#harga" class="btn btn--block" data-checkout data-cta="checkout" data-pos="pricing" data-paket="schoboot" data-marketing-placement="pricing">Daftar sekarang, Rp149K →</a>
+      <!-- TODO [V]: cara kirim link kelas (email / WhatsApp?) -->
+      <p class="note">Pembayaran aman lewat checkout Global Hub. Link kelas dikirim setelah pembayaran terverifikasi.</p>
+      <p class="terms">*S&amp;K: Potongan Rp300.000 untuk 5 pendaftar mentoring pertama, Rp200.000 untuk 5 berikutnya.</p>
+    </div>
+  </div>
+</section>
+<!-- /§pricing -->
+
+<!-- §faq -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <h2 class="h2 reveal">Yang sering ditanyain</h2>
+    <div class="faq">
+      <details><summary>Bootcamp ini program resmi LPDP?</summary><p>Bukan. SchoBoot adalah program persiapan dari Global Hub by Englishvit, nggak berafiliasi dengan LPDP.</p></details>
+      <!-- TODO [V]: tanggal dan jam -->
+      <details><summary>Kapan jadwalnya?</summary><p>Januari 2027, 4 sesi selama 2 minggu, tiap sesi 60 menit.</p></details>
+      <!-- TODO [V]: "Kelasnya lewat apa?" (platform) — disembunyikan sampai dikonfirmasi -->
+      <details hidden><summary>Kelasnya lewat apa?</summary><p>TODO</p></details>
+      <!-- TODO [V]: "Kalau nggak bisa hadir, ada rekamannya?" — disembunyikan sampai dikonfirmasi -->
+      <details hidden><summary>Kalau nggak bisa hadir, ada rekamannya?</summary><p>TODO</p></details>
+      <details><summary>Apakah ikut bootcamp menjamin lolos LPDP?</summary><p>Nggak ada yang bisa menjamin hasil seleksi. Bootcamp ini bantu kamu tahu apa yang perlu disiapkan dan gimana menyiapkannya dengan lebih terarah.</p></details>
+      <details><summary>Setelah bootcamp, bisa lanjut dibimbing?</summary><p>Bisa, lewat Scholarship Mentoring Global Hub. Peserta bootcamp dapat potongan khusus untuk kuota terbatas.</p></details>
+      <!-- TODO [V]: metode pembayaran -->
+      <details><summary>Bayarnya gimana?</summary><p>Lewat halaman checkout Global Hub.</p></details>
+      <details><summary>Masih bingung?</summary><p>Chat admin dulu, gratis dan nggak wajib daftar. <a href="#" class="link" data-cta="whatsapp" data-pos="faq-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="faq-wa">Tanya admin via WhatsApp</a></p></details>
+    </div>
+  </div>
+</section>
+<!-- /§faq -->
+
+<!-- §closing -->
+<section class="closing">
+  <div class="wrap">
+    <h2 class="h2">Pendaftaran LPDP belum dibuka. <span>Persiapanmu bisa mulai sekarang.</span></h2>
+    <a href="#harga" class="btn" data-checkout data-cta="checkout" data-pos="closing" data-paket="schoboot" data-marketing-placement="closing">Amankan kursimu, Rp149K →</a><br>
+    <a href="#" class="link" data-cta="whatsapp" data-pos="closing-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="closing-wa">Tanya admin via WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Global Hub by Englishvit · PT Sinergi Insan Andalan</p>
+    <p>Disclaimer: SchoBoot tidak berafiliasi dengan dan tidak mewakili LPDP.</p>
+  </div>
+</footer>
+<!-- /§closing -->
+
+<!-- §sticky -->
+<div class="sticky" id="sticky" aria-hidden="true">
+  <div><b>Rp149K</b>Kuota 50</div>
+  <a href="#harga" class="btn" data-checkout data-cta="checkout" data-pos="mobile-sticky" data-paket="schoboot" data-marketing-placement="mobile-sticky" tabindex="-1">Daftar</a>
+</div>
+<!-- /§sticky -->
+
+<script>/*__JS__*/</script>
+<script>
+/* ===== Satu-satunya tempat konfigurasi link & kuota ===== */
+var CONFIG = {
+  // TODO [V]: ganti ke link orderonline SchoBoot (contoh pola: https://globalhub.orderonline.id/schoboot-lpdp). Harga & produk diatur developer di orderonline.
+  CHECKOUT_URL: 'https://globalhub.orderonline.id/scholarship-mentoring-essential',
+  // Link "Tanya admin" diatur src/shared.js (WA_NUMBER, sama dengan globalhub.id/study-abroad), pesan dari data-msg tiap link.
+  // TODO [V]: pastikan nomor admin itu juga yang pegang SchoBoot, atau pakai endpoint globalhub.id/.../konsultasi?package=SchoBoot kalau mendukung.
+  // TODO [V]: sisa kursi asli dari data pendaftar. null = label urgensi disembunyikan (jangan isi angka karangan).
+  SEATS_LEFT: null,
+  SEATS_TOTAL: 50
+};
+
+(function(){
+  // Dibangun ulang setelah shared.js: parameter iklan yang masuk (utm_campaign, fbclid, gclid, dll.) ikut diteruskan,
+  // lalu utm_source/medium/content ditimpa supaya pembelian terlacak ke halaman ini dan tombolnya.
+  function checkoutHref(placement){
+    var u = new URL(CONFIG.CHECKOUT_URL), inc = new URLSearchParams(location.search);
+    inc.forEach(function(v,k){ if (k !== 'btn' && k !== 'h1') u.searchParams.set(k, v); });
+    u.searchParams.set('utm_source','lp');
+    u.searchParams.set('utm_medium','schoboot');
+    u.searchParams.set('utm_content',placement);
+    return u.toString();
+  }
+  document.querySelectorAll('[data-checkout]').forEach(function(a){
+    a.href = checkoutHref(a.getAttribute('data-marketing-placement'));
+    a.rel = 'noopener';
+  });
+
+  // Label urgensi: hanya tampil kalau ada angka asli
+  var urg = document.getElementById('urgent');
+  if (typeof CONFIG.SEATS_LEFT === 'number') {
+    urg.textContent = 'Sisa ' + CONFIG.SEATS_LEFT + ' kursi dari ' + CONFIG.SEATS_TOTAL;
+    urg.hidden = false;
+  }
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Tracker: 0/5 → 5/5 mengikuti scroll
+  var tr = document.getElementById('tracker'), items = tr.querySelectorAll('li'),
+      cnt = document.getElementById('tcount'), bar = document.getElementById('tbar'), last = -1, ticking = false;
+  function updTracker(){
+    ticking = false;
+    // Selalu mulai 0/5 saat halaman dibuka, terisi seiring scroll (juga di desktop yang tracker-nya langsung terlihat)
+    var r = tr.getBoundingClientRect(), vh = innerHeight, y = scrollY, top = r.top + y;
+    var start = Math.max(0, top - vh * 0.9), end = Math.max(start + 360, top + r.height - vh * 0.35);
+    var p = (y - start) / (end - start);
+    var n = Math.max(0, Math.min(5, Math.floor(p * 6)));
+    if (n === last) return; last = n;
+    items.forEach(function(li,i){ li.classList.toggle('done', i < n); });
+    cnt.textContent = n; bar.style.width = (n * 20) + '%';
+  }
+  addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(updTracker); } }, {passive:true});
+  requestAnimationFrame(function(){ setTimeout(updTracker, 0); });
+
+  // Reveal saat masuk viewport
+  var els = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); }
+  else {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){ io.observe(e); });
+  }
+
+  // Kartu destinasi bergerak
+  var deck = document.getElementById('deck'), cards = Array.prototype.slice.call(deck.querySelectorAll('.card')),
+      dots = document.querySelectorAll('.deck__dots i'), idx = 0, timer = null;
+  function show(){
+    cards.forEach(function(c,i){ var pos = (i - idx + 3) % 3; c.className = 'card p' + pos; });
+    dots.forEach(function(d,i){ d.classList.toggle('on', i === idx); });
+  }
+  function next(){ idx = (idx + 1) % 3; show(); }
+  cards.forEach(function(c){ c.addEventListener('click', function(){ next(); restart(); }); });
+  function restart(){ clearInterval(timer); if(!reduce) timer = setInterval(next, 3200); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) restart(); else clearInterval(timer); }); }).observe(deck);
+  }
+
+  // Mockup sesi 4: tombol "lihat tips"
+  var qa = document.getElementById('qa'), qb = qa.querySelector('button');
+  qb.addEventListener('click', function(){ var o = qa.classList.toggle('open'); qb.setAttribute('aria-expanded', o); qb.textContent = o ? 'Tutup tips' : 'Lihat tips'; });
+
+  // Bar melayang HP: muncul setelah hero lewat, sembunyi saat harga terlihat
+  var sticky = document.getElementById('sticky'), heroOut = false, priceIn = false;
+  function updSticky(){ var s = heroOut && !priceIn; sticky.classList.toggle('show', s); sticky.setAttribute('aria-hidden', !s); sticky.querySelector('a').tabIndex = s ? 0 : -1; }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){ heroOut = !es[0].isIntersecting; updSticky(); }).observe(document.getElementById('hero'));
+    new IntersectionObserver(function(es){ priceIn = es[0].isIntersecting; updSticky(); }).observe(document.querySelector('#harga .pricecard'));
+  }
+})();
+</script>
+</body>
+</html>
