@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="id" data-btn="black">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SchoBoot: Bootcamp Persiapan LPDP 2027 | Global Hub</title>
+<meta name="description" content="4 sesi live bareng mentor buat tahu apa aja yang perlu kamu siapin sebelum daftar LPDP. Rp149.000, kuota 50 peserta, Januari 2027.">
+<meta name="robots" content="noindex, nofollow"><!-- selama draft -->
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:,"><!-- TODO: favicon Global Hub -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Sans, sama dengan globalhub.id. Dimuat non-blocking; fallback sans-serif. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap"></noscript>
+<!-- Tracking: tidak ada pixel/GA/Clarity di draft ini. Klik tombol push `lp_cta_click` ke dataLayer (src/shared.js):
+     cta=checkout -> InitiateCheckout, cta=whatsapp -> Contact. TIDAK ada Purchase dari LP; Purchase hanya dari pembayaran terverifikasi.
+     Developer: jangan biarkan tag menembak dari localhost/preview. -->
+<style>/*__CSS__*/</style>
+</head>
+<body data-variant="SCHOBOOT">
+
+
+<main id="top">
+
+
+
+
+
+
+
+
+
+</main>
+
+
+<script>/*__JS__*/</script>
+<script>
+/* ===== Satu-satunya tempat konfigurasi link & kuota ===== */
+var CONFIG = {
+  // TODO [V]: ganti ke link orderonline SchoBoot (contoh pola: https://globalhub.orderonline.id/schoboot-lpdp). Harga & produk diatur developer di orderonline.
+  CHECKOUT_URL: 'https://globalhub.orderonline.id/scholarship-mentoring-essential',
+  // Link "Tanya admin" diatur src/shared.js (WA_NUMBER, sama dengan globalhub.id/study-abroad), pesan dari data-msg tiap link.
+  // TODO [V]: pastikan nomor admin itu juga yang pegang SchoBoot, atau pakai endpoint globalhub.id/.../konsultasi?package=SchoBoot kalau mendukung.
+  // TODO [V]: sisa kursi asli dari data pendaftar. null = label urgensi disembunyikan (jangan isi angka karangan).
+  SEATS_LEFT: null,
+  SEATS_TOTAL: 50
+};
+
+(function(){
+  // Dibangun ulang setelah shared.js: parameter iklan yang masuk (utm_campaign, fbclid, gclid, dll.) ikut diteruskan,
+  // lalu utm_source/medium/content ditimpa supaya pembelian terlacak ke halaman ini dan tombolnya.
+  function checkoutHref(placement){
+    var u = new URL(CONFIG.CHECKOUT_URL), inc = new URLSearchParams(location.search);
+    inc.forEach(function(v,k){ if (k !== 'btn' && k !== 'h1') u.searchParams.set(k, v); });
+    u.searchParams.set('utm_source','lp');
+    u.searchParams.set('utm_medium','schoboot');
+    u.searchParams.set('utm_content',placement);
+    return u.toString();
+  }
+  document.querySelectorAll('[data-checkout]').forEach(function(a){
+    a.href = checkoutHref(a.getAttribute('data-marketing-placement'));
+    a.rel = 'noopener';
+  });
+
+  // Label urgensi: hanya tampil kalau ada angka asli
+  var urg = document.getElementById('urgent');
+  if (typeof CONFIG.SEATS_LEFT === 'number') {
+    urg.textContent = 'Sisa ' + CONFIG.SEATS_LEFT + ' kursi dari ' + CONFIG.SEATS_TOTAL;
+    urg.hidden = false;
+  }
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Tracker: 0/5 → 5/5 mengikuti scroll
+  var tr = document.getElementById('tracker'), items = tr.querySelectorAll('li'),
+      cnt = document.getElementById('tcount'), bar = document.getElementById('tbar'), last = -1, ticking = false;
+  function updTracker(){
+    ticking = false;
+    // Selalu mulai 0/5 saat halaman dibuka, terisi seiring scroll (juga di desktop yang tracker-nya langsung terlihat)
+    var r = tr.getBoundingClientRect(), vh = innerHeight, y = scrollY, top = r.top + y;
+    var start = Math.max(0, top - vh * 0.9), end = Math.max(start + 360, top + r.height - vh * 0.35);
+    var p = (y - start) / (end - start);
+    var n = Math.max(0, Math.min(5, Math.floor(p * 6)));
+    if (n === last) return; last = n;
+    items.forEach(function(li,i){ li.classList.toggle('done', i < n); });
+    cnt.textContent = n; bar.style.width = (n * 20) + '%';
+  }
+  addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(updTracker); } }, {passive:true});
+  requestAnimationFrame(function(){ setTimeout(updTracker, 0); });
+
+  // Reveal saat masuk viewport
+  var els = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); }
+  else {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){ io.observe(e); });
+  }
+
+  // Kartu destinasi bergerak
+  var deck = document.getElementById('deck'), cards = Array.prototype.slice.call(deck.querySelectorAll('.card')),
+      dots = document.querySelectorAll('.deck__dots i'), idx = 0, timer = null;
+  function show(){
+    cards.forEach(function(c,i){ var pos = (i - idx + 3) % 3; c.className = 'card p' + pos; });
+    dots.forEach(function(d,i){ d.classList.toggle('on', i === idx); });
+  }
+  function next(){ idx = (idx + 1) % 3; show(); }
+  cards.forEach(function(c){ c.addEventListener('click', function(){ next(); restart(); }); });
+  function restart(){ clearInterval(timer); if(!reduce) timer = setInterval(next, 3200); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) restart(); else clearInterval(timer); }); }).observe(deck);
+  }
+
+  // Mockup sesi 4: tombol "lihat tips"
+  var qa = document.getElementById('qa'), qb = qa.querySelector('button');
+  qb.addEventListener('click', function(){ var o = qa.classList.toggle('open'); qb.setAttribute('aria-expanded', o); qb.textContent = o ? 'Tutup tips' : 'Lihat tips'; });
+
+  // Bar melayang HP: muncul setelah hero lewat, sembunyi saat harga terlihat
+  var sticky = document.getElementById('sticky'), heroOut = false, priceIn = false;
+  function updSticky(){ var s = heroOut && !priceIn; sticky.classList.toggle('show', s); sticky.setAttribute('aria-hidden', !s); sticky.querySelector('a').tabIndex = s ? 0 : -1; }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){ heroOut = !es[0].isIntersecting; updSticky(); }).observe(document.getElementById('hero'));
+    new IntersectionObserver(function(es){ priceIn = es[0].isIntersecting; updSticky(); }).observe(document.querySelector('#harga .pricecard'));
+  }
+})();
+</script>
+</body>
+</html>
