@@ -112,7 +112,8 @@ s{color:var(--muted)}
 .marquee:hover .marquee__track{animation-play-state:paused}
 .marquee__track img{height:44px;width:auto;object-fit:contain}
 @keyframes marquee{to{transform:translateX(-100%)}}
-@media (prefers-reduced-motion:reduce){.marquee{overflow-x:auto}.marquee__track{animation:none}.marquee__track[aria-hidden]{display:none}}
+/* Sengaja tetap jalan walau perangkat memakai reduced motion (permintaan tim): geraknya pelan, linear, dan berhenti saat di-hover */
+@media (prefers-reduced-motion:reduce){.marquee__track{animation-duration:28s!important;animation-delay:0s!important;animation-iteration-count:infinite!important}}
 
 /* ---------- Banding ---------- */
 .cmp{margin-top:20px;display:grid;gap:8px}
