@@ -26,7 +26,7 @@ node build.js
 - `src/lp.css`: tampilan semua halaman. `src/ieltsgo-v2.css`: tambahan khusus IELTSGO v2. `src/icons.html`: ikon.
 - `src/shared.js`: nomor WhatsApp admin (`WA_NUMBER`), penerusan UTM ke Order Online, dan tracking klik.
 - `src/ielts-a.html`, `src/ielts-b.html`, `src/a.html`, `src/b.html`: isi tiap halaman.
-- `src/schoboot.html` + `src/schoboot.css`: SchoBoot, gaya sendiri (tidak memakai `lp.css`). Link checkout dan sisa kursi diatur di objek `CONFIG` di bawah halaman. Varian: `?btn=orange`, `?h1=b`, `?h1=c`. Gambar di `schoboot/media/`.
+- `src/schoboot.html` + `src/schoboot.css`: SchoBoot, gaya sendiri (tidak memakai `lp.css`). Link checkout dan sisa kursi diatur di objek `CONFIG` di bawah halaman. Varian tombol: `?btn=orange`. Gambar di `schoboot/media/`.
 
 ## Yang harus dikerjakan developer sebelum tayang
 
