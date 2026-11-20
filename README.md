@@ -11,6 +11,7 @@ Draft landing page untuk review dan serah terima ke developer. Belum final: semu
 | `ielts-b/` | IELTS · Versi B Daftar Langsung (usul `globalhub.id/ieltslive`) | Checkout Order Online |
 | `study-abroad-a/` | Study Abroad · Versi A Direct Offer | Checkout Order Online |
 | `study-abroad-b/` | Study Abroad · Versi B Konsultasi Dulu | Chat WhatsApp |
+| `schoboot/` | SchoBoot · Scholarship Bootcamp LPDP Prep (brief 20 Nov 2026) | Checkout Order Online (sementara link Essential, ganti `CONFIG.CHECKOUT_URL`) |
 
 Tiap `index.html` berdiri sendiri (CSS dan JS sudah di dalam), jadi bisa langsung disalin ke server mana pun.
 
@@ -25,6 +26,7 @@ node build.js
 - `src/lp.css`: tampilan semua halaman. `src/ieltsgo-v2.css`: tambahan khusus IELTSGO v2. `src/icons.html`: ikon.
 - `src/shared.js`: nomor WhatsApp admin (`WA_NUMBER`), penerusan UTM ke Order Online, dan tracking klik.
 - `src/ielts-a.html`, `src/ielts-b.html`, `src/a.html`, `src/b.html`: isi tiap halaman.
+- `src/schoboot.html` + `src/schoboot.css`: SchoBoot, gaya sendiri (tidak memakai `lp.css`). Link checkout dan sisa kursi diatur di objek `CONFIG` di bawah halaman. Varian: `?btn=orange`, `?h1=b`, `?h1=c`. Gambar di `schoboot/media/`.
 
 ## Yang harus dikerjakan developer sebelum tayang
 
