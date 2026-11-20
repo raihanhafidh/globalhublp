@@ -66,7 +66,8 @@ s{color:var(--muted)}
 .nav__logo{display:flex;align-items:center;background:#fff;border-radius:10px;padding:0 12px;height:38px;text-decoration:none;margin-right:auto;flex:none}
 .nav__logo img{display:block;width:110px;height:22px}
 .nav__cta{flex:none}
-@media (max-width:359px){.nav__cta svg{display:none}.nav__logo{padding:0 10px}.nav__logo img{width:96px;height:19px}}
+/* HP: notch cuma berisi logo, menyempit dan di tengah seperti Dynamic Island. Tombol daftar ada di hero dan bar melayang bawah. */
+@media (max-width:767px){.nav .nav__pill{width:auto;padding:8px 14px}.nav .nav__logo{margin-right:0}.nav .nav__cta{display:none}}
 .nav__links{display:none;gap:2px}
 .nav__links a{color:#fff;opacity:.78;text-decoration:none;font-size:14px;padding:8px 12px;border-radius:999px}
 .nav__links a:hover{opacity:1;background:rgba(255,255,255,.08)}
@@ -276,7 +277,7 @@ footer p + p{margin-top:6px}
       <a href="#harga">Harga</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="#harga" class="nav__cta" data-checkout data-cta="checkout" data-pos="nav" data-paket="schoboot" data-marketing-placement="nav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>Daftar Rp149K</a>
+    <a href="#harga" class="nav__cta" data-checkout data-cta="checkout" data-pos="nav" data-paket="schoboot" data-marketing-placement="nav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>Daftar</a>
   </nav>
 </header>
 <!-- /§nav -->
