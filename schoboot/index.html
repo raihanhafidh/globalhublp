@@ -125,11 +125,12 @@ s{color:var(--muted)}
 .campus__inner{display:grid;gap:18px;align-items:center}
 .campus__cap{font-size:14px;color:var(--muted);text-align:center;max-width:420px;margin:0 auto}
 .marquee{display:flex;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.marquee__track{display:flex;align-items:center;gap:32px;padding:0 32px 0 0;margin:0;list-style:none;flex:none;animation:marquee 28s linear infinite}
+.marquee__track{display:flex;align-items:center;gap:32px;padding:0 32px 0 0;margin:0;list-style:none;flex:none;animation:marquee 28s linear infinite;will-change:transform}
 .marquee:hover .marquee__track{animation-play-state:paused}
 .marquee__track img{height:44px;width:auto;object-fit:contain}
 @keyframes marquee{to{transform:translateX(-100%)}}
-@media (prefers-reduced-motion:reduce){.marquee{overflow-x:auto}.marquee__track{animation:none}.marquee__track[aria-hidden]{display:none}}
+/* Sengaja tetap jalan walau perangkat memakai reduced motion (permintaan tim): geraknya pelan, linear, dan berhenti saat di-hover */
+@media (prefers-reduced-motion:reduce){.marquee__track{animation-duration:28s!important;animation-delay:0s!important;animation-iteration-count:infinite!important}}
 
 /* ---------- Banding ---------- */
 .cmp{margin-top:20px;display:grid;gap:8px}
@@ -717,7 +718,11 @@ var CONFIG = {
 
   // Scroll beranimasi untuk semua tombol/link yang mengarah ke section lain (#...)
   var navH = function(){ var n = document.querySelector('.nav__pill'); return n ? n.getBoundingClientRect().bottom + 12 : 0; };
-  var ease = function(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; };
+  // Easing cubic-bezier(.7,0,.2,1): mulai pelan, lalu melaju cepat, berhenti singkat di tujuan
+  var ease = (function(x1,y1,x2,y2){
+    function b(t,a1,a2){ return 3*a1*t*(1-t)*(1-t) + 3*a2*t*t*(1-t) + t*t*t; }
+    return function(x){ var lo=0, hi=1, t=x; for (var i=0;i<24;i++){ t=(lo+hi)/2; if (b(t,x1,x2)<x) lo=t; else hi=t; } return b(t,y1,y2); };
+  })(.7,0,.2,1);
   var anim = null;
   function stopAnim(){ if (anim) { cancelAnimationFrame(anim); anim = null; } }
   ['wheel','touchstart','keydown'].forEach(function(ev){ addEventListener(ev, stopAnim, {passive:true}); });
@@ -731,13 +736,14 @@ var CONFIG = {
       el.focus({preventScroll:true});
       el.classList.remove('arrive'); void el.offsetWidth; el.classList.add('arrive');
     }
-    if (reduce || Math.abs(target() - from) < 4) {
-      // Tanpa animasi: lompat, lalu koreksi beberapa frame sampai posisi stabil
+    // Sengaja tetap beranimasi walau perangkat memakai reduced motion (permintaan tim)
+    if (Math.abs(target() - from) < 4) {
+      // Jarak sangat dekat: lompat, lalu koreksi beberapa frame sampai posisi stabil
       var n = 0; scrollTo(0, target());
       (function settle(){ var t = target(); if (Math.abs(t - scrollY) > 2) scrollTo(0, t); if (++n < 12) requestAnimationFrame(settle); else arrive(); })();
       return;
     }
-    var dur = Math.min(1100, Math.max(550, Math.abs(target() - from) * .35)), t0 = null;
+    var dur = Math.min(1300, Math.max(800, Math.abs(target() - from) * .4)), t0 = null;
     stopAnim();
     anim = requestAnimationFrame(function step(ts){
       if (t0 === null) t0 = ts;
