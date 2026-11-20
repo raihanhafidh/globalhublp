@@ -67,8 +67,29 @@ s{color:var(--muted)}
 .nav__logo{display:flex;align-items:center;background:#fff;border-radius:10px;padding:0 12px;height:38px;text-decoration:none;margin-right:auto;flex:none}
 .nav__logo img{display:block;width:110px;height:22px}
 .nav__cta{flex:none}
-/* HP: notch cuma berisi logo, menyempit dan di tengah seperti Dynamic Island. Tombol daftar ada di hero dan bar melayang bawah. */
-@media (max-width:767px){.nav .nav__pill{width:auto;padding:8px 14px}.nav .nav__logo{margin-right:0}.nav .nav__cta{display:none}}
+/* HP: logo + tombol menu. Panel dropdown memanjang di dalam notch (pola Supaste). */
+.nav__menu,.nav__panel{display:none}
+@media (max-width:767px){
+  .nav .nav__pill{flex-wrap:wrap;padding:8px;transition:border-radius .3s}
+  .nav .nav__cta{display:none}
+  .nav__menu{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer;padding:0}
+  .nav__menu .i-close{display:none}
+  .nav.open .nav__menu .i-open,.nav__pill.open .nav__menu .i-open{display:none}
+  .nav__pill.open .nav__menu .i-close{display:block}
+  .nav__panel{display:grid;grid-template-rows:0fr;flex-basis:100%;transition:grid-template-rows .35s cubic-bezier(.2,.8,.2,1)}
+  .nav__pill.open .nav__panel{grid-template-rows:1fr}
+  .nav__panel-in{overflow:hidden;min-height:0;display:flex;flex-direction:column}
+  .nav__panel-in a{color:rgba(255,255,255,.72);text-decoration:none;font-size:20px;padding:10px 12px;opacity:0;transform:translateY(-6px);transition:opacity .25s,transform .3s,color .2s}
+  .nav__panel-in a:first-child{margin-top:14px}
+  .nav__panel-in a:hover{color:#fff}
+  .nav__pill.open .nav__panel-in a{opacity:1;transform:none}
+  .nav__pill.open .nav__panel-in a:nth-child(2){transition-delay:.03s}
+  .nav__pill.open .nav__panel-in a:nth-child(3){transition-delay:.06s}
+  .nav__pill.open .nav__panel-in a:nth-child(4){transition-delay:.09s}
+  .nav__pill.open .nav__panel-in a:nth-child(5){transition-delay:.12s}
+  .nav__panel-in .nav__panel-cta{display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:var(--ink);font-size:15px;font-weight:700;border-radius:12px;margin:14px 0 4px;padding:12px}
+  .nav__panel-in .nav__panel-cta:hover{color:var(--ink)}
+}
 .nav__links{display:none;gap:2px}
 .nav__links a{color:#fff;opacity:.78;text-decoration:none;font-size:14px;padding:8px 12px;border-radius:999px}
 .nav__links a:hover{opacity:1;background:rgba(255,255,255,.08)}
@@ -76,36 +97,39 @@ s{color:var(--muted)}
 .nav__cta:active{transform:scale(.97)}
 
 /* ---------- Hero: gradasi oranye → kuning (warna deck PM), rata tengah ala Supaste ---------- */
-.hero{position:relative;overflow:hidden;margin:0 0 8px;border-radius:0 0 28px 28px;padding:92px 0 40px;text-align:center;color:#1A1006;
+.hero{position:relative;overflow:hidden;margin:0 0 8px;border-radius:0 0 28px 28px;padding:96px 0 52px;text-align:center;color:#1A1006;
   background:radial-gradient(120% 60% at 50% 0%,rgba(255,255,255,.18),transparent 60%),linear-gradient(180deg,#FF6A1F 0%,#FF8040 30%,#FDB913 72%,#FFE29A 100%)}
 .hero__inner{display:flex;flex-direction:column;align-items:center}
 .eyebrow--hero{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.45);color:#2B1700}
 .eyebrow--hero i{background:#fff}
 @media (max-width:479px){.eyebrow--hero{font-size:12px;white-space:nowrap;padding:6px 11px}}
-.h1{font-size:clamp(31px,8.4vw,72px);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin-top:18px;max-width:15ch}
+.h1{font-size:clamp(31px,8.4vw,72px);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin-top:24px;max-width:15ch}
 .h1 .line{display:block}
 .h1 .line--serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.02em;font-size:1.08em;line-height:1;color:#3A1D00;margin-top:.12em}
 .h1 .w{display:inline-block;white-space:nowrap}
 .h1 .ch{display:inline-block;opacity:0;transform:translateY(.35em);animation:ch .5s cubic-bezier(.2,.8,.2,1) forwards}
 @keyframes ch{to{opacity:1;transform:none}}
-.hero__sub{font-size:16px;color:#3A2410;margin-top:16px;max-width:600px}
-.hero__cta{margin-top:24px;display:flex;flex-direction:column;align-items:stretch;gap:10px;width:100%;max-width:320px}
+.hero__sub{font-size:16px;color:#3A2410;margin-top:24px;max-width:600px}
+.hero__cta{margin-top:36px;display:flex;flex-direction:column;align-items:stretch;gap:10px;width:100%;max-width:320px}
 .btn--hero svg{transition:transform .25s cubic-bezier(.2,.8,.2,1)}
 .btn--hero:hover svg{transform:translateY(2px)}
 .btn--ghost{background:#fff;color:var(--ink);box-shadow:0 6px 20px rgba(120,50,0,.15)}
-.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin-top:18px;padding:0;list-style:none;font-size:13px;color:#4A2E12}
-.trust s{color:#7A5530}
 /* Kartu harga berdenyut sekali saat sampai lewat tombol scroll */
 #harga.arrive .pricecard{animation:arrive 1.1s cubic-bezier(.2,.8,.2,1)}
 @keyframes arrive{0%{box-shadow:0 0 0 0 rgba(255,128,64,.55),0 20px 50px rgba(14,14,16,.08)}60%{box-shadow:0 0 0 14px rgba(255,128,64,0),0 20px 50px rgba(14,14,16,.08)}100%{box-shadow:0 20px 50px rgba(14,14,16,.08)}}
 [tabindex="-1"]:focus{outline:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* ---------- Strip fakta ---------- */
-.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px}
-.fact{background:var(--card);border-radius:18px;padding:10px 8px;text-align:center}
-.fact b{display:block;font-size:15px;letter-spacing:-.01em;line-height:1.2}
-.fact span{display:block;font-size:11px;line-height:1.25;color:var(--muted);margin-top:2px}
+/* ---------- Logo kampus berjalan (pola globalhub.id/ieltsgo) ---------- */
+.campus{padding:28px 0 24px;overflow:hidden}
+.campus__inner{display:grid;gap:18px;align-items:center}
+.campus__cap{font-size:14px;color:var(--muted);text-align:center;max-width:420px;margin:0 auto}
+.marquee{display:flex;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee__track{display:flex;align-items:center;gap:32px;padding:0 32px 0 0;margin:0;list-style:none;flex:none;animation:marquee 28s linear infinite}
+.marquee:hover .marquee__track{animation-play-state:paused}
+.marquee__track img{height:44px;width:auto;object-fit:contain}
+@keyframes marquee{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.marquee{overflow-x:auto}.marquee__track{animation:none}.marquee__track[aria-hidden]{display:none}}
 
 /* ---------- Banding ---------- */
 .cmp{margin-top:20px;display:grid;gap:8px}
@@ -220,12 +244,16 @@ footer p + p{margin-top:6px}
   .wrap{padding:0 40px}
   .nav__links{display:flex}
   .nav__pill{--ear:22px;padding:8px 10px 8px 12px;border-radius:0 0 28px 28px}
-  .hero{padding:140px 0 88px}
-  .hero__sub{font-size:19px}
-  .hero__cta{flex-direction:row;justify-content:center;max-width:none;width:auto;gap:14px}
+  .hero{padding:148px 0 104px}
+  .campus{padding:40px 0 32px}
+  .campus__inner{grid-template-columns:minmax(0,340px) 1px minmax(0,1fr);gap:32px}
+  .campus__inner::before{content:"";grid-column:2;grid-row:1;height:56px;background:var(--line)}
+  .campus__cap{text-align:left;margin:0;font-size:15px;grid-column:1;grid-row:1}
+  .marquee{grid-column:3;grid-row:1}
+  .marquee__track img{height:60px}
+  .hero__sub{font-size:19px;margin-top:28px}
+  .hero__cta{margin-top:44px;flex-direction:row;justify-content:center;max-width:none;width:auto;gap:14px}
   .hero__cta .btn{min-width:210px}
-  .facts{grid-template-columns:repeat(4,1fr);margin:12px}
-  .fact{padding:20px 24px;border-radius:28px}
   .cmp__head{display:grid;grid-template-columns:1fr 1fr;font-size:13px;font-weight:700;color:var(--muted);padding:0 16px}
   .cmp__row{grid-template-columns:1fr 1fr}
   .cmp__from,.cmp__to{padding:16px 20px}
@@ -240,9 +268,6 @@ footer p + p{margin-top:6px}
   .mock{padding:18px;font-size:14px}
   .personas{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);margin:22px 0 0;padding:0;overflow:visible}
   .swipe{display:none}
-  .fact{text-align:left}
-  .fact b{font-size:20px}
-  .fact span{font-size:13px}
   .mock li{padding:7px 10px}
   .faq{grid-template-columns:1fr 1fr;align-items:start}
   .closing{padding:90px 0}
@@ -260,7 +285,7 @@ footer p + p{margin-top:6px}
 
 <!-- §nav -->
 <header class="nav">
-  <nav class="nav__pill" aria-label="Utama">
+  <nav class="nav__pill" id="nav" aria-label="Utama">
     <a href="#top" class="nav__logo" aria-label="Global Hub by Englishvit, ke atas halaman"><img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="110" height="22" fetchpriority="high"></a>
     <div class="nav__links">
       <a href="#program">Program</a>
@@ -269,6 +294,20 @@ footer p + p{margin-top:6px}
       <a href="#faq">FAQ</a>
     </div>
     <a href="#harga" class="nav__cta" data-checkout data-cta="checkout" data-pos="nav" data-paket="schoboot" data-marketing-placement="nav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>Daftar</a>
+    <!-- HP: tombol menu membuka panel dropdown di dalam notch (pola Supaste) -->
+    <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Buka menu">
+      <svg class="i-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="i-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="nav__panel" id="nav-panel">
+      <div class="nav__panel-in">
+        <a href="#program">Program</a>
+        <a href="#untuk-siapa">Untuk siapa</a>
+        <a href="#harga">Harga</a>
+        <a href="#faq">FAQ</a>
+        <a href="#harga" class="nav__panel-cta" data-checkout data-cta="checkout" data-pos="nav-menu" data-paket="schoboot" data-marketing-placement="nav-menu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>Daftar</a>
+      </div>
+    </div>
   </nav>
 </header>
 <!-- /§nav -->
@@ -300,22 +339,43 @@ footer p + p{margin-top:6px}
       <a href="#harga" class="btn btn--hero" data-scroll data-marketing-placement="hero-info">Info lebih lengkap <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
       <a href="#" class="btn btn--ghost" data-cta="whatsapp" data-pos="hero-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="hero-wa">Tanya admin dulu</a>
     </div>
-    <ul class="trust">
-      <li>4 sesi × 60 menit</li>
-      <li><s>Rp250.000</s> Rp149.000</li>
-      <li>Kuota 50 peserta</li>
-    </ul>
   </div>
 </section>
 <!-- /§hero -->
 
 <!-- §facts -->
-<section class="facts" aria-label="Fakta program">
-  <div class="fact"><b>4 sesi</b><span>live grup</span></div>
-  <div class="fact"><b>60 menit</b><span>per sesi</span></div>
-  <div class="fact"><b>2 minggu</b><span>Jan 2027</span></div>
-  <div class="fact"><b>Maks. 50</b><span>peserta</span></div>
-  <!-- TODO [V]: tanggal dan jam tiap sesi -->
+<!-- Logo kampus berjalan, sama dengan globalhub.id/ieltsgo (logo & caption dari situ).
+     TODO [V]: pastikan caption ini juga berlaku untuk mentor SchoBoot. Logo kampus tidak berarti kerja sama resmi. -->
+<section class="campus" aria-label="Kampus tempat mentor Global Hub belajar">
+  <div class="wrap campus__inner">
+    <p class="campus__cap">Mentor kami menjadi bagian dari perjalanan pelajar Indonesia di universitas terbaik dunia.</p>
+    <div class="marquee">
+      <ul class="marquee__track">
+        <li><img src="https://globalhub.id/home/logos/monash.avif" alt="Monash University" width="177" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/adelaide.avif" alt="University of Adelaide" width="196" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/western.avif" alt="University of Western Australia" width="197" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/hellenic.avif" alt="Hellenic University" width="197" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/melbourne.avif" alt="The University of Melbourne" width="200" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/newcastle.avif" alt="University of Newcastle" width="192" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/selcuk.avif" alt="Selcuk University" width="214" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/jordan.avif" alt="Jordan University" width="172" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/khnty.avif" alt="University of Khnty" width="172" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/kfupm.avif" alt="King Fahd University of Petroleum and Minerals" width="251" height="64" loading="lazy" decoding="async"></li>
+      </ul>
+      <ul class="marquee__track" aria-hidden="true">
+        <li><img src="https://globalhub.id/home/logos/monash.avif" alt="" width="177" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/adelaide.avif" alt="" width="196" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/western.avif" alt="" width="197" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/hellenic.avif" alt="" width="197" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/melbourne.avif" alt="" width="200" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/newcastle.avif" alt="" width="192" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/selcuk.avif" alt="" width="214" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/jordan.avif" alt="" width="172" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/khnty.avif" alt="" width="172" height="64" loading="lazy" decoding="async"></li>
+        <li><img src="https://globalhub.id/home/logos/kfupm.avif" alt="" width="251" height="64" loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+  </div>
 </section>
 <!-- /§facts -->
 
@@ -639,6 +699,21 @@ var CONFIG = {
     var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(e){ io.observe(e); });
   }
+
+  // Menu HP: buka/tutup panel di dalam notch
+  var navEl = document.getElementById('nav'), menuBtn = navEl.querySelector('.nav__menu'), panel = document.getElementById('nav-panel');
+  function setMenu(open){
+    navEl.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+    panel.querySelectorAll('a').forEach(function(a){ a.tabIndex = open ? 0 : -1; });
+  }
+  setMenu(false);
+  menuBtn.addEventListener('click', function(){ setMenu(!navEl.classList.contains('open')); });
+  panel.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && navEl.classList.contains('open')) { setMenu(false); menuBtn.focus(); } });
+  document.addEventListener('click', function(e){ if (navEl.classList.contains('open') && !navEl.contains(e.target)) setMenu(false); });
+  matchMedia('(min-width:768px)').addEventListener('change', function(){ setMenu(false); });
 
   // Scroll beranimasi untuk semua tombol/link yang mengarah ke section lain (#...)
   var navH = function(){ var n = document.querySelector('.nav__pill'); return n ? n.getBoundingClientRect().bottom + 12 : 0; };
