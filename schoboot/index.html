@@ -273,6 +273,62 @@ footer p + p{margin-top:6px}
 <!-- /§nav -->
 
 <main id="top">
+<!-- §hero -->
+<section class="hero" id="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <span class="eyebrow"><i></i>Scholarship Bootcamp · LPDP Prep · Januari 2027</span>
+      <h1 class="h1" id="h1" aria-label="Tahu syaratnya itu gampang. Siap bersaing itu beda cerita.">
+        <span class="line">Tahu syaratnya itu gampang.</span>
+        <span class="line">Siap bersaing itu beda cerita.</span>
+      </h1>
+      <script>
+      /* A/B H1: ?h1=b atau ?h1=c. Lalu animasi per huruf (dilewati kalau reduced-motion). */
+      (function(){
+        var v={b:["Mau LPDP?","Jangan cuma tahu syaratnya."],c:["Mulai siapin LPDP","sebelum pendaftaran dibuka."]};
+        var h=document.getElementById('h1'),q=new URLSearchParams(location.search),k=q.get('h1'),L=h.querySelectorAll('.line');
+        if(v[k]){L[0].textContent=v[k][0];L[1].textContent=v[k][1];h.setAttribute('aria-label',v[k].join(' '));}
+        var b=q.get('btn');if(b==='orange'||b==='black')document.documentElement.setAttribute('data-btn',b);
+        if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+        var i=0;L.forEach(function(line){var words=line.textContent.trim().split(' ');line.textContent='';line.setAttribute('aria-hidden','true');
+          words.forEach(function(w,wi){var ws=document.createElement('span');ws.className='w';
+            Array.from(w).forEach(function(c){var s=document.createElement('span');s.className='ch';s.textContent=c;s.style.animationDelay=(i++*14)+'ms';ws.appendChild(s);});
+            line.appendChild(ws);if(wi<words.length-1)line.appendChild(document.createTextNode(' '));});});
+      })();
+      </script>
+      <p class="hero__sub">4 sesi live bareng mentor buat tahu apa aja yang perlu kamu siapin sebelum daftar LPDP, dan apa yang bikin aplikasimu punya arah.</p>
+      <div class="price"><s>Rp250.000</s><strong>Rp149.000</strong><span class="quota">· Kuota 50 peserta</span></div>
+      <div class="hero__cta">
+        <a href="#harga" class="btn" data-checkout data-cta="checkout" data-pos="hero" data-paket="schoboot" data-marketing-placement="hero">Amankan kursimu, Rp149K →</a>
+        <a href="#" class="link" data-cta="whatsapp" data-pos="hero-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="hero-wa">Masih ragu? Tanya admin dulu</a>
+      </div>
+      <ul class="trust">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>4 sesi × 60 menit</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Live &amp; interaktif</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Kuota terbatas 50 orang</li>
+      </ul>
+    </div>
+
+    <!-- Mockup "LPDP Prep Tracker": HTML/CSS, progres terisi saat di-scroll -->
+    <div class="tracker" id="tracker" role="img" aria-label="Ilustrasi checklist persiapan LPDP: study plan, esai kontribusi, dokumen, skor bahasa, wawancara">
+      <div class="tracker__top">
+        <span class="tracker__title">LPDP Prep Tracker</span>
+        <span class="tracker__count"><span id="tcount">0</span>/5</span>
+      </div>
+      <div class="bar"><span id="tbar"></span></div>
+      <ul>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Study plan<span class="tag">Sesi 2</span></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Esai kontribusi<span class="tag">Sesi 2</span></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Dokumen<span class="tag">Sesi 3</span></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Skor bahasa<span class="tag">Sesi 1</span></li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E0E10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Wawancara<span class="tag">Sesi 4</span></li>
+      </ul>
+      <!-- TODO [V]: label "Sesi N" di tracker mengikuti placeholder materi sesi, sesuaikan kalau materi final berbeda -->
+      <p class="tracker__foot">Ilustrasi. Isi tiap sesi menyesuaikan materi final.</p>
+    </div>
+  </div>
+</section>
+<!-- /§hero -->
 
 
 
