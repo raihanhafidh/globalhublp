@@ -133,7 +133,7 @@
 <!-- /§destinations -->
 
 <!-- §program -->
-<!-- Roadmap 4 sesi sebagai peta jalan (referensi desain dari tim): jalan tergambar saat section terlihat, pin muncul berurutan,
+<!-- Alur peta dari atas ke bawah (desktop & HP). Roadmap 4 sesi sebagai peta jalan (referensi desain dari tim): jalan tergambar saat section terlihat, pin muncul berurutan,
      klik kartu/pin untuk buka detail (popover di desktop, bottom sheet di HP), titik "Kamu di sini" berjalan ke sesi yang dipilih. -->
 <section class="sec" id="program">
   <div class="wrap fade-up">
@@ -150,43 +150,43 @@
       <svg class="rm__map rm__map--d" viewBox="0 0 1200 750" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         <defs>
           <pattern id="rmDots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#E9DCC3"/></pattern>
-          <mask id="rmRevealD" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="750"><path class="rm-reveal" d="M110 660 C330 630 600 680 820 640 C930 620 935 515 820 480 C700 440 450 430 380 395 C295 352 330 285 430 250 C560 205 760 175 930 150" fill="none" stroke="#fff" stroke-width="60" stroke-linecap="round"/></mask>
+          <mask id="rmRevealD" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="750"><path class="rm-reveal" d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#fff" stroke-width="60" stroke-linecap="round"/></mask>
         </defs>
         <rect width="1200" height="750" fill="#FCF5E8"/>
         <rect width="1200" height="750" fill="url(#rmDots)"/>
-        <g class="rm-cloud"><ellipse cx="170" cy="70" rx="48" ry="18" fill="#fff"/><ellipse cx="195" cy="58" rx="28" ry="18" fill="#fff"/></g>
-        <g class="rm-cloud rm-cloud--b"><ellipse cx="620" cy="60" rx="44" ry="16" fill="#fff"/><ellipse cx="640" cy="50" rx="24" ry="15" fill="#fff"/></g>
-        <g class="rm-cloud"><ellipse cx="1060" cy="250" rx="40" ry="14" fill="#fff"/><ellipse cx="1078" cy="241" rx="22" ry="13" fill="#fff"/></g>
-        <path d="M40 230 L140 100 L240 230Z" fill="#E7D3B4"/><path d="M140 100 L240 230 L170 230Z" fill="#D9C19C"/><path d="M118 128 L140 100 L162 128 L148 122 L140 132 L130 122Z" fill="#fff"/>
-        <path d="M170 230 L250 132 L330 230Z" fill="#EEDDC2"/><path d="M233 152 L250 132 L267 152 L256 147 L250 155 L243 147Z" fill="#fff"/>
-        <path d="M0 250 C180 215 380 270 600 240 C820 210 1000 250 1200 225 V750 H0Z" fill="#EEF2DE"/>
-        <path d="M940 420 L1040 300 L1140 420Z" fill="#E7D3B4"/><path d="M1040 300 L1140 420 L1075 420Z" fill="#D9C19C"/><path d="M1020 324 L1040 300 L1060 324 L1048 319 L1040 328 L1032 319Z" fill="#fff"/>
-        <path d="M0 420 C220 395 420 440 640 410 C860 380 1020 425 1200 400 V750 H0Z" fill="#E6EDD2"/>
-        <path d="M0 585 C160 560 300 590 480 572 C700 550 900 560 1200 535" fill="none" stroke="#CFE3EE" stroke-width="26" stroke-linecap="round"/>
-        <path d="M0 585 C160 560 300 590 480 572 C700 550 900 560 1200 535" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="12 14" opacity=".8"/>
+        <g class="rm-cloud"><ellipse cx="560" cy="34" rx="44" ry="15" fill="#fff"/><ellipse cx="580" cy="25" rx="24" ry="14" fill="#fff"/></g>
+        <g class="rm-cloud rm-cloud--b"><ellipse cx="1090" cy="250" rx="40" ry="14" fill="#fff"/><ellipse cx="1108" cy="241" rx="22" ry="13" fill="#fff"/></g>
+        <path d="M0 215 C180 195 380 235 600 210 C820 185 1000 220 1200 200 V750 H0Z" fill="#EEF2DE"/>
+        <path d="M960 420 L1060 300 L1160 420Z" fill="#E7D3B4"/><path d="M1060 300 L1160 420 L1095 420Z" fill="#D9C19C"/><path d="M1040 324 L1060 300 L1080 324 L1068 319 L1060 328 L1052 319Z" fill="#fff"/>
+        <path d="M0 430 C220 405 420 450 640 420 C860 390 1020 435 1200 410 V750 H0Z" fill="#E6EDD2"/>
+        <path d="M30 730 L130 600 L230 730Z" fill="#E7D3B4"/><path d="M130 600 L230 730 L160 730Z" fill="#D9C19C"/><path d="M108 628 L130 600 L152 628 L138 622 L130 632 L120 622Z" fill="#fff"/>
+        <path d="M160 730 L240 632 L320 730Z" fill="#EEDDC2"/><path d="M223 652 L240 632 L257 652 L246 647 L240 655 L233 647Z" fill="#fff"/>
+        <path d="M0 165 C160 190 300 160 480 178 C700 200 900 190 1200 215" fill="none" stroke="#CFE3EE" stroke-width="26" stroke-linecap="round"/>
+        <path d="M0 165 C160 190 300 160 480 178 C700 200 900 190 1200 215" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="12 14" opacity=".8"/>
         <g fill="#9CC98A">
-          <g transform="translate(140 470)"><path d="M0 -40 L18 0 H-18Z"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
-          <g transform="translate(300 300)"><path d="M0 -36 L16 0 H-16Z"/><rect x="-2.5" y="0" width="5" height="11" fill="#B08560"/></g>
-          <g transform="translate(700 320)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
-          <g transform="translate(1010 470)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
-          <g transform="translate(60 720)"><path d="M0 -36 L16 0 H-16Z"/><rect x="-2.5" y="0" width="5" height="11" fill="#B08560"/></g>
-          <g transform="translate(560 735)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
-          <g transform="translate(1000 728)"><path d="M0 -38 L17 0 H-17Z"/><rect x="-2.5" y="0" width="5" height="11" fill="#B08560"/></g>
-          <g transform="translate(250 730)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
+          <g transform="translate(60 330)"><path d="M0 -40 L18 0 H-18Z"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
+          <g transform="translate(150 405)"><path d="M0 -36 L16 0 H-16Z"/><rect x="-2.5" y="0" width="5" height="11" fill="#B08560"/></g>
+          <g transform="translate(700 232)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
+          <g transform="translate(1040 470)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
+          <g transform="translate(1172 540)"><path d="M0 -38 L17 0 H-17Z"/><rect x="-2.5" y="0" width="5" height="11" fill="#B08560"/></g>
+          <g transform="translate(480 650)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
+          <g transform="translate(600 725)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
+          <g transform="translate(800 715)"><path d="M0 -38 L17 0 H-17Z"/><rect x="-2.5" y="0" width="5" height="11" fill="#B08560"/></g>
+          <g transform="translate(1010 725)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
         </g>
         <g mask="url(#rmRevealD)">
-          <path d="M110 660 C330 630 600 680 820 640 C930 620 935 515 820 480 C700 440 450 430 380 395 C295 352 330 285 430 250 C560 205 760 175 930 150" fill="none" stroke="#E8C27E" stroke-width="40" stroke-linecap="round"/>
-          <path d="M110 660 C330 630 600 680 820 640 C930 620 935 515 820 480 C700 440 450 430 380 395 C295 352 330 285 430 250 C560 205 760 175 930 150" fill="none" stroke="#F7DCA6" stroke-width="32" stroke-linecap="round"/>
-          <path d="M110 660 C330 630 600 680 820 640 C930 620 935 515 820 480 C700 440 450 430 380 395 C295 352 330 285 430 250 C560 205 760 175 930 150" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="16 14" stroke-linecap="round"/>
-          <g transform="translate(905 560) rotate(14)"><rect x="-24" y="-20" width="48" height="40" rx="3" fill="#B8865A"/><path d="M-24 -10H24M-24 0H24M-24 10H24" stroke="#9A6D45" stroke-width="2"/></g>
+          <path d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#E8C27E" stroke-width="40" stroke-linecap="round"/>
+          <path d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#F7DCA6" stroke-width="32" stroke-linecap="round"/>
+          <path d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="16 14" stroke-linecap="round"/>
+          <g transform="translate(913 190) rotate(-12)"><rect x="-24" y="-20" width="48" height="40" rx="3" fill="#B8865A"/><path d="M-24 -10H24M-24 0H24M-24 10H24" stroke="#9A6D45" stroke-width="2"/></g>
         </g>
-        <path class="rm-done" d="M110 660 C330 630 600 680 820 640 C930 620 935 515 820 480 C700 440 450 430 380 395 C295 352 330 285 430 250 C560 205 760 175 930 150" fill="none" stroke="#FF6A1F" stroke-width="5" stroke-linecap="round"/>
-        <ellipse class="rm-hill" cx="930" cy="152" rx="70" ry="18" fill="#D6E6BE"/>
-        <g class="rm-flag"><rect x="926" y="70" width="5" height="84" rx="2" fill="#1B2440"/><path d="M931 72 L990 90 L931 108Z" fill="#FDB913"/><path d="M950 85 l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7Z" fill="#FF6A1F"/></g>
-        <path class="rm-trail" d="M985 82 C1030 45 1070 55 1130 28" fill="none" stroke="#9A9AA6" stroke-width="2.5" stroke-dasharray="7 8"/>
+        <path class="rm-done" d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#FF6A1F" stroke-width="5" stroke-linecap="round"/>
+        <ellipse class="rm-hill" cx="930" cy="602" rx="70" ry="18" fill="#D6E6BE"/>
+        <g class="rm-flag"><rect x="926" y="518" width="5" height="84" rx="2" fill="#1B2440"/><path d="M931 520 L990 538 L931 556Z" fill="#FDB913"/><path d="M950 533 l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7Z" fill="#FF6A1F"/></g>
+        <path class="rm-trail" d="M985 530 C1030 492 1070 502 1130 470" fill="none" stroke="#9A9AA6" stroke-width="2.5" stroke-dasharray="7 8"/>
         <g class="rm-plane"><g transform="scale(1.4)"><path d="M-14 0 L14 -2 L20 0 L14 2Z M-2 -1 L-10 -14 L-5 -14 L6 -1Z M-2 1 L-10 14 L-5 14 L6 1Z M-12 -1 L-16 -7 L-13 -7 L-8 -1Z M-12 1 L-16 7 L-13 7 L-8 1Z" fill="#fff" stroke="#1B2440" stroke-width="1.4" stroke-linejoin="round"/></g>
-          <animateMotion dur="8s" repeatCount="indefinite" rotate="auto" path="M985 82 C1030 45 1070 55 1130 28 C1170 10 1200 0 1260 -30"/></g>
-        <g transform="translate(1140 505)"><circle r="30" fill="#fff" stroke="#C9C9D2" stroke-width="2"/><g class="rm-needle"><path d="M0 -24 L6 0 L0 24 L-6 0Z" fill="#6E7385"/><path d="M0 -24 L6 0 H-6Z" fill="#FF6A1F"/></g><text y="-36" text-anchor="middle" font-size="13" font-weight="700" fill="#6E7385">U</text></g>
+          <animateMotion dur="8s" repeatCount="indefinite" rotate="auto" path="M985 530 C1030 492 1070 502 1130 470 C1170 452 1200 440 1260 410"/></g>
+        <g transform="translate(1145 690)"><circle r="30" fill="#fff" stroke="#C9C9D2" stroke-width="2"/><g class="rm-needle"><path d="M0 -24 L6 0 L0 24 L-6 0Z" fill="#6E7385"/><path d="M0 -24 L6 0 H-6Z" fill="#FF6A1F"/></g><text y="-36" text-anchor="middle" font-size="13" font-weight="700" fill="#6E7385">U</text></g>
       </svg>
       <!-- Peta HP (portrait) -->
       <svg class="rm__map rm__map--m" viewBox="0 0 400 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
@@ -391,23 +391,89 @@
   <div class="wrap fade-up" style="text-align:center">
     <h2 class="h2 reveal">Satu tiket. 4 sesi lengkap.</h2>
     <p class="lead">Sekali bayar, langsung dapat kursi di batch Januari 2027.</p>
-    <div class="pricecard reveal" style="text-align:left">
-      <div class="pricecard__name">Scholarship Bootcamp · Global Hub</div>
-      <div class="pricecard__price"><s>Rp250.000</s><strong>Rp149.000</strong></div>
-      <!-- TODO [V]: angka sisa kursi asli dari data pendaftar (CONFIG.SEATS_LEFT). Selama null, label ini disembunyikan. -->
-      <span class="urgent" id="urgent" hidden></span>
-      <ul class="checks">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>4 sesi live × 60 menit</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Belajar bareng calon pendaftar LPDP lain</li>
-        <!-- TODO [V]: konfirmasi poin "peta persiapan" sebagai deliverable -->
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Peta persiapan LPDP yang bisa langsung kamu pakai</li>
-        <!-- TODO [V]: bonus tampil di LP atau cuma di chat? -->
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Bonus: potongan hingga Rp300.000 kalau lanjut Scholarship Mentoring*</li>
-      </ul>
-      <a href="#harga" class="btn btn--block" data-checkout data-cta="checkout" data-pos="pricing" data-paket="schoboot" data-marketing-placement="pricing">Daftar sekarang, Rp149K →</a>
-      <!-- TODO [V]: cara kirim link kelas (email / WhatsApp?) -->
-      <p class="note">Pembayaran aman lewat checkout Global Hub. Link kelas dikirim setelah pembayaran terverifikasi.</p>
-      <p class="terms">*S&amp;K: Potongan Rp300.000 untuk 5 pendaftar mentoring pertama, Rp200.000 untuk 5 berikutnya.</p>
+    <div class="reveal">
+<!-- Harga dibungkus amplop "gacha": klik/tap -> amplop gemetar, segel lilin pecah, tutup terbuka, kartu harga keluar + confetti.
+         Harga dan isi kartu selalu ada di DOM (SEO / pembaca layar). Tanpa JS amplop tampil terbuka. -->
+<div class="envx" data-envx>
+  <div class="envx__stage">
+    <div class="envx__env" role="button" tabindex="0" aria-expanded="false" aria-controls="envx-letter" aria-label="Buka amplop untuk melihat harga spesial bootcamp LPDP Global Hub">
+      <div class="envx__paper envx__back"><div class="envx__grain"></div></div>
+
+      <div class="envx__rays" aria-hidden="true"></div>
+      <div class="envx__slot">
+        <div class="envx__letter" id="envx-letter">
+          <article class="envx__card">
+            <div class="envx__stamp" aria-hidden="true">HARGA<b>spesial</b>BATCH JAN 2027</div>
+            <p class="envx__eyebrow">Buat kamu yang serius,</p>
+            <h3 class="envx__name">Scholarship Bootcamp · Global Hub</h3>
+            <div class="envx__prices">
+              <span class="envx__old"><span class="sr">Harga normal </span>Rp250.000</span>
+              <span class="envx__new"><span class="sr">Harga spesial </span>Rp149.000</span>
+            </div>
+            <span class="envx__save">Hemat Rp101.000</span>
+            <!-- TODO [V]: angka sisa kursi asli dari data pendaftar (CONFIG.SEATS_LEFT). Selama null, label ini disembunyikan. -->
+            <span class="urgent" id="urgent" hidden></span>
+            <ul class="envx__list">
+              <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8" fill="none" stroke="#FF6A1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>4 sesi live × 60 menit</li>
+              <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8" fill="none" stroke="#FF6A1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Belajar bareng calon pendaftar LPDP lain</li>
+              <!-- TODO [V]: konfirmasi poin "peta persiapan" sebagai deliverable -->
+              <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8" fill="none" stroke="#FF6A1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Peta persiapan LPDP yang bisa langsung kamu pakai</li>
+              <!-- TODO [V]: bonus tampil di LP atau cuma di chat? -->
+              <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8" fill="none" stroke="#FF6A1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bonus: potongan hingga Rp300.000 kalau lanjut Scholarship Mentoring*</li>
+            </ul>
+            <a class="envx__cta" href="#harga" data-checkout data-cta="checkout" data-pos="pricing-envelope" data-paket="schoboot" data-marketing-placement="pricing-envelope">Daftar sekarang, Rp149K →</a>
+            <!-- TODO [V]: cara kirim link kelas (email / WhatsApp?) -->
+            <p class="envx__note">Pembayaran aman lewat checkout Global Hub. Link kelas dikirim setelah pembayaran terverifikasi.</p>
+            <p class="envx__tnc">*S&amp;K: Potongan Rp300.000 untuk 5 pendaftar mentoring pertama, Rp200.000 untuk 5 berikutnya.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="envx__paper envx__pocket">
+        <svg class="envx__seam" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,100 L44,58 M100,100 L56,58" stroke="rgba(120,35,0,.22)" stroke-width=".35" vector-effect="non-scaling-stroke" fill="none"/>
+          <path d="M0,99.4 L44,57.4 M100,99.4 L56,57.4" stroke="rgba(255,220,190,.35)" stroke-width=".35" vector-effect="non-scaling-stroke" fill="none"/>
+        </svg>
+        <div class="envx__grain"></div><div class="envx__fiber"></div>
+      </div>
+
+      <div class="envx__flapshade" aria-hidden="true"></div>
+      <div class="envx__flap" aria-hidden="true">
+        <div class="envx__face envx__face--front"><div class="envx__grain"></div><div class="envx__fiber"></div></div>
+        <div class="envx__face envx__face--back"><div class="envx__grain"></div></div>
+      </div>
+
+      <div class="envx__label" aria-hidden="true"><span>Buka ini</span><small>ada yang spesial buat kamu</small></div>
+
+      <div class="envx__seal" aria-hidden="true">
+        <span class="envx__pulse"></span>
+        <svg viewBox="0 0 120 120" class="half half--l"><use href="#envx-wax"/></svg>
+        <svg viewBox="0 0 120 120" class="half half--r"><use href="#envx-wax"/></svg>
+      </div>
+      <div class="envx__spark" aria-hidden="true"></div>
+    </div>
+    <span class="envx__hint" aria-hidden="true">Tap amplopnya untuk membuka</span>
+  </div>
+
+  <!-- simbol segel lilin -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <radialGradient id="envx-g1" cx="36%" cy="30%" r="75%"><stop offset="0" stop-color="#E9693A"/><stop offset=".55" stop-color="#C2431A"/><stop offset="1" stop-color="#8A2A0B"/></radialGradient>
+      <radialGradient id="envx-g2" cx="60%" cy="68%" r="70%"><stop offset="0" stop-color="#D4582A"/><stop offset=".7" stop-color="#B53B14"/><stop offset="1" stop-color="#93300F"/></radialGradient>
+      <filter id="envx-rough"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
+      <symbol id="envx-wax" viewBox="0 0 120 120">
+        <path filter="url(#envx-rough)" fill="url(#envx-g1)" d="M60,4 C72,3 78,10 88,12 C99,15 104,24 109,33 C116,43 113,52 116,62 C118,73 111,80 107,90 C101,101 92,104 82,110 C71,116 63,113 52,116 C40,118 33,110 24,105 C13,98 10,89 7,79 C3,68 7,59 5,48 C4,37 11,30 17,21 C24,11 33,9 43,6 C49,4 54,5 60,4 Z"/>
+        <path d="M30,22 C42,14 56,12 68,16" stroke="#F49A6C" stroke-width="3" stroke-linecap="round" fill="none" opacity=".55"/>
+        <circle cx="60" cy="60" r="37" fill="url(#envx-g2)"/>
+        <circle cx="60" cy="60" r="37" fill="none" stroke="#7E2408" stroke-width="2.5" opacity=".55"/>
+        <circle cx="60" cy="61.5" r="36" fill="none" stroke="#F08A5D" stroke-width="1.4" opacity=".45"/>
+        <circle cx="60" cy="60" r="30" fill="none" stroke="#7E2408" stroke-width="1" stroke-dasharray="1.5 3" opacity=".5"/>
+        <text x="60" y="71.5" text-anchor="middle" font-family="Instrument Serif,Georgia,serif" font-style="italic" font-size="32" fill="#F08A5D" opacity=".6">GH</text>
+        <text x="60" y="70" text-anchor="middle" font-family="Instrument Serif,Georgia,serif" font-style="italic" font-size="32" fill="#7A2207" opacity=".85">GH</text>
+      </symbol>
+    </defs>
+  </svg>
+</div>
     </div>
   </div>
 </section>
@@ -542,6 +608,7 @@ var CONFIG = {
       if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex','-1');
       el.focus({preventScroll:true});
       el.classList.remove('arrive'); void el.offsetWidth; el.classList.add('arrive');
+      window.dispatchEvent(new CustomEvent('lp:arrive', { detail: el.id }));
     }
     // Sengaja tetap beranimasi walau perangkat memakai reduced motion (permintaan tim)
     if (Math.abs(target() - from) < 4) {
@@ -584,6 +651,88 @@ var CONFIG = {
   }
 
   // Mockup sesi 4: tombol "lihat tips"
+  // Amplop harga "gacha"
+  (() => {
+  document.querySelectorAll('[data-envx]').forEach(root => {
+    root.classList.add('js');
+    const stage = root.querySelector('.envx__stage');
+    const env = root.querySelector('.envx__env');
+    const letter = root.querySelector('.envx__letter');
+    const spark = root.querySelector('.envx__spark');
+    const reduce = false; // animasi tetap jalan walau reduced motion aktif (keputusan tim)
+    let open = false, timers = [];
+
+    // Ukur posisi surat: tersembunyi di dalam amplop, lalu keluar ke atas
+    function measure() {
+      const envH = env.offsetHeight, lh = letter.offsetHeight;
+      const baseBottom = envH * 0.05;                       // bottom:5% dari tinggi AMPLOP (dikunci px: wadahnya memanjang saat tutup terbuka)
+      letter.style.bottom = baseBottom + 'px';
+      const restTop = envH - baseBottom - lh;              // posisi top surat tanpa transform
+      const inside = envH * 0.14 - restTop;                // top surat 14% di bawah tepi atas amplop
+      const cover = env.offsetWidth / envH < 1.2 ? 0.66 : 0.42;
+      const finalTop = -(lh - envH * cover);                // bagian bawah surat menutup ±42% amplop
+      const out = finalTop - restTop;
+      root.style.setProperty('--in', inside + 'px');
+      root.style.setProperty('--out', out + 'px');
+      root._lift = Math.max(0, -finalTop + 40);
+      // ruang di atas amplop baru dibuka saat kartu keluar, jadi amplop turun bersamaan dengan kartu naik (tanpa celah kosong)
+      if (open && root.classList.contains('is-out')) stage.style.setProperty('--lift', root._lift + 'px');
+    }
+    function burst() {
+      spark.innerHTML = '';
+      const cols = ['#FDB913', '#FF8040', '#fff', '#FF6A1F'];
+      for (let i = 0; i < 28; i++) {
+        const a = (Math.PI * 2 * i) / 28, d = 70 + Math.random() * 120;
+        const el = document.createElement('i');
+        el.style.background = cols[i % cols.length];
+        el.style.setProperty('--dx', Math.cos(a) * d + 'px');
+        el.style.setProperty('--dy', Math.sin(a) * d - 40 + 'px');
+        el.style.setProperty('--r', Math.random() * 360 + 'deg');
+        spark.appendChild(el);
+      }
+    }
+    function at(ms, fn) { timers.push(setTimeout(fn, reduce ? 0 : ms)); }
+
+    function openEnv() {
+      if (open) return;
+      open = true; timers.forEach(clearTimeout); timers = [];
+      env.setAttribute('aria-expanded', 'true');
+      env.removeAttribute('role'); env.setAttribute('tabindex', '-1'); env.removeAttribute('aria-label');
+      measure();
+      // gacha: amplop gemetar dulu (0,5 dtk), baru segel pecah
+      root.classList.add('is-charge');
+      at(480, () => { root.classList.remove('is-charge'); root.classList.add('is-cracked'); });
+      at(860, () => root.classList.add('is-flap'));
+      at(1480, () => { root.classList.add('is-out'); measure(); });
+      at(2330, () => { root.classList.add('is-front'); burst(); });
+      // Tracking (kalau pixel sudah dipasang): custom event envelope_open / ViewContent content_name "bootcamp LPDP pricing". BUKAN Purchase.
+      window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'envelope_open', variant: document.body.dataset.variant || '' });
+    }
+    function closeEnv() {
+      open = false; timers.forEach(clearTimeout); timers = [];
+      root.classList.remove('is-front');
+      at(50, () => root.classList.remove('is-out'));
+      at(300, () => stage.style.setProperty('--lift', '0px'));
+      at(900, () => root.classList.remove('is-flap'));
+      at(1500, () => { root.classList.remove('is-cracked'); env.setAttribute('aria-expanded', 'false'); env.setAttribute('role', 'button'); env.setAttribute('tabindex', '0'); env.setAttribute('aria-label', 'Buka amplop untuk melihat harga spesial bootcamp LPDP Global Hub'); });
+    }
+
+    env.addEventListener('click', e => { if (!e.target.closest('a')) openEnv(); });
+    env.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && !open) { e.preventDefault(); openEnv(); } });
+    window.addEventListener('resize', measure);
+    // Ukur baru saat section mendekati layar (bukan saat halaman dimuat), supaya tidak memaksa layout section yang belum dirender
+    let seen = false;
+    if (document.fonts) document.fonts.ready.then(() => { if (seen) measure(); });
+    requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('ready')));
+    // Section #harga pakai content-visibility: ukur ulang saat mendekati layar
+    if ('IntersectionObserver' in window) new IntersectionObserver(es => { if (es[0].isIntersecting) { seen = true; measure(); } }, { rootMargin: '600px 0px' }).observe(root);
+    else { seen = true; measure(); }
+    // Datang dari tombol yang mengarah ke #harga (navbar Daftar, hero, bar HP): amplop langsung dibuka begitu scroll sampai
+    window.addEventListener('lp:arrive', e => { if (e.detail === 'harga') openEnv(); });
+    if (location.hash === '#harga') setTimeout(openEnv, 900);
+  });
+})();
+
   // Kartu persona: desktop miring 3D mengikuti kursor; HP: kartu yang di tengah disorot + titik indikator
   (function(){
     var row = document.querySelector('.personas'); if(!row) return;
@@ -622,7 +771,7 @@ var CONFIG = {
     var details = document.querySelectorAll('.rm-detail');
     var mq = window.matchMedia('(min-width:900px)');
     // Titik kira-kira tiap pin (koordinat viewBox); posisi pastinya dicari di jalan supaya pin selalu menempel di jalan
-    var TARGET = { d:{w:1200,h:750,pts:[[380,648],[895,560],[600,428],[480,232]]}, m:{w:400,h:1000,pts:[[314,211],[92,398],[300,574],[104,734]]} };
+    var TARGET = { d:{w:1200,h:750,pts:[[380,102],[895,190],[600,322],[480,518]]}, m:{w:400,h:1000,pts:[[314,211],[92,398],[300,574],[104,734]]} };
     var REVEAL = 2.6; // detik, durasi jalan tergambar
     var G = null, at = -1, meLen = 0, raf = 0, opened = false, active = -1, lastFocus = null;
 
@@ -667,10 +816,27 @@ var CONFIG = {
     }
     // HP: layar ikut bergerak (scroll) mengikuti titik yang sedang berjalan, supaya titiknya tetap terlihat di atas bottom sheet
     function follow(f){
-      if(mq.matches || !opened) return;
-      var r = me.getBoundingClientRect(), top = 84, bot = innerHeight - pop.offsetHeight - 12;
-      var d = r.top - (top + Math.max(0, bot - top) * .55);
+      if(!opened) return;
+      var d;
+      if(mq.matches){
+        // desktop: popover ikut turun ke pin aktif, layar ikut scroll supaya popover + titik tetap di tengah
+        var pr = pop.getBoundingClientRect(), mr = me.getBoundingClientRect();
+        var c = (Math.min(pr.top, mr.top - 30) + Math.max(pr.bottom, mr.top + 30)) / 2;
+        d = c - (66 + (innerHeight - 66) / 2);
+      } else {
+        var r = me.getBoundingClientRect(), top = 84, bot = innerHeight - pop.offsetHeight - 12;
+        d = r.top - (top + Math.max(0, bot - top) * .55);
+      }
       if(Math.abs(d) > .5) window.scrollTo(0, scrollY + d * f);
+    }
+    // Desktop: posisikan popover di samping pin aktif (kiri/kanan, mana yang lebih lega)
+    function anchor(i){
+      var q = G.p.getPointAtLength(G.lens[i]), W = rm.clientWidth, H = rm.clientHeight;
+      var x = q.x / G.w * W, y = q.y / G.h * H, w = pop.offsetWidth, h = pop.offsetHeight;
+      var left = x < W / 2 ? x + 40 : x - 40 - w;
+      left = Math.max(16, Math.min(W - w - 16, left));
+      var top = Math.max(16, Math.min(H - h - 16, y - h / 2 - 20));
+      pop.style.left = left + 'px'; pop.style.top = top + 'px';
     }
     function mark(i){
       pins.forEach(function(p, j){ p.classList.toggle('on', j === i); p.classList.toggle('done', i >= 0 && j < i); });
@@ -690,12 +856,15 @@ var CONFIG = {
         if(desk){ rm.appendChild(pop); pop.removeAttribute('aria-modal'); }
         else { document.body.appendChild(scrim); document.body.appendChild(pop); pop.setAttribute('aria-modal', 'true'); scrim.hidden = false; }
         pop.classList.toggle('rm-pop--sheet', !desk);
-        pop.hidden = false; void pop.offsetWidth;
+        pop.classList.toggle('rm-pop--anchor', desk);
+        if(!desk){ pop.style.left = ''; pop.style.top = ''; }
+        pop.hidden = false; if(desk){ pop.classList.add('noanim'); anchor(i); void pop.offsetWidth; pop.classList.remove('noanim'); } void pop.offsetWidth;
         pop.classList.add('show'); if(!desk) scrim.classList.add('show');
         opened = true;
         setTimeout(function(){ xB.focus({ preventScroll:true }); }, 60);
       } else {
         body.classList.remove('swap'); void body.offsetWidth; body.classList.add('swap');
+        if(desk) anchor(i);
       }
       travel(G.lens[i]);
     }
@@ -755,7 +924,7 @@ var CONFIG = {
   function updSticky(){ var s = heroOut && !priceIn; sticky.classList.toggle('show', s); sticky.setAttribute('aria-hidden', !s); sticky.querySelector('a').tabIndex = s ? 0 : -1; }
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function(es){ heroOut = !es[0].isIntersecting; updSticky(); }).observe(document.getElementById('hero'));
-    new IntersectionObserver(function(es){ priceIn = es[0].isIntersecting; updSticky(); }).observe(document.querySelector('#harga .pricecard'));
+    new IntersectionObserver(function(es){ priceIn = es[0].isIntersecting; updSticky(); }).observe(document.querySelector('#harga .envx'));
   }
 })();
 </script>
