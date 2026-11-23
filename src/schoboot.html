@@ -15,6 +15,7 @@
 <!-- Tracking: tidak ada pixel/GA/Clarity di draft ini. Klik tombol push `lp_cta_click` ke dataLayer (src/shared.js):
      cta=checkout -> InitiateCheckout, cta=whatsapp -> Contact. TIDAK ada Purchase dari LP; Purchase hanya dari pembayaran terverifikasi.
      Developer: jangan biarkan tag menembak dari localhost/preview. -->
+<script>document.documentElement.classList.add("js")</script>
 <style>/*__CSS__*/</style>
 </head>
 <body data-variant="SCHOBOOT">
@@ -58,15 +59,23 @@
       <span class="line line--serif">Siap bersaing sampai lulus itu beda cerita.</span>
     </h1>
     <script>
-    /* Varian tombol ?btn=orange, lalu animasi per huruf (dilewati kalau reduced-motion). */
+    /* Varian tombol ?btn=orange, lalu headline "diketik": huruf muncul satu per satu (fade) dengan kursor berkedip.
+       Sengaja tetap jalan walau reduced motion aktif (permintaan tim). Teks lengkap ada di aria-label untuk pembaca layar. */
     (function(){
       var h=document.getElementById('h1'),q=new URLSearchParams(location.search),L=h.querySelectorAll('.line');
       var b=q.get('btn');if(b==='orange'||b==='black')document.documentElement.setAttribute('data-btn',b);
-      if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-      var i=0;L.forEach(function(line){var words=line.textContent.trim().split(' ');line.textContent='';line.setAttribute('aria-hidden','true');
+      var chars=[];
+      L.forEach(function(line){var words=line.textContent.trim().split(' ');line.textContent='';line.setAttribute('aria-hidden','true');
         words.forEach(function(w,wi){var ws=document.createElement('span');ws.className='w';
-          Array.from(w).forEach(function(c){var s=document.createElement('span');s.className='ch';s.textContent=c;s.style.animationDelay=(i++*12)+'ms';ws.appendChild(s);});
+          Array.from(w).forEach(function(c){var s=document.createElement('span');s.className='ch';s.textContent=c;ws.appendChild(s);chars.push(s);});
           line.appendChild(ws);if(wi<words.length-1)line.appendChild(document.createTextNode(' '));});});
+      var caret=document.createElement('span');caret.className='caret';caret.setAttribute('aria-hidden','true');
+      var i=0,step=Math.max(18,Math.round(2200/chars.length));
+      function tick(){
+        if(i<chars.length){var c=chars[i++];c.classList.add('on');c.after(caret);setTimeout(tick,c.textContent==='.'?step*6:step);}
+        else{h.classList.add('typed');setTimeout(function(){caret.classList.add('gone');},1600);}
+      }
+      chars[0].before(caret);setTimeout(tick,450);
     })();
     </script>
     <p class="hero__sub">Program mentoring 4 sesi live Zoom buat tahu apa aja yang perlu kamu siapin sebelum daftar LPDP, dan apa yang bikin berkasmu punya kesempatan lulus!</p>
@@ -83,7 +92,7 @@
 <!-- §compare -->
 <!-- Latar senja (foto dari tim) + panel kaca (glassmorphism) ala referensi Supaste, menyambung warna hero -->
 <section class="sec sec--sunset" id="info">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2 reveal">Info LPDP gratis itu banyak. Yang bikin bingung: <span class="hl">mulai dari mana.</span></h2>
     <div class="cmp glass">
       <div class="cmp__head"><span>Info gratis di internet</span><span>Di SchoBoot</span></div>
@@ -100,7 +109,7 @@
 <!-- TODO [V]: pastikan hak pakai ketiga foto, dan bahwa negara tujuan ini sesuai daftar kampus tujuan LPDP sebelum tayang -->
 <!-- Latar biru laut, melanjutkan laut di bawah section senja -->
 <section class="sec sec--sea" aria-labelledby="dest-title">
-  <div class="wrap dest">
+  <div class="wrap fade-up dest">
     <div>
       <h2 class="h2 reveal" id="dest-title">Kampus impianmu ada di mana?</h2>
       <p class="lead">Australia, Rusia, Tiongkok, atau negara lain. Apa pun tujuanmu, aplikasinya mulai dari persiapan yang sama.</p>
@@ -119,7 +128,7 @@
 
 <!-- §program -->
 <section class="sec" id="program">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2 reveal">Apa aja yang kamu dapat di 4 sesi</h2>
     <!--
       TODO [V]: judul dan isi tiap sesi belum ada di materi PM.
@@ -191,7 +200,7 @@
 <!-- Logo kampus berjalan, sama dengan globalhub.id/ieltsgo (logo & caption dari situ).
      TODO [V]: pastikan caption ini juga berlaku untuk mentor SchoBoot. Logo kampus tidak berarti kerja sama resmi. -->
 <section class="campus" aria-label="Kampus tempat mentor Global Hub belajar">
-  <div class="wrap campus__inner">
+  <div class="wrap fade-up campus__inner">
     <p class="campus__cap">Mentor kami menjadi bagian dari perjalanan pelajar Indonesia di universitas terbaik dunia.</p>
     <div class="marquee">
       <ul class="marquee__track">
@@ -225,7 +234,7 @@
 
 <!-- §mentor -->
 <section class="sec sec--white" id="mentor">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2 reveal">Dipandu mentor yang udah lewat jalan ini</h2>
     <!-- Data mentor dari globalhub.id/mentors (program Study Abroad, label "LPDP Awardee" sesuai situs resmi). Logo LPDP sengaja tidak dipakai, cukup teks.
          TODO [V]: mentor mana yang benar-benar memandu SchoBoot, dan izin tampil di halaman ini. -->
@@ -244,7 +253,7 @@
 
 <!-- §personas -->
 <section class="sec" id="untuk-siapa">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2 reveal">Cocok buat kamu yang…</h2>
     <div class="personas">
       <article class="persona reveal"><span class="persona__tag t1">Baru mau mulai</span><h3>"Mulai siapin LPDP sebelum pendaftaran dibuka."</h3><p>Belum pernah daftar LPDP, tapi udah pengen S2/S3.</p></article>
@@ -259,7 +268,7 @@
 
 <!-- §pricing -->
 <section class="sec sec--white" id="harga">
-  <div class="wrap" style="text-align:center">
+  <div class="wrap fade-up" style="text-align:center">
     <h2 class="h2 reveal">Satu tiket. 4 sesi lengkap.</h2>
     <p class="lead">Sekali bayar, langsung dapat kursi di batch Januari 2027.</p>
     <div class="pricecard reveal" style="text-align:left">
@@ -286,7 +295,7 @@
 
 <!-- §faq -->
 <section class="sec" id="faq">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2 reveal">Yang sering ditanyain</h2>
     <div class="faq">
       <details><summary>Bootcamp ini program resmi LPDP?</summary><p>Bukan. SchoBoot adalah program persiapan dari Global Hub by Englishvit, nggak berafiliasi dengan LPDP.</p></details>
@@ -308,7 +317,7 @@
 
 <!-- §closing -->
 <section class="closing">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2">Pendaftaran LPDP belum dibuka. <span>Persiapanmu bisa mulai sekarang.</span></h2>
     <a href="#harga" class="btn" data-checkout data-cta="checkout" data-pos="closing" data-paket="schoboot" data-marketing-placement="closing">Amankan kursimu, Rp149K →</a><br>
     <a href="#" class="link" data-cta="whatsapp" data-pos="closing-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="closing-wa">Tanya admin via WhatsApp</a>
@@ -371,7 +380,9 @@ var CONFIG = {
 
   // Reveal saat masuk viewport
   var els = document.querySelectorAll('.reveal');
-  if (reduce || !('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); }
+  // Fade-in-up: kartu/baris (.reveal) dan isi tiap section di bawah hero (.fade-up). Tetap jalan walau reduced motion aktif.
+  els = Array.prototype.slice.call(els).concat(Array.prototype.slice.call(document.querySelectorAll('.fade-up')));
+  if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); }
   else {
     var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(e){ io.observe(e); });
