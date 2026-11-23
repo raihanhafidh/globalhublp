@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SchoBoot: Bootcamp Persiapan LPDP 2027 | Global Hub</title>
+<title>Bootcamp Persiapan LPDP 2027 | Global Hub</title>
 <meta name="description" content="4 sesi live bareng mentor buat tahu apa aja yang perlu kamu siapin sebelum daftar LPDP. Rp149.000, kuota 50 peserta, Januari 2027.">
 <meta name="robots" content="noindex, nofollow"><!-- selama draft -->
 <meta name="theme-color" content="#FF6A1F">
@@ -179,9 +179,11 @@ s{color:var(--muted)}
 .sec--sunset .hl{background:linear-gradient(transparent 62%,rgba(255,255,255,.75) 62%)}
 .glass{background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 24px 60px rgba(90,40,0,.18);border-radius:28px;padding:8px}
 .glass .cmp__row{background:transparent;border:1px solid rgba(255,255,255,.45)}
-.glass .cmp__from{background:rgba(255,255,255,.38);color:#4A3420}
-.glass .cmp__to{background:rgba(255,255,255,.72);color:#1A1006;box-shadow:inset 3px 0 0 var(--orange)}
+.glass .cmp__from{background:rgba(255,236,236,.62);color:#8E1E22}
+.glass .cmp__to{background:rgba(236,253,250,.82);color:#0B3B3A;font-weight:600;box-shadow:inset 3px 0 0 #14B8A6}
 .glass .cmp__head{color:#3A2410}
+.glass .cmp__head span:first-child{color:#B42318}
+.glass .cmp__head span:last-child{color:#0F766E}
 /* ---------- Mentor (data globalhub.id/mentors) ---------- */
 .mentors{display:grid;grid-auto-flow:column;grid-auto-columns:72%;gap:12px;margin:20px -20px 0;padding:0 20px 6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .mentors::-webkit-scrollbar{display:none}
@@ -191,7 +193,10 @@ s{color:var(--muted)}
 .mcard b{display:block;font-size:16px;line-height:1.25}
 .mcard .aw{display:block;color:#B4521E;font-weight:700;font-size:13px;margin-top:3px}
 .mcard p{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.4}
-.cmp svg{flex:none;margin-top:3px}
+.cmp__ic{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;margin-top:-1px}
+.cmp__ic--no{background:#E5484D;box-shadow:0 3px 8px rgba(229,72,77,.3)}
+.cmp__ic--yes{background:linear-gradient(135deg,#1E88E5,#14B8A6);box-shadow:0 3px 10px rgba(20,184,166,.35)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ---------- Destinasi (kartu bergerak) ---------- */
 .dest{display:grid;gap:18px;align-items:center}
@@ -478,7 +483,7 @@ footer p + p{margin-top:6px}
 
 </style>
 </head>
-<body data-variant="SCHOBOOT">
+<body data-variant="LPDP-BOOTCAMP">
 
 <!-- §nav -->
 <header class="nav">
@@ -486,6 +491,7 @@ footer p + p{margin-top:6px}
     <a href="#top" class="nav__logo" aria-label="Global Hub by Englishvit, ke atas halaman"><img src="https://globalhub.id/home/logos/logo.avif" alt="Global Hub by Englishvit" width="110" height="22" fetchpriority="high"></a>
     <div class="nav__links">
       <a href="#program">Program</a>
+      <a href="#mentor">Mentor</a>
       <a href="#untuk-siapa">Untuk siapa</a>
       <a href="#harga">Harga</a>
       <a href="#faq">FAQ</a>
@@ -499,6 +505,7 @@ footer p + p{margin-top:6px}
     <div class="nav__panel" id="nav-panel">
       <div class="nav__panel-in">
         <a href="#program">Program</a>
+        <a href="#mentor">Mentor</a>
         <a href="#untuk-siapa">Untuk siapa</a>
         <a href="#harga">Harga</a>
         <a href="#faq">FAQ</a>
@@ -545,7 +552,7 @@ footer p + p{margin-top:6px}
     <div class="hero__cta">
       <!-- Tombol utama hero = info (scroll ke kartu produk/harga), bukan checkout, jadi tidak ada data-cta="checkout" di sini -->
       <a href="#harga" class="btn btn--hero" data-scroll data-marketing-placement="hero-info">Program siap lulus beasiswa LPDP <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
-      <a href="#" class="btn btn--ghost" data-cta="whatsapp" data-pos="hero-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="hero-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Ngobrol sama admin dulu kak!</a>
+      <a href="#" class="btn btn--ghost" data-cta="whatsapp" data-pos="hero-wa" data-msg="Halo kak, aku mau tanya bootcamp LPDP Global Hub. Aku lagi di tahap ___." data-marketing-placement="hero-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Ngobrol sama admin dulu kak!</a>
     </div>
   </div>
 </section>
@@ -557,12 +564,13 @@ footer p + p{margin-top:6px}
 <section class="sec sec--sunset" id="info">
   <div class="wrap fade-up">
     <h2 class="h2 reveal">Info LPDP gratis itu banyak. Yang bikin bingung: <span class="hl">mulai dari mana.</span></h2>
+    <!-- Bukan Global Hub = merah + silang, Global Hub = biru kehijauan + centang -->
     <div class="cmp glass">
-      <div class="cmp__head"><span>Info gratis di internet</span><span>Di SchoBoot</span></div>
-      <div class="cmp__row reveal"><div class="cmp__from"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Daftar persyaratan LPDP</div><div class="cmp__to"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Pendampingan cara menyiapkannya</div></div>
-      <div class="cmp__row reveal"><div class="cmp__from"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Tips bikin esai</div><div class="cmp__to"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Arahan strategi aplikasi</div></div>
-      <div class="cmp__row reveal"><div class="cmp__from"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Info tahapan seleksi</div><div class="cmp__to"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Persiapan sesuai kebutuhanmu</div></div>
-      <div class="cmp__row reveal"><div class="cmp__from"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Contoh pertanyaan wawancara</div><div class="cmp__to"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8040" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Pendampingan menghadapi seleksi</div></div>
+      <div class="cmp__head"><span>Info gratis di internet</span><span>Di Global Hub</span></div>
+      <div class="cmp__row reveal"><div class="cmp__from"><span class="cmp__ic cmp__ic--no" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span class="sr">Tidak ada: </span>Daftar persyaratan LPDP</div><div class="cmp__to"><span class="cmp__ic cmp__ic--yes" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="sr">Ada: </span>Pendampingan cara menyiapkannya</div></div>
+      <div class="cmp__row reveal"><div class="cmp__from"><span class="cmp__ic cmp__ic--no" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span class="sr">Tidak ada: </span>Tips bikin esai</div><div class="cmp__to"><span class="cmp__ic cmp__ic--yes" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="sr">Ada: </span>Arahan strategi aplikasi</div></div>
+      <div class="cmp__row reveal"><div class="cmp__from"><span class="cmp__ic cmp__ic--no" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span class="sr">Tidak ada: </span>Info tahapan seleksi</div><div class="cmp__to"><span class="cmp__ic cmp__ic--yes" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="sr">Ada: </span>Persiapan sesuai kebutuhanmu</div></div>
+      <div class="cmp__row reveal"><div class="cmp__from"><span class="cmp__ic cmp__ic--no" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span class="sr">Tidak ada: </span>Contoh pertanyaan wawancara</div><div class="cmp__to"><span class="cmp__ic cmp__ic--yes" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="sr">Ada: </span>Pendampingan menghadapi seleksi</div></div>
     </div>
   </div>
 </section>
@@ -849,7 +857,7 @@ footer p + p{margin-top:6px}
     <h2 class="h2 reveal">Satu tiket. 4 sesi lengkap.</h2>
     <p class="lead">Sekali bayar, langsung dapat kursi di batch Januari 2027.</p>
     <div class="pricecard reveal" style="text-align:left">
-      <div class="pricecard__name">SchoBoot · Scholarship Bootcamp</div>
+      <div class="pricecard__name">Scholarship Bootcamp · Global Hub</div>
       <div class="pricecard__price"><s>Rp250.000</s><strong>Rp149.000</strong></div>
       <!-- TODO [V]: angka sisa kursi asli dari data pendaftar (CONFIG.SEATS_LEFT). Selama null, label ini disembunyikan. -->
       <span class="urgent" id="urgent" hidden></span>
@@ -875,7 +883,7 @@ footer p + p{margin-top:6px}
   <div class="wrap fade-up">
     <h2 class="h2 reveal">Yang sering ditanyain</h2>
     <div class="faq">
-      <details><summary>Bootcamp ini program resmi LPDP?</summary><p>Bukan. SchoBoot adalah program persiapan dari Global Hub by Englishvit, nggak berafiliasi dengan LPDP.</p></details>
+      <details><summary>Bootcamp ini program resmi LPDP?</summary><p>Bukan. Bootcamp ini program persiapan dari Global Hub by Englishvit, nggak berafiliasi dengan LPDP.</p></details>
       <!-- TODO [V]: tanggal dan jam -->
       <details><summary>Kapan jadwalnya?</summary><p>Januari 2027, 4 sesi selama 2 minggu, tiap sesi 60 menit.</p></details>
       <!-- TODO [V]: "Kelasnya lewat apa?" (platform) — disembunyikan sampai dikonfirmasi -->
@@ -886,7 +894,7 @@ footer p + p{margin-top:6px}
       <details><summary>Setelah bootcamp, bisa lanjut dibimbing?</summary><p>Bisa, lewat Scholarship Mentoring Global Hub. Peserta bootcamp dapat potongan khusus untuk kuota terbatas.</p></details>
       <!-- TODO [V]: metode pembayaran -->
       <details><summary>Bayarnya gimana?</summary><p>Lewat halaman checkout Global Hub.</p></details>
-      <details><summary>Masih bingung?</summary><p>Chat admin dulu, gratis dan nggak wajib daftar. <a href="#" class="link" data-cta="whatsapp" data-pos="faq-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="faq-wa">Tanya admin via WhatsApp</a></p></details>
+      <details><summary>Masih bingung?</summary><p>Chat admin dulu, gratis dan nggak wajib daftar. <a href="#" class="link" data-cta="whatsapp" data-pos="faq-wa" data-msg="Halo kak, aku mau tanya bootcamp LPDP Global Hub. Aku lagi di tahap ___." data-marketing-placement="faq-wa">Tanya admin via WhatsApp</a></p></details>
     </div>
   </div>
 </section>
@@ -897,7 +905,7 @@ footer p + p{margin-top:6px}
   <div class="wrap fade-up">
     <h2 class="h2">Pendaftaran LPDP belum dibuka. <span>Persiapanmu bisa mulai sekarang.</span></h2>
     <a href="#harga" class="btn" data-checkout data-cta="checkout" data-pos="closing" data-paket="schoboot" data-marketing-placement="closing">Amankan kursimu, Rp149K →</a><br>
-    <a href="#" class="link" data-cta="whatsapp" data-pos="closing-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="closing-wa">Tanya admin via WhatsApp</a>
+    <a href="#" class="link" data-cta="whatsapp" data-pos="closing-wa" data-msg="Halo kak, aku mau tanya bootcamp LPDP Global Hub. Aku lagi di tahap ___." data-marketing-placement="closing-wa">Tanya admin via WhatsApp</a>
   </div>
 </section>
 </main>
@@ -905,7 +913,7 @@ footer p + p{margin-top:6px}
 <footer>
   <div class="wrap">
     <p>Global Hub by Englishvit · PT Sinergi Insan Andalan</p>
-    <p>Disclaimer: SchoBoot tidak berafiliasi dengan dan tidak mewakili LPDP.</p>
+    <p>Disclaimer: Global Hub tidak berafiliasi dengan dan tidak mewakili LPDP.</p>
   </div>
 </footer>
 <!-- /§closing -->
