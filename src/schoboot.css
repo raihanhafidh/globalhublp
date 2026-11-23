@@ -196,6 +196,7 @@ s{color:var(--muted)}
 .card.p0{transform:translateX(0) rotate(0) translateZ(0);z-index:3}
 .card.p1{transform:translateX(42%) rotate(7deg) scale(.88);z-index:2;filter:brightness(.85)}
 .card.p2{transform:translateX(-42%) rotate(-7deg) scale(.88);z-index:1;filter:brightness(.85)}
+.card.ph{transform:scale(.78);opacity:0;z-index:0;pointer-events:none}
 .deck__dots{display:flex;gap:6px;justify-content:center;margin-top:4px}
 .deck__dots i{width:6px;height:6px;border-radius:9px;background:#d6d6db;transition:width .3s,background .3s}
 /* Kartu destinasi tetap beranimasi walau reduced motion aktif (permintaan tim) */
