@@ -124,9 +124,17 @@ s{color:var(--muted)}
 .cmp__to{font-weight:500;box-shadow:inset 3px 0 0 var(--yellow)}
 .cmp__head{display:none}
 /* ---------- Section 2: senja + glassmorphism ---------- */
-.sec--sunset{position:relative;overflow:hidden;margin:0 0 8px;border-radius:0 0 28px 28px;padding:40px 0 48px;background:#FFE29A url(media/sunset-750.webp) center 40%/cover no-repeat}
+.sec.sec--sunset{position:relative;overflow:hidden;margin:0;border-radius:0;padding:40px 0 72px;background:#FFE29A url(media/sunset-750.webp) center 40%/cover no-repeat}
 .sec--sunset::before{content:"";position:absolute;left:0;right:0;top:0;height:160px;background:linear-gradient(#FFE29A,rgba(255,226,154,0));pointer-events:none}
-.sec--sunset .wrap{position:relative}
+.sec--sunset::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(rgba(59,63,85,0),#3B3F55);pointer-events:none}
+.sec--sunset .wrap{position:relative;z-index:1}
+/* Section setelah senja: biru laut, menyambung tanpa celah */
+.sec.sec--sea{margin:0 0 8px;border-radius:0 0 28px 28px;background:linear-gradient(180deg,#3B3F55 0%,#2A2E43 55%,#20233A 100%);color:#fff}
+.sec--sea .h2{color:#fff}
+.sec--sea .lead{color:rgba(255,255,255,.78)}
+.sec--sea .deck__dots i{background:rgba(255,255,255,.3)}
+.sec--sea .deck__dots i.on{background:var(--orange)}
+.sec--sea .card{box-shadow:0 22px 50px rgba(0,0,0,.35)}
 .sec--sunset .h2{color:#1A1006}
 .sec--sunset .hl{background:linear-gradient(transparent 62%,rgba(255,255,255,.75) 62%)}
 .glass{background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 24px 60px rgba(90,40,0,.18);border-radius:28px;padding:8px}
@@ -252,7 +260,9 @@ footer p + p{margin-top:6px}
 @media (min-width:768px){
   .sec,.closing{border-radius:var(--r-xl);margin:12px}
   .hero{border-radius:0;margin:0}
-  .sec.sec--sunset{margin:0 0 12px;border-radius:0 0 var(--r-xl) var(--r-xl);padding:120px 0 150px;background-image:url(media/sunset-1440.webp);background-position:center 52%}
+  .sec.sec--sunset{margin:0;border-radius:0;padding:140px 0 300px;background-image:url(media/sunset-1440.webp);background-position:center bottom}
+  .sec--sunset::after{height:140px}
+  .sec.sec--sea{margin:0 0 12px;border-radius:0 0 var(--r-xl) var(--r-xl)}
   .glass{padding:12px;border-radius:36px}
   .mentors{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);margin:28px 0 0;padding:0;overflow:visible;gap:16px}
   .mcard b{font-size:18px}
