@@ -6,7 +6,7 @@
 <title>Bootcamp Persiapan LPDP 2027 | Global Hub</title>
 <meta name="description" content="4 sesi live bareng mentor buat tahu apa aja yang perlu kamu siapin sebelum daftar LPDP. Rp149.000, kuota 50 peserta, Januari 2027.">
 <meta name="robots" content="noindex, nofollow"><!-- selama draft -->
-<meta name="theme-color" content="#FF6A1F">
+<meta name="theme-color" content="#3C8EDC">
 <link rel="icon" href="https://globalhub.id/home/logos/favicon.svg">
 <!-- Instrument Serif italic (OFL) di-host sendiri + preload -->
 <link rel="preload" href="media/instrument-serif-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -15,6 +15,9 @@
 <!-- Tracking: tidak ada pixel/GA/Clarity di draft ini. Klik tombol push `lp_cta_click` ke dataLayer (src/shared.js):
      cta=checkout -> InitiateCheckout, cta=whatsapp -> Contact. TIDAK ada Purchase dari LP; Purchase hanya dari pembayaran terverifikasi.
      Developer: jangan biarkan tag menembak dari localhost/preview. -->
+<!-- Hero padang rumput (preload gambar latar LCP, sesudah font supaya headline tidak bergeser saat font masuk) -->
+<link rel="preload" as="image" href="media/meadow-1000.webp" media="(max-width:767px)">
+<link rel="preload" as="image" href="media/meadow-1536.webp" media="(min-width:768px)">
 <script>document.documentElement.classList.add("js")</script>
 <style>/*__CSS__*/</style>
 </head>
@@ -54,10 +57,7 @@
 <main id="top">
 <!-- §hero -->
 <section class="hero" id="hero">
-  <!-- Burung terbang: video green screen dari tim, latar hijau sudah dihapus (jadi putih) lalu dibaurkan ke gradasi dengan mix-blend-mode:multiply.
-       Dimuat setelah halaman selesai supaya tidak memperlambat layar pertama.
-       TODO [V]: pastikan lisensi video burung (sumber FreeGFX) boleh dipakai komersial/iklan. -->
-  <video class="hero__birds" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="media/birds.mp4"></video>
+  <!-- Video burung sementara dilepas (permintaan tim). File media/birds*.mp4 dan script-nya masih ada; untuk memasang lagi, kembalikan <video class="hero__birds" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="media/birds.mp4"></video> di sini. -->
   <div class="wrap hero__inner">
     <span class="eyebrow eyebrow--hero"><i></i>Scholarship Bootcamp · LPDP Prep · Januari 2027</span>
     <h1 class="h1" id="h1" aria-label="Tahu syarat beasiswa LPDP itu gampang. Siap bersaing sampai lulus itu beda cerita.">
@@ -152,21 +152,21 @@
       <!-- Peta desktop (landscape) -->
       <svg class="rm__map rm__map--d" viewBox="0 0 1200 750" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         <defs>
-          <pattern id="rmDots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#E9DCC3"/></pattern>
+          <pattern id="rmDots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#D5E4F5"/></pattern>
           <mask id="rmRevealD" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="750"><path class="rm-reveal" d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#fff" stroke-width="60" stroke-linecap="round"/></mask>
         </defs>
-        <rect width="1200" height="750" fill="#FCF5E8"/>
+        <rect width="1200" height="750" fill="#F2F8FF"/>
         <rect width="1200" height="750" fill="url(#rmDots)"/>
         <g class="rm-cloud"><ellipse cx="560" cy="34" rx="44" ry="15" fill="#fff"/><ellipse cx="580" cy="25" rx="24" ry="14" fill="#fff"/></g>
         <g class="rm-cloud rm-cloud--b"><ellipse cx="1090" cy="250" rx="40" ry="14" fill="#fff"/><ellipse cx="1108" cy="241" rx="22" ry="13" fill="#fff"/></g>
-        <path d="M0 215 C180 195 380 235 600 210 C820 185 1000 220 1200 200 V750 H0Z" fill="#EEF2DE"/>
-        <path d="M960 420 L1060 300 L1160 420Z" fill="#E7D3B4"/><path d="M1060 300 L1160 420 L1095 420Z" fill="#D9C19C"/><path d="M1040 324 L1060 300 L1080 324 L1068 319 L1060 328 L1052 319Z" fill="#fff"/>
-        <path d="M0 430 C220 405 420 450 640 420 C860 390 1020 435 1200 410 V750 H0Z" fill="#E6EDD2"/>
-        <path d="M30 730 L130 600 L230 730Z" fill="#E7D3B4"/><path d="M130 600 L230 730 L160 730Z" fill="#D9C19C"/><path d="M108 628 L130 600 L152 628 L138 622 L130 632 L120 622Z" fill="#fff"/>
-        <path d="M160 730 L240 632 L320 730Z" fill="#EEDDC2"/><path d="M223 652 L240 632 L257 652 L246 647 L240 655 L233 647Z" fill="#fff"/>
-        <path d="M0 165 C160 190 300 160 480 178 C700 200 900 190 1200 215" fill="none" stroke="#CFE3EE" stroke-width="26" stroke-linecap="round"/>
+        <path d="M0 215 C180 195 380 235 600 210 C820 185 1000 220 1200 200 V750 H0Z" fill="#E9F5E1"/>
+        <path d="M960 420 L1060 300 L1160 420Z" fill="#C9DAEE"/><path d="M1060 300 L1160 420 L1095 420Z" fill="#B3C8E2"/><path d="M1040 324 L1060 300 L1080 324 L1068 319 L1060 328 L1052 319Z" fill="#fff"/>
+        <path d="M0 430 C220 405 420 450 640 420 C860 390 1020 435 1200 410 V750 H0Z" fill="#DCEFCF"/>
+        <path d="M30 730 L130 600 L230 730Z" fill="#C9DAEE"/><path d="M130 600 L230 730 L160 730Z" fill="#B3C8E2"/><path d="M108 628 L130 600 L152 628 L138 622 L130 632 L120 622Z" fill="#fff"/>
+        <path d="M160 730 L240 632 L320 730Z" fill="#DAE6F4"/><path d="M223 652 L240 632 L257 652 L246 647 L240 655 L233 647Z" fill="#fff"/>
+        <path d="M0 165 C160 190 300 160 480 178 C700 200 900 190 1200 215" fill="none" stroke="#BFDDF6" stroke-width="26" stroke-linecap="round"/>
         <path d="M0 165 C160 190 300 160 480 178 C700 200 900 190 1200 215" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="12 14" opacity=".8"/>
-        <g fill="#9CC98A">
+        <g fill="#7FC36B">
           <g transform="translate(60 330)"><path d="M0 -40 L18 0 H-18Z"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
           <g transform="translate(150 405)"><path d="M0 -36 L16 0 H-16Z"/><rect x="-2.5" y="0" width="5" height="11" fill="#B08560"/></g>
           <g transform="translate(700 232)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
@@ -178,13 +178,13 @@
           <g transform="translate(1010 725)"><circle cy="-14" r="15"/><rect x="-2.5" y="0" width="5" height="12" fill="#B08560"/></g>
         </g>
         <g mask="url(#rmRevealD)">
-          <path d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#E8C27E" stroke-width="40" stroke-linecap="round"/>
-          <path d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#F7DCA6" stroke-width="32" stroke-linecap="round"/>
-          <path d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="16 14" stroke-linecap="round"/>
+          <path d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#C3D6EE" stroke-width="40" stroke-linecap="round"/>
+          <path d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#FFFFFF" stroke-width="32" stroke-linecap="round"/>
+          <path d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#9DBDE3" stroke-width="3" stroke-dasharray="16 14" stroke-linecap="round"/>
           <g transform="translate(913 190) rotate(-12)"><rect x="-24" y="-20" width="48" height="40" rx="3" fill="#B8865A"/><path d="M-24 -10H24M-24 0H24M-24 10H24" stroke="#9A6D45" stroke-width="2"/></g>
         </g>
         <path class="rm-done" d="M110 90 C330 120 600 70 820 110 C930 130 935 235 820 270 C700 310 450 320 380 355 C295 398 330 465 430 500 C560 545 760 575 930 600" fill="none" stroke="#FF6A1F" stroke-width="5" stroke-linecap="round"/>
-        <ellipse class="rm-hill" cx="930" cy="602" rx="70" ry="18" fill="#D6E6BE"/>
+        <ellipse class="rm-hill" cx="930" cy="602" rx="70" ry="18" fill="#CBE8B8"/>
         <g class="rm-flag"><rect x="926" y="518" width="5" height="84" rx="2" fill="#1B2440"/><path d="M931 520 L990 538 L931 556Z" fill="#FDB913"/><path d="M950 533 l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7Z" fill="#FF6A1F"/></g>
         <path class="rm-trail" d="M985 530 C1030 492 1070 502 1130 470" fill="none" stroke="#9A9AA6" stroke-width="2.5" stroke-dasharray="7 8"/>
         <g class="rm-plane"><g transform="scale(1.4)"><path d="M-14 0 L14 -2 L20 0 L14 2Z M-2 -1 L-10 -14 L-5 -14 L6 -1Z M-2 1 L-10 14 L-5 14 L6 1Z M-12 -1 L-16 -7 L-13 -7 L-8 -1Z M-12 1 L-16 7 L-13 7 L-8 1Z" fill="#fff" stroke="#1B2440" stroke-width="1.4" stroke-linejoin="round"/></g>
@@ -194,19 +194,19 @@
       <!-- Peta HP (portrait) -->
       <svg class="rm__map rm__map--m" viewBox="0 0 400 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         <defs>
-          <pattern id="rmDotsM" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#E9DCC3"/></pattern>
+          <pattern id="rmDotsM" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#D5E4F5"/></pattern>
           <mask id="rmRevealM" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="1000"><path class="rm-reveal" d="M80 96 C200 105 300 135 316 205 C332 280 150 330 92 395 C55 440 80 495 180 530 C260 556 320 560 312 600 C305 650 150 690 104 735 C60 780 80 870 170 885 C200 889 230 888 250 888" fill="none" stroke="#fff" stroke-width="44" stroke-linecap="round"/></mask>
         </defs>
-        <rect width="400" height="1000" fill="#FCF5E8"/>
+        <rect width="400" height="1000" fill="#F2F8FF"/>
         <rect width="400" height="1000" fill="url(#rmDotsM)"/>
         <g class="rm-cloud"><ellipse cx="200" cy="40" rx="30" ry="11" fill="#fff"/><ellipse cx="214" cy="33" rx="17" ry="11" fill="#fff"/></g>
-        <path d="M250 150 L320 60 L390 150Z" fill="#E7D3B4"/><path d="M320 60 L390 150 L345 150Z" fill="#D9C19C"/><path d="M305 80 L320 60 L335 80 L326 76 L320 83 L314 76Z" fill="#fff"/>
-        <path d="M330 150 L375 95 L420 150Z" fill="#EEDDC2"/>
-        <path d="M0 300 C120 280 260 310 400 285 V1000 H0Z" fill="#EEF2DE"/>
-        <path d="M0 640 C140 620 260 650 400 625 V1000 H0Z" fill="#E6EDD2"/>
-        <path d="M0 500 C90 515 170 485 260 505 C320 517 360 510 400 505" fill="none" stroke="#CFE3EE" stroke-width="18" stroke-linecap="round"/>
+        <path d="M250 150 L320 60 L390 150Z" fill="#C9DAEE"/><path d="M320 60 L390 150 L345 150Z" fill="#B3C8E2"/><path d="M305 80 L320 60 L335 80 L326 76 L320 83 L314 76Z" fill="#fff"/>
+        <path d="M330 150 L375 95 L420 150Z" fill="#DAE6F4"/>
+        <path d="M0 300 C120 280 260 310 400 285 V1000 H0Z" fill="#E9F5E1"/>
+        <path d="M0 640 C140 620 260 650 400 625 V1000 H0Z" fill="#DCEFCF"/>
+        <path d="M0 500 C90 515 170 485 260 505 C320 517 360 510 400 505" fill="none" stroke="#BFDDF6" stroke-width="18" stroke-linecap="round"/>
         <path d="M0 500 C90 515 170 485 260 505 C320 517 360 510 400 505" fill="none" stroke="#fff" stroke-width="1.6" stroke-dasharray="9 11" opacity=".8"/>
-        <g fill="#9CC98A">
+        <g fill="#7FC36B">
           <g transform="translate(28 330)"><path d="M0 -28 L13 0 H-13Z"/><rect x="-2" y="0" width="4" height="9" fill="#B08560"/></g>
           <g transform="translate(372 320)"><circle cy="-11" r="12"/><rect x="-2" y="0" width="4" height="9" fill="#B08560"/></g>
           <g transform="translate(30 470)"><circle cy="-11" r="12"/><rect x="-2" y="0" width="4" height="9" fill="#B08560"/></g>
@@ -218,12 +218,12 @@
           <g transform="translate(372 975)"><path d="M0 -28 L13 0 H-13Z"/><rect x="-2" y="0" width="4" height="9" fill="#B08560"/></g>
         </g>
         <g mask="url(#rmRevealM)">
-          <path d="M80 96 C200 105 300 135 316 205 C332 280 150 330 92 395 C55 440 80 495 180 530 C260 556 320 560 312 600 C305 650 150 690 104 735 C60 780 80 870 170 885 C200 889 230 888 250 888" fill="none" stroke="#E8C27E" stroke-width="28" stroke-linecap="round"/>
-          <path d="M80 96 C200 105 300 135 316 205 C332 280 150 330 92 395 C55 440 80 495 180 530 C260 556 320 560 312 600 C305 650 150 690 104 735 C60 780 80 870 170 885 C200 889 230 888 250 888" fill="none" stroke="#F7DCA6" stroke-width="22" stroke-linecap="round"/>
-          <path d="M80 96 C200 105 300 135 316 205 C332 280 150 330 92 395 C55 440 80 495 180 530 C260 556 320 560 312 600 C305 650 150 690 104 735 C60 780 80 870 170 885 C200 889 230 888 250 888" fill="none" stroke="#fff" stroke-width="2.2" stroke-dasharray="11 10" stroke-linecap="round"/>
+          <path d="M80 96 C200 105 300 135 316 205 C332 280 150 330 92 395 C55 440 80 495 180 530 C260 556 320 560 312 600 C305 650 150 690 104 735 C60 780 80 870 170 885 C200 889 230 888 250 888" fill="none" stroke="#C3D6EE" stroke-width="28" stroke-linecap="round"/>
+          <path d="M80 96 C200 105 300 135 316 205 C332 280 150 330 92 395 C55 440 80 495 180 530 C260 556 320 560 312 600 C305 650 150 690 104 735 C60 780 80 870 170 885 C200 889 230 888 250 888" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round"/>
+          <path d="M80 96 C200 105 300 135 316 205 C332 280 150 330 92 395 C55 440 80 495 180 530 C260 556 320 560 312 600 C305 650 150 690 104 735 C60 780 80 870 170 885 C200 889 230 888 250 888" fill="none" stroke="#9DBDE3" stroke-width="2.2" stroke-dasharray="11 10" stroke-linecap="round"/>
         </g>
         <path class="rm-done" d="M80 96 C200 105 300 135 316 205 C332 280 150 330 92 395 C55 440 80 495 180 530 C260 556 320 560 312 600 C305 650 150 690 104 735 C60 780 80 870 170 885 C200 889 230 888 250 888" fill="none" stroke="#FF6A1F" stroke-width="4" stroke-linecap="round"/>
-        <ellipse class="rm-hill" cx="250" cy="891" rx="52" ry="13" fill="#D6E6BE"/>
+        <ellipse class="rm-hill" cx="250" cy="891" rx="52" ry="13" fill="#CBE8B8"/>
         <g class="rm-flag"><rect x="247" y="823" width="4" height="68" rx="2" fill="#1B2440"/><path d="M251 825 L296 839 L251 853Z" fill="#FDB913"/><path d="M265 834 l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6Z" fill="#FF6A1F"/></g>
       </svg>
 
