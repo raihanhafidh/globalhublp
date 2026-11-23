@@ -366,8 +366,27 @@ s{color:var(--muted)}
 .personas::-webkit-scrollbar{display:none}
 .persona{scroll-snap-align:start}
 .swipe{font-size:12px;color:var(--muted);margin-top:8px}
-.persona{background:#fff;border-radius:var(--r-lg);padding:18px}
-.persona__tag{display:inline-block;font-size:12px;font-weight:700;background:var(--card);border-radius:999px;padding:4px 10px}
+.persona{background:#fff;border-radius:24px;padding:12px 12px 22px;display:flex;flex-direction:column}
+.personas .persona{transform:perspective(900px) translateY(var(--ty,0)) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .5s,opacity .8s ease,scale .5s cubic-bezier(.2,.8,.2,1)}
+.personas .persona.reveal:not(.in){--ty:18px;opacity:0}
+.personas .persona.reveal.in{opacity:1}
+.personas .persona.tilt{transition:transform .12s linear,box-shadow .5s,opacity .8s ease;box-shadow:0 22px 44px rgba(60,40,10,.14)}
+.personas .persona.dim{opacity:.55;scale:.95}
+.persona__art{position:relative;border-radius:16px;overflow:hidden;margin-bottom:16px;aspect-ratio:480/300;background:#F3F1EC;isolation:isolate}
+.persona:nth-child(1) .persona__art{background:#FFF6DB}.persona:nth-child(2) .persona__art{background:#FFEDE3}.persona:nth-child(3) .persona__art{background:#EEF0F3}
+.persona__art img{display:block;width:100%;height:100%;object-fit:cover;transform:translate(var(--mx,0),var(--my,0)) scale(1.06);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.persona.tilt .persona__art img{transition:transform .15s linear}
+/* Ilustrasi terbuka dari bawah saat kartu muncul */
+.js .persona.reveal .persona__art{clip-path:inset(100% 0 0 0 round 16px);transition:clip-path 1.1s cubic-bezier(.22,.9,.3,1) .15s}
+.js .persona.reveal.in .persona__art{clip-path:inset(0 0 0 0 round 16px)}
+.js .persona.reveal:nth-child(2) .persona__art{transition-delay:.35s}
+.js .persona.reveal:nth-child(3) .persona__art{transition-delay:.55s}
+.persona__tag,.persona h3,.persona p{margin-left:8px;margin-right:8px}
+.persona__tag{align-self:flex-start;display:inline-block;font-size:12px;font-weight:700;background:var(--card);border-radius:999px;padding:4px 10px}
+.pdots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+.pdots i{width:7px;height:7px;border-radius:999px;background:#D6D6DC;transition:width .35s cubic-bezier(.2,.8,.2,1),background .3s}
+.pdots i.on{width:20px;background:var(--orange)}
+@media (max-width:767px){.persona__art{aspect-ratio:480/220}.persona:nth-child(3) .persona__art img{object-position:50% 10%}}
 .persona__tag.t1{background:#FFF6DB}.persona__tag.t2{background:#FFEDE3}.persona__tag.t3{background:#EEF0F3}
 .persona h3{font-size:17px;margin-top:10px;letter-spacing:-.01em}
 .persona p{font-size:14px;color:var(--muted);margin-top:4px}
@@ -447,6 +466,8 @@ footer p + p{margin-top:6px}
   .mock{padding:18px;font-size:14px}
   .personas{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);margin:22px 0 0;padding:0;overflow:visible}
   .swipe{display:none}
+  .pdots{display:none}
+  .personas{perspective:1200px}
   .mock li{padding:7px 10px}
   .faq{grid-template-columns:1fr 1fr;align-items:start}
   .closing{padding:90px 0}
@@ -802,12 +823,20 @@ footer p + p{margin-top:6px}
 <!-- §personas -->
 <section class="sec" id="untuk-siapa">
   <div class="wrap fade-up">
+    <!-- Ilustrasi persona (SVG animasi dari tim, dipasang lewat <img>). Desktop: kartu miring mengikuti kursor; HP: geser dengan indikator titik. -->
     <h2 class="h2 reveal">Cocok buat kamu yang…</h2>
     <div class="personas">
-      <article class="persona reveal"><span class="persona__tag t1">Baru mau mulai</span><h3>"Mulai siapin LPDP sebelum pendaftaran dibuka."</h3><p>Belum pernah daftar LPDP, tapi udah pengen S2/S3.</p></article>
-      <article class="persona reveal"><span class="persona__tag t2">Lagi nyiapin</span><h3>"Jangan cuma memenuhi syarat. Bangun aplikasi yang punya arah."</h3><p>Udah punya target LPDP dan mulai ngumpulin dokumen.</p></article>
-      <article class="persona reveal"><span class="persona__tag t3">Mau coba lagi</span><h3>"Pernah coba LPDP? Saatnya evaluasi strategi persiapanmu."</h3><p>Pernah daftar atau ikut seleksi, tapi belum lolos.</p></article>
+      <article class="persona reveal">
+        <div class="persona__art"><img src="media/persona/persona-1-baru-mulai.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
+        <span class="persona__tag t1">Baru mau mulai</span><h3>"Mulai siapin LPDP sebelum pendaftaran dibuka."</h3><p>Belum pernah daftar LPDP, tapi udah pengen S2/S3.</p></article>
+      <article class="persona reveal">
+        <div class="persona__art"><img src="media/persona/persona-2-lagi-nyiapin.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
+        <span class="persona__tag t2">Lagi nyiapin</span><h3>"Jangan cuma memenuhi syarat. Bangun aplikasi yang punya arah."</h3><p>Udah punya target LPDP dan mulai ngumpulin dokumen.</p></article>
+      <article class="persona reveal">
+        <div class="persona__art"><img src="media/persona/persona-3-coba-lagi.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
+        <span class="persona__tag t3">Mau coba lagi</span><h3>"Pernah coba LPDP? Saatnya evaluasi strategi persiapanmu."</h3><p>Pernah daftar atau ikut seleksi, tapi belum lolos.</p></article>
     </div>
+    <div class="pdots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
     <p class="swipe" aria-hidden="true">Geser untuk lihat lainnya →</p>
     <p class="primary">Primary target: calon pendaftar S2/S3 yang serius daftar LPDP.</p>
   </div>
@@ -1078,6 +1107,33 @@ var CONFIG = {
   }
 
   // Mockup sesi 4: tombol "lihat tips"
+  // Kartu persona: desktop miring 3D mengikuti kursor; HP: kartu yang di tengah disorot + titik indikator
+  (function(){
+    var row = document.querySelector('.personas'); if(!row) return;
+    var cards = [].slice.call(row.querySelectorAll('.persona')), dots = [].slice.call(document.querySelectorAll('.pdots i'));
+    var fine = window.matchMedia('(hover:hover) and (pointer:fine)');
+    cards.forEach(function(c){
+      c.addEventListener('pointermove', function(e){
+        if(!fine.matches || window.innerWidth < 768) return;
+        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        c.style.setProperty('--rx', (-y * 7).toFixed(2) + 'deg'); c.style.setProperty('--ry', (x * 9).toFixed(2) + 'deg');
+        c.style.setProperty('--mx', (x * -10).toFixed(1) + 'px'); c.style.setProperty('--my', (y * -8).toFixed(1) + 'px');
+        c.classList.add('tilt');
+      });
+      c.addEventListener('pointerleave', function(){ c.classList.remove('tilt'); ['--rx','--ry','--mx','--my'].forEach(function(k){ c.style.removeProperty(k); }); });
+    });
+    var ticking = false;
+    function upd(){
+      ticking = false; if(window.innerWidth >= 768){ cards.forEach(function(c){ c.classList.remove('dim'); }); return; }
+      var mid = row.getBoundingClientRect().left + row.clientWidth / 2, best = 0, bd = 1e9;
+      cards.forEach(function(c, i){ var r = c.getBoundingClientRect(), d = Math.abs(r.left + r.width / 2 - mid); if(d < bd){ bd = d; best = i; } });
+      cards.forEach(function(c, i){ c.classList.toggle('dim', i !== best); });
+      dots.forEach(function(d, i){ d.classList.toggle('on', i === best); });
+    }
+    row.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(upd); } }, { passive:true });
+    window.addEventListener('resize', upd); upd();
+  })();
+
   // Roadmap peta 4 sesi: jalan tergambar saat terlihat, pin muncul berurutan, klik kartu/pin buka detail,
   // titik "Kamu di sini" berjalan sepanjang jalan ke sesi yang dipilih. Popover di desktop, bottom sheet di HP.
   (function(){
@@ -1127,9 +1183,17 @@ var CONFIG = {
       cancelAnimationFrame(raf); me.classList.add('moving');
       raf = requestAnimationFrame(function st(ts){
         if(!t0) t0 = ts; var x = Math.min(1, (ts - t0) / dur), e = x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2;
-        placeMe(from + (to - from) * e);
-        if(x < 1) raf = requestAnimationFrame(st); else me.classList.remove('moving');
+        placeMe(from + (to - from) * e); follow(.14);
+        if(x < 1) raf = requestAnimationFrame(st);
+        else { me.classList.remove('moving'); var k = 0; (function settle(){ follow(.2); if(++k < 30 && opened) raf = requestAnimationFrame(settle); })(); }
       });
+    }
+    // HP: layar ikut bergerak (scroll) mengikuti titik yang sedang berjalan, supaya titiknya tetap terlihat di atas bottom sheet
+    function follow(f){
+      if(mq.matches || !opened) return;
+      var r = me.getBoundingClientRect(), top = 84, bot = innerHeight - pop.offsetHeight - 12;
+      var d = r.top - (top + Math.max(0, bot - top) * .55);
+      if(Math.abs(d) > .5) window.scrollTo(0, scrollY + d * f);
     }
     function mark(i){
       pins.forEach(function(p, j){ p.classList.toggle('on', j === i); p.classList.toggle('done', i >= 0 && j < i); });

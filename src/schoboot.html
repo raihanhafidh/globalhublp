@@ -363,12 +363,20 @@
 <!-- §personas -->
 <section class="sec" id="untuk-siapa">
   <div class="wrap fade-up">
+    <!-- Ilustrasi persona (SVG animasi dari tim, dipasang lewat <img>). Desktop: kartu miring mengikuti kursor; HP: geser dengan indikator titik. -->
     <h2 class="h2 reveal">Cocok buat kamu yang…</h2>
     <div class="personas">
-      <article class="persona reveal"><span class="persona__tag t1">Baru mau mulai</span><h3>"Mulai siapin LPDP sebelum pendaftaran dibuka."</h3><p>Belum pernah daftar LPDP, tapi udah pengen S2/S3.</p></article>
-      <article class="persona reveal"><span class="persona__tag t2">Lagi nyiapin</span><h3>"Jangan cuma memenuhi syarat. Bangun aplikasi yang punya arah."</h3><p>Udah punya target LPDP dan mulai ngumpulin dokumen.</p></article>
-      <article class="persona reveal"><span class="persona__tag t3">Mau coba lagi</span><h3>"Pernah coba LPDP? Saatnya evaluasi strategi persiapanmu."</h3><p>Pernah daftar atau ikut seleksi, tapi belum lolos.</p></article>
+      <article class="persona reveal">
+        <div class="persona__art"><img src="media/persona/persona-1-baru-mulai.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
+        <span class="persona__tag t1">Baru mau mulai</span><h3>"Mulai siapin LPDP sebelum pendaftaran dibuka."</h3><p>Belum pernah daftar LPDP, tapi udah pengen S2/S3.</p></article>
+      <article class="persona reveal">
+        <div class="persona__art"><img src="media/persona/persona-2-lagi-nyiapin.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
+        <span class="persona__tag t2">Lagi nyiapin</span><h3>"Jangan cuma memenuhi syarat. Bangun aplikasi yang punya arah."</h3><p>Udah punya target LPDP dan mulai ngumpulin dokumen.</p></article>
+      <article class="persona reveal">
+        <div class="persona__art"><img src="media/persona/persona-3-coba-lagi.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
+        <span class="persona__tag t3">Mau coba lagi</span><h3>"Pernah coba LPDP? Saatnya evaluasi strategi persiapanmu."</h3><p>Pernah daftar atau ikut seleksi, tapi belum lolos.</p></article>
     </div>
+    <div class="pdots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
     <p class="swipe" aria-hidden="true">Geser untuk lihat lainnya →</p>
     <p class="primary">Primary target: calon pendaftar S2/S3 yang serius daftar LPDP.</p>
   </div>
@@ -573,6 +581,33 @@ var CONFIG = {
   }
 
   // Mockup sesi 4: tombol "lihat tips"
+  // Kartu persona: desktop miring 3D mengikuti kursor; HP: kartu yang di tengah disorot + titik indikator
+  (function(){
+    var row = document.querySelector('.personas'); if(!row) return;
+    var cards = [].slice.call(row.querySelectorAll('.persona')), dots = [].slice.call(document.querySelectorAll('.pdots i'));
+    var fine = window.matchMedia('(hover:hover) and (pointer:fine)');
+    cards.forEach(function(c){
+      c.addEventListener('pointermove', function(e){
+        if(!fine.matches || window.innerWidth < 768) return;
+        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        c.style.setProperty('--rx', (-y * 7).toFixed(2) + 'deg'); c.style.setProperty('--ry', (x * 9).toFixed(2) + 'deg');
+        c.style.setProperty('--mx', (x * -10).toFixed(1) + 'px'); c.style.setProperty('--my', (y * -8).toFixed(1) + 'px');
+        c.classList.add('tilt');
+      });
+      c.addEventListener('pointerleave', function(){ c.classList.remove('tilt'); ['--rx','--ry','--mx','--my'].forEach(function(k){ c.style.removeProperty(k); }); });
+    });
+    var ticking = false;
+    function upd(){
+      ticking = false; if(window.innerWidth >= 768){ cards.forEach(function(c){ c.classList.remove('dim'); }); return; }
+      var mid = row.getBoundingClientRect().left + row.clientWidth / 2, best = 0, bd = 1e9;
+      cards.forEach(function(c, i){ var r = c.getBoundingClientRect(), d = Math.abs(r.left + r.width / 2 - mid); if(d < bd){ bd = d; best = i; } });
+      cards.forEach(function(c, i){ c.classList.toggle('dim', i !== best); });
+      dots.forEach(function(d, i){ d.classList.toggle('on', i === best); });
+    }
+    row.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(upd); } }, { passive:true });
+    window.addEventListener('resize', upd); upd();
+  })();
+
   // Roadmap peta 4 sesi: jalan tergambar saat terlihat, pin muncul berurutan, klik kartu/pin buka detail,
   // titik "Kamu di sini" berjalan sepanjang jalan ke sesi yang dipilih. Popover di desktop, bottom sheet di HP.
   (function(){
@@ -622,9 +657,17 @@ var CONFIG = {
       cancelAnimationFrame(raf); me.classList.add('moving');
       raf = requestAnimationFrame(function st(ts){
         if(!t0) t0 = ts; var x = Math.min(1, (ts - t0) / dur), e = x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2;
-        placeMe(from + (to - from) * e);
-        if(x < 1) raf = requestAnimationFrame(st); else me.classList.remove('moving');
+        placeMe(from + (to - from) * e); follow(.14);
+        if(x < 1) raf = requestAnimationFrame(st);
+        else { me.classList.remove('moving'); var k = 0; (function settle(){ follow(.2); if(++k < 30 && opened) raf = requestAnimationFrame(settle); })(); }
       });
+    }
+    // HP: layar ikut bergerak (scroll) mengikuti titik yang sedang berjalan, supaya titiknya tetap terlihat di atas bottom sheet
+    function follow(f){
+      if(mq.matches || !opened) return;
+      var r = me.getBoundingClientRect(), top = 84, bot = innerHeight - pop.offsetHeight - 12;
+      var d = r.top - (top + Math.max(0, bot - top) * .55);
+      if(Math.abs(d) > .5) window.scrollTo(0, scrollY + d * f);
     }
     function mark(i){
       pins.forEach(function(p, j){ p.classList.toggle('on', j === i); p.classList.toggle('done', i >= 0 && j < i); });
