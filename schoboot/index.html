@@ -15,6 +15,7 @@
 <!-- Tracking: tidak ada pixel/GA/Clarity di draft ini. Klik tombol push `lp_cta_click` ke dataLayer (src/shared.js):
      cta=checkout -> InitiateCheckout, cta=whatsapp -> Contact. TIDAK ada Purchase dari LP; Purchase hanya dari pembayaran terverifikasi.
      Developer: jangan biarkan tag menembak dari localhost/preview. -->
+<script>document.documentElement.classList.add("js")</script>
 <style>@font-face{font-family:"Google Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(media/google-sans-latin.woff2) format("woff2")}
 @font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url(media/instrument-serif-italic-latin.woff2) format("woff2")}
 :root{
@@ -108,8 +109,27 @@ s{color:var(--muted)}
 .h1 .line{display:block}
 .h1 .line--serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.02em;font-size:1.08em;line-height:1;color:#3A1D00;margin-top:.12em}
 .h1 .w{display:inline-block;white-space:nowrap}
-.h1 .ch{display:inline-block;opacity:0;transform:translateY(.35em);animation:ch .5s cubic-bezier(.2,.8,.2,1) forwards}
-@keyframes ch{to{opacity:1;transform:none}}
+/* Headline diketik: tiap huruf fade in, kursor berkedip mengikuti */
+.h1 .ch{opacity:0;transition:opacity .12s ease-out}
+.h1 .ch.on{opacity:1}
+/* Kursor selebar nol (garis digambar lewat ::after) supaya teks tidak bergeser saat kursor pindah */
+.caret{position:relative;display:inline-block;width:0;height:.82em;vertical-align:-.06em;animation:blink 1s steps(1) infinite;transition:opacity .4s}
+.caret::after{content:"";position:absolute;left:2px;top:0;bottom:0;width:3px;background:currentColor;border-radius:2px}
+.line--serif .caret::after{width:2px}
+.h1.typed .caret{animation-duration:.7s}
+.caret.gone{opacity:0;animation:none}
+@keyframes blink{50%{opacity:0}}
+/* Masuk pertama: navbar turun (fade in down), elemen hero lain naik pelan */
+.nav__pill{animation:navin .8s cubic-bezier(.2,.8,.2,1) .1s both}
+@keyframes navin{from{opacity:0;transform:translateY(-110%)}to{opacity:1;transform:none}}
+.js .eyebrow--hero,.js .hero__sub,.js .hero__cta{animation:heroup .8s cubic-bezier(.2,.8,.2,1) both}
+.js .eyebrow--hero{animation-delay:.25s}
+.js .hero__sub{animation-delay:.55s}
+.js .hero__cta{animation-delay:.75s}
+@keyframes heroup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+/* Scroll: isi section naik sambil muncul (fade in up) */
+.js .fade-up{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .fade-up.in{opacity:1;transform:none}
 .hero__sub{font-size:16px;color:#3A2410;margin-top:24px;max-width:600px}
 .hero__cta{margin-top:36px;display:flex;flex-direction:column;align-items:stretch;gap:10px;width:100%;max-width:320px}
 .btn--hero svg{transition:transform .25s cubic-bezier(.2,.8,.2,1)}
@@ -318,10 +338,7 @@ footer p + p{margin-top:6px}
   footer{padding-bottom:32px}
 }
 @media (hover:none){.btn:hover{transform:none}}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
-  .reveal{opacity:1;transform:none}
-}
+
 </style>
 </head>
 <body data-variant="SCHOBOOT">
@@ -365,15 +382,23 @@ footer p + p{margin-top:6px}
       <span class="line line--serif">Siap bersaing sampai lulus itu beda cerita.</span>
     </h1>
     <script>
-    /* Varian tombol ?btn=orange, lalu animasi per huruf (dilewati kalau reduced-motion). */
+    /* Varian tombol ?btn=orange, lalu headline "diketik": huruf muncul satu per satu (fade) dengan kursor berkedip.
+       Sengaja tetap jalan walau reduced motion aktif (permintaan tim). Teks lengkap ada di aria-label untuk pembaca layar. */
     (function(){
       var h=document.getElementById('h1'),q=new URLSearchParams(location.search),L=h.querySelectorAll('.line');
       var b=q.get('btn');if(b==='orange'||b==='black')document.documentElement.setAttribute('data-btn',b);
-      if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-      var i=0;L.forEach(function(line){var words=line.textContent.trim().split(' ');line.textContent='';line.setAttribute('aria-hidden','true');
+      var chars=[];
+      L.forEach(function(line){var words=line.textContent.trim().split(' ');line.textContent='';line.setAttribute('aria-hidden','true');
         words.forEach(function(w,wi){var ws=document.createElement('span');ws.className='w';
-          Array.from(w).forEach(function(c){var s=document.createElement('span');s.className='ch';s.textContent=c;s.style.animationDelay=(i++*12)+'ms';ws.appendChild(s);});
+          Array.from(w).forEach(function(c){var s=document.createElement('span');s.className='ch';s.textContent=c;ws.appendChild(s);chars.push(s);});
           line.appendChild(ws);if(wi<words.length-1)line.appendChild(document.createTextNode(' '));});});
+      var caret=document.createElement('span');caret.className='caret';caret.setAttribute('aria-hidden','true');
+      var i=0,step=Math.max(18,Math.round(2200/chars.length));
+      function tick(){
+        if(i<chars.length){var c=chars[i++];c.classList.add('on');c.after(caret);setTimeout(tick,c.textContent==='.'?step*6:step);}
+        else{h.classList.add('typed');setTimeout(function(){caret.classList.add('gone');},1600);}
+      }
+      chars[0].before(caret);setTimeout(tick,450);
     })();
     </script>
     <p class="hero__sub">Program mentoring 4 sesi live Zoom buat tahu apa aja yang perlu kamu siapin sebelum daftar LPDP, dan apa yang bikin berkasmu punya kesempatan lulus!</p>
@@ -390,7 +415,7 @@ footer p + p{margin-top:6px}
 <!-- §compare -->
 <!-- Latar senja (foto dari tim) + panel kaca (glassmorphism) ala referensi Supaste, menyambung warna hero -->
 <section class="sec sec--sunset" id="info">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2 reveal">Info LPDP gratis itu banyak. Yang bikin bingung: <span class="hl">mulai dari mana.</span></h2>
     <div class="cmp glass">
       <div class="cmp__head"><span>Info gratis di internet</span><span>Di SchoBoot</span></div>
@@ -407,7 +432,7 @@ footer p + p{margin-top:6px}
 <!-- TODO [V]: pastikan hak pakai ketiga foto, dan bahwa negara tujuan ini sesuai daftar kampus tujuan LPDP sebelum tayang -->
 <!-- Latar biru laut, melanjutkan laut di bawah section senja -->
 <section class="sec sec--sea" aria-labelledby="dest-title">
-  <div class="wrap dest">
+  <div class="wrap fade-up dest">
     <div>
       <h2 class="h2 reveal" id="dest-title">Kampus impianmu ada di mana?</h2>
       <p class="lead">Australia, Rusia, Tiongkok, atau negara lain. Apa pun tujuanmu, aplikasinya mulai dari persiapan yang sama.</p>
@@ -426,7 +451,7 @@ footer p + p{margin-top:6px}
 
 <!-- §program -->
 <section class="sec" id="program">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2 reveal">Apa aja yang kamu dapat di 4 sesi</h2>
     <!--
       TODO [V]: judul dan isi tiap sesi belum ada di materi PM.
@@ -498,7 +523,7 @@ footer p + p{margin-top:6px}
 <!-- Logo kampus berjalan, sama dengan globalhub.id/ieltsgo (logo & caption dari situ).
      TODO [V]: pastikan caption ini juga berlaku untuk mentor SchoBoot. Logo kampus tidak berarti kerja sama resmi. -->
 <section class="campus" aria-label="Kampus tempat mentor Global Hub belajar">
-  <div class="wrap campus__inner">
+  <div class="wrap fade-up campus__inner">
     <p class="campus__cap">Mentor kami menjadi bagian dari perjalanan pelajar Indonesia di universitas terbaik dunia.</p>
     <div class="marquee">
       <ul class="marquee__track">
@@ -532,7 +557,7 @@ footer p + p{margin-top:6px}
 
 <!-- §mentor -->
 <section class="sec sec--white" id="mentor">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2 reveal">Dipandu mentor yang udah lewat jalan ini</h2>
     <!-- Data mentor dari globalhub.id/mentors (program Study Abroad, label "LPDP Awardee" sesuai situs resmi). Logo LPDP sengaja tidak dipakai, cukup teks.
          TODO [V]: mentor mana yang benar-benar memandu SchoBoot, dan izin tampil di halaman ini. -->
@@ -551,7 +576,7 @@ footer p + p{margin-top:6px}
 
 <!-- §personas -->
 <section class="sec" id="untuk-siapa">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2 reveal">Cocok buat kamu yang…</h2>
     <div class="personas">
       <article class="persona reveal"><span class="persona__tag t1">Baru mau mulai</span><h3>"Mulai siapin LPDP sebelum pendaftaran dibuka."</h3><p>Belum pernah daftar LPDP, tapi udah pengen S2/S3.</p></article>
@@ -566,7 +591,7 @@ footer p + p{margin-top:6px}
 
 <!-- §pricing -->
 <section class="sec sec--white" id="harga">
-  <div class="wrap" style="text-align:center">
+  <div class="wrap fade-up" style="text-align:center">
     <h2 class="h2 reveal">Satu tiket. 4 sesi lengkap.</h2>
     <p class="lead">Sekali bayar, langsung dapat kursi di batch Januari 2027.</p>
     <div class="pricecard reveal" style="text-align:left">
@@ -593,7 +618,7 @@ footer p + p{margin-top:6px}
 
 <!-- §faq -->
 <section class="sec" id="faq">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2 reveal">Yang sering ditanyain</h2>
     <div class="faq">
       <details><summary>Bootcamp ini program resmi LPDP?</summary><p>Bukan. SchoBoot adalah program persiapan dari Global Hub by Englishvit, nggak berafiliasi dengan LPDP.</p></details>
@@ -615,7 +640,7 @@ footer p + p{margin-top:6px}
 
 <!-- §closing -->
 <section class="closing">
-  <div class="wrap">
+  <div class="wrap fade-up">
     <h2 class="h2">Pendaftaran LPDP belum dibuka. <span>Persiapanmu bisa mulai sekarang.</span></h2>
     <a href="#harga" class="btn" data-checkout data-cta="checkout" data-pos="closing" data-paket="schoboot" data-marketing-placement="closing">Amankan kursimu, Rp149K →</a><br>
     <a href="#" class="link" data-cta="whatsapp" data-pos="closing-wa" data-msg="Halo kak, aku mau tanya SchoBoot (bootcamp LPDP). Aku lagi di tahap ___." data-marketing-placement="closing-wa">Tanya admin via WhatsApp</a>
@@ -744,7 +769,9 @@ var CONFIG = {
 
   // Reveal saat masuk viewport
   var els = document.querySelectorAll('.reveal');
-  if (reduce || !('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); }
+  // Fade-in-up: kartu/baris (.reveal) dan isi tiap section di bawah hero (.fade-up). Tetap jalan walau reduced motion aktif.
+  els = Array.prototype.slice.call(els).concat(Array.prototype.slice.call(document.querySelectorAll('.fade-up')));
+  if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); }
   else {
     var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(e){ io.observe(e); });
