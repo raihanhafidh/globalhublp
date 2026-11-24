@@ -18,7 +18,7 @@
 <!-- Hero padang rumput (preload gambar latar LCP, sesudah font supaya headline tidak bergeser saat font masuk) -->
 <link rel="preload" as="image" href="media/meadow-1000.webp" media="(max-width:767px)">
 <link rel="preload" as="image" href="media/meadow-1536.webp" media="(min-width:768px)">
-<script>document.documentElement.classList.add("js")</script>
+<script>document.documentElement.classList.add("js","anim-wait")</script>
 <style>/*__CSS__*/</style>
 </head>
 <body data-variant="LPDP-BOOTCAMP">
@@ -75,13 +75,19 @@
         words.forEach(function(w,wi){var ws=document.createElement('span');ws.className='w';
           Array.from(w).forEach(function(c){var s=document.createElement('span');s.className='ch';s.textContent=c;ws.appendChild(s);chars.push(s);});
           line.appendChild(ws);if(wi<words.length-1)line.appendChild(document.createTextNode(' '));});});
-      var caret=document.createElement('span');caret.className='caret';caret.setAttribute('aria-hidden','true');
-      var i=0,step=Math.max(26,Math.round(3300/chars.length));
+      // Kursor diletakkan absolut di h1 dan digeser pakai transform (posisi huruf diukur sekali),
+      // jadi tiap huruf yang muncul tidak memicu hitung ulang layout halaman.
+      var caret=document.createElement('span');caret.className='caret';caret.setAttribute('aria-hidden','true');h.appendChild(caret);
+      var i=0,step=Math.max(26,Math.round(3300/chars.length)),pos=null;
+      function measure(){var hr=h.getBoundingClientRect();pos=chars.map(function(c){var r=c.getBoundingClientRect();return [r.right-hr.left,r.top-hr.top,r.height,r.left-hr.left];});}
+      function put(k,after){var q=pos[k];caret.style.height=(q[2]*.82)+'px';caret.style.transform='translate('+(after?q[0]+2:q[3])+'px,'+(q[1]+q[2]*.12)+'px)';}
       function tick(){
-        if(i<chars.length){var c=chars[i++];c.classList.add('on');c.after(caret);setTimeout(tick,c.textContent==='.'?step*6:step);}
+        if(i<chars.length){var c=chars[i];c.classList.add('on');put(i,true);i++;setTimeout(tick,c.textContent==='.'?step*6:step);}
         else{h.classList.add('typed');setTimeout(function(){caret.classList.add('gone');},1600);}
       }
-      chars[0].before(caret);setTimeout(tick,900);
+      setTimeout(function(){measure();put(0,false);caret.classList.add('show');tick();},900);
+      if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){if(pos){measure();if(i<chars.length&&i>0)put(i-1,true);}});
+      addEventListener('resize',function(){if(pos&&!caret.classList.contains('gone')){measure();put(Math.max(0,i-1),i>0);}});
     })();
     </script>
     <div class="hero__cta">
@@ -95,7 +101,7 @@
 
 
 <!-- §compare -->
-<!-- §compare: section 2 versi roadmap interaktif (brief section2-roadmap). Kolom "Kalau belajar sendiri" / "Di Global Hub":
+<!-- §compare: section 2 versi roadmap interaktif (rute dari atas ke bawah, nyambung ke peta 4 sesi) (brief section2-roadmap). Kolom "Kalau belajar sendiri" / "Di Global Hub":
      TODO [V]: copy usulan, minta konfirmasi PM (Selma) sebelum tayang. -->
 <section class="sec sec--sunset" id="info">
   <div class="wrap fade-up">
@@ -106,14 +112,14 @@
     <div class="jr" data-jr data-dir="right">
       <div class="jr__map">
         <div class="jr__stage" role="tablist" aria-label="4 hal yang bikin persiapanmu lebih terarah">
-          <svg class="jr__art" viewBox="0 0 600 560" aria-hidden="true" focusable="false"><defs><linearGradient id="jrFill" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1E88E5"/><stop offset="1" stop-color="#14B8A6"/></linearGradient><pattern id="jrDots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#C9DCF3"/></pattern></defs><rect width="600" height="560" fill="url(#jrDots)" opacity=".7"/><path d="M-20,420 C80,370 170,450 280,420 C380,390 420,470 620,430 L620,580 L-20,580 Z" fill="#E3F4EA"/><path d="M380,50 C460,20 560,40 620,80 L620,200 C560,220 470,190 420,160 C380,130 350,70 380,50 Z" fill="#FFF3D6"/><path d="M40,170 C60,120 150,110 190,150 C230,190 200,250 140,256 C80,262 24,220 40,170 Z" fill="#EAF3FF"/><g transform="translate(120,196) scale(0.75)" fill="#fff" opacity="1"><ellipse rx="46" ry="16"/><circle cx="-15" cy="-9" r="18"/><circle cx="14" cy="-14" r="22"/></g><ellipse cx="500" cy="102" rx="70" ry="20" fill="#CDEBD8"/><g transform="translate(500,100)"><rect x="-3" y="-66" width="6" height="68" rx="3" fill="#0B2545"/><path class="jr-flag" d="M3,-64 L46,-53 L3,-42 Z" fill="#FDB913" stroke="#0B2545" stroke-width="2" stroke-linejoin="round"/></g><g transform="translate(150,90) scale(0.7)" fill="#fff" opacity="1"><ellipse rx="46" ry="16"/><circle cx="-15" cy="-9" r="18"/><circle cx="14" cy="-14" r="22"/></g><g transform="translate(560,250) scale(0.55)" fill="#fff" opacity="1"><ellipse rx="46" ry="16"/><circle cx="-15" cy="-9" r="18"/><circle cx="14" cy="-14" r="22"/></g><path d="M230,82 l26,-9 l-14,15 z M242,88 l-3,7 l-2,-9 z" fill="#fff" stroke="#0B2545" stroke-width="1.6" stroke-linejoin="round" opacity=".8"/><path d="M214,94 C200,100 190,112 176,116" fill="none" stroke="#0B2545" stroke-width="1.4" stroke-dasharray="3 5" opacity=".4"/><g transform="translate(420,120) scale(0.7)"><path class="jr-tw" d="M0,-10 C1.6,-2 2,-1.6 10,0 C2,1.6 1.6,2 0,10 C-1.6,2 -2,1.6 -10,0 C-2,-1.6 -1.6,-2 0,-10 Z" fill="#FDB913"/></g><g transform="translate(90,320) scale(0.5)"><path class="jr-tw2" d="M0,-10 C1.6,-2 2,-1.6 10,0 C2,1.6 1.6,2 0,10 C-1.6,2 -2,1.6 -10,0 C-2,-1.6 -1.6,-2 0,-10 Z" fill="#FF8040"/></g><g transform="translate(560,380) scale(0.55)"><path class="jr-tw2" d="M0,-10 C1.6,-2 2,-1.6 10,0 C2,1.6 1.6,2 0,10 C-1.6,2 -2,1.6 -10,0 C-2,-1.6 -1.6,-2 0,-10 Z" fill="#FDB913"/></g><path d="M60,468 C76.5,454.8 98.3,400.0 150,396 C201.7,392.0 282.6,463.6 342,446 C401.4,428.4 482.4,345.8 474,300 C465.6,254.2 291.2,234.1 296,196 C300.8,157.9 462.6,111.1 500,92" fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M60,468 C76.5,454.8 98.3,400.0 150,396 C201.7,392.0 282.6,463.6 342,446 C401.4,428.4 482.4,345.8 474,300 C465.6,254.2 291.2,234.1 296,196 C300.8,157.9 462.6,111.1 500,92" fill="none" stroke="#C9DCF3" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/><path d="M60,468 C76.5,454.8 98.3,400.0 150,396 C201.7,392.0 282.6,463.6 342,446 C401.4,428.4 482.4,345.8 474,300 C465.6,254.2 291.2,234.1 296,196 C300.8,157.9 462.6,111.1 500,92" class="jr__progress" data-jr-road fill="none" stroke="url(#jrFill)" stroke-width="6" stroke-linecap="round"/><style>.jr-tw{animation:jrTw 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}.jr-tw2{animation:jrTw 2.4s ease-in-out -1.2s infinite;transform-box:fill-box;transform-origin:center}@keyframes jrTw{0%,100%{opacity:.35;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}.jr-flag{animation:jrWave 1.6s ease-in-out infinite;transform-box:fill-box;transform-origin:left center}@keyframes jrWave{50%{transform:skewY(-6deg) scaleX(.92)}}</style></svg>
-          <div class="jr__start" style="--x:10.00%;--y:83.57%"><span>Mulai dari mana?</span></div>
-          <div class="jr__finish" style="--x:83.33%;--y:16.43%"><span>Siap daftar <em>LPDP</em></span></div>
-          <button type="button" class="jr__stop jr__stop--below" style="--x:25.00%;--y:70.71%" data-step="0" role="tab" id="jr-tab-0" aria-controls="jr-panel" aria-selected="false" tabindex="0"><span class="jr__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 9v4l3 2M9 3h6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><i>01</i></span><span class="jr__label">Efektif</span></button>
-<button type="button" class="jr__stop jr__stop--below" style="--x:57.00%;--y:79.64%" data-step="1" role="tab" id="jr-tab-1" aria-controls="jr-panel" aria-selected="false" tabindex="-1"><span class="jr__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 20h5v-5h5v-5h5V5h3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><i>02</i></span><span class="jr__label">Terarah</span></button>
-<button type="button" class="jr__stop jr__stop--left" style="--x:79.00%;--y:53.57%" data-step="2" role="tab" id="jr-tab-2" aria-controls="jr-panel" aria-selected="false" tabindex="-1"><span class="jr__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="8" cy="9" r="3" fill="currentColor"/><circle cx="16" cy="9" r="3" fill="currentColor"/><path d="M2.5 19a5.5 5.5 0 0 1 11 0M10.5 19a5.5 5.5 0 0 1 11 0" fill="currentColor"/></svg><i>03</i></span><span class="jr__label">Komunitas</span></button>
-<button type="button" class="jr__stop jr__stop--above" style="--x:49.33%;--y:35.00%" data-step="3" role="tab" id="jr-tab-3" aria-controls="jr-panel" aria-selected="false" tabindex="-1"><span class="jr__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M2 9l10-5 10 5-10 5z" fill="currentColor"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5" fill="currentColor"/><path d="M21 9v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><i>04</i></span><span class="jr__label">Awardee</span></button>
-          <div class="jr__me" style="--x:10.00%;--y:83.57%" aria-hidden="true"><span class="jr__puffs" aria-hidden="true"><i></i><i></i><i></i><i></i></span><svg class="jr__van" viewBox="0 0 132 92" width="100%" height="100%" aria-hidden="true"><rect x="14" y="2" width="96" height="9" rx="4.5" fill="#FDB913"/><rect x="58" y="2" width="8" height="9" fill="#FF8040"/><path d="M30,11 v6 M94,11 v6" stroke="#0B2545" stroke-width="3" stroke-linecap="round"/><path d="M10,52 C10,30 20,17 40,17 L98,17 C114,17 122,30 124,46 L126,62 C126,68 122,72 116,72 L16,72 C12,72 10,68 10,62 Z" fill="#14B8A6"/><path d="M10,46 C11,28 21,17 40,17 L98,17 C113,17 121,28 123,46 Z" fill="#FFF6E5"/><path d="M84,46 L104,30 L123,46" fill="#14B8A6"/><rect x="20" y="24" width="22" height="16" rx="5" fill="#BFE0F7"/><rect x="47" y="24" width="22" height="16" rx="5" fill="#BFE0F7"/><path d="M76,24 h20 q7,0 12,6 l6,10 h-38 z" fill="#BFE0F7"/><path d="M23,27 l6,0 M50,27 l6,0" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".8"/><path d="M74,46 v22" stroke="#0E8F80" stroke-width="2"/><rect x="66" y="52" width="6" height="2.5" rx="1.2" fill="#0B2545" opacity=".5"/><circle cx="121" cy="54" r="4" fill="#FFE29A"/><rect x="6" y="54" width="5" height="7" rx="2" fill="#E5484D"/><rect x="8" y="68" width="118" height="5" rx="2.5" fill="#0B2545" opacity=".85"/><rect x="2" y="66" width="10" height="4" rx="2" fill="#5B5B66"/><g class="jr__wheel" style="transform-origin:34px 74px"><circle cx="34" cy="74" r="13" fill="#0B2545"/><circle cx="34" cy="74" r="6" fill="#E6E6EA"/><path d="M34,68 v12 M28,74 h12" stroke="#0B2545" stroke-width="2"/></g><g class="jr__wheel" style="transform-origin:102px 74px"><circle cx="102" cy="74" r="13" fill="#0B2545"/><circle cx="102" cy="74" r="6" fill="#E6E6EA"/><path d="M102,68 v12 M96,74 h12" stroke="#0B2545" stroke-width="2"/></g></svg><span>Kamu</span></div>
+          <svg class="jr__art" viewBox="0 0 600 560" aria-hidden="true" focusable="false"><defs><linearGradient id="jrFill" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1E88E5"/><stop offset="1" stop-color="#14B8A6"/></linearGradient><pattern id="jrDots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#C9DCF3"/></pattern></defs><rect width="600" height="560" fill="url(#jrDots)" opacity=".7"/><path d="M-20,420 C80,370 170,450 280,420 C380,390 420,470 620,430 L620,580 L-20,580 Z" fill="#E3F4EA"/><path d="M380,510 C460,540 560,520 620,480 L620,360 C560,340 470,370 420,400 C380,430 350,490 380,510 Z" fill="#FFF3D6"/><path d="M40,170 C60,120 150,110 190,150 C230,190 200,250 140,256 C80,262 24,220 40,170 Z" fill="#EAF3FF"/><g transform="translate(120,196) scale(0.75)" fill="#fff" opacity="1"><ellipse rx="46" ry="16"/><circle cx="-15" cy="-9" r="18"/><circle cx="14" cy="-14" r="22"/></g><ellipse cx="500" cy="462" rx="70" ry="20" fill="#CDEBD8"/><g transform="translate(500,460)"><rect x="-3" y="-66" width="6" height="68" rx="3" fill="#0B2545"/><path class="jr-flag" d="M3,-64 L46,-53 L3,-42 Z" fill="#FDB913" stroke="#0B2545" stroke-width="2" stroke-linejoin="round"/></g><g transform="translate(150,90) scale(0.7)" fill="#fff" opacity="1"><ellipse rx="46" ry="16"/><circle cx="-15" cy="-9" r="18"/><circle cx="14" cy="-14" r="22"/></g><g transform="translate(560,250) scale(0.55)" fill="#fff" opacity="1"><ellipse rx="46" ry="16"/><circle cx="-15" cy="-9" r="18"/><circle cx="14" cy="-14" r="22"/></g><path d="M230,82 l26,-9 l-14,15 z M242,88 l-3,7 l-2,-9 z" fill="#fff" stroke="#0B2545" stroke-width="1.6" stroke-linejoin="round" opacity=".8"/><path d="M214,94 C200,100 190,112 176,116" fill="none" stroke="#0B2545" stroke-width="1.4" stroke-dasharray="3 5" opacity=".4"/><g transform="translate(420,120) scale(0.7)"><path class="jr-tw" d="M0,-10 C1.6,-2 2,-1.6 10,0 C2,1.6 1.6,2 0,10 C-1.6,2 -2,1.6 -10,0 C-2,-1.6 -1.6,-2 0,-10 Z" fill="#FDB913"/></g><g transform="translate(90,320) scale(0.5)"><path class="jr-tw2" d="M0,-10 C1.6,-2 2,-1.6 10,0 C2,1.6 1.6,2 0,10 C-1.6,2 -2,1.6 -10,0 C-2,-1.6 -1.6,-2 0,-10 Z" fill="#FF8040"/></g><g transform="translate(560,380) scale(0.55)"><path class="jr-tw2" d="M0,-10 C1.6,-2 2,-1.6 10,0 C2,1.6 1.6,2 0,10 C-1.6,2 -2,1.6 -10,0 C-2,-1.6 -1.6,-2 0,-10 Z" fill="#FDB913"/></g><path d="M60,92 C76.5,105.2 98.3,160 150,164 C201.7,168 282.6,96.4 342,114 C401.4,131.6 482.4,214.2 474,260 C465.6,305.8 291.2,325.9 296,364 C300.8,402.1 462.6,448.9 500,468" fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M60,92 C76.5,105.2 98.3,160 150,164 C201.7,168 282.6,96.4 342,114 C401.4,131.6 482.4,214.2 474,260 C465.6,305.8 291.2,325.9 296,364 C300.8,402.1 462.6,448.9 500,468" fill="none" stroke="#C9DCF3" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/><path d="M60,92 C76.5,105.2 98.3,160 150,164 C201.7,168 282.6,96.4 342,114 C401.4,131.6 482.4,214.2 474,260 C465.6,305.8 291.2,325.9 296,364 C300.8,402.1 462.6,448.9 500,468" class="jr__progress" data-jr-road fill="none" stroke="url(#jrFill)" stroke-width="6" stroke-linecap="round"/><style>.jr-tw{animation:jrTw 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}.jr-tw2{animation:jrTw 2.4s ease-in-out -1.2s infinite;transform-box:fill-box;transform-origin:center}@keyframes jrTw{0%,100%{opacity:.35;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}.jr-flag{animation:jrWave 1.6s ease-in-out infinite;transform-box:fill-box;transform-origin:left center}@keyframes jrWave{50%{transform:skewY(-6deg) scaleX(.92)}}</style></svg>
+          <div class="jr__start" style="--x:10.00%;--y:16.43%"><span>Mulai dari mana?</span></div>
+          <div class="jr__finish" style="--x:83.33%;--y:83.57%"><span>Siap daftar <em>LPDP</em></span></div>
+          <button type="button" class="jr__stop jr__stop--above" style="--x:25.00%;--y:29.29%" data-step="0" role="tab" id="jr-tab-0" aria-controls="jr-panel" aria-selected="false" tabindex="0"><span class="jr__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 9v4l3 2M9 3h6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><i>01</i></span><span class="jr__label">Efektif</span></button>
+<button type="button" class="jr__stop jr__stop--above" style="--x:57.00%;--y:20.36%" data-step="1" role="tab" id="jr-tab-1" aria-controls="jr-panel" aria-selected="false" tabindex="-1"><span class="jr__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 20h5v-5h5v-5h5V5h3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><i>02</i></span><span class="jr__label">Terarah</span></button>
+<button type="button" class="jr__stop jr__stop--left" style="--x:79.00%;--y:46.43%" data-step="2" role="tab" id="jr-tab-2" aria-controls="jr-panel" aria-selected="false" tabindex="-1"><span class="jr__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="8" cy="9" r="3" fill="currentColor"/><circle cx="16" cy="9" r="3" fill="currentColor"/><path d="M2.5 19a5.5 5.5 0 0 1 11 0M10.5 19a5.5 5.5 0 0 1 11 0" fill="currentColor"/></svg><i>03</i></span><span class="jr__label">Komunitas</span></button>
+<button type="button" class="jr__stop jr__stop--below" style="--x:49.33%;--y:65.00%" data-step="3" role="tab" id="jr-tab-3" aria-controls="jr-panel" aria-selected="false" tabindex="-1"><span class="jr__sticker" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M2 9l10-5 10 5-10 5z" fill="currentColor"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5" fill="currentColor"/><path d="M21 9v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><i>04</i></span><span class="jr__label">Awardee</span></button>
+          <div class="jr__me" style="--x:10.00%;--y:16.43%" aria-hidden="true"><span class="jr__puffs" aria-hidden="true"><i></i><i></i><i></i><i></i></span><svg class="jr__van" viewBox="0 0 132 92" width="100%" height="100%" aria-hidden="true"><rect x="14" y="2" width="96" height="9" rx="4.5" fill="#FDB913"/><rect x="58" y="2" width="8" height="9" fill="#FF8040"/><path d="M30,11 v6 M94,11 v6" stroke="#0B2545" stroke-width="3" stroke-linecap="round"/><path d="M10,52 C10,30 20,17 40,17 L98,17 C114,17 122,30 124,46 L126,62 C126,68 122,72 116,72 L16,72 C12,72 10,68 10,62 Z" fill="#14B8A6"/><path d="M10,46 C11,28 21,17 40,17 L98,17 C113,17 121,28 123,46 Z" fill="#FFF6E5"/><path d="M84,46 L104,30 L123,46" fill="#14B8A6"/><rect x="20" y="24" width="22" height="16" rx="5" fill="#BFE0F7"/><rect x="47" y="24" width="22" height="16" rx="5" fill="#BFE0F7"/><path d="M76,24 h20 q7,0 12,6 l6,10 h-38 z" fill="#BFE0F7"/><path d="M23,27 l6,0 M50,27 l6,0" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".8"/><path d="M74,46 v22" stroke="#0E8F80" stroke-width="2"/><rect x="66" y="52" width="6" height="2.5" rx="1.2" fill="#0B2545" opacity=".5"/><circle cx="121" cy="54" r="4" fill="#FFE29A"/><rect x="6" y="54" width="5" height="7" rx="2" fill="#E5484D"/><rect x="8" y="68" width="118" height="5" rx="2.5" fill="#0B2545" opacity=".85"/><rect x="2" y="66" width="10" height="4" rx="2" fill="#5B5B66"/><g class="jr__wheel" style="transform-origin:34px 74px"><circle cx="34" cy="74" r="13" fill="#0B2545"/><circle cx="34" cy="74" r="6" fill="#E6E6EA"/><path d="M34,68 v12 M28,74 h12" stroke="#0B2545" stroke-width="2"/></g><g class="jr__wheel" style="transform-origin:102px 74px"><circle cx="102" cy="74" r="13" fill="#0B2545"/><circle cx="102" cy="74" r="6" fill="#E6E6EA"/><path d="M102,68 v12 M96,74 h12" stroke="#0B2545" stroke-width="2"/></g></svg><span>Kamu</span></div>
         </div>
       </div>
       <div class="jr__panel" id="jr-panel" role="tabpanel" aria-live="polite">
@@ -166,9 +172,7 @@
     <h2 class="h2 reveal">Apa aja yang kamu dapat di 4 sesi</h2>
     <p class="rm-hint"><span aria-hidden="true">?</span>Klik tiap sesi buat lihat detailnya</p>
     <!--
-      TODO [V]: judul dan isi tiap sesi belum ada di materi PM.
-      Placeholder di bawah DIAMBIL DARI content angle MOFU di deck PM,
-      wajib dikonfirmasi sebelum tayang.
+      Judul & isi 4 sesi disalin dari poster PM "LPDP Preparation in January 2027" (Session 1-4).
     -->
     <!-- TODO [V]: slot testimoni peserta mentoring beasiswa Global Hub + izin tertulis. Disembunyikan sampai ada. JANGAN mengarang testimoni. -->
     <div class="rm" id="rm">
@@ -251,30 +255,31 @@
       </svg>
 
       <!-- Titik "Kamu di sini": posisinya diatur JS sepanjang jalan -->
-      <div class="rm-me" id="rm-me" aria-hidden="true"><span class="rm-me__tag">Kamu di sini</span><i></i></div>
+      <!-- Avatar = van "Kamu" yang sama dengan section 2, supaya journey-nya nyambung -->
+      <div class="rm-me" id="rm-me" data-dir="right" aria-hidden="true"><div class="rmv"><span class="rmv__puffs"><i></i><i></i><i></i><i></i></span><svg class="rmv__svg" viewBox="0 0 132 92" width="100%" height="100%" aria-hidden="true"><rect x="14" y="2" width="96" height="9" rx="4.5" fill="#FDB913"/><rect x="58" y="2" width="8" height="9" fill="#FF8040"/><path d="M30,11 v6 M94,11 v6" stroke="#0B2545" stroke-width="3" stroke-linecap="round"/><path d="M10,52 C10,30 20,17 40,17 L98,17 C114,17 122,30 124,46 L126,62 C126,68 122,72 116,72 L16,72 C12,72 10,68 10,62 Z" fill="#14B8A6"/><path d="M10,46 C11,28 21,17 40,17 L98,17 C113,17 121,28 123,46 Z" fill="#FFF6E5"/><path d="M84,46 L104,30 L123,46" fill="#14B8A6"/><rect x="20" y="24" width="22" height="16" rx="5" fill="#BFE0F7"/><rect x="47" y="24" width="22" height="16" rx="5" fill="#BFE0F7"/><path d="M76,24 h20 q7,0 12,6 l6,10 h-38 z" fill="#BFE0F7"/><path d="M23,27 l6,0 M50,27 l6,0" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".8"/><path d="M74,46 v22" stroke="#0E8F80" stroke-width="2"/><rect x="66" y="52" width="6" height="2.5" rx="1.2" fill="#0B2545" opacity=".5"/><circle cx="121" cy="54" r="4" fill="#FFE29A"/><rect x="6" y="54" width="5" height="7" rx="2" fill="#E5484D"/><rect x="8" y="68" width="118" height="5" rx="2.5" fill="#0B2545" opacity=".85"/><rect x="2" y="66" width="10" height="4" rx="2" fill="#5B5B66"/><g class="rmv__wheel" style="transform-origin:34px 74px"><circle cx="34" cy="74" r="13" fill="#0B2545"/><circle cx="34" cy="74" r="6" fill="#E6E6EA"/><path d="M34,68 v12 M28,74 h12" stroke="#0B2545" stroke-width="2"/></g><g class="rmv__wheel" style="transform-origin:102px 74px"><circle cx="102" cy="74" r="13" fill="#0B2545"/><circle cx="102" cy="74" r="6" fill="#E6E6EA"/><path d="M102,68 v12 M96,74 h12" stroke="#0B2545" stroke-width="2"/></g></svg><b>Kamu</b></div></div>
 
       <!-- Pin nomor sesi: posisinya dihitung JS dari jalan peta yang aktif -->
-      <button type="button" class="rm-pin" data-s="0" aria-label="Sesi 1: Peta persiapan LPDP"><svg viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50C20 50 3 30 3 19a17 17 0 0 1 34 0c0 11-17 31-17 31Z" fill="#FF6A1F" stroke="#fff" stroke-width="3"/><circle cx="20" cy="19" r="11.5" fill="#fff"/></svg><b>1</b></button>
-      <button type="button" class="rm-pin" data-s="1" aria-label="Sesi 2: Study plan dan narasi kontribusi"><svg viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50C20 50 3 30 3 19a17 17 0 0 1 34 0c0 11-17 31-17 31Z" fill="#FF6A1F" stroke="#fff" stroke-width="3"/><circle cx="20" cy="19" r="11.5" fill="#fff"/></svg><b>2</b></button>
-      <button type="button" class="rm-pin" data-s="2" aria-label="Sesi 3: Dokumen aplikasi"><svg viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50C20 50 3 30 3 19a17 17 0 0 1 34 0c0 11-17 31-17 31Z" fill="#FF6A1F" stroke="#fff" stroke-width="3"/><circle cx="20" cy="19" r="11.5" fill="#fff"/></svg><b>3</b></button>
-      <button type="button" class="rm-pin" data-s="3" aria-label="Sesi 4: Seleksi substansi dan wawancara"><svg viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50C20 50 3 30 3 19a17 17 0 0 1 34 0c0 11-17 31-17 31Z" fill="#FF6A1F" stroke="#fff" stroke-width="3"/><circle cx="20" cy="19" r="11.5" fill="#fff"/></svg><b>4</b></button>
+      <button type="button" class="rm-pin" data-s="0" aria-label="Sesi 1: LPDP&#39;s program and requirements"><svg viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50C20 50 3 30 3 19a17 17 0 0 1 34 0c0 11-17 31-17 31Z" fill="#FF6A1F" stroke="#fff" stroke-width="3"/><circle cx="20" cy="19" r="11.5" fill="#fff"/></svg><b>1</b></button>
+      <button type="button" class="rm-pin" data-s="1" aria-label="Sesi 2: Application Strategy"><svg viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50C20 50 3 30 3 19a17 17 0 0 1 34 0c0 11-17 31-17 31Z" fill="#FF6A1F" stroke="#fff" stroke-width="3"/><circle cx="20" cy="19" r="11.5" fill="#fff"/></svg><b>2</b></button>
+      <button type="button" class="rm-pin" data-s="2" aria-label="Sesi 3: Scholastic"><svg viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50C20 50 3 30 3 19a17 17 0 0 1 34 0c0 11-17 31-17 31Z" fill="#FF6A1F" stroke="#fff" stroke-width="3"/><circle cx="20" cy="19" r="11.5" fill="#fff"/></svg><b>3</b></button>
+      <button type="button" class="rm-pin" data-s="3" aria-label="Sesi 4: Interview"><svg viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50C20 50 3 30 3 19a17 17 0 0 1 34 0c0 11-17 31-17 31Z" fill="#FF6A1F" stroke="#fff" stroke-width="3"/><circle cx="20" cy="19" r="11.5" fill="#fff"/></svg><b>4</b></button>
 
       <!-- Kartu sesi; isi lengkapnya ada di .rm-detail dan dibuka di popover / bottom sheet -->
       <button type="button" class="rm-card" data-s="0" aria-haspopup="dialog">
         <span class="rm-card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg></span>
-        <span class="rm-card__t"><span class="rm-card__no">Sesi 1</span><span class="rm-card__h">Peta persiapan LPDP</span><span class="rm-card__more">Lihat detail</span></span>
+        <span class="rm-card__t"><span class="rm-card__no">Sesi 1</span><span class="rm-card__h">LPDP&#39;s program and requirements</span><span class="rm-card__more">Lihat detail</span></span>
       </button>
       <button type="button" class="rm-card" data-s="1" aria-haspopup="dialog">
         <span class="rm-card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3Z"/></svg></span>
-        <span class="rm-card__t"><span class="rm-card__no">Sesi 2</span><span class="rm-card__h">Study plan &amp; narasi kontribusi</span><span class="rm-card__more">Lihat detail</span></span>
+        <span class="rm-card__t"><span class="rm-card__no">Sesi 2</span><span class="rm-card__h">Application Strategy</span><span class="rm-card__more">Lihat detail</span></span>
       </button>
       <button type="button" class="rm-card" data-s="2" aria-haspopup="dialog">
         <span class="rm-card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h7l4 4v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M11 9h5M11 12.5h5M11 16h3"/><path d="M4 7v12a2 2 0 0 0 2 2h9"/></svg></span>
-        <span class="rm-card__t"><span class="rm-card__no">Sesi 3</span><span class="rm-card__h">Dokumen aplikasi</span><span class="rm-card__more">Lihat detail</span></span>
+        <span class="rm-card__t"><span class="rm-card__no">Sesi 3</span><span class="rm-card__h">Scholastic</span><span class="rm-card__more">Lihat detail</span></span>
       </button>
       <button type="button" class="rm-card" data-s="3" aria-haspopup="dialog">
         <span class="rm-card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/><path d="M19 8h1a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-1v3l-4-3h-4a1 1 0 0 1-1-1v-1"/></svg></span>
-        <span class="rm-card__t"><span class="rm-card__no">Sesi 4</span><span class="rm-card__h">Seleksi substansi &amp; wawancara</span><span class="rm-card__more">Lihat detail</span></span>
+        <span class="rm-card__t"><span class="rm-card__no">Sesi 4</span><span class="rm-card__h">Interview</span><span class="rm-card__more">Lihat detail</span></span>
       </button>
 
       <div class="rm-goal"><small>Tujuan</small><b>Siap daftar <em>LPDP</em></b></div>
@@ -284,38 +289,40 @@
     <div class="rm-details">
       <div class="rm-detail" data-s="0">
         <span class="sess__no">Sesi 1</span>
-        <h3>Peta persiapan LPDP</h3>
-        <p>Pahami persyaratan dan tahapan seleksi, lalu petakan apa yang udah dan belum kamu punya.</p>
-        <div class="mock"><ul>
-          <li><span class="dot g"></span>Ijazah &amp; transkrip<span class="pill" style="background:#E7F6EE;color:#1F7A45">siap</span></li>
-          <li><span class="dot y"></span>Skor bahasa<span class="pill">proses</span></li>
-          <li><span class="dot n"></span>Surat rekomendasi<span class="pill" style="background:#EEF0F3;color:#5B5B66">belum</span></li>
-        </ul></div>
+        <h3>LPDP&#39;s program and requirements</h3>
+        <ul class="rm-points">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mengenal LPDP: program, skema, syarat.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Hal-hal yang perlu dipersiapkan sejak awal.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Kesalahan umum calon pendaftar.</li>
+        </ul>
       </div>
       <div class="rm-detail" data-s="1">
         <span class="sess__no">Sesi 2</span>
-        <h3>Study plan &amp; narasi kontribusi</h3>
-        <p>Bangun rencana studi yang nyambung sama tujuanmu dan kontribusi yang mau kamu bawa pulang.</p>
-        <div class="mock flow"><span>Tujuan</span><em aria-hidden="true">→</em><span>Jurusan</span><em aria-hidden="true">→</em><span>Kontribusi</span></div>
+        <h3>Application Strategy</h3>
+        <ul class="rm-points">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Cara menentukan tujuan dan mengkoneksikan.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Membangun narasi yang konsisten.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Persiapan esai atau dokumen tertulis yang dipersyaratkan.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Kesalahan umum dalam menyusun aplikasi.</li>
+        </ul>
       </div>
       <div class="rm-detail" data-s="2">
         <span class="sess__no">Sesi 3</span>
-        <h3>Dokumen aplikasi</h3>
-        <p>Kenali dokumen yang dibutuhkan dan kesalahan yang sering bikin aplikasi lemah.</p>
-        <div class="mock"><ul>
-          <li><span class="dot g"></span>Esai</li>
-          <li><span class="dot o"></span>Surat rekomendasi<span class="pill">sering terlupa</span></li>
-          <li><span class="dot o"></span>Surat pernyataan<span class="pill">sering terlupa</span></li>
-        </ul></div>
+        <h3>Scholastic</h3>
+        <ul class="rm-points">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Seleksi Bakat Skolastik: materi dan strategi.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mengenal seleksi substansi.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Persiapan menghadapi pertanyaan seleksi.</li>
+        </ul>
       </div>
       <div class="rm-detail" data-s="3">
         <span class="sess__no">Sesi 4</span>
-        <h3>Seleksi substansi &amp; wawancara</h3>
-        <p>Pahami apa yang dinilai di tahap substansi dan cara menyiapkan diri menghadapinya.</p>
-        <div class="mock"><div class="qa">
-          <b>"Kenapa kamu memilih jurusan ini?"</b>
-          <p class="qa__tip"><strong>Tips:</strong> hubungkan pengalamanmu, jurusan pilihan, dan rencana kontribusimu dalam satu cerita yang runtut.</p>
-        </div></div>
+        <h3>Interview</h3>
+        <ul class="rm-points">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Gambaran proses seleksi substansi.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Kesalahan yang perlu dihindari.</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#EAF3FF"/><path d="M8 12.5l2.6 2.6L16 9.6" stroke="#1E6FD9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Tips persiapan akhir.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -373,7 +380,7 @@
 <!-- §mentor -->
 <section class="sec sec--white" id="mentor">
   <div class="wrap fade-up">
-    <h2 class="h2 reveal">Dipandu mentor yang udah lewat jalan ini</h2>
+    <h2 class="h2 reveal">Dipandu para mentor awardee LPDP</h2>
     <!-- Data mentor dari globalhub.id/mentors (program Study Abroad, label "LPDP Awardee" sesuai situs resmi). Logo LPDP sengaja tidak dipakai, cukup teks.
          TODO [V]: mentor mana yang benar-benar memandu SchoBoot, dan izin tampil di halaman ini. -->
     <div class="mentors">
@@ -679,6 +686,23 @@ var CONFIG = {
   }
 
   // Mockup sesi 4: tombol "lihat tips"
+  // Animasi CSS di dalam SVG inline (awan, kompas, bendera, kelap-kelip) memaksa hitung ulang layout tiap frame, bahkan saat section-nya
+  // di luar layar. Jadi dijeda selama section tidak terlihat dan jalan lagi begitu terlihat (animasinya tetap sama).
+  (function(){
+    var zones = document.querySelectorAll('#info, #program');
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){
+      e.target.classList.toggle('anim-off', !e.isIntersecting);
+      e.target.querySelectorAll('svg').forEach(function(v){ if (v.pauseAnimations) { if (e.isIntersecting) v.unpauseAnimations(); else v.pauseAnimations(); } });
+    }); }, { rootMargin: '150px 0px' });
+    zones.forEach(function(z){ z.classList.add('anim-off'); io.observe(z); });
+  })();
+  // Dekorasi SVG baru mulai bergerak sesaat setelah halaman selesai dimuat, supaya tidak berebut CPU dengan layar pertama
+  (function(){
+    function go(){ setTimeout(function(){ document.documentElement.classList.remove('anim-wait'); }, 1800); }
+    if (document.readyState === 'complete') go(); else addEventListener('load', go);
+  })();
+
   // Section 2: roadmap van "Kamu"
   (() => {
   const root = document.querySelector('[data-jr]');
@@ -927,19 +951,22 @@ var CONFIG = {
         pin.style.setProperty('--d', (tt * REVEAL).toFixed(2) + 's');
         cards[i].style.setProperty('--d', (tt * REVEAL + .25).toFixed(2) + 's');
       });
-      placeMe(at < 0 ? 0 : lens[at]);
+      if(at < 0) placeMe(0); else placeMe(Math.max(0, lens[at] - park()), lens[at]);
     }
-    function placeMe(len){
+    function park(){ return G.w / 22; } // jarak parkir van sebelum pin (unit peta)
+    function placeMe(len, lineTo){
       meLen = len; var q = G.p.getPointAtLength(len);
       me.style.left = (q.x / G.w * 100) + '%'; me.style.top = (q.y / G.h * 100) + '%';
-      G.p.style.strokeDashoffset = G.total - len;
+      G.p.style.strokeDashoffset = G.total - (lineTo == null ? len : lineTo);
     }
-    function travel(to){
-      var from = meLen, t0 = 0, dur = Math.min(1700, 600 + Math.abs(to - from) / G.total * 2400);
+    function travel(pin){
+      var to = Math.max(0, pin - park()), from = meLen, t0 = 0, dur = Math.min(1700, 600 + Math.abs(to - from) / G.total * 2400), sg = to >= from ? 1 : -1;
       cancelAnimationFrame(raf); me.classList.add('moving');
       raf = requestAnimationFrame(function st(ts){
         if(!t0) t0 = ts; var x = Math.min(1, (ts - t0) / dur), e = x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2;
-        placeMe(from + (to - from) * e); follow(.14);
+        var l = from + (to - from) * e, q = G.p.getPointAtLength(l), r = G.p.getPointAtLength(Math.max(0, Math.min(G.total, l + sg * 4)));
+        if(Math.abs(r.x - q.x) > .3) me.dataset.dir = r.x < q.x ? 'left' : 'right';
+        placeMe(l, l + (pin - to) * e); follow(.14);
         if(x < 1) raf = requestAnimationFrame(st);
         else { me.classList.remove('moving'); var k = 0; (function settle(){ follow(.2); if(++k < 30 && opened) raf = requestAnimationFrame(settle); })(); }
       });
@@ -963,7 +990,7 @@ var CONFIG = {
     function anchor(i){
       var q = G.p.getPointAtLength(G.lens[i]), W = rm.clientWidth, H = rm.clientHeight;
       var x = q.x / G.w * W, y = q.y / G.h * H, w = pop.offsetWidth, h = pop.offsetHeight;
-      var left = x < W / 2 ? x + 40 : x - 40 - w;
+      var left = x < W / 2 ? x + 80 : x - 80 - w; // jarak lebih lebar supaya van yang parkir di dekat pin tetap terlihat
       left = Math.max(16, Math.min(W - w - 16, left));
       var top = Math.max(16, Math.min(H - h - 16, y - h / 2 - 20));
       pop.style.left = left + 'px'; pop.style.top = top + 'px';
