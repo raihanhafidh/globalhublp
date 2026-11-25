@@ -120,7 +120,7 @@ s{color:var(--muted)}
 .js .fade-up{opacity:0;transform:translateY(32px);transition:opacity 1.2s cubic-bezier(.22,.9,.3,1),transform 1.3s cubic-bezier(.22,.9,.3,1)}
 .js .fade-up.in{opacity:1;transform:none}
 .hero__cta{margin-top:40px;display:flex;flex-direction:column;align-items:stretch;gap:10px;width:100%;max-width:340px}
-.hero__cta .btn--ghost svg{color:#25D366;flex:none}
+.hero__cta .btn--ghost svg{flex:none}
 /* Burung terbang (video tanpa green screen): putih hilang lewat multiply, burung jadi siluet gelap di atas gradasi */
 .hero__birds{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;mix-blend-mode:multiply;opacity:0;transition:opacity 2s ease;pointer-events:none;z-index:0}
 .hero__birds.on{opacity:.4}
@@ -712,3 +712,19 @@ footer p + p{margin-top:6px}
 @media (min-width:900px){.rm-card__no{font-size:9.5px;letter-spacing:.02em}.rm-goal{left:84.5%}}
 @media (max-width:899px){.rm-goal{left:56%}}
 .envx__cta{justify-content:center;text-align:center}
+
+/* ===== WA jadi CTA utama ===== */
+.btn--wa{gap:10px}
+.btn--wa svg{color:#25D366;flex:none}
+.nav__cta--wa svg{color:#25D366;flex:none}
+.hero__meta{margin:6px 0 0;text-align:center;font-size:13.5px;line-height:1.5;color:var(--ink);opacity:.8}
+.rm-ask{margin-top:6px;font-size:14px;color:var(--muted);text-align:center}
+.persona__wa{margin:14px 8px 0;margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:var(--ink);text-decoration:none;background:var(--card);border-radius:999px;padding:8px 14px;transition:background .2s,transform .15s}
+.persona p{margin-bottom:14px}
+.persona__wa:hover{background:#E3F5EE}.persona__wa:active{transform:scale(.97)}
+.persona__wa svg{color:#25D366;flex:none}
+.envx__wa{margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border-radius:999px;border:1.5px solid var(--line);font-weight:700;font-size:14px;padding:0 12px;color:var(--ink);text-decoration:none;background:#fff}
+.envx__wa svg{color:#25D366;flex:none}
+.closing .btn--wa{display:inline-flex;align-items:center}
+.closing__meta{margin:12px 0 0;font-size:13.5px;color:rgba(255,255,255,.7)}
+.sticky .btn--wa{display:inline-flex;align-items:center;gap:8px}
