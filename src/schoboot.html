@@ -34,7 +34,8 @@
       <a href="#harga">Harga</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="#harga" class="nav__cta" data-checkout data-cta="checkout" data-pos="nav" data-paket="schoboot" data-marketing-placement="nav"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>Daftar</a>
+    <!-- CTA utama halaman = konsultasi WhatsApp (keputusan tim). Checkout tetap ada di kartu harga. -->
+    <a href="#" class="nav__cta nav__cta--wa" data-cta="whatsapp" data-pos="nav" data-msg="Halo kak, aku mau konsultasi bootcamp LPDP Global Hub (Januari 2027). Aku lagi di tahap ___." data-marketing-placement="nav"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Konsultasi</a>
     <!-- HP: tombol menu membuka panel dropdown di dalam notch (pola Supaste) -->
     <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Buka menu">
       <svg class="i-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -47,7 +48,7 @@
         <a href="#untuk-siapa">Untuk siapa</a>
         <a href="#harga">Harga</a>
         <a href="#faq">FAQ</a>
-        <a href="#harga" class="nav__panel-cta" data-checkout data-cta="checkout" data-pos="nav-menu" data-paket="schoboot" data-marketing-placement="nav-menu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>Daftar</a>
+        <a href="#" class="nav__panel-cta nav__cta--wa" data-cta="whatsapp" data-pos="nav-menu" data-msg="Halo kak, aku mau konsultasi bootcamp LPDP Global Hub (Januari 2027). Aku lagi di tahap ___." data-marketing-placement="nav-menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Konsultasi dulu</a>
       </div>
     </div>
   </nav>
@@ -91,9 +92,10 @@
     })();
     </script>
     <div class="hero__cta">
-      <!-- Tombol utama hero = info (scroll ke section 2 #info, cek informasi dulu), bukan checkout, jadi tidak ada data-cta="checkout" di sini -->
-      <a href="#info" class="btn btn--hero" data-scroll data-marketing-placement="hero-info">Pelajari lebih detail! <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="#" class="btn btn--ghost" data-cta="whatsapp" data-pos="hero-wa" data-msg="Halo kak, aku mau tanya bootcamp LPDP Global Hub. Aku lagi di tahap ___." data-marketing-placement="hero-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Konsultasi dulu!</a>
+      <!-- Tombol utama hero = konsultasi WhatsApp; tombol kedua = scroll ke section 2 (#info) -->
+      <a href="#" class="btn btn--hero btn--wa" data-cta="whatsapp" data-pos="hero-wa" data-msg="Halo kak, aku mau konsultasi bootcamp LPDP Global Hub (Januari 2027). Aku lagi di tahap ___." data-marketing-placement="hero-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Konsultasi dulu!</a>
+      <a href="#info" class="btn btn--ghost" data-scroll data-marketing-placement="hero-info">Pelajari lebih detail <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      <p class="hero__meta">Rp149.000 · 4 sesi live · 12–21 Jan 2027<br>Konsultasi gratis, nggak wajib daftar.</p>
     </div>
   </div>
 </section>
@@ -139,32 +141,6 @@
   </div>
 </section>
 <!-- /§compare -->
-
-<!-- §destinations -->
-<!-- TODO [V]: pastikan hak pakai keenam foto (Australia, Inggris, Korea Selatan, Jerman, Rusia, Tiongkok), dan bahwa negara tujuan ini sesuai daftar kampus tujuan LPDP sebelum tayang -->
-<!-- Latar biru laut, melanjutkan laut di bawah section senja -->
-<section class="sec sec--sea" id="mimpi" aria-labelledby="dest-title">
-  <div class="wrap fade-up dest">
-    <div>
-      <h2 class="h2 reveal" id="dest-title">Kamu mau kuliah di mana?</h2>
-      <p class="lead">Australia, Inggris, Eropa, Asia. Banyak awardee LPDP berangkat dari posisi yang sama kayak kamu sekarang: masih bingung mulai dari mana.</p>
-    </div>
-    <div>
-      <div class="deck" id="deck">
-        <button class="card p0" type="button"><img src="media/australia.webp" alt="Gedung opera di tepi pelabuhan Sydney dengan latar gedung pencakar langit" width="480" height="270" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Australia</b><span>Sydney</span></span><span class="sr">, ganti kartu</span></button>
-        <button class="card p1" type="button"><img src="media/inggris.webp" alt="Menara jam bergaya gotik di tepi sungai London dengan jembatan di sampingnya" width="400" height="600" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Inggris</b><span>London</span></span><span class="sr">, ganti kartu</span></button>
-        <button class="card ph" type="button"><img src="media/korea-selatan.webp" alt="Deretan gedung kota Seoul diterpa cahaya matahari sore" width="400" height="600" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Korea Selatan</b><span>Seoul</span></span><span class="sr">, ganti kartu</span></button>
-        <button class="card ph" type="button"><img src="media/jerman.webp" alt="Gedung bersejarah berkubah di tengah kota Berlin dilihat dari atas saat senja" width="400" height="485" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Jerman</b><span>Berlin</span></span><span class="sr">, ganti kartu</span></button>
-        <button class="card ph" type="button"><img src="media/rusia.webp" alt="Gedung utama universitas bergaya menara di Moskow dikelilingi taman" width="480" height="270" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Rusia</b><span>Moskow</span></span><span class="sr">, ganti kartu</span></button>
-        <button class="card p2" type="button"><img src="media/tiongkok.webp" alt="Pagoda kayu bertingkat dengan latar gedung apartemen modern" width="480" height="360" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Tiongkok</b><span>Tradisi bertemu kota modern</span></span><span class="sr">, ganti kartu</span></button>
-      </div>
-      <div class="deck__dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
-    </div>
-  </div>
-  <!-- Kalimat jembatan ke section program -->
-  <p class="wrap bridge reveal">Mimpinya udah jelas. <span>Sekarang tinggal petain jalannya.</span></p>
-</section>
-<!-- /§destinations -->
 
 <!-- §program -->
 <!-- Alur peta dari atas ke bawah (desktop & HP). Roadmap 4 sesi sebagai peta jalan (referensi desain dari tim): jalan tergambar saat section terlihat, pin muncul berurutan,
@@ -290,6 +266,7 @@
     </div>
 
     <p class="rm-note">Semua sesi direkam dan bisa kamu tonton ulang selama 30 hari.</p>
+    <p class="rm-ask">Bingung harus mulai siapin dari mana? <a href="#" class="link" data-cta="whatsapp" data-pos="program-wa" data-msg="Halo kak, aku mau tanya isi 4 sesi bootcamp LPDP Global Hub. Aku paling butuh bagian ___." data-marketing-placement="program-wa">Tanya admin dulu</a></p>
 
     <!-- Isi detail tiap sesi: sumber teks untuk popover / bottom sheet. Tetap ada di HTML (tersembunyi saat JS aktif) supaya terbaca tanpa JS. -->
     <div class="rm-details">
@@ -409,6 +386,32 @@
 </section>
 <!-- /§mentor -->
 
+<!-- §destinations -->
+<!-- TODO [V]: pastikan hak pakai keenam foto (Australia, Inggris, Korea Selatan, Jerman, Rusia, Tiongkok), dan bahwa negara tujuan ini sesuai daftar kampus tujuan LPDP sebelum tayang -->
+<!-- Dipindah ke sesudah mentor: negara tujuan jadi aspirasi yang nyambung ke kampus mentor, lalu masuk ke persona -->
+<section class="sec sec--sea" id="mimpi" aria-labelledby="dest-title">
+  <div class="wrap fade-up dest">
+    <div>
+      <h2 class="h2 reveal" id="dest-title">Kamu mau kuliah di mana?</h2>
+      <p class="lead">Australia, Inggris, Eropa, Asia. Banyak awardee LPDP berangkat dari posisi yang sama kayak kamu sekarang: masih bingung mulai dari mana.</p>
+    </div>
+    <div>
+      <div class="deck" id="deck">
+        <button class="card p0" type="button"><img src="media/australia.webp" alt="Gedung opera di tepi pelabuhan Sydney dengan latar gedung pencakar langit" width="480" height="270" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Australia</b><span>Sydney</span></span><span class="sr">, ganti kartu</span></button>
+        <button class="card p1" type="button"><img src="media/inggris.webp" alt="Menara jam bergaya gotik di tepi sungai London dengan jembatan di sampingnya" width="400" height="600" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Inggris</b><span>London</span></span><span class="sr">, ganti kartu</span></button>
+        <button class="card ph" type="button"><img src="media/korea-selatan.webp" alt="Deretan gedung kota Seoul diterpa cahaya matahari sore" width="400" height="600" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Korea Selatan</b><span>Seoul</span></span><span class="sr">, ganti kartu</span></button>
+        <button class="card ph" type="button"><img src="media/jerman.webp" alt="Gedung bersejarah berkubah di tengah kota Berlin dilihat dari atas saat senja" width="400" height="485" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Jerman</b><span>Berlin</span></span><span class="sr">, ganti kartu</span></button>
+        <button class="card ph" type="button"><img src="media/rusia.webp" alt="Gedung utama universitas bergaya menara di Moskow dikelilingi taman" width="480" height="270" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Rusia</b><span>Moskow</span></span><span class="sr">, ganti kartu</span></button>
+        <button class="card p2" type="button"><img src="media/tiongkok.webp" alt="Pagoda kayu bertingkat dengan latar gedung apartemen modern" width="480" height="360" loading="lazy" decoding="async"><span class="card__chip">S2 · S3</span><span class="card__cap"><b>Tiongkok</b><span>Tradisi bertemu kota modern</span></span><span class="sr">, ganti kartu</span></button>
+      </div>
+      <div class="deck__dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+  <!-- Kalimat jembatan ke section persona ("Kamu yang mana?") -->
+  <p class="wrap bridge reveal">Mimpinya udah jelas. <span>Tinggal tahu kamu mulai dari mana.</span></p>
+</section>
+<!-- /§destinations -->
+
 <!-- §personas -->
 <section class="sec" id="untuk-siapa">
   <div class="wrap fade-up">
@@ -418,17 +421,17 @@
     <div class="personas">
       <article class="persona reveal">
         <div class="persona__art"><img src="media/persona/persona-1-baru-mulai.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
-        <span class="persona__tag t1">Baru mau mulai daftar</span><h3>"Pengen S2, tapi belum tahu langkah pertamanya."</h3><p>Belum pernah daftar LPDP. Kamu mulai siap sebelum pendaftaran dibuka, bukan pas udah mepet.</p></article>
+        <span class="persona__tag t1">Baru mau mulai daftar</span><h3>"Pengen S2, tapi belum tahu langkah pertamanya."</h3><p>Belum pernah daftar LPDP. Kamu mulai siap sebelum pendaftaran dibuka, bukan pas udah mepet.</p><a href="#" class="persona__wa" data-cta="whatsapp" data-pos="persona-1" data-msg="Halo kak, aku mau tanya bootcamp LPDP Global Hub. Aku baru mau mulai daftar LPDP dan belum tahu langkah pertamanya." data-marketing-placement="persona-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Ini aku, tanya admin</a></article>
       <article class="persona reveal">
         <div class="persona__art"><img src="media/persona/persona-2-lagi-nyiapin.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
-        <span class="persona__tag t2">Lagi nyiapin</span><h3>"Dokumen udah mulai dikumpulin, tapi belum nyambung jadi satu cerita."</h3><p>Kamu bikin aplikasi yang punya arah, bukan sekadar memenuhi syarat.</p></article>
+        <span class="persona__tag t2">Lagi nyiapin</span><h3>"Dokumen udah mulai dikumpulin, tapi belum nyambung jadi satu cerita."</h3><p>Kamu bikin aplikasi yang punya arah, bukan sekadar memenuhi syarat.</p><a href="#" class="persona__wa" data-cta="whatsapp" data-pos="persona-2" data-msg="Halo kak, aku mau tanya bootcamp LPDP Global Hub. Aku lagi nyiapin dokumen LPDP, tapi belum nyambung jadi satu cerita." data-marketing-placement="persona-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Ini aku, tanya admin</a></article>
       <article class="persona reveal">
         <div class="persona__art"><img src="media/persona/persona-3-coba-lagi.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
-        <span class="persona__tag t3">Mau coba lagi</span><h3>"Pernah daftar, belum lolos, dan nggak tahu salahnya di mana."</h3><p>Kamu evaluasi bagian yang perlu dibenerin, bukan ngulang dari nol.</p></article>
+        <span class="persona__tag t3">Mau coba lagi</span><h3>"Pernah daftar, belum lolos, dan nggak tahu salahnya di mana."</h3><p>Kamu evaluasi bagian yang perlu dibenerin, bukan ngulang dari nol.</p><a href="#" class="persona__wa" data-cta="whatsapp" data-pos="persona-3" data-msg="Halo kak, aku mau tanya bootcamp LPDP Global Hub. Aku pernah daftar LPDP tapi belum lolos." data-marketing-placement="persona-3"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Ini aku, tanya admin</a></article>
       <!-- Kartu 4 dari segmen Notion "Working Professionals" (prioritas High). Ilustrasi dibuat dengan gaya yang sama dengan 3 kartu lain. -->
       <article class="persona reveal">
         <div class="persona__art"><img src="media/persona/persona-4-sambil-kerja.svg" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
-        <span class="persona__tag t4">Sambil kerja</span><h3>"Udah kerja 2–3 tahun, pengen lanjut S2 biar kariernya naik."</h3><p>Kamu sambungin pengalaman kerja ke study plan dan kontribusi. Kelasnya cuma 4 × 60 menit, dan ada rekamannya.</p></article>
+        <span class="persona__tag t4">Sambil kerja</span><h3>"Udah kerja 2–3 tahun, pengen lanjut S2 biar kariernya naik."</h3><p>Kamu sambungin pengalaman kerja ke study plan dan kontribusi. Kelasnya cuma 4 × 60 menit, dan ada rekamannya.</p><a href="#" class="persona__wa" data-cta="whatsapp" data-pos="persona-4" data-msg="Halo kak, aku mau tanya bootcamp LPDP Global Hub. Aku udah kerja dan pengen lanjut S2 lewat LPDP." data-marketing-placement="persona-4"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Ini aku, tanya admin</a></article>
     </div>
     <div class="pdots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     <p class="swipe" aria-hidden="true">Geser untuk lihat lainnya →</p>
@@ -475,6 +478,7 @@
               <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8" fill="none" stroke="#FF6A1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Template &amp; outline dokumen</li>
             </ul>
             <a class="envx__cta" href="#harga" data-checkout data-cta="checkout" data-pos="pricing-envelope" data-paket="schoboot" data-marketing-placement="pricing-envelope">Daftar Scholarship Bootcamp!</a>
+            <a href="#" class="envx__wa" data-cta="whatsapp" data-pos="pricing-wa" data-msg="Halo kak, aku tertarik bootcamp LPDP Global Hub yang Rp149.000, tapi mau tanya dulu soal ___." data-marketing-placement="pricing-wa"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Masih ragu? Tanya admin dulu</a>
             <p class="envx__bonus">Mau lanjut dibimbing personal (1 on 1) setelah bootcamp? Peserta bootcamp dapat potongan Scholarship Mentoring hingga Rp300.000.*</p>
             <p class="envx__tnc">*Rp300.000 untuk 5 pendaftar mentoring pertama, Rp200.000 untuk 5 berikutnya.</p>
             <p class="envx__note">Bayar lewat checkout Global Hub. Link Zoom dikirim setelah pembayaran terverifikasi.</p>
@@ -545,6 +549,8 @@
       <details><summary>Harus punya skor IELTS/TOEFL dulu?</summary><p>Baiknya sudah siap, tapi kalau belum punya juga nggak masalah. Di Sesi 1 kamu justru jadi tahu kapan harus mulai ngejar skor bahasa.</p></details>
       <details><summary>Bedanya sama Scholarship Mentoring?</summary><p>Bootcamp itu kelas grup buat nyusun arah persiapan. Scholarship Mentoring itu bimbingan personal: esai dan dokumenmu dibahas satu per satu sampai submit.</p></details>
       <details><summary>Kuota pesertanya berapa?</summary><p>Satu batch maksimal 50 peserta.</p></details>
+      <!-- TODO [V]: samakan dengan skrip admin WA -->
+      <details><summary>Kalau chat admin, nanti dipaksa daftar?</summary><p>Nggak. Admin bantu jawab pertanyaanmu dan cek kamu lagi di tahap persiapan yang mana. Mau daftar atau nggak, keputusannya tetap di kamu.</p></details>
       <details><summary>Masih bingung?</summary><p>Konsultasi ke admin. Gratis, dan nggak wajib daftar. <a href="#" class="link" data-cta="whatsapp" data-pos="faq-wa" data-msg="Halo kak, aku mau tanya bootcamp LPDP Global Hub. Aku lagi di tahap ___." data-marketing-placement="faq-wa">Tanya admin via WhatsApp</a></p></details>
     </div>
   </div>
@@ -556,9 +562,9 @@
   <div class="wrap fade-up">
     <h2 class="h2">Pendaftaran LPDP belum dibuka. <span>Itu justru waktu terbaik buat mulai siap.</span></h2>
     <p class="closing__sub">Yang mulai lebih awal punya waktu buat benerin esai, ngejar skor, dan latihan wawancara. Yang nunggu pengumuman, ngerjain semuanya sekaligus.</p>
-    <!-- Tombol utama closing = konsultasi (WhatsApp) sesuai dokumen copy; checkout tetap ada di kartu harga & bar HP -->
-    <a href="#" class="btn" data-cta="whatsapp" data-pos="closing-konsultasi" data-msg="Halo kak, aku mau konsultasi dulu soal bootcamp LPDP Global Hub. Aku lagi di tahap ___." data-marketing-placement="closing-konsultasi">Konsultasi dulu!</a><br>
-    <a href="#" class="link" data-cta="whatsapp" data-pos="closing-wa" data-msg="Halo kak, aku mau tanya bootcamp LPDP Global Hub. Aku lagi di tahap ___." data-marketing-placement="closing-wa">Tanya admin via WhatsApp</a>
+    <!-- Satu CTA saja: konsultasi WhatsApp. Checkout ada di kartu harga. -->
+    <a href="#" class="btn btn--wa" data-cta="whatsapp" data-pos="closing-konsultasi" data-msg="Halo kak, aku mau konsultasi dulu soal bootcamp LPDP Global Hub. Aku lagi di tahap ___." data-marketing-placement="closing-konsultasi"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Konsultasi dulu!</a>
+    <p class="closing__meta">Gratis, dan nggak wajib daftar.</p>
   </div>
 </section>
 </main>
@@ -574,7 +580,7 @@
 <!-- §sticky -->
 <div class="sticky" id="sticky" aria-hidden="true">
   <div><b>Program Preparation</b>LPDP 2027</div>
-  <a href="#harga" class="btn" data-checkout data-cta="checkout" data-pos="mobile-sticky" data-paket="schoboot" data-marketing-placement="mobile-sticky" tabindex="-1">Daftar</a>
+  <a href="#" class="btn btn--wa" data-cta="whatsapp" data-pos="mobile-sticky" data-msg="Halo kak, aku mau konsultasi bootcamp LPDP Global Hub (Januari 2027). Aku lagi di tahap ___." data-marketing-placement="mobile-sticky" tabindex="-1"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.22c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.41 9.83-9.84 9.83zm8.37-18.2A11.75 11.75 0 0 0 12.04.13C5.5.13.18 5.45.18 12c0 2.09.55 4.13 1.59 5.93L.08 24l6.22-1.63a11.83 11.83 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.87-11.87a11.8 11.8 0 0 0-3.5-8.37z"/></svg>Konsultasi</a>
 </div>
 <!-- /§sticky -->
 
